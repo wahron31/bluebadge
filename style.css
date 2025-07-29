@@ -1,14 +1,88 @@
+/* Global styles */
 body {
-  background: #f5f5f5; color: #222;
-  font-family: 'Segoe UI', sans-serif;
-  margin:0;padding:0;
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f8f9fa;
+  color: #212529;
+  line-height: 1.6;
 }
-header { background:#00529B;color:#fff;padding:1rem;text-align:center;}
-nav ul { display:flex;justify-content:center;gap:1rem;list-style:none;padding:1rem;}
-nav a { color:#00529B;text-decoration:none;font-weight:bold; }
-#banner { background:#FFD700;color:#222;text-align:center;padding:0.5rem; }
-main { padding:1rem;}
-#quiz-container, #result { max-width:400px;margin:2rem auto;text-align:center;}
-ul { list-style:none;padding:0;}
-li { margin:0.5rem 0;}
-button { padding:0.75rem 1.5rem;margin-top:1rem;background:#00529B;color:#fff;border:none;border-radius:4px;}
+
+/* Header */
+header {
+  background-color: #003366;
+  color: white;
+  padding: 20px 15px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+header p {
+  margin-top: 5px;
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+/* Main content */
+main {
+  padding: 20px 15px;
+}
+
+.intro h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #003366;
+}
+
+.intro p {
+  font-size: 16px;
+}
+
+/* Word of the day */
+.word-of-the-day h3 {
+  font-size: 20px;
+  margin-top: 30px;
+  color: #003366;
+}
+
+.word-box {
+  background-color: #e1eaff;
+  padding: 15px;
+  border-left: 5px solid #003366;
+  margin-top: 10px;
+  border-radius: 4px;
+}
+
+/* Quiz button */
+.quiz-link {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.button {
+  background-color: #003366;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #0055aa;
+}
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
