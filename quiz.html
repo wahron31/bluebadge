@@ -2,46 +2,128 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Miniquiz | BlueBadge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BlueBadge - Quiz</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .question-box {
+      margin-bottom: 25px;
+    }
+
+    .question {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .options button {
+      display: block;
+      margin: 5px 0;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      background-color: #e0ecff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .options button.correct {
+      background-color: #b6f3c4;
+    }
+
+    .options button.wrong {
+      background-color: #f5b5b5;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>BlueBadge</h1>
-    <p>Dagelijkse miniquiz – Woordenschat en grammatica</p>
+    <h1>Dagelijkse Quiz</h1>
+    <p>Beantwoord de 5 vragen hieronder</p>
   </header>
 
-  <main>
-    <section class="intro">
-      <h2>Beantwoord de volgende vragen:</h2>
-    </section>
-
-    <section class="quiz">
-      <form>
-        <div class="question">
-          <p><strong>1.</strong> Wat betekent het woord <em>“uitkering”</em>?</p>
-          <label><input type="radio" name="q1" /> Vakantie</label><br />
-          <label><input type="radio" name="q1" /> Overheidssteun</label><br />
-          <label><input type="radio" name="q1" /> Verjaardag</label><br />
-        </div>
-
-        <div class="question">
-          <p><strong>2.</strong> Kies de correcte zin:</p>
-          <label><input type="radio" name="q2" /> Ik heb gisteren gewandeld.</label><br />
-          <label><input type="radio" name="q2" /> Ik heeft gisteren gewandeld.</label><br />
-          <label><input type="radio" name="q2" /> Ik hebben gisteren gewandeld.</label><br />
-        </div>
-
-        <div class="quiz-link">
-          <a href="#" class="button">Antwoorden bekijken</a>
-        </div>
-      </form>
-    </section>
-  </main>
+  <main id="quiz-container"></main>
 
   <footer>
-    <p>© 2025 BlueBadge</p>
+    <p>BlueBadge &copy; 2025</p>
   </footer>
+
+  <script>
+    const vragen = [
+      {
+        vraag: "Wat betekent het woord 'toepassing'?",
+        opties: ["Vakantie", "Gebruik", "Vlucht", "Verlies"],
+        antwoord: 1
+      },
+      {
+        vraag: "Wat is een 'uitkering'?",
+        opties: ["Boek", "Werkloosheidsgeld", "Belasting", "Overeenkomst"],
+        antwoord: 1
+      },
+      {
+        vraag: "Wat betekent 'omtrent'?",
+        opties: ["In de buurt van", "Specifiek", "Onder", "Buiten"],
+        antwoord: 0
+      },
+      {
+        vraag: "Wat is een correcte zin?",
+        opties: [
+          "Hij heb een auto.",
+          "Hij heeft een auto.",
+          "Hij hebben een auto.",
+          "Hij ben een auto."
+        ],
+        antwoord: 1
+      },
+      {
+        vraag: "Kies het juiste lidwoord: ... universiteit",
+        opties: ["De", "Het"],
+        antwoord: 0
+      },
+      {
+        vraag: "Wat betekent 'beoordelen'?",
+        opties: ["Behandelen", "Oordelen", "Ontvangen", "Vervelen"],
+        antwoord: 1
+      },
+      {
+        vraag: "Wat is de verleden tijd van 'vinden'?",
+        opties: ["Vond", "Vindt", "Vinden", "Vondt"],
+        antwoord: 0
+      }
+    ];
+
+    const shuffle = arr => arr.sort(() => 0.5 - Math.random());
+    const quizContainer = document.getElementById("quiz-container");
+    const gekozen = shuffle(vragen).slice(0, 5);
+
+    gekozen.forEach((q, idx) => {
+      const div = document.createElement("div");
+      div.className = "question-box";
+      div.innerHTML = `
+        <div class="question">${idx + 1}. ${q.vraag}</div>
+        <div class="options">
+          ${q.opties.map((opt, i) =>
+            `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`
+          ).join("")}
+        </div>
+      `;
+      quizContainer.appendChild(div);
+    });
+
+    window.beoordeel = function (btn, juist) {
+      const knoppen = btn.parentNode.querySelectorAll("button");
+      knoppen.forEach(b => b.disabled = true);
+      if (juist) {
+        btn.classList.add("correct");
+      } else {
+        btn.classList.add("wrong");
+        knoppen.forEach(b => {
+          if (b.innerText === btn.parentNode.parentNode.dataset.correct) {
+            b.classList.add("correct");
+          }
+        });
+      }
+    }
+  </script>
 </body>
 </html>
