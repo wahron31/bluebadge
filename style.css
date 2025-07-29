@@ -1,88 +1,74 @@
-/* Global styles */
-body {
+/* Genel stil */
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-  background-color: #f8f9fa;
-  color: #212529;
-  line-height: 1.6;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* Header */
+body {
+  background-color: #f5f9ff;
+  color: #1a1a1a;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Üst başlık */
 header {
-  background-color: #003366;
-  color: white;
-  padding: 20px 15px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 28px;
-  letter-spacing: 1px;
+  font-size: 2rem;
+  color: #0077cc;
 }
 
 header p {
-  margin-top: 5px;
-  font-size: 16px;
-  opacity: 0.9;
+  font-size: 1rem;
+  color: #444;
 }
 
-/* Main content */
-main {
-  padding: 20px 15px;
-}
-
-.intro h2 {
-  font-size: 22px;
-  margin-bottom: 10px;
-  color: #003366;
-}
-
-.intro p {
-  font-size: 16px;
-}
-
-/* Word of the day */
-.word-of-the-day h3 {
-  font-size: 20px;
-  margin-top: 30px;
-  color: #003366;
-}
-
-.word-box {
-  background-color: #e1eaff;
+/* İçerik bölümü */
+main section {
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
   padding: 15px;
-  border-left: 5px solid #003366;
-  margin-top: 10px;
-  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-/* Quiz button */
-.quiz-link {
-  margin-top: 30px;
-  text-align: center;
+h2 {
+  font-size: 1.2rem;
+  color: #005999;
+  margin-bottom: 10px;
+}
+
+/* Butonlar */
+.menu ul {
+  list-style: none;
 }
 
 .button {
-  background-color: #003366;
+  display: block;
+  background-color: #0077cc;
   color: white;
-  padding: 12px 25px;
   text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-  display: inline-block;
-  font-size: 16px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  transition: background 0.2s ease-in-out;
 }
 
 .button:hover {
-  background-color: #0055aa;
+  background-color: #005fa3;
 }
 
-/* Footer */
+/* Alt bilgi */
 footer {
-  margin-top: 40px;
   text-align: center;
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #777;
+  margin-top: 40px;
 }
