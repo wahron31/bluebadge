@@ -1,1 +1,26 @@
-
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>BlueBadge - Mini Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Mini Quiz</h1>
+  </header>
+  <main>
+    <div id="quiz-container">
+      <p id="question-text"></p>
+      <ul id="options"></ul>
+      <button id="next-btn">Volgende</button>
+    </div>
+    <div id="result" style="display:none;">
+      <p>Je score: <span id="score"></span>/5</p>
+      <button id="retry-btn">Opnieuw</button>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
