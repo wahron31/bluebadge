@@ -1,1 +1,12 @@
-
+[
+  {
+    "vraag": "Welk woord betekent 'permission'?",
+    "options": ["toestemming","bedrag","vergunning","behandeling"],
+    "answer": "vergunning"
+  },
+  {
+    "vraag": "Wat is de juiste vertaling van 'dining'?",
+    "options": ["eten","bankeren","vervoer","nodig"],
+    "answer": "eten"
+  }
+]
