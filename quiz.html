@@ -2,25 +2,46 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>BlueBadge - Mini Quiz</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miniquiz | BlueBadge</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Mini Quiz</h1>
+    <h1>BlueBadge</h1>
+    <p>Dagelijkse miniquiz – Woordenschat en grammatica</p>
   </header>
+
   <main>
-    <div id="quiz-container">
-      <p id="question-text"></p>
-      <ul id="options"></ul>
-      <button id="next-btn">Volgende</button>
-    </div>
-    <div id="result" style="display:none;">
-      <p>Je score: <span id="score"></span>/5</p>
-      <button id="retry-btn">Opnieuw</button>
-    </div>
+    <section class="intro">
+      <h2>Beantwoord de volgende vragen:</h2>
+    </section>
+
+    <section class="quiz">
+      <form>
+        <div class="question">
+          <p><strong>1.</strong> Wat betekent het woord <em>“uitkering”</em>?</p>
+          <label><input type="radio" name="q1" /> Vakantie</label><br />
+          <label><input type="radio" name="q1" /> Overheidssteun</label><br />
+          <label><input type="radio" name="q1" /> Verjaardag</label><br />
+        </div>
+
+        <div class="question">
+          <p><strong>2.</strong> Kies de correcte zin:</p>
+          <label><input type="radio" name="q2" /> Ik heb gisteren gewandeld.</label><br />
+          <label><input type="radio" name="q2" /> Ik heeft gisteren gewandeld.</label><br />
+          <label><input type="radio" name="q2" /> Ik hebben gisteren gewandeld.</label><br />
+        </div>
+
+        <div class="quiz-link">
+          <a href="#" class="button">Antwoorden bekijken</a>
+        </div>
+      </form>
+    </section>
   </main>
-  <script src="app.js"></script>
+
+  <footer>
+    <p>© 2025 BlueBadge</p>
+  </footer>
 </body>
 </html>
