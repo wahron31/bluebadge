@@ -78,5 +78,85 @@
     "antwoord": 1,
     "uitleg": "5 × 8 = 40 uur.",
     "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Wat is 120 gedeeld door 8?",
+    "opties": ["12", "14", "15", "16"],
+    "antwoord": 2,
+    "uitleg": "120 / 8 = 15.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Een agent koopt 3 pennen van €2,50 per stuk. Wat betaalt hij in totaal?",
+    "opties": ["€5,00", "€6,50", "€7,50", "€8,00"],
+    "antwoord": 2,
+    "uitleg": "3 × 2,50 = 7,50.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Wat is het verschil tussen 100 en 37?",
+    "opties": ["57", "63", "67", "73"],
+    "antwoord": 1,
+    "uitleg": "100 - 37 = 63.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Een team werkt 6 dagen per week, 7 uur per dag. Hoeveel uur werken ze per week?",
+    "opties": ["36", "42", "48", "54"],
+    "antwoord": 1,
+    "uitleg": "6 × 7 = 42 uur.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Wat is 9 × 9?",
+    "opties": ["72", "81", "90", "99"],
+    "antwoord": 1,
+    "uitleg": "9 × 9 = 81.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Een jas kost €80. Na 10% korting, wat is de prijs?",
+    "opties": ["€70", "€72", "€75", "€78"],
+    "antwoord": 1,
+    "uitleg": "10% van 80 = 8. 80 - 8 = 72.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Wat is het gemiddelde van 5, 10 en 15?",
+    "opties": ["10", "12", "15", "20"],
+    "antwoord": 0,
+    "uitleg": "(5+10+15)/3 = 30/3 = 10.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Wat is 2/5 van 100?",
+    "opties": ["20", "25", "30", "40"],
+    "antwoord": 3,
+    "uitleg": "2/5 × 100 = 40.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Een agent rijdt 90 km in 1,5 uur. Wat is zijn gemiddelde snelheid?",
+    "opties": ["45 km/h", "60 km/h", "75 km/h", "90 km/h"],
+    "antwoord": 1,
+    "uitleg": "90 / 1,5 = 60 km/h.",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek_redeneren",
+    "vraag": "Wat is 5²?",
+    "opties": ["10", "15", "20", "25"],
+    "antwoord": 3,
+    "uitleg": "5 × 5 = 25.",
+    "niveau": "basis"
   }
 ]
