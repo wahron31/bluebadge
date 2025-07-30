@@ -1037,14 +1037,11 @@ a:focus {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-/* Quiz görünürlüğü override */
+/* Quiz görünürlüğü override - KOYU MAVİ YAZI */
 .question-box,
 .question {
-  background: #181c24 !important;
-  color: #fff !important;
+  color: #264b7a !important;
 }
 .options button {
-  background: #23283a !important;
-  color: #fff !important;
-  border: 1.5px solid #444 !important;
+  color: #264b7a !important;
 }
