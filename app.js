@@ -36,7 +36,7 @@ function changeLanguage(langCode) {
     
     // Update language button
     const langFlags = {
-        'nl': '🇳🇱 NL',
+        'nl': '🇳🇱 VL',
         'fr': '🇫🇷 FR', 
         'de': '🇩🇪 DE',
         'tr': '🇹🇷 TR'
