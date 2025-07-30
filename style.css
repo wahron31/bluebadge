@@ -1036,3 +1036,15 @@ a:focus {
 .loading {
   animation: pulse 1.5s ease-in-out infinite;
 }
+
+/* Quiz görünürlüğü override */
+.question-box,
+.question {
+  background: #181c24 !important;
+  color: #fff !important;
+}
+.options button {
+  background: #23283a !important;
+  color: #fff !important;
+  border: 1.5px solid #444 !important;
+}
