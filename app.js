@@ -92,16 +92,19 @@ document.addEventListener('click', function(event) {
 // Load data files
 async function loadData() {
     try {
-        const [quiz, woorden, cognitief, languages] = await Promise.all([
+        const [quiz, woorden, abstractRed, verbaalRed, numeriekRed, languages] = await Promise.all([
             fetch('data/quiz_questions.json').then(res => res.json()).catch(() => []),
             fetch('data/woorden.json').then(res => res.json()).catch(() => []),
-            fetch('data/cognitief.json').then(res => res.json()).catch(() => []),
+            fetch('data/abstract_redeneren.json').then(res => res.json()).catch(() => []),
+            fetch('data/verbaal_redeneren.json').then(res => res.json()).catch(() => []),
+            fetch('data/numeriek_redeneren.json').then(res => res.json()).catch(() => []),
             fetch('data/languages.json').then(res => res.json()).catch(() => {})
         ]);
         
         quizData = quiz;
         woordenData = woorden;
-        cognitiefData = cognitief;
+        // Cognitieve soruları birleştir
+        cognitiefData = [...abstractRed, ...verbaalRed, ...numeriekRed];
         languagesData = languages;
         
         // Load saved language preference
