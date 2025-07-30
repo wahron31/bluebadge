@@ -78,5 +78,85 @@
     "antwoord": 0,
     "uitleg": "Het antoniem van snel is langzaam.",
     "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke van de volgende woorden is een zelfstandig naamwoord?",
+    "opties": ["lopen", "huis", "mooi", "snel"],
+    "antwoord": 1,
+    "uitleg": "Huis is een zelfstandig naamwoord.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is het synoniem van 'beginnen'?",
+    "opties": ["Starten", "Eindigen", "Stoppen", "Sluiten"],
+    "antwoord": 0,
+    "uitleg": "Starten is een synoniem van beginnen.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke zin is een bevel?",
+    "opties": ["Ga zitten!", "Ik ga zitten.", "Zit jij?", "Zitten is leuk."],
+    "antwoord": 0,
+    "uitleg": "Ga zitten! is een bevel.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is het tegenovergestelde van 'licht'?",
+    "opties": ["Donker", "Zwaar", "Helder", "Groot"],
+    "antwoord": 0,
+    "uitleg": "Het tegenovergestelde van licht is donker.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke uitdrukking betekent 'direct ter zake komen'?",
+    "opties": ["Met de deur in huis vallen", "Iets uit je duim zuigen", "De handdoek in de ring gooien", "Een handje toesteken"],
+    "antwoord": 0,
+    "uitleg": "Met de deur in huis vallen betekent direct ter zake komen.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is het meervoud van 'tafel'?",
+    "opties": ["Tafels", "Tafelen", "Tafeltjes", "Tafeles"],
+    "antwoord": 0,
+    "uitleg": "Het meervoud van tafel is tafels.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke zin is een wens?",
+    "opties": ["Ik hoop dat het mooi weer wordt.", "Het is mooi weer.", "Wordt het mooi weer?", "Het weer is mooi."],
+    "antwoord": 0,
+    "uitleg": "Ik hoop dat het mooi weer wordt is een wens.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is het juiste voorzetsel: 'Hij woont ... een appartement'?",
+    "opties": ["in", "op", "aan", "bij"],
+    "antwoord": 0,
+    "uitleg": "Je woont in een appartement.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke zin is fout?",
+    "opties": ["De agenten lopen snel.", "De agent loopt snel.", "De agenten loopt snel.", "De agent loopt traag."],
+    "antwoord": 2,
+    "uitleg": "De agenten loopt snel is grammaticaal fout.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is een antoniem van 'hoog'?",
+    "opties": ["Laag", "Lang", "Diep", "Breed"],
+    "antwoord": 0,
+    "uitleg": "Het antoniem van hoog is laag.",
+    "niveau": "basis"
   }
 ]
