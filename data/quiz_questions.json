@@ -1,12 +1,177 @@
 [
   {
-    "vraag": "Welk woord betekent 'permission'?",
-    "options": ["toestemming","bedrag","vergunning","behandeling"],
-    "answer": "vergunning"
+    "vraag": "Wat betekent 'omtrent' in de politiecontext?",
+    "opties": ["over", "onder", "naast", "achter"],
+    "antwoord": 0,
+    "categorie": "taal",
+    "uitleg": "'Omtrent' betekent 'over' of 'met betrekking tot'"
   },
   {
-    "vraag": "Wat is de juiste vertaling van 'dining'?",
-    "options": ["eten","bankeren","vervoer","nodig"],
-    "answer": "eten"
+    "vraag": "Welk woord past het best: 'De verdachte werd ... aangehouden'?",
+    "opties": ["derhalve", "omtrent", "terzake", "onmiddellijk"],
+    "antwoord": 3,
+    "categorie": "taal",
+    "uitleg": "'Onmiddellijk' betekent direct of meteen"
+  },
+  {
+    "vraag": "Als je 15 + 23 × 2 berekent, wat is dan het juiste antwoord?",
+    "opties": ["76", "61", "38", "53"],
+    "antwoord": 1,
+    "categorie": "cognitief",
+    "uitleg": "Vermenigvuldiging gaat voor optelling: 15 + (23 × 2) = 15 + 46 = 61"
+  },
+  {
+    "vraag": "Welk patroon volgt: 2, 4, 8, 16, ?",
+    "opties": ["24", "32", "20", "28"],
+    "antwoord": 1,
+    "categorie": "cognitief",
+    "uitleg": "Elk getal wordt verdubbeld: 16 × 2 = 32"
+  },
+  {
+    "vraag": "Een inwoner meldt geluidsoverlast om 3:00 's nachts. Wat doe je eerst?",
+    "opties": ["Direct een boete uitschrijven", "De situatie ter plaatse beoordelen", "De melder wegsturen", "Wachten tot de volgende dag"],
+    "antwoord": 1,
+    "categorie": "situationeel",
+    "uitleg": "Altijd eerst de situatie beoordelen voordat je actie onderneemt"
+  },
+  {
+    "vraag": "Wat betekent 'proces-verbaal'?",
+    "opties": ["Een mondelinge verklaring", "Een officieel politierapport", "Een getuigenverklaring", "Een dagboek"],
+    "antwoord": 1,
+    "categorie": "taal",
+    "uitleg": "Een proces-verbaal is een officieel schriftelijk rapport van politie"
+  },
+  {
+    "vraag": "Je ziet een verdachte persoon bij een bank om 2:00 's nachts. Wat doe je?",
+    "opties": ["Hem direct arresteren", "De situatie observeren en indien nodig benaderen", "Weglopen", "Foto's maken"],
+    "antwoord": 1,
+    "categorie": "situationeel",
+    "uitleg": "Observeer eerst de situatie en benader voorzichtig indien verdacht gedrag"
+  },
+  {
+    "vraag": "Als een auto rijdt met 80 km/h en moet stoppen, hoeveel meter is de remweg ongeveer?",
+    "opties": ["40 meter", "64 meter", "32 meter", "80 meter"],
+    "antwoord": 1,
+    "categorie": "cognitief",
+    "uitleg": "Remweg = (snelheid ÷ 10)² = (80 ÷ 10)² = 8² = 64 meter"
+  },
+  {
+    "vraag": "Wat betekent 'in flagrante delicto'?",
+    "opties": ["Na het delict", "Op heterdaad", "Bij verdenking", "Voor het delict"],
+    "antwoord": 1,
+    "categorie": "taal",
+    "uitleg": "'In flagrante delicto' betekent op heterdaad betrapt"
+  },
+  {
+    "vraag": "Een collega gedraagt zich agressief tegen burgers. Wat doe je?",
+    "opties": ["Niets, het gaat me niet aan", "De collega direct aanspreken en melden bij leidinggevende", "Alleen de burger helpen", "Wegkijken"],
+    "antwoord": 1,
+    "categorie": "situationeel",
+    "uitleg": "Spreek de collega aan en meld het incident bij je leidinggevende"
+  },
+  {
+    "vraag": "Welke zin is grammaticaal correct?",
+    "opties": ["De politie zijn gekomen", "De politie is gekomen", "De politie heeft gekomen", "De politie waren gekomen"],
+    "antwoord": 1,
+    "categorie": "taal",
+    "uitleg": "'Politie' is enkelvoud, dus 'is gekomen' is correct"
+  },
+  {
+    "vraag": "Als je 40% van 250 moet berekenen, wat is het antwoord?",
+    "opties": ["90", "100", "110", "120"],
+    "antwoord": 1,
+    "categorie": "cognitief",
+    "uitleg": "40% van 250 = 0,40 × 250 = 100"
+  },
+  {
+    "vraag": "Je moet een ruzie tussen buren bemiddelen. Wat is de beste aanpak?",
+    "opties": ["Beide partijen straffen", "Neutraal blijven en beide kanten horen", "Kiezen voor één kant", "De politie erbij halen"],
+    "antwoord": 1,
+    "categorie": "situationeel",
+    "uitleg": "Blijf neutraal en luister naar beide partijen om tot een oplossing te komen"
+  },
+  {
+    "vraag": "Wat betekent 'tentamen'?",
+    "opties": ["Poging", "Examen", "Onderzoek", "Alle genoemde"],
+    "antwoord": 3,
+    "categorie": "taal",
+    "uitleg": "'Tentamen' kan poging, examen of onderzoek betekenen afhankelijk van context"
+  },
+  {
+    "vraag": "Een reeks: 3, 6, 12, 24, ? Wat volgt?",
+    "opties": ["36", "48", "42", "30"],
+    "antwoord": 1,
+    "categorie": "cognitief",
+    "uitleg": "Elk getal wordt verdubbeld: 24 × 2 = 48"
+  },
+  {
+    "vraag": "Je krijgt een melding van huiselijk geweld. Wat is prioriteit nummer 1?",
+    "opties": ["Bewijsmateriaal verzamelen", "Veiligheid van het slachtoffer", "De dader arresteren", "Een rapport schrijven"],
+    "antwoord": 1,
+    "categorie": "situationeel",
+    "uitleg": "De veiligheid van het slachtoffer heeft altijd prioriteit"
+  },
+  {
+    "vraag": "Welke vorm is correct: 'Ik ... naar de plaats delict gegaan'?",
+    "opties": ["ben", "heb", "was", "had"],
+    "antwoord": 0,
+    "categorie": "taal",
+    "uitleg": "Bij verplaatsing gebruik je 'zijn': ik ben gegaan"
+  },
+  {
+    "vraag": "Als je 3/4 moet omrekenen naar een percentage, wat krijg je?",
+    "opties": ["34%", "75%", "43%", "65%"],
+    "antwoord": 1,
+    "categorie": "cognitief",
+    "uitleg": "3 ÷ 4 = 0,75 = 75%"
+  },
+  {
+    "vraag": "Een persoon weigert zijn identiteitskaart te tonen. Wat doe je?",
+    "opties": ["Hem direct arresteren", "Uitleggen waarom identificatie nodig is", "Weglopen", "Dreigen"],
+    "antwoord": 1,
+    "categorie": "situationeel",
+    "uitleg": "Leg eerst uit waarom identificatie nodig is en wat de gevolgen zijn van weigering"
+  },
+  {
+    "vraag": "Wat betekent 'cumuleren'?",
+    "opties": ["Verdelen", "Stapelen/ophopen", "Verminderen", "Verwisselen"],
+    "antwoord": 1,
+    "categorie": "taal",
+    "uitleg": "'Cumuleren' betekent opstapelen of zich ophopen"
+  },
+  {
+    "vraag": "Als 5x + 10 = 35, wat is x?",
+    "opties": ["5", "7", "3", "4"],
+    "antwoord": 0,
+    "categorie": "cognitief",
+    "uitleg": "5x = 35 - 10 = 25, dus x = 25 ÷ 5 = 5"
+  },
+  {
+    "vraag": "Je ziet een kind alleen op straat 's avonds laat. Wat doe je?",
+    "opties": ["Negeren", "Het kind benaderen en helpen", "Foto maken", "Wachten"],
+    "antwoord": 1,
+    "categorie": "situationeel",
+    "uitleg": "Een kind alleen 's avonds laat vraagt om hulp en begeleiding"
+  },
+  {
+    "vraag": "Welk woord past: 'De zaak wordt ... onderzocht'?",
+    "opties": ["grondelijk", "grondig", "diep", "zwaar"],
+    "antwoord": 1,
+    "categorie": "taal",
+    "uitleg": "'Grondig onderzocht' is de correcte uitdrukking"
+  },
+  {
+    "vraag": "Een driehoek heeft hoeken van 60°, 60° en ? graden.",
+    "opties": ["60°", "90°", "45°", "30°"],
+    "antwoord": 0,
+    "categorie": "cognitief",
+    "uitleg": "Hoeken in een driehoek tellen altijd op tot 180°: 60 + 60 + 60 = 180°"
+  },
+  {
+    "vraag": "Bij een verkeersongeval met gewonden, wat doe je eerst?",
+    "opties": ["Verkeer regelen", "Eerste hulp verlenen", "Rapport schrijven", "Foto's maken"],
+    "antwoord": 1,
+    "categorie": "situationeel",
+    "uitleg": "Bij gewonden heeft eerste hulp verlenen altijd prioriteit"
   }
 ]

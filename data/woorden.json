@@ -1,12 +1,212 @@
 [
   {
-    "woord": "toepassing",
-    "betekenis": "uygulama, başvuru",
-    "voorbeeld": "Ik heb mijn toepassing gestuurd naar de politie."
+    "woord": "Omtrent",
+    "betekenis": "over, met betrekking tot, aangaande",
+    "voorbeeld": "Er zijn nog vragen omtrent de nieuwe procedure.",
+    "type": "voorzetsel",
+    "niveau": "gevorderd"
   },
   {
-    "woord": "uitkering",
-    "betekenis": "sosyal yardım, ödeme",
-    "voorbeeld": "Ik ontvang een uitkering van de gemeente."
+    "woord": "Derhalve",
+    "betekenis": "daarom, dus, bijgevolg",
+    "voorbeeld": "De verdachte was niet thuis, derhalve keerden we terug.",
+    "type": "bijwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Dienovereenkomstig",
+    "betekenis": "in overeenstemming daarmee",
+    "voorbeeld": "Het protocol is aangepast en we handelen dienovereenkomstig.",
+    "type": "bijwoord",
+    "niveau": "expert"
+  },
+  {
+    "woord": "Proces-verbaal",
+    "betekenis": "officieel politierapport",
+    "voorbeeld": "We moeten een proces-verbaal opmaken van dit incident.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Aanhouding",
+    "betekenis": "het arresteren van een persoon",
+    "voorbeeld": "De aanhouding van de verdachte verliep zonder problemen.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Terechtstelling",
+    "betekenis": "executie, voltrekking van doodstraf",
+    "voorbeeld": "Terechtstelling is in België niet toegestaan.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Verhoor",
+    "betekenis": "ondervraging door de politie",
+    "voorbeeld": "Het verhoor van de getuige duurde twee uur.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Handhaving",
+    "betekenis": "het toezien op naleving van regels",
+    "voorbeeld": "Handhaving van verkeerswetten is belangrijk voor de veiligheid.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Opsporingsbevoegdheid",
+    "betekenis": "wettelijke macht om misdrijven te onderzoeken",
+    "voorbeeld": "Politieagenten hebben opsporingsbevoegdheid in hun district.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "expert"
+  },
+  {
+    "woord": "Inbreuk",
+    "betekenis": "overtreding, schending van een regel",
+    "voorbeeld": "Dit is een inbreuk op het verkeersreglement.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Verdenking",
+    "betekenis": "vermoeden van schuld",
+    "voorbeeld": "Er is verdenking tegen de verdachte wegens diefstal.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Bewaring",
+    "betekenis": "opsluiting in afwachting van proces",
+    "voorbeeld": "De verdachte wordt in bewaring gehouden.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Getuige",
+    "betekenis": "persoon die iets heeft gezien of gehoord",
+    "voorbeeld": "De getuige verklaarde dat hij de dief heeft zien vluchten.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Fouillering",
+    "betekenis": "het doorzoeken van een persoon",
+    "voorbeeld": "De fouillering leverde geen verdachte voorwerpen op.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Voorlopige hechtenis",
+    "betekenis": "tijdelijke opsluiting voor het proces",
+    "voorbeeld": "De rechter besliste tot voorlopige hechtenis.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "expert"
+  },
+  {
+    "woord": "Misdrijf",
+    "betekenis": "strafbare handeling",
+    "voorbeeld": "Diefstal is een misdrijf dat bestraft wordt.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Overtreding",
+    "betekenis": "lichte inbreuk op de wet",
+    "voorbeeld": "Parkeren op een verboden plaats is een overtreding.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Surveillance",
+    "betekenis": "het observeren en bewaken",
+    "voorbeeld": "De surveillance van het winkelcentrum werd verhoogd.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Interventie",
+    "betekenis": "tussenkomst, ingrijpen",
+    "voorbeeld": "De politie deed een interventie bij de vechtpartij.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Patrouille",
+    "betekenis": "rondgang voor bewaking",
+    "voorbeeld": "De patrouille controleert het gebied elke twee uur.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Oproerige menigte",
+    "betekenis": "groep mensen die de orde verstoort",
+    "voorbeeld": "De politie moest ingrijpen bij de oproerige menigte.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "expert"
+  },
+  {
+    "woord": "Beklaagde",
+    "betekenis": "persoon die beschuldigd wordt",
+    "voorbeeld": "De beklaagde ontkende alle aanklachten.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Bewijs",
+    "betekenis": "informatie die schuld of onschuld toont",
+    "voorbeeld": "Het DNA-bewijs was doorslaggevend in de zaak.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Rechtspraak",
+    "betekenis": "het uitoefenen van recht door rechters",
+    "voorbeeld": "De rechtspraak bepaalt de straf voor misdrijven.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "gevorderd"
+  },
+  {
+    "woord": "Procedure",
+    "betekenis": "vaste manier van werken, protocol",
+    "voorbeeld": "We volgen de standaard procedure bij arrestaties.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Aangifte",
+    "betekenis": "melding van misdrijf bij politie",
+    "voorbeeld": "Zij deed aangifte van de inbraak bij het politiebureau.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Bewijslast",
+    "betekenis": "verplichting om schuld te bewijzen",
+    "voorbeeld": "De bewijslast ligt bij het openbaar ministerie.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "expert"
+  },
+  {
+    "woord": "Dader",
+    "betekenis": "persoon die misdrijf heeft gepleegd",
+    "voorbeeld": "De dader werd opgepakt door de politie.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Slachtoffer",
+    "betekenis": "persoon die schade heeft geleden",
+    "voorbeeld": "Het slachtoffer heeft aangifte gedaan van de overval.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
+  },
+  {
+    "woord": "Rechtbank",
+    "betekenis": "gerechtshof waar recht wordt gesproken",
+    "voorbeeld": "De zaak komt volgende maand voor de rechtbank.",
+    "type": "zelfstandig naamwoord",
+    "niveau": "basis"
   }
 ]

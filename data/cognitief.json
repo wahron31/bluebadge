@@ -1,0 +1,162 @@
+[
+  {
+    "type": "logisch_denken",
+    "vraag": "Alle politieagenten dragen een uniform. Jan draagt een uniform. Is Jan een politieagent?",
+    "opties": ["Ja, zeker", "Nee, niet noodzakelijk", "Misschien", "Geen informatie"],
+    "antwoord": 1,
+    "uitleg": "Alleen omdat Jan een uniform draagt, betekent niet dat hij politieagent is. Ook andere beroepen dragen uniformen.",
+    "niveau": "basis"
+  },
+  {
+    "type": "rekenen",
+    "vraag": "Een politieauto rijdt 60 km/h en moet 180 km afleggen. Hoelang duurt de reis?",
+    "opties": ["2 uur", "3 uur", "4 uur", "2,5 uur"],
+    "antwoord": 1,
+    "uitleg": "180 km ÷ 60 km/h = 3 uur",
+    "niveau": "basis"
+  },
+  {
+    "type": "patroon_herkenning",
+    "vraag": "Welk getal volgt: 2, 6, 18, 54, ?",
+    "opties": ["108", "162", "144", "216"],
+    "antwoord": 1,
+    "uitleg": "Elk getal wordt vermenigvuldigd met 3: 54 × 3 = 162",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "ruimtelijk_inzicht",
+    "vraag": "Een kubus heeft hoeveel hoeken?",
+    "opties": ["6", "8", "12", "4"],
+    "antwoord": 1,
+    "uitleg": "Een kubus heeft 8 hoekpunten",
+    "niveau": "basis"
+  },
+  {
+    "type": "logisch_denken",
+    "vraag": "Als het regent, dan is de straat nat. De straat is nat. Betekent dit dat het regent?",
+    "opties": ["Ja", "Nee", "Misschien", "Altijd"],
+    "antwoord": 1,
+    "uitleg": "De straat kan ook nat zijn door andere oorzaken (sproeiwagen, lekkage, etc.)",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "rekenen",
+    "vraag": "15% van 200 euro is:",
+    "opties": ["20 euro", "30 euro", "25 euro", "35 euro"],
+    "antwoord": 1,
+    "uitleg": "15% van 200 = 0,15 × 200 = 30 euro",
+    "niveau": "basis"
+  },
+  {
+    "type": "concentratie",
+    "vraag": "Tel het aantal keer dat de letter 'e' voorkomt: 'De politie deed een grondige recherche'",
+    "opties": ["5", "6", "7", "8"],
+    "antwoord": 2,
+    "uitleg": "D[e] politi[e] d[e][e]d [e][e]n grondig[e] r[e]ch[e]rch[e] = 7 keer",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "geheugen",
+    "vraag": "Onthoud deze cijferreeks: 7-4-9-2-5. Wat was het derde cijfer?",
+    "opties": ["4", "9", "2", "5"],
+    "antwoord": 1,
+    "uitleg": "De reeks was 7-4-9-2-5, het derde cijfer is 9",
+    "niveau": "basis"
+  },
+  {
+    "type": "rekenen",
+    "vraag": "Als 3x + 7 = 22, dan is x:",
+    "opties": ["5", "4", "6", "3"],
+    "antwoord": 0,
+    "uitleg": "3x = 22 - 7 = 15, dus x = 15 ÷ 3 = 5",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "logisch_denken",
+    "vraag": "In een rij staan: Anna, Bert, Chris, Diana. Bert staat voor Chris. Anna staat niet eerst. Wie staat er tweede?",
+    "opties": ["Anna", "Bert", "Chris", "Diana"],
+    "antwoord": 0,
+    "uitleg": "Als Anna niet eerst staat en Bert voor Chris staat, is de volgorde: Bert, Anna, Chris, Diana",
+    "niveau": "expert"
+  },
+  {
+    "type": "patroon_herkenning",
+    "vraag": "Welke vorm volgt: ○△□○△?",
+    "opties": ["○", "△", "□", "♦"],
+    "antwoord": 2,
+    "uitleg": "Het patroon herhaalt zich: cirkel, driehoek, vierkant",
+    "niveau": "basis"
+  },
+  {
+    "type": "rekenen",
+    "vraag": "Een cel heeft 240 gedetineerden. 30% zijn vrouwen. Hoeveel mannen zijn er?",
+    "opties": ["168", "180", "170", "160"],
+    "antwoord": 0,
+    "uitleg": "30% vrouwen = 72 vrouwen. Mannen = 240 - 72 = 168",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "ruimtelijk_inzicht",
+    "vraag": "Als je een vierkant 45° draait, welke vorm krijg je?",
+    "opties": ["Rechthoek", "Ruit", "Driehoek", "Cirkel"],
+    "antwoord": 1,
+    "uitleg": "Een vierkant dat 45° gedraaid is, ziet eruit als een ruit",
+    "niveau": "basis"
+  },
+  {
+    "type": "concentratie",
+    "vraag": "Hoeveel woorden met 4 letters staan er in: 'De man reed snel door het bos naar huis'?",
+    "opties": ["2", "3", "4", "5"],
+    "antwoord": 1,
+    "uitleg": "Woorden met 4 letters: 'snel', 'door', 'naar' = 3 woorden",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "logisch_denken",
+    "vraag": "Alle crimineelsporen zijn belangrijk. Dit spoor is niet belangrijk. Is dit een crimineel spoor?",
+    "opties": ["Ja", "Nee", "Misschien", "Onbekend"],
+    "antwoord": 1,
+    "uitleg": "Als alle criminele sporen belangrijk zijn en dit spoor niet belangrijk is, kan het geen crimineel spoor zijn",
+    "niveau": "expert"
+  },
+  {
+    "type": "rekenen",
+    "vraag": "Een boete van 150 euro wordt verhoogd met 25%. Wat is het nieuwe bedrag?",
+    "opties": ["175 euro", "187,50 euro", "200 euro", "162,50 euro"],
+    "antwoord": 1,
+    "uitleg": "150 + (25% van 150) = 150 + 37,50 = 187,50 euro",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "geheugen",
+    "vraag": "Onthoud: Verdachte is 1m75 lang, draagt zwarte jas, heeft blonde haar. Hoe lang is de verdachte?",
+    "opties": ["1m70", "1m75", "1m80", "1m65"],
+    "antwoord": 1,
+    "uitleg": "De verdachte is 1m75 lang",
+    "niveau": "basis"
+  },
+  {
+    "type": "patroon_herkenning",
+    "vraag": "Welk getal past niet: 2, 4, 6, 9, 10?",
+    "opties": ["2", "4", "9", "10"],
+    "antwoord": 2,
+    "uitleg": "Alle getallen zijn even, behalve 9",
+    "niveau": "basis"
+  },
+  {
+    "type": "ruimtelijk_inzicht",
+    "vraag": "Je kijkt naar het noorden. Je draait 90° naar rechts, dan 180° naar links. Welke kant kijk je nu op?",
+    "opties": ["Noord", "Oost", "Zuid", "West"],
+    "antwoord": 3,
+    "uitleg": "Noord → 90° rechts = Oost → 180° links = West",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "logisch_denken",
+    "vraag": "Een dief steelt altijd 's nachts. Het is nu dag. Kan er gestolen worden?",
+    "opties": ["Nee, want het is dag", "Ja, door een andere dief", "Misschien", "Alleen door deze dief"],
+    "antwoord": 1,
+    "uitleg": "De stelling zegt dat DEZE dief altijd 's nachts steelt, maar andere dieven kunnen overdag stelen",
+    "niveau": "expert"
+  }
+]
