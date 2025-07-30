@@ -1,0 +1,82 @@
+[
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welk woord hoort niet in het rijtje thuis: hond, kat, muis, auto?",
+    "opties": ["hond", "kat", "muis", "auto"],
+    "antwoord": 3,
+    "uitleg": "Auto is geen dier, de rest wel.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is het tegenovergestelde van 'groot'?",
+    "opties": ["Lang", "Klein", "Breed", "Hoog"],
+    "antwoord": 1,
+    "uitleg": "Het tegenovergestelde van groot is klein.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke zin is correct?",
+    "opties": ["Hij hebben een boek.", "Hij heeft een boek.", "Hij heb een boek.", "Hij heeft een boeken."],
+    "antwoord": 1,
+    "uitleg": "Hij heeft een boek is grammaticaal correct.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welk woord is een synoniem van 'blij'?",
+    "opties": ["Verdrietig", "Vrolijk", "Boos", "Bang"],
+    "antwoord": 1,
+    "uitleg": "Vrolijk is een synoniem van blij.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke uitdrukking betekent 'iemand helpen'?",
+    "opties": ["Een handje toesteken", "De handdoek in de ring gooien", "Iets uit je duim zuigen", "Met de deur in huis vallen"],
+    "antwoord": 0,
+    "uitleg": "Een handje toesteken betekent iemand helpen.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is het meervoud van 'kind'?",
+    "opties": ["Kinden", "Kinderen", "Kindjes", "Kindes"],
+    "antwoord": 1,
+    "uitleg": "Het meervoud van kind is kinderen.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke zin is een vraagzin?",
+    "opties": ["Jij gaat naar school.", "Ga jij naar school?", "Jij naar school gaat.", "School jij gaat?"],
+    "antwoord": 1,
+    "uitleg": "Ga jij naar school? is een vraagzin.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is het juiste voorzetsel: 'Hij wacht ... de bus'?",
+    "opties": ["op", "in", "aan", "bij"],
+    "antwoord": 0,
+    "uitleg": "Je wacht op de bus.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Welke zin is fout?",
+    "opties": ["De politieagent helpt de vrouw.", "De vrouw helpt de politieagent.", "De politieagent helpen de vrouw.", "De vrouw wordt geholpen door de politieagent."],
+    "antwoord": 2,
+    "uitleg": "De politieagent helpen de vrouw is grammaticaal fout.",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal_redeneren",
+    "vraag": "Wat is een antoniem van 'snel'?",
+    "opties": ["Langzaam", "Vlug", "Kort", "Groot"],
+    "antwoord": 0,
+    "uitleg": "Het antoniem van snel is langzaam.",
+    "niveau": "basis"
+  }
+]
