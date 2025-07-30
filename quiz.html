@@ -300,5 +300,26 @@
   </footer>
 
   <script src="app.js"></script>
+  <script>
+    // Quiz sayfası açıldığında otomatik quiz başlat
+    document.addEventListener('DOMContentLoaded', function() {
+      // Eğer currentQuiz yoksa, rastgele 5 soru seç ve başlat
+      if (!localStorage.getItem('currentQuiz')) {
+        // Tüm sorular yüklenene kadar bekle
+        setTimeout(function() {
+          // cognitiefData app.js globalinde yüklü olmalı
+          if (window.cognitiefData && cognitiefData.length >= 5) {
+            // Soruları karıştır ve ilk 5'ini seç
+            const shuffled = cognitiefData.sort(() => 0.5 - Math.random());
+            const selected = shuffled.slice(0, 5);
+            localStorage.setItem('currentQuiz', JSON.stringify(selected));
+            localStorage.setItem('quizCategory', 'cognitief');
+            // Sayfayı yeniden yükle (artık currentQuiz var)
+            location.reload();
+          }
+        }, 500);
+      }
+    });
+  </script>
 </body>
 </html>
