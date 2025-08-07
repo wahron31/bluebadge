@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Cognitieve Vaardigheden</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand">
+        <h1>🚔 BlueBadge</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="quiz.html">Dagelijkse Quiz</a>
+        <a href="cognitief.html">Cognitieve Vaardigheden</a>
+        <a href="taal.html">Taaltraining</a>
+        <a href="voortgang.html">Voortgang</a>
+      </div>
+    </nav>
+    <div class="hero-section">
+      <h2>COGNITIEVE VAARDIGHEDEN</h2>
+      <p>Test je rekenkundige, verbale en abstracte denkvermogen • Bereid je optimaal voor</p>
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-number" id="cognitief-completed">0</span>
+          <span class="stat-label">Tests Voltooid</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="cognitief-score">0%</span>
+          <span class="stat-label">Gemiddelde Score</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="cognitief-level">Beginner</span>
+          <span class="stat-label">Huidige Niveau</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="test-categories">
+      <h3>🧠 Cognitieve Test Categorieën</h3>
+      <div class="challenge-grid">
+        <div class="challenge-card">
+          <div class="module-icon">🔢</div>
+          <h4>Numeriek Redeneren</h4>
+          <p>Rekenen, percentages, grafieken interpreteren</p>
+          <div class="module-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="numeriek-progress" style="width: 0%"></div>
+            </div>
+            <span id="numeriek-progress-text">0% voltooid</span>
+          </div>
+          <button class="challenge-btn" onclick="startCognitiveTest('numeriek')">Start Numerieke Test</button>
+        </div>
+        <div class="challenge-card">
+          <div class="module-icon">📝</div>
+          <h4>Verbaal Redeneren</h4>
+          <p>Tekstbegrip, logische conclusies, analogieën</p>
+          <div class="module-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="verbaal-progress" style="width: 0%"></div>
+            </div>
+            <span id="verbaal-progress-text">0% voltooid</span>
+          </div>
+          <button class="challenge-btn" onclick="startCognitiveTest('verbaal')">Start Verbale Test</button>
+        </div>
+        <div class="challenge-card">
+          <div class="module-icon">🔲</div>
+          <h4>Abstract Redeneren</h4>
+          <p>Patronen herkennen, logische sequenties</p>
+          <div class="module-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="abstract-progress" style="width: 0%"></div>
+            </div>
+            <span id="abstract-progress-text">0% voltooid</span>
+          </div>
+          <button class="challenge-btn" onclick="startCognitiveTest('abstract')">Start Abstracte Test</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-interface" id="test-interface" style="display: none;">
+      <h3 id="test-title">Test Interface</h3>
+      <div class="test-container">
+        <div class="test-header">
+          <div class="test-info">
+            <span id="question-counter">Vraag 1 van 10</span>
+            <span id="test-timer">00:00</span>
+          </div>
+          <div class="test-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="test-progress-fill" style="width: 10%"></div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="question-container">
+          <div class="question-text" id="current-question">
+            Vraag wordt geladen...
+          </div>
+          <div class="question-options" id="question-options">
+            <!-- Opties worden dynamisch geladen -->
+          </div>
+        </div>
+
+        <div class="test-controls">
+          <button class="control-btn secondary" onclick="previousQuestion()" id="prev-btn" disabled>Vorige</button>
+          <button class="control-btn primary" onclick="nextQuestion()" id="next-btn">Volgende</button>
+          <button class="control-btn success" onclick="finishTest()" id="finish-btn" style="display: none;">Test Afronden</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="test-results" id="test-results" style="display: none;">
+      <h3>🎯 Test Resultaten</h3>
+      <div class="results-container">
+        <div class="score-display">
+          <div class="main-score">
+            <span class="score-number" id="final-score">0</span>
+            <span class="score-total">/ 10</span>
+          </div>
+          <div class="percentage-score" id="percentage-score">0%</div>
+          <div class="performance-rating" id="performance-rating">
+            Blijf oefenen!
+          </div>
+        </div>
+        
+        <div class="detailed-results">
+          <div class="result-breakdown">
+            <h4>Prestatie per categorie</h4>
+            <div id="category-breakdown">
+              <!-- Wordt dynamisch gevuld -->
+            </div>
+          </div>
+          
+          <div class="improvement-tips">
+            <h4>Verbeterpunten</h4>
+            <div id="improvement-suggestions">
+              <!-- Wordt dynamisch gevuld -->
+            </div>
+          </div>
+        </div>
+
+        <div class="result-actions">
+          <button class="challenge-btn" onclick="retryTest()">Test Opnieuw Doen</button>
+          <button class="module-btn" onclick="backToOverview()">Terug naar Overzicht</button>
+          <button class="challenge-btn" onclick="goToDashboard()">Dashboard</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="tips-section">
+      <h3>💡 Tips voor Cognitieve Tests</h3>
+      <div class="tips-grid">
+        <div class="tip-card">
+          <h4>Numeriek Redeneren</h4>
+          <ul>
+            <li>Oefen dagelijks met hoofdrekenen</li>
+            <li>Leer percentages snel berekenen</li>
+            <li>Train met grafieken lezen</li>
+            <li>Memoriseer belangrijke formules</li>
+          </ul>
+        </div>
+        <div class="tip-card">
+          <h4>Verbaal Redeneren</h4>
+          <ul>
+            <li>Lees veel Nederlandse teksten</li>
+            <li>Oefen met logische conclusies</li>
+            <li>Leer synoniemen en antoniemen</li>
+            <li>Train tekstbegrip dagelijks</li>
+          </ul>
+        </div>
+        <div class="tip-card">
+          <h4>Abstract Redeneren</h4>
+          <ul>
+            <li>Oefen met patronen herkenning</li>
+            <li>Train ruimtelijk inzicht</li>
+            <li>Los logische puzzels op</li>
+            <li>Oefen met vormensequenties</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BlueBadge | Classified Training System</p>
+    <p class="footer-note">Stay sharp. Stay ready. 🔍</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="cognitief.js"></script>
+</body>
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Voortgang Tracking</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand">
+        <h1>🚔 BlueBadge</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+        <a href="quiz.html">Dagelijkse Quiz</a>
+        <a href="cognitief.html">Cognitieve Vaardigheden</a>
+        <a href="taal.html">Taaltraining</a>
+        <a href="voortgang.html">Voortgang</a>
+      </div>
+    </nav>
+    <div class="hero-section">
+      <h2>VOORTGANG TRACKING</h2>
+      <p>Volg je vooruitgang en prestaties • Elke dag beter worden</p>
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-number" id="total-study-days">0</span>
+          <span class="stat-label">Studiedagen</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="overall-average">0%</span>
+          <span class="stat-label">Gemiddelde Score</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" id="current-streak">0</span>
+          <span class="stat-label">Huidige Reeks</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="progress-overview">
+      <h3>📊 Algemeen Overzicht</h3>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="card-header">
+            <h4>Cognitieve Vaardigheden</h4>
+            <span class="progress-percentage" id="cognitief-overall">65%</span>
+          </div>
+          <div class="progress-bar large">
+            <div class="progress-fill" id="cognitief-overall-bar" style="width: 65%"></div>
+          </div>
+          <div class="subcategories">
+            <div class="subcat-item">
+              <span>Numeriek:</span>
+              <div class="mini-progress">
+                <div class="progress-fill" id="numeriek-mini" style="width: 70%"></div>
+              </div>
+              <span class="mini-score">70%</span>
+            </div>
+            <div class="subcat-item">
+              <span>Verbaal:</span>
+              <div class="mini-progress">
+                <div class="progress-fill" id="verbaal-mini" style="width: 60%"></div>
+              </div>
+              <span class="mini-score">60%</span>
+            </div>
+            <div class="subcat-item">
+              <span>Abstract:</span>
+              <div class="mini-progress">
+                <div class="progress-fill" id="abstract-mini" style="width: 65%"></div>
+              </div>
+              <span class="mini-score">65%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview-card">
+          <div class="card-header">
+            <h4>Taalvaardigheden</h4>
+            <span class="progress-percentage" id="taal-overall">58%</span>
+          </div>
+          <div class="progress-bar large">
+            <div class="progress-fill" id="taal-overall-bar" style="width: 58%"></div>
+          </div>
+          <div class="subcategories">
+            <div class="subcat-item">
+              <span>Lezen:</span>
+              <div class="mini-progress">
+                <div class="progress-fill" id="lezen-mini" style="width: 65%"></div>
+              </div>
+              <span class="mini-score">65%</span>
+            </div>
+            <div class="subcat-item">
+              <span>Woordenschat:</span>
+              <div class="mini-progress">
+                <div class="progress-fill" id="woorden-mini" style="width: 55%"></div>
+              </div>
+              <span class="mini-score">55%</span>
+            </div>
+            <div class="subcat-item">
+              <span>Grammatica:</span>
+              <div class="mini-progress">
+                <div class="progress-fill" id="grammatica-mini" style="width: 50%"></div>
+              </div>
+              <span class="mini-score">50%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="overview-card">
+          <div class="card-header">
+            <h4>Polis Scenario's</h4>
+            <span class="progress-percentage" id="scenarios-overall">42%</span>
+          </div>
+          <div class="progress-bar large">
+            <div class="progress-fill" id="scenarios-overall-bar" style="width: 42%"></div>
+          </div>
+          <div class="scenario-stats">
+            <div class="scenario-stat">
+              <span class="stat-label">Opgelost:</span>
+              <span class="stat-value" id="scenarios-solved">23</span>
+            </div>
+            <div class="scenario-stat">
+              <span class="stat-label">Gemiddelde tijd:</span>
+              <span class="stat-value" id="avg-time">2:15</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="daily-activity">
+      <h3>📅 Dagelijkse Activiteit</h3>
+      <div class="activity-calendar">
+        <div class="calendar-header">
+          <button class="calendar-nav" onclick="previousMonth()">‹</button>
+          <h4 id="current-month">Januari 2025</h4>
+          <button class="calendar-nav" onclick="nextMonth()">›</button>
+        </div>
+        <div class="calendar-grid" id="calendar-grid">
+          <!-- Kalender wordt dynamisch gegenereerd -->
+        </div>
+        <div class="calendar-legend">
+          <div class="legend-item">
+            <div class="legend-dot no-activity"></div>
+            <span>Geen activiteit</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot low-activity"></div>
+            <span>Laag</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot medium-activity"></div>
+            <span>Gemiddeld</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot high-activity"></div>
+            <span>Hoog</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="detailed-stats">
+      <h3>📈 Gedetailleerde Statistieken</h3>
+      <div class="stats-tabs">
+        <button class="tab-btn active" onclick="showStatsTab('week')">Deze Week</button>
+        <button class="tab-btn" onclick="showStatsTab('month')">Deze Maand</button>
+        <button class="tab-btn" onclick="showStatsTab('all')">Alles</button>
+      </div>
+      
+      <div class="stats-content">
+        <div class="stat-charts">
+          <div class="chart-container">
+            <h4>Scores per Dag</h4>
+            <div class="chart-placeholder" id="daily-scores-chart">
+              <!-- Eenvoudige grafiek placeholder -->
+              <div class="chart-bars" id="score-bars">
+                <!-- Balken worden dynamisch gegenereerd -->
+              </div>
+            </div>
+          </div>
+          
+          <div class="chart-container">
+            <h4>Tijd Besteed per Categorie</h4>
+            <div class="time-breakdown">
+              <div class="time-item">
+                <span class="category">Cognitief:</span>
+                <div class="time-bar">
+                  <div class="time-fill cognitief" style="width: 45%"></div>
+                </div>
+                <span class="time-value">2h 15m</span>
+              </div>
+              <div class="time-item">
+                <span class="category">Taal:</span>
+                <div class="time-bar">
+                  <div class="time-fill taal" style="width: 35%"></div>
+                </div>
+                <span class="time-value">1h 45m</span>
+              </div>
+              <div class="time-item">
+                <span class="category">Scenario's:</span>
+                <div class="time-bar">
+                  <div class="time-fill scenarios" style="width: 20%"></div>
+                </div>
+                <span class="time-value">1h 00m</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent-achievements">
+      <h3>🏆 Recente Prestaties</h3>
+      <div class="achievements-list">
+        <div class="achievement-item earned">
+          <div class="achievement-icon">🎯</div>
+          <div class="achievement-info">
+            <h4>Perfecte Score</h4>
+            <p>Behaald een 100% score op een cognitieve test</p>
+            <span class="achievement-date">2 dagen geleden</span>
+          </div>
+        </div>
+        
+        <div class="achievement-item earned">
+          <div class="achievement-icon">🔥</div>
+          <div class="achievement-info">
+            <h4>7-dagen Streak</h4>
+            <p>7 dagen achtereen geoefend</p>
+            <span class="achievement-date">Vandaag</span>
+          </div>
+        </div>
+        
+        <div class="achievement-item">
+          <div class="achievement-icon">📚</div>
+          <div class="achievement-info">
+            <h4>Woordenschat Master</h4>
+            <p>100 nieuwe woorden geleerd</p>
+            <span class="achievement-progress">78/100</span>
+          </div>
+        </div>
+        
+        <div class="achievement-item">
+          <div class="achievement-icon">🚀</div>
+          <div class="achievement-info">
+            <h4>Snelle Leerling</h4>
+            <p>Alle tests met 80%+ score</p>
+            <span class="achievement-progress">In voortgang</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="activity-log">
+      <h3>📝 Activiteiten Log</h3>
+      <div class="log-container">
+        <div class="log-filters">
+          <select id="activity-filter" onchange="filterActivities()">
+            <option value="all">Alle Activiteiten</option>
+            <option value="cognitief">Cognitieve Tests</option>
+            <option value="taal">Taal Oefeningen</option>
+            <option value="scenario">Scenario Training</option>
+            <option value="quiz">Dagelijkse Quiz</option>
+          </select>
+        </div>
+        
+        <div class="activity-timeline" id="activity-timeline">
+          <!-- Activiteiten worden dynamisch geladen -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BlueBadge | Classified Training System</p>
+    <p class="footer-note">Stay sharp. Stay ready. 🔍</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="voortgang.js"></script>
+</body>
+</html>
