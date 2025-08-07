@@ -161,34 +161,282 @@ function shuffleArray(array) {
     return shuffled;
 }
 
-// Sonuçları kaydetme
+// Geliştirilmiş scoring sistemi ve activity tracking
 function saveQuizResult(category, score, total) {
-    userData.totalQuestions += total;
     const percentage = Math.round((score / total) * 100);
-    userData.successRate = Math.round((userData.successRate + percentage) / 2);
-    
-    // Yerel depolamaya kaydet
-    localStorage.setItem('userData', JSON.stringify(userData));
-    
-    // Aktivite geçmişine ekle
-    addToActivityHistory(category, score, total);
-}
-
-// Aktivite geçmişi
-function addToActivityHistory(category, score, total) {
-    const activity = {
-        date: new Date().toLocaleDateString('nl-NL'),
+    const result = {
+        date: new Date().toISOString().split('T')[0],
+        time: new Date().toLocaleTimeString('nl-NL'),
         category: category,
         score: score,
         total: total,
-        percentage: Math.round((score / total) * 100)
+        percentage: percentage,
+        type: 'quiz'
+    };
+    
+    // Save to quiz results
+    let quizResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
+    quizResults.unshift(result);
+    quizResults = quizResults.slice(0, 100); // Keep last 100 results
+    localStorage.setItem('quizResults', JSON.stringify(quizResults));
+    
+    // Update user data
+    userData.totalQuestions += total;
+    userData.successRate = calculateOverallSuccessRate();
+    userData.streakDays = calculateStreakDays();
+    
+    // Save updated user data
+    localStorage.setItem('userData', JSON.stringify(userData));
+    
+    // Update dashboard
+    updateDashboard();
+    
+    // Add to activity history
+    addToActivityHistory(category, `${category} quiz`, score, total);
+}
+
+// Calculate overall success rate from all test results
+function calculateOverallSuccessRate() {
+    const allResults = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults') || '[]'),
+        ...JSON.parse(localStorage.getItem('languageResults') || '[]'),
+        ...JSON.parse(localStorage.getItem('quizResults') || '[]')
+    ];
+    
+    if (allResults.length === 0) return userData.successRate || 78;
+    
+    return Math.round(allResults.reduce((sum, r) => sum + r.percentage, 0) / allResults.length);
+}
+
+// Calculate current streak days
+function calculateStreakDays() {
+    const allResults = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults') || '[]'),
+        ...JSON.parse(localStorage.getItem('languageResults') || '[]'),
+        ...JSON.parse(localStorage.getItem('quizResults') || '[]')
+    ];
+    
+    if (allResults.length === 0) return userData.streakDays || 7;
+    
+    const uniqueDates = [...new Set(allResults.map(r => r.date))].sort((a, b) => new Date(b) - new Date(a));
+    
+    let streak = 0;
+    const today = new Date().toISOString().split('T')[0];
+    let checkDate = new Date();
+    
+    // Check if there was activity today
+    if (uniqueDates[0] === today) {
+        streak = 1;
+        checkDate.setDate(checkDate.getDate() - 1);
+    } else {
+        // Check if activity was yesterday
+        const yesterday = new Date(checkDate.getTime() - 24*60*60*1000).toISOString().split('T')[0];
+        if (uniqueDates[0] === yesterday) {
+            streak = 1;
+            checkDate.setDate(checkDate.getDate() - 2);
+        } else {
+            return 0;
+        }
+    }
+    
+    // Count consecutive days
+    for (let i = 1; i < uniqueDates.length; i++) {
+        const expectedDate = checkDate.toISOString().split('T')[0];
+        if (uniqueDates[i] === expectedDate) {
+            streak++;
+            checkDate.setDate(checkDate.getDate() - 1);
+        } else {
+            break;
+        }
+    }
+    
+    return streak;
+}
+
+// Enhanced activity history
+function addToActivityHistory(category, description, score, total) {
+    const activity = {
+        id: Date.now(),
+        date: new Date().toISOString().split('T')[0],
+        time: new Date().toLocaleTimeString('nl-NL'),
+        category: category,
+        description: description,
+        score: score,
+        total: total,
+        percentage: Math.round((score / total) * 100),
+        timestamp: new Date().getTime()
     };
     
     let history = JSON.parse(localStorage.getItem('activityHistory') || '[]');
     history.unshift(activity);
-    history = history.slice(0, 10); // Son 10 aktiviteyi tut
+    history = history.slice(0, 50); // Keep last 50 activities
     
     localStorage.setItem('activityHistory', JSON.stringify(history));
+    
+    // Update recent activity display if on index page
+    updateRecentActivityDisplay();
+}
+
+// Update recent activity display on dashboard
+function updateRecentActivityDisplay() {
+    const activityList = document.querySelector('.activity-list');
+    if (!activityList) return;
+    
+    const history = JSON.parse(localStorage.getItem('activityHistory') || '[]');
+    const recent = history.slice(0, 3); // Show last 3 activities
+    
+    activityList.innerHTML = recent.map(activity => `
+        <div class="activity-item">
+            <span class="activity-date">${formatActivityDate(activity.date)}</span>
+            <span class="activity-desc">${activity.description} - Score: ${activity.score}/${activity.total}</span>
+            <span class="activity-score ${getScoreClass(activity.percentage)}">${activity.percentage}%</span>
+        </div>
+    `).join('');
+}
+
+// Format activity date for display
+function formatActivityDate(dateString) {
+    const date = new Date(dateString);
+    const today = new Date().toISOString().split('T')[0];
+    const yesterday = new Date(Date.now() - 24*60*60*1000).toISOString().split('T')[0];
+    
+    if (dateString === today) return 'Vandaag';
+    if (dateString === yesterday) return 'Gisteren';
+    
+    const daysAgo = Math.floor((Date.now() - date.getTime()) / (24*60*60*1000));
+    return `${daysAgo} dagen geleden`;
+}
+
+// Get score class for styling
+function getScoreClass(percentage) {
+    if (percentage >= 80) return 'excellent';
+    if (percentage >= 60) return 'good';
+    return 'needs-improvement';
+}
+
+// Enhanced progress calculation
+function updateProgressBars() {
+    // Get all test results
+    const cognitiveResults = JSON.parse(localStorage.getItem('cognitiveResults') || '[]');
+    const languageResults = JSON.parse(localStorage.getItem('languageResults') || '[]');
+    const quizResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
+    
+    // Calculate progress based on actual performance
+    const cognitiveAvg = cognitiveResults.length > 0 
+        ? Math.round(cognitiveResults.reduce((sum, r) => sum + r.percentage, 0) / cognitiveResults.length)
+        : userData.progress.cognitief || 65;
+        
+    const taalAvg = languageResults.length > 0 
+        ? Math.round(languageResults.reduce((sum, r) => sum + r.percentage, 0) / languageResults.length)
+        : userData.progress.taal || 42;
+    
+    // Update progress bars with smooth animation
+    updateProgressBar('cognitief', cognitiveAvg);
+    updateProgressBar('taal', taalAvg);
+    
+    // Update userData
+    userData.progress.cognitief = cognitiveAvg;
+    userData.progress.taal = taalAvg;
+}
+
+// Update individual progress bar with animation
+function updateProgressBar(module, percentage) {
+    const progressFill = document.querySelector(`[data-module="${module}"] .progress-fill`);
+    if (progressFill) {
+        // Animate to new percentage
+        progressFill.style.transition = 'width 1s ease-out';
+        progressFill.style.width = percentage + '%';
+    }
+    
+    // Update percentage text
+    const percentageText = document.querySelector(`[data-module="${module}"] span`);
+    if (percentageText) {
+        percentageText.textContent = percentage + '% voltooid';
+    }
+}
+
+// Enhanced dashboard updates
+function updateDashboard() {
+    // Update basic stats
+    document.getElementById('total-questions').textContent = userData.totalQuestions;
+    document.getElementById('success-rate').textContent = userData.successRate + '%';
+    document.getElementById('streak-days').textContent = userData.streakDays;
+    
+    // Update daily word
+    updateDailyWord();
+    
+    // Update progress bars
+    updateProgressBars();
+    
+    // Update recent activity
+    updateRecentActivityDisplay();
+    
+    // Update achievement indicators
+    updateAchievementIndicators();
+}
+
+// Update achievement indicators
+function updateAchievementIndicators() {
+    const allResults = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults') || '[]'),
+        ...JSON.parse(localStorage.getItem('languageResults') || '[]'),
+        ...JSON.parse(localStorage.getItem('quizResults') || '[]')
+    ];
+    
+    // Check for perfect score achievement
+    const hasPerfectScore = allResults.some(r => r.percentage === 100);
+    if (hasPerfectScore) {
+        showAchievementNotification('🎯 Perfect Score behaald!');
+    }
+    
+    // Check for streak achievements
+    if (userData.streakDays === 7) {
+        showAchievementNotification('🔥 7-dagen streak behaald!');
+    }
+    
+    // Check for improvement
+    const recentResults = allResults.slice(0, 5);
+    if (recentResults.length === 5) {
+        const recentAvg = recentResults.reduce((sum, r) => sum + r.percentage, 0) / 5;
+        const olderResults = allResults.slice(5, 10);
+        if (olderResults.length > 0) {
+            const olderAvg = olderResults.reduce((sum, r) => sum + r.percentage, 0) / olderResults.length;
+            if (recentAvg > olderAvg + 10) {
+                showAchievementNotification('📈 Grote verbetering gedetecteerd!');
+            }
+        }
+    }
+}
+
+// Show achievement notification
+function showAchievementNotification(message) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'achievement-notification';
+    notification.textContent = message;
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #16a34a, #22c55e);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        animation: slideInRight 0.5s ease-out;
+        font-weight: 600;
+    `;
+    
+    document.body.appendChild(notification);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.5s ease-out';
+        setTimeout(() => {
+            document.body.removeChild(notification);
+        }, 500);
+    }, 3000);
 }
 
 // Sayfa yüklendikende
