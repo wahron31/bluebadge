@@ -1,0 +1,394 @@
+[
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord hoort NIET bij de anderen: politie, brandweer, ambulance, bakkerij?",
+    "opties": ["politie", "brandweer", "ambulance", "bakkerij"],
+    "antwoord": 3,
+    "uitleg": "Bakkerij is geen hulpdienst, de andere drie zijn hulpverlenende diensten",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Boek is tot lezen zoals mes is tot:",
+    "opties": ["eten", "snijden", "keuken", "scherp"],
+    "antwoord": 1,
+    "uitleg": "Een boek gebruik je om te lezen, een mes gebruik je om te snijden",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin is grammaticaal ONJUIST?",
+    "opties": ["De politie is gearriveerd", "De agenten hebben de verdachte aangehouden", "Hij word morgen verhoord", "Wij gaan naar het bureau"],
+    "antwoord": 2,
+    "uitleg": "Moet zijn: 'Hij wordt morgen verhoord' (dt-fout)",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat betekent 'onpartijdig'?",
+    "opties": ["vooringenomen", "neutraal", "betrokken", "emotioneel"],
+    "antwoord": 1,
+    "uitleg": "Onpartijdig betekent neutraal, niet bevooroordeeld",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord is een SYNONIEM voor 'arresteren'?",
+    "opties": ["vrijlaten", "aanhouden", "ontslaan", "bezoeken"],
+    "antwoord": 1,
+    "uitleg": "Aanhouden betekent hetzelfde als arresteren",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Rechter is tot rechtbank zoals leraar is tot:",
+    "opties": ["student", "school", "boek", "les"],
+    "antwoord": 1,
+    "uitleg": "Een rechter werkt in een rechtbank, een leraar werkt op school",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin gebruikt de JUISTE vorm van 'zijn' of 'hebben'?",
+    "opties": ["Ik heb naar huis gegaan", "Zij zijn de auto gekocht", "Wij hebben het rapport geschreven", "Hij heeft naar buiten gelopen"],
+    "antwoord": 2,
+    "uitleg": "'Geschreven' gaat met 'hebben', verplaatsing gaat met 'zijn'",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat is het TEGENOVERGESTELDE van 'schuldig'?",
+    "opties": ["verdacht", "onschuldig", "aangeklaagd", "veroordeeld"],
+    "antwoord": 1,
+    "uitleg": "Onschuldig is het tegenovergestelde van schuldig",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Voltooi de analogie: Zwaar is tot licht zoals groot is tot:",
+    "opties": ["hoog", "klein", "breed", "lang"],
+    "antwoord": 1,
+    "uitleg": "Zwaar/licht zijn tegenovergestelden, net als groot/klein",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord past het best in de zin: 'De getuige gaf een ... verklaring.'",
+    "opties": ["valse", "betrouwbare", "korte", "alle opties zijn mogelijk"],
+    "antwoord": 3,
+    "uitleg": "Alle woorden kunnen grammaticaal correct gebruikt worden in deze context",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin bevat een SPELLINGSFOUT?",
+    "opties": ["De commissaris leidde het onderzoek", "Het bewijs werd zorgvuldig onderzocht", "De verdachte bekende zijn schuld", "Hij word morgen vrijgelaten"],
+    "antwoord": 3,
+    "uitleg": "Moet zijn: 'Hij wordt morgen vrijgelaten'",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Politieagent is tot veiligheid zoals dokter is tot:",
+    "opties": ["ziekenhuis", "gezondheid", "medicijn", "patiënt"],
+    "antwoord": 1,
+    "uitleg": "Politieagent zorgt voor veiligheid, dokter zorgt voor gezondheid",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat betekent 'getuige à décharge'?",
+    "opties": ["getuige ten gunste van verdachte", "getuige ten nadele van verdachte", "ooggetuige", "deskundige getuige"],
+    "antwoord": 0,
+    "uitleg": "À décharge betekent ten gunste van de verdachte (ontlastend bewijs)",
+    "niveau": "expert"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord hoort NIET in deze reeks: verhoor, onderzoek, arrestatie, vakantie?",
+    "opties": ["verhoor", "onderzoek", "arrestatie", "vakantie"],
+    "antwoord": 3,
+    "uitleg": "Vakantie heeft niets te maken met politiewerk, de andere wel",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Voltooi: Als alle verdachten schuldig zijn, en Jan is een verdachte, dan is Jan:",
+    "opties": ["onschuldig", "schuldig", "misschien schuldig", "geen van deze"],
+    "antwoord": 1,
+    "uitleg": "Logische gevolgtrekking: als alle verdachten schuldig zijn, dan is Jan ook schuldig",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin is het DUIDELIJKST geformuleerd?",
+    "opties": ["De man werd door de politie gearresteerd", "Door de politie werd de man gearresteerd", "Gearresteerd werd de man door de politie", "De politie arresteerde de man"],
+    "antwoord": 3,
+    "uitleg": "Actieve vorm is meestal duidelijker dan passieve vorm",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Sleutel is tot slot zoals wachtwoord is tot:",
+    "opties": ["computer", "veiligheid", "toegang", "code"],
+    "antwoord": 0,
+    "uitleg": "Sleutel opent slot, wachtwoord opent toegang tot computer",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat betekent 'proces-verbaal' letterlijk?",
+    "opties": ["mondeling proces", "schriftelijk proces", "snel proces", "belangrijk proces"],
+    "antwoord": 1,
+    "uitleg": "Proces-verbaal betekent letterlijk 'schriftelijk proces' (officieel rapport)",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord is een ANTONIEM van 'toestaan'?",
+    "opties": ["goedkeuren", "verbieden", "accepteren", "toelaten"],
+    "antwoord": 1,
+    "uitleg": "Verbieden is het tegenovergestelde van toestaan",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Voltooi de reeks: misdaad, onderzoek, arrest, proces, ?",
+    "opties": ["vrijspraak", "vonnis", "hoger beroep", "alle zijn mogelijk"],
+    "antwoord": 3,
+    "uitleg": "Na een proces kunnen alle drie opties volgen, afhankelijk van de uitkomst",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin heeft de JUISTE interpunctie?",
+    "opties": ["De agent zei Stop, of ik schiet!", "De agent zei: 'Stop, of ik schiet!'", "De agent zei, stop of ik schiet.", "De agent zei; Stop of ik schiet!"],
+    "antwoord": 1,
+    "uitleg": "Directe rede vereist dubbele punt en aanhalingstekens",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Bewijs is tot waarheid zoals leugen is tot:",
+    "opties": ["eerlijkheid", "bedrog", "geheim", "verhaal"],
+    "antwoord": 1,
+    "uitleg": "Bewijs leidt tot waarheid, leugen leidt tot bedrog",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat betekent 'juridisch' in eenvoudige taal?",
+    "opties": ["medisch", "wettelijk", "politiek", "economisch"],
+    "antwoord": 1,
+    "uitleg": "Juridisch betekent 'met betrekking tot het recht/de wet'",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin gebruikt 'als' of 'dan' CORRECT?",
+    "opties": ["Hij is groter dan ik", "Hij is groter als ik", "Als hij groter is dan ik", "Beide A en C zijn correct"],
+    "antwoord": 3,
+    "uitleg": "Voor vergelijking gebruik je 'dan', voor voorwaarde gebruik je 'als'",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord hoort bij: onderzoek, opsporing, recherche?",
+    "opties": ["vakantie", "detectie", "ontspanning", "sport"],
+    "antwoord": 1,
+    "uitleg": "Detectie hoort bij onderzoek/opsporing/recherche (allemaal opsporingsactiviteiten)",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Handboek is tot kennis zoals kaart is tot:",
+    "opties": ["papier", "richting", "auto", "reis"],
+    "antwoord": 1,
+    "uitleg": "Handboek geeft kennis, kaart geeft richting/oriëntatie",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke formulering is het MEEST FORMEEL?",
+    "opties": ["De verdachte is opgepakt", "De verdachte werd gearresteerd", "De verdachte is in hechtenis genomen", "Ze hebben de verdachte te pakken"],
+    "antwoord": 2,
+    "uitleg": "'In hechtenis genomen' is de meest formele/juridische formulering",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat betekent 'confidentieel'?",
+    "opties": ["openbaar", "vertrouwelijk", "belangrijk", "dringend"],
+    "antwoord": 1,
+    "uitleg": "Confidentieel betekent vertrouwelijk, geheim",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Voltooi de logica: Alle criminelen breken de wet. Sommige mensen breken de wet. Daarom:",
+    "opties": ["zijn alle mensen crimineel", "zijn sommige mensen crimineel", "is de conclusie onduidelijk", "zijn geen mensen crimineel"],
+    "antwoord": 2,
+    "uitleg": "De conclusie is onduidelijk - we weten niet of de mensen die de wet breken crimineel zijn of per ongeluk/andere redenen",
+    "niveau": "expert"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin heeft de BESTE woordkeus voor een politierapport?",
+    "opties": ["De dader is weggerend", "De verdachte heeft zich van de plaats delict verwijderd", "De kerel is er vandoor gegaan", "Hij is weggelopen"],
+    "antwoord": 1,
+    "uitleg": "Formele, precieze taal past bij officiële rapporten",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Uniform is tot herkenning zoals badge is tot:",
+    "opties": ["metaal", "autoriteit", "politie", "symbool"],
+    "antwoord": 1,
+    "uitleg": "Uniform zorgt voor herkenning, badge symboliseert autoriteit",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat is de MEERVOUDSVORM van 'corpus delicti'?",
+    "opties": ["corpus delictis", "corpora delicti", "corpussen delicti", "corpus delicten"],
+    "antwoord": 1,
+    "uitleg": "Latijnse term: corpus (enkelvoud) → corpora (meervoud)",
+    "niveau": "expert"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord past NIET bij: rechtvaardig, eerlijk, onpartijdig, bevooroordeeld?",
+    "opties": ["rechtvaardig", "eerlijk", "onpartijdig", "bevooroordeeld"],
+    "antwoord": 3,
+    "uitleg": "Bevooroordeeld is negatief, de andere zijn positieve eigenschappen van rechtspraak",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Voltooi: 'Onschuldig tot ... bewezen'",
+    "opties": ["schuld", "het tegendeel", "onschuld", "anders"],
+    "antwoord": 1,
+    "uitleg": "Het juridische principe: 'onschuldig tot het tegendeel bewezen is'",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Wet is tot regel zoals straf is tot:",
+    "opties": ["beloning", "consequentie", "overtreding", "rechter"],
+    "antwoord": 1,
+    "uitleg": "Wet stelt regel vast, straf is een consequentie van overtreding",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin is grammaticaal CORRECT?",
+    "opties": ["Ik zou komen als ik tijd zou hebben", "Ik zou komen als ik tijd had", "Ik kwam als ik tijd zou hebben", "Ik kom als ik tijd zou hebben"],
+    "antwoord": 1,
+    "uitleg": "In conditionele zinnen: hoofdzin conditional, bijzin imperfectum",
+    "niveau": "expert"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat betekent 'recidive' in juridische context?",
+    "opties": ["eerste overtreding", "herhaling misdrijf", "vrijspraak", "boete"],
+    "antwoord": 1,
+    "uitleg": "Recidive betekent herhaling van een misdrijf (recidivisme)",
+    "niveau": "expert"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord hoort bij: betrouwbaar, eerlijk, integer?",
+    "opties": ["corrupt", "oprecht", "vals", "oneerlijk"],
+    "antwoord": 1,
+    "uitleg": "Oprecht past bij betrouwbaar, eerlijk en integer (positieve karaktereigenschappen)",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Preventie is tot voorkomen zoals repressie is tot:",
+    "opties": ["belonen", "onderdrukken", "helpen", "beschermen"],
+    "antwoord": 1,
+    "uitleg": "Preventie voorkomt problemen, repressie onderdrukt/bestraft gedrag",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin heeft de JUISTE kommaplaatsing?",
+    "opties": ["De agent die, de verdachte achtervolgde was moe", "De agent, die de verdachte achtervolgde, was moe", "De agent die de verdachte achtervolgde, was moe", "De agent die de verdachte, achtervolgde was moe"],
+    "antwoord": 2,
+    "uitleg": "Na de bijzin komt een komma, niet binnen de bijzin",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat is een SYNONIEM voor 'surveillance'?",
+    "opties": ["arrestatie", "bewaking", "onderzoek", "patrouille"],
+    "antwoord": 1,
+    "uitleg": "Surveillance betekent bewaking/observatie",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Voltooi de redenering: Alle politieagenten dragen uniform. Jan draagt geen uniform. Daarom:",
+    "opties": ["is Jan een politieagent", "is Jan geen politieagent", "weten we niet of Jan politieagent is", "draagt Jan wel uniform"],
+    "antwoord": 1,
+    "uitleg": "Logische gevolgtrekking: als alle agenten uniform dragen en Jan draagt geen uniform, dan is Jan geen agent",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Misdrijf is tot wet zoals fout is tot:",
+    "opties": ["correctie", "regel", "straf", "vergissing"],
+    "antwoord": 1,
+    "uitleg": "Misdrijf overtreedt wet, fout overtreedt regel",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke formulering is het OBJECTIEFST voor een rapport?",
+    "opties": ["De verdachte gedroeg zich vreemd", "De verdachte toonde afwijkend gedrag", "Het gedrag van de verdachte week af van normaal", "Verdachte vertoonde observeerbaar afwijkend gedrag"],
+    "antwoord": 3,
+    "uitleg": "Objectieve beschrijving vermijdt interpretatie en gebruikt observeerbare feiten",
+    "niveau": "expert"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat betekent 'flagrante delicto'?",
+    "opties": ["na het delict", "op heterdaad", "tijdens onderzoek", "bij verdenking"],
+    "antwoord": 1,
+    "uitleg": "'In flagrante delicto' betekent op heterdaad betrapt",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welk woord hoort NIET bij: verhoor, interrogatie, ondervraging, ontmoeting?",
+    "opties": ["verhoor", "interrogatie", "ondervraging", "ontmoeting"],
+    "antwoord": 3,
+    "uitleg": "Ontmoeting is informeel, de andere zijn formele ondervragingsmethoden",
+    "niveau": "basis"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Analogie: Rechter is tot oordeel zoals jury is tot:",
+    "opties": ["wet", "uitspraak", "vonnis", "verdict"],
+    "antwoord": 3,
+    "uitleg": "Rechter velt oordeel, jury geeft verdict (in jury-systemen)",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Welke zin heeft de BESTE parallel structuur?",
+    "opties": ["Hij is intelligent, aardig en werkt hard", "Hij is intelligent, aardig en hardwerkend", "Hij is slim, heeft een aardig karakter en werkt hard", "Hij denkt goed na, is aardig en hardwerkend"],
+    "antwoord": 1,
+    "uitleg": "Alle drie woorden zijn bijvoeglijke naamwoorden: intelligent, aardig, hardwerkend",
+    "niveau": "expert"
+  },
+  {
+    "type": "verbaal",
+    "vraag": "Wat is het verschil tussen 'advocaat' en 'procureur'?",
+    "opties": ["geen verschil", "advocaat verdedigt, procureur vervolgt", "procureur verdedigt, advocaat vervolgt", "beiden vervolgen"],
+    "antwoord": 1,
+    "uitleg": "Advocaat verdedigt de cliënt, procureur (officier van justitie) vervolgt namens de staat",
+    "niveau": "gevorderd"
+  }
+]
