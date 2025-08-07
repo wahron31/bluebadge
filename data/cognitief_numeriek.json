@@ -1,0 +1,402 @@
+[
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 24 + 36 × 2 - 15",
+    "opties": ["81", "75", "69", "57"],
+    "antwoord": 2,
+    "uitleg": "Vermenigvuldiging eerst: 24 + 72 - 15 = 81",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een politieauto rijdt 120 km in 1,5 uur. Wat is de gemiddelde snelheid?",
+    "opties": ["70 km/h", "75 km/h", "80 km/h", "85 km/h"],
+    "antwoord": 2,
+    "uitleg": "120 km ÷ 1,5 uur = 80 km/h",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "25% van 840 euro is:",
+    "opties": ["200 euro", "210 euro", "220 euro", "230 euro"],
+    "antwoord": 1,
+    "uitleg": "25% van 840 = 0,25 × 840 = 210 euro",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Als 3x + 7 = 28, dan is x:",
+    "opties": ["6", "7", "8", "9"],
+    "antwoord": 1,
+    "uitleg": "3x = 28 - 7 = 21, dus x = 21 ÷ 3 = 7",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een boete van 150 euro wordt met 40% verhoogd. Wat is het nieuwe bedrag?",
+    "opties": ["190 euro", "200 euro", "210 euro", "220 euro"],
+    "antwoord": 2,
+    "uitleg": "40% van 150 = 60 euro. 150 + 60 = 210 euro",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een rechthoek heeft een lengte van 12 cm en breedte van 8 cm. Wat is de oppervlakte?",
+    "opties": ["88 cm²", "94 cm²", "96 cm²", "100 cm²"],
+    "antwoord": 2,
+    "uitleg": "Oppervlakte = lengte × breedte = 12 × 8 = 96 cm²",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "In een groep van 200 mensen zijn 30% vrouwen. Hoeveel mannen zijn er?",
+    "opties": ["130", "140", "150", "160"],
+    "antwoord": 1,
+    "uitleg": "30% vrouwen = 60 vrouwen. Mannen = 200 - 60 = 140",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: √144 + √81",
+    "opties": ["21", "23", "25", "27"],
+    "antwoord": 0,
+    "uitleg": "√144 = 12, √81 = 9. 12 + 9 = 21",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een politiebureau heeft 45 agenten. 20% werkt nachtdienst. Hoeveel agenten werken nachtdienst?",
+    "opties": ["7", "8", "9", "10"],
+    "antwoord": 2,
+    "uitleg": "20% van 45 = 0,20 × 45 = 9 agenten",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Als een auto 8,5 liter benzine gebruikt per 100 km, hoeveel liter is nodig voor 350 km?",
+    "opties": ["28,5 liter", "29,0 liter", "29,75 liter", "30,5 liter"],
+    "antwoord": 2,
+    "uitleg": "(8,5 ÷ 100) × 350 = 0,085 × 350 = 29,75 liter",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Rond af tot op 2 decimalen: 45,6789",
+    "opties": ["45,67", "45,68", "45,69", "45,70"],
+    "antwoord": 1,
+    "uitleg": "Kijk naar het derde decimaal (7). 7 ≥ 5, dus rond omhoog: 45,68",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een cirkel heeft een diameter van 14 cm. Wat is de straal?",
+    "opties": ["6 cm", "7 cm", "8 cm", "9 cm"],
+    "antwoord": 1,
+    "uitleg": "Straal = diameter ÷ 2 = 14 ÷ 2 = 7 cm",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: (15 + 25) × 3 - 20",
+    "opties": ["100", "110", "120", "130"],
+    "antwoord": 0,
+    "uitleg": "(15 + 25) × 3 - 20 = 40 × 3 - 20 = 120 - 20 = 100",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een schaal heeft de verhouding 1:25000. 4 cm op de kaart komt overeen met:",
+    "opties": ["1 km", "1,5 km", "2 km", "2,5 km"],
+    "antwoord": 0,
+    "uitleg": "4 cm × 25000 = 100000 cm = 1 km",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Van 120 naar 150 is een toename van hoeveel procent?",
+    "opties": ["20%", "25%", "30%", "35%"],
+    "antwoord": 1,
+    "uitleg": "Toename = (150-120)/120 × 100% = 30/120 × 100% = 25%",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een driehoek heeft zijden van 3, 4 en 5 cm. Wat is de oppervlakte?",
+    "opties": ["5 cm²", "6 cm²", "7 cm²", "8 cm²"],
+    "antwoord": 1,
+    "uitleg": "Rechthoekige driehoek: oppervlakte = (3 × 4) ÷ 2 = 6 cm²",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 2³ + 3² - 4¹",
+    "opties": ["13", "15", "17", "19"],
+    "antwoord": 0,
+    "uitleg": "2³ = 8, 3² = 9, 4¹ = 4. 8 + 9 - 4 = 13",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een politiecel heeft 240 gedetineerden. 35% zijn vrouwen. Hoeveel mannen zijn er?",
+    "opties": ["144", "152", "156", "164"],
+    "antwoord": 2,
+    "uitleg": "35% vrouwen = 84 vrouwen. Mannen = 240 - 84 = 156",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Als je 60 km/h rijdt, hoeveel meter leg je per seconde af?",
+    "opties": ["16,7 m/s", "17,3 m/s", "18,1 m/s", "18,9 m/s"],
+    "antwoord": 0,
+    "uitleg": "60 km/h = 60000 m/3600 s = 16,67 m/s ≈ 16,7 m/s",
+    "niveau": "expert"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een politiebudget van 2,4 miljoen euro wordt met 15% gekort. Wat is het nieuwe budget?",
+    "opties": ["1,98 miljoen", "2,04 miljoen", "2,12 miljoen", "2,28 miljoen"],
+    "antwoord": 1,
+    "uitleg": "15% van 2,4 miljoen = 0,36 miljoen. 2,4 - 0,36 = 2,04 miljoen",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken de gemiddelde snelheid: 40 km in 30 minuten",
+    "opties": ["70 km/h", "75 km/h", "80 km/h", "85 km/h"],
+    "antwoord": 2,
+    "uitleg": "30 minuten = 0,5 uur. 40 km ÷ 0,5 uur = 80 km/h",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een kubus heeft een zijde van 5 cm. Wat is het volume?",
+    "opties": ["100 cm³", "115 cm³", "125 cm³", "135 cm³"],
+    "antwoord": 2,
+    "uitleg": "Volume kubus = zijde³ = 5³ = 125 cm³",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 7/8 + 3/4",
+    "opties": ["13/8", "11/8", "15/8", "17/8"],
+    "antwoord": 0,
+    "uitleg": "3/4 = 6/8. 7/8 + 6/8 = 13/8",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een politiepatrouille rijdt 240 km in 3 uur. Na een pauze van 30 minuten rijden ze nog 160 km in 2 uur. Wat is de gemiddelde rijsnelheid?",
+    "opties": ["72 km/h", "75 km/h", "78 km/h", "80 km/h"],
+    "antwoord": 3,
+    "uitleg": "Totaal: 400 km in 5 uur rijden. 400 ÷ 5 = 80 km/h (pauze niet meegeteld)",
+    "niveau": "expert"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Van de 180 meldingen zijn 60% gerelateerd aan verkeer. Hoeveel verkeersmeldingen zijn er?",
+    "opties": ["98", "102", "108", "112"],
+    "antwoord": 2,
+    "uitleg": "60% van 180 = 0,60 × 180 = 108 meldingen",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 45% van 80 + 25% van 120",
+    "opties": ["66", "68", "70", "72"],
+    "antwoord": 0,
+    "uitleg": "45% van 80 = 36. 25% van 120 = 30. 36 + 30 = 66",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een rechthoekige kamer is 6m lang en 4m breed. Hoeveel m² tegels zijn nodig?",
+    "opties": ["22 m²", "24 m²", "26 m²", "28 m²"],
+    "antwoord": 1,
+    "uitleg": "Oppervlakte = lengte × breedte = 6 × 4 = 24 m²",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Als 2/5 van een groep mannen is, en er zijn 120 mannen, hoeveel mensen zijn er totaal?",
+    "opties": ["280", "300", "320", "350"],
+    "antwoord": 1,
+    "uitleg": "Als 2/5 = 120, dan 1/5 = 60. Totaal = 5 × 60 = 300",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 144 ÷ 12 + 8 × 3",
+    "opties": ["34", "36", "38", "40"],
+    "antwoord": 1,
+    "uitleg": "144 ÷ 12 + 8 × 3 = 12 + 24 = 36",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een cirkel heeft een omtrek van 31,4 cm. Wat is de diameter? (π ≈ 3,14)",
+    "opties": ["8 cm", "9 cm", "10 cm", "11 cm"],
+    "antwoord": 2,
+    "uitleg": "Omtrek = π × diameter. 31,4 = 3,14 × diameter. Diameter = 10 cm",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een auto verbruikt 7,2 liter per 100 km. Hoeveel kost 450 km rijden als benzine €1,60 per liter kost?",
+    "opties": ["€ 48,60", "€ 50,40", "€ 51,84", "€ 53,28"],
+    "antwoord": 2,
+    "uitleg": "Verbruik: (7,2/100) × 450 = 32,4 liter. Kosten: 32,4 × €1,60 = €51,84",
+    "niveau": "expert"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 15² - 14²",
+    "opties": ["27", "29", "31", "33"],
+    "antwoord": 1,
+    "uitleg": "15² - 14² = 225 - 196 = 29",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een politiebureau heeft 5 diensten van elk 8 agenten. 20% is ziek. Hoeveel agenten werken?",
+    "opties": ["30", "32", "34", "36"],
+    "antwoord": 1,
+    "uitleg": "Totaal: 5 × 8 = 40 agenten. Ziek: 20% van 40 = 8. Werken: 40 - 8 = 32",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Als de wisselkoers 1 euro = 1,18 dollar is, hoeveel dollar krijg je voor 850 euro?",
+    "opties": ["$995", "$1003", "$1015", "$1025"],
+    "antwoord": 1,
+    "uitleg": "850 × 1,18 = $1003",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken de oppervlakte van een cirkel met straal 6 cm (π ≈ 3,14)",
+    "opties": ["110,52 cm²", "112,24 cm²", "113,04 cm²", "115,68 cm²"],
+    "antwoord": 2,
+    "uitleg": "Oppervlakte = π × r² = 3,14 × 6² = 3,14 × 36 = 113,04 cm²",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Van 200 euro naar 170 euro is een daling van hoeveel procent?",
+    "opties": ["12%", "15%", "18%", "20%"],
+    "antwoord": 1,
+    "uitleg": "Daling = (200-170)/200 × 100% = 30/200 × 100% = 15%",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 3/5 × 4/7",
+    "opties": ["12/35", "7/12", "5/8", "9/16"],
+    "antwoord": 0,
+    "uitleg": "3/5 × 4/7 = (3×4)/(5×7) = 12/35",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een ladder van 5 meter staat tegen een muur. De voet staat 3 meter van de muur. Hoe hoog reikt de ladder?",
+    "opties": ["3,5 m", "4,0 m", "4,2 m", "4,5 m"],
+    "antwoord": 1,
+    "uitleg": "Pythagoras: h² + 3² = 5². h² = 25 - 9 = 16. h = 4 meter",
+    "niveau": "expert"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 20% van 150 + 30% van 200",
+    "opties": ["90", "95", "100", "105"],
+    "antwoord": 0,
+    "uitleg": "20% van 150 = 30. 30% van 200 = 60. 30 + 60 = 90",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een rechthoek heeft een oppervlakte van 84 cm² en een breedte van 7 cm. Wat is de lengte?",
+    "opties": ["10 cm", "11 cm", "12 cm", "13 cm"],
+    "antwoord": 2,
+    "uitleg": "Oppervlakte = lengte × breedte. 84 = lengte × 7. Lengte = 84 ÷ 7 = 12 cm",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: √(16 + 9)",
+    "opties": ["4", "5", "6", "7"],
+    "antwoord": 1,
+    "uitleg": "√(16 + 9) = √25 = 5",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een politiewagen rijdt de eerste 100 km met 80 km/h, de volgende 100 km met 120 km/h. Wat is de gemiddelde snelheid?",
+    "opties": ["90 km/h", "95 km/h", "96 km/h", "100 km/h"],
+    "antwoord": 2,
+    "uitleg": "Tijd: 100/80 + 100/120 = 1,25 + 0,833 = 2,083 uur. Gemiddeld: 200/2,083 = 96 km/h",
+    "niveau": "expert"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 8! ÷ 6!",
+    "opties": ["48", "52", "56", "60"],
+    "antwoord": 2,
+    "uitleg": "8! ÷ 6! = (8 × 7 × 6!) ÷ 6! = 8 × 7 = 56",
+    "niveau": "expert"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Van de 320 arrestaties dit jaar waren 25% voor verkeersovertredingen. Hoeveel verkeersovertredingen?",
+    "opties": ["75", "80", "85", "90"],
+    "antwoord": 1,
+    "uitleg": "25% van 320 = 0,25 × 320 = 80 arrestaties",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 144/12 + 81/9 - 64/8",
+    "opties": ["13", "14", "15", "16"],
+    "antwoord": 0,
+    "uitleg": "144/12 + 81/9 - 64/8 = 12 + 9 - 8 = 13",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een driehoek heeft hoeken van 45°, 65° en x°. Wat is x?",
+    "opties": ["65°", "70°", "75°", "80°"],
+    "antwoord": 1,
+    "uitleg": "Som hoeken driehoek = 180°. 45° + 65° + x° = 180°. x = 70°",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een politieagent werkt 38 uren per week en verdient €2850 per maand. Wat is het uurloon? (1 maand ≈ 4,33 weken)",
+    "opties": ["€ 17,25", "€ 17,50", "€ 17,75", "€ 18,00"],
+    "antwoord": 0,
+    "uitleg": "Uren per maand: 38 × 4,33 = 164,54. Uurloon: €2850 ÷ 164,54 = €17,25",
+    "niveau": "expert"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Bereken: 2⁴ + 3³ - 5²",
+    "opties": ["16", "18", "20", "22"],
+    "antwoord": 1,
+    "uitleg": "2⁴ = 16, 3³ = 27, 5² = 25. 16 + 27 - 25 = 18",
+    "niveau": "gevorderd"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Een auto rijdt 420 km op 35 liter benzine. Hoeveel km per liter?",
+    "opties": ["11,8 km/l", "12,0 km/l", "12,2 km/l", "12,5 km/l"],
+    "antwoord": 1,
+    "uitleg": "420 km ÷ 35 liter = 12 km per liter",
+    "niveau": "basis"
+  },
+  {
+    "type": "numeriek",
+    "vraag": "Als een politiebureau 180 meldingen per dag ontvangt en dit 25% meer is dan vorig jaar, hoeveel meldingen waren er vorig jaar per dag?",
+    "opties": ["135", "140", "144", "150"],
+    "antwoord": 2,
+    "uitleg": "180 = vorig jaar + 25% van vorig jaar = 1,25 × vorig jaar. Vorig jaar = 180 ÷ 1,25 = 144",
+    "niveau": "expert"
+  }
+]
