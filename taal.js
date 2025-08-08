@@ -244,8 +244,9 @@ function updateLanguageNavButtons() {
     nextBtn.disabled = languageAnswers[currentLanguageQuestionIndex] === undefined;
     
     const onLast = currentLanguageQuestionIndex === currentLanguageTest.length - 1;
-    // Show Einde only on last question
-    endBtn.style.display = onLast && languageAnswers[currentLanguageQuestionIndex] !== undefined ? 'block' : 'none';
+    // Only show Einde after last question is answered
+    const lastAnswered = onLast && languageAnswers[currentLanguageQuestionIndex] !== undefined;
+    endBtn.style.display = lastAnswered ? 'block' : 'none';
     // Always show Test Afronden
     finishBtn.style.display = 'block';
 }

@@ -138,8 +138,9 @@ function updateCognitiveNavButtons() {
     nextBtn.disabled = cognitiveAnswers[currentQuestionIndex] === undefined;
     
     const onLast = currentQuestionIndex === currentCognitiveTest.length - 1;
-    // Show Einde only on last question
-    endBtn.style.display = onLast && cognitiveAnswers[currentQuestionIndex] !== undefined ? 'block' : 'none';
+    // Only show Einde after last question is answered
+    const lastAnswered = onLast && cognitiveAnswers[currentQuestionIndex] !== undefined;
+    endBtn.style.display = lastAnswered ? 'block' : 'none';
     // Always show Test Afronden
     finishBtn.style.display = 'block';
 }

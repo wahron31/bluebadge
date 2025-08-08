@@ -103,11 +103,11 @@
         <div class="question-box">
           <div class="question">${index + 1}. ${q.vraag}</div>
           <div class="options">
-            ${q.opties.map((opt, i) => `<button onclick=\"beoordeel(this, ${i === q.antwoord})\">${opt}</button>`).join('')}
+            ${q.opties.map((opt, i) => `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`).join('')}
           </div>
         </div>`;
-      // Einde button only on last question
-      document.getElementById('end-quiz-btn').style.display = (index === gekozen.length - 1) ? 'inline-block' : 'none';
+      // Hide Einde by default; it will appear only after last question is answered
+      document.getElementById('end-quiz-btn').style.display = 'none';
     }
 
     window.beoordeel = function (btn, juist) {
@@ -115,8 +115,14 @@
       knoppen.forEach(b => b.disabled = true);
       if (juist) { btn.classList.add('correct'); score++; } else { btn.classList.add('wrong'); }
       setTimeout(() => {
-        currentIndex++;
-        if (currentIndex < gekozen.length) { render(currentIndex); } else { endQuizEarly(); }
+        const isLast = currentIndex === gekozen.length - 1;
+        if (isLast) {
+          // Show Einde only after last question is answered
+          document.getElementById('end-quiz-btn').style.display = 'inline-block';
+        } else {
+          currentIndex++;
+          render(currentIndex);
+        }
       }, 400);
     };
 
