@@ -74,16 +74,19 @@ function updatePageLanguage() {
 // Close menus when clicking outside
 document.addEventListener('click', function(event) {
     const langMenu = document.getElementById('lang-menu');
-    const langBtn = document.querySelector('.lang-btn');
-    
-    if (!langBtn.contains(event.target) && !langMenu.contains(event.target)) {
-        langMenu.classList.remove('active');
+    const langBtn = document.getElementById('lang-btn');
+    try {
+        if (langMenu && langBtn && !langBtn.contains(event.target) && !langMenu.contains(event.target)) {
+            langMenu.classList.remove('open');
+        }
+    } catch (e) {
+        // no-op
     }
     
     const navLinks = document.querySelector('.nav-links');
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     
-    if (!mobileBtn.contains(event.target) && !navLinks.contains(event.target)) {
+    if (mobileBtn && navLinks && !mobileBtn.contains(event.target) && !navLinks.contains(event.target)) {
         navLinks.classList.remove('active');
         mobileBtn.classList.remove('active');
     }

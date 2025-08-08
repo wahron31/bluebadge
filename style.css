@@ -2018,7 +2018,7 @@ a:focus {
 .lang-current .flag { font-size: 16px; }
 .lang-current .code { font-weight: 600; letter-spacing: 0.5px; }
 .lang-current .arrow { opacity: 0.7; }
-.lang-menu { position:absolute; right:0; top: 110%; background: rgba(26,26,46,0.95); border:1px solid var(--glass-border); border-radius: 12px; min-width: 180px; box-shadow: var(--shadow-dark); padding: 6px; display:none; z-index: 1000; }
+.lang-menu { position:absolute; right:0; top: 110%; background: rgba(26,26,46,0.95); border:1px solid var(--glass-border); border-radius: 12px; min-width: 180px; box-shadow: var(--shadow-dark); padding: 6px; display:none; z-index: 2000; }
 .lang-menu.open { display:block; }
 .lang-item { display:flex; align-items:center; gap:8px; padding:8px 10px; border-radius:8px; color: var(--text-primary); cursor:pointer; }
 .lang-item:hover { background: rgba(74,144,226,0.15); }
