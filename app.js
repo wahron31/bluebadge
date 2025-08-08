@@ -1,7 +1,9 @@
-// Veri yükleme
+// Global variables
 let quizData = [];
 let woordenData = [];
 let cognitiefData = [];
+let languagesData = {};
+let currentLanguage = 'nl'; // Default language
 let userData = {
     totalQuestions: 156,
     successRate: 78,
@@ -14,23 +16,108 @@ let userData = {
     }
 };
 
-// Veri dosyalarını yükle
+// Language and mobile menu functions
+function toggleLanguageMenu() {
+    const langMenu = document.getElementById('lang-menu');
+    langMenu.classList.toggle('active');
+}
+
+function toggleMobileMenu() {
+    const navLinks = document.querySelector('.nav-links');
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    
+    navLinks.classList.toggle('active');
+    mobileBtn.classList.toggle('active');
+}
+
+function changeLanguage(langCode) {
+    currentLanguage = langCode;
+    localStorage.setItem('selectedLanguage', langCode);
+    
+    // Update language button
+    const langFlags = {
+        'nl': '🇳🇱 VL',
+        'fr': '🇫🇷 FR', 
+        'de': '🇩🇪 DE',
+        'tr': '🇹🇷 TR'
+    };
+    
+    document.getElementById('current-lang').textContent = langFlags[langCode];
+    
+    // Close language menu
+    document.getElementById('lang-menu').classList.remove('active');
+    
+    // Update all translatable elements
+    updatePageLanguage();
+}
+
+function updatePageLanguage() {
+    if (!languagesData[currentLanguage]) return;
+    
+    const lang = languagesData[currentLanguage];
+    
+    // Update all elements with data-translate attribute
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (lang[key]) {
+            element.textContent = lang[key];
+        }
+    });
+    
+    // Update page title
+    document.title = `BlueBadge – ${lang.police_selection_training}`;
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = currentLanguage;
+}
+
+// Close menus when clicking outside
+document.addEventListener('click', function(event) {
+    const langMenu = document.getElementById('lang-menu');
+    const langBtn = document.querySelector('.lang-btn');
+    
+    if (!langBtn.contains(event.target) && !langMenu.contains(event.target)) {
+        langMenu.classList.remove('active');
+    }
+    
+    const navLinks = document.querySelector('.nav-links');
+    const mobileBtn = document.querySelector('.mobile-menu-btn');
+    
+    if (!mobileBtn.contains(event.target) && !navLinks.contains(event.target)) {
+        navLinks.classList.remove('active');
+        mobileBtn.classList.remove('active');
+    }
+});
+
+// Load data files
 async function loadData() {
     try {
-        const [quiz, woorden, cognitief] = await Promise.all([
+        const [quiz, woorden, abstractRed, verbaalRed, numeriekRed, languages] = await Promise.all([
             fetch('data/quiz_questions.json').then(res => res.json()).catch(() => []),
             fetch('data/woorden.json').then(res => res.json()).catch(() => []),
-            fetch('data/cognitief.json').then(res => res.json()).catch(() => [])
+            fetch('data/abstract_redeneren.json').then(res => res.json()).catch(() => []),
+            fetch('data/verbaal_redeneren.json').then(res => res.json()).catch(() => []),
+            fetch('data/numeriek_redeneren.json').then(res => res.json()).catch(() => []),
+            fetch('data/languages.json').then(res => res.json()).catch(() => {})
         ]);
         
         quizData = quiz;
         woordenData = woorden;
-        cognitiefData = cognitief;
+        // Cognitieve soruları birleştir
+        cognitiefData = [...abstractRed, ...verbaalRed, ...numeriekRed];
+        languagesData = languages;
+        
+        // Load saved language preference
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        if (savedLanguage && languagesData[savedLanguage]) {
+            currentLanguage = savedLanguage;
+            updatePageLanguage();
+        }
         
         updateDashboard();
     } catch (error) {
-        console.log('Veri dosyaları yüklenirken hata:', error);
-        // Örnek verilerle devam et
+        console.log('Error loading data files:', error);
+        // Continue with sample data
         loadSampleData();
     }
 }
@@ -687,6 +774,7 @@ if (!document.getElementById('quiz-styles')) {
     document.head.appendChild(styleSheet);
 }
 
+<<<<<<< HEAD
 function goToResultsPage(payload) {
     try {
         localStorage.setItem('lastQuizResult', JSON.stringify(payload));
@@ -695,3 +783,14 @@ function goToResultsPage(payload) {
         console.error('Cannot store results:', e);
     }
 }
+=======
+// Initialize app when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    loadData();
+    
+    // Initialize quiz page if we're on quiz.html
+    if (window.location.pathname.includes('quiz.html')) {
+        initializeQuizPage();
+    }
+});
+>>>>>>> origin/bluebadge-branch
