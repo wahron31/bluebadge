@@ -25,6 +25,7 @@
           <option value="fr">FR</option>
           <option value="de">DE</option>
         </select>
+        <div id="language-switcher"></div>
         <input id="bb-username" placeholder="Kullanıcı" style="margin-left:8px; padding:6px 8px; border-radius:6px; border:1px solid #334; background: rgba(26, 26, 46, 0.6); color: var(--text-secondary);" />
         <button class="challenge-btn" style="padding:6px 10px;" onclick="(function(){ const u=document.getElementById('bb-username').value.trim(); if(u){ bbAuth.login(u); alert('Giriş yapıldı: '+u); } })()">Giriş</button>
       </div>
