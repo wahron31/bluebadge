@@ -48,7 +48,19 @@
     "btn_retry": "Opnieuw",
     "btn_finish": "Test Afronden",
     "btn_end": "Einde",
-    "results": "Resultaten"
+    "btn_prev": "Vorige",
+    "btn_next": "Volgende",
+    "results": "Resultaten",
+    "your_score": "Jouw Score",
+    "details": "Details",
+    "test_results": "Test Resultaten",
+    "performance_by_category": "Prestatie per categorie",
+    "improvement_points": "Verbeterpunten",
+    "language_results": "Taaltest Resultaten",
+    "reading_comprehension": "Begrijpend Lezen",
+    "listening": "Luistervaardigheid",
+    "vocabulary": "Woordenschat",
+    "grammar": "Grammatica"
   },
   "fr": {
     "language_name": "Français",
@@ -99,7 +111,19 @@
     "btn_retry": "Recommencer",
     "btn_finish": "Terminer le test",
     "btn_end": "Fin",
-    "results": "Résultats"
+    "btn_prev": "Précédent",
+    "btn_next": "Suivant",
+    "results": "Résultats",
+    "your_score": "Votre score",
+    "details": "Détails",
+    "test_results": "Résultats du test",
+    "performance_by_category": "Performance par catégorie",
+    "improvement_points": "Points d'amélioration",
+    "language_results": "Résultats du test de langue",
+    "reading_comprehension": "Compréhension écrite",
+    "listening": "Compréhension orale",
+    "vocabulary": "Vocabulaire",
+    "grammar": "Grammaire"
   },
   "de": {
     "language_name": "Deutsch",
@@ -150,7 +174,19 @@
     "btn_retry": "Erneut",
     "btn_finish": "Test beenden",
     "btn_end": "Ende",
-    "results": "Ergebnisse"
+    "btn_prev": "Zurück",
+    "btn_next": "Weiter",
+    "results": "Ergebnisse",
+    "your_score": "Ihre Punktzahl",
+    "details": "Details",
+    "test_results": "Testergebnisse",
+    "performance_by_category": "Leistung nach Kategorie",
+    "improvement_points": "Verbesserungspunkte",
+    "language_results": "Sprachtest Ergebnisse",
+    "reading_comprehension": "Leseverständnis",
+    "listening": "Hörverständnis",
+    "vocabulary": "Wortschatz",
+    "grammar": "Grammatik"
   },
   "tr": {
     "language_name": "Türkçe",
@@ -200,8 +236,20 @@
     "btn_dashboard": "Ana sayfa",
     "btn_retry": "Tekrar",
     "btn_finish": "Testi Bitir",
-    "btn_end": "Einde",
-    "results": "Sonuçlar"
+    "btn_end": "Bitti",
+    "btn_prev": "Önceki",
+    "btn_next": "Sonraki",
+    "results": "Sonuçlar",
+    "your_score": "Puanın",
+    "details": "Detaylar",
+    "test_results": "Test Sonuçları",
+    "performance_by_category": "Kategori bazında performans",
+    "improvement_points": "Gelişim noktaları",
+    "language_results": "Dil Testi Sonuçları",
+    "reading_comprehension": "Okuduğunu Anlama",
+    "listening": "Dinlediğini Anlama",
+    "vocabulary": "Kelime Hazinesi",
+    "grammar": "Gramer"
   },
   "en": {
     "language_name": "English",
@@ -252,6 +300,18 @@
     "btn_retry": "Retry",
     "btn_finish": "Finish Test",
     "btn_end": "End",
-    "results": "Results"
+    "btn_prev": "Previous",
+    "btn_next": "Next",
+    "results": "Results",
+    "your_score": "Your Score",
+    "details": "Details",
+    "test_results": "Test Results",
+    "performance_by_category": "Performance by category",
+    "improvement_points": "Improvement points",
+    "language_results": "Language Test Results",
+    "reading_comprehension": "Reading Comprehension",
+    "listening": "Listening",
+    "vocabulary": "Vocabulary",
+    "grammar": "Grammar"
   }
 }
