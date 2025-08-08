@@ -1,60 +1,41 @@
 (function(){
-  const dict = {
-    nl: {
-      'nav.dashboard': 'Dashboard',
-      'nav.quiz': 'Dagelijkse Quiz',
-      'nav.cognitive': 'Cognitieve Vaardigheden',
-      'nav.language': 'Taaltraining',
-      'nav.progress': 'Voortgang'
-    },
-    tr: {
-      'nav.dashboard': 'Kontrol Paneli',
-      'nav.quiz': 'Günlük Quiz',
-      'nav.cognitive': 'Bilişsel Beceriler',
-      'nav.language': 'Dil Eğitimi',
-      'nav.progress': 'İlerleme'
-    },
-    en: {
-      'nav.dashboard': 'Dashboard',
-      'nav.quiz': 'Daily Quiz',
-      'nav.cognitive': 'Cognitive Skills',
-      'nav.language': 'Language Training',
-      'nav.progress': 'Progress'
-    },
-    fr: {
-      'nav.dashboard': 'Tableau de bord',
-      'nav.quiz': 'Quiz quotidien',
-      'nav.cognitive': 'Compétences cognitives',
-      'nav.language': 'Formation linguistique',
-      'nav.progress': 'Progrès'
-    },
-    de: {
-      'nav.dashboard': 'Übersicht',
-      'nav.quiz': 'Tägliches Quiz',
-      'nav.cognitive': 'Kognitive Fähigkeiten',
-      'nav.language': 'Sprachtraining',
-      'nav.progress': 'Fortschritt'
-    }
-  };
+  let dict = {};
+  let current = localStorage.getItem('lang') || 'nl';
 
   function applyLang(lang){
-    const map = dict[lang] || dict.nl;
+    const map = dict[lang] || {};
+    // data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (map[key]) el.textContent = map[key];
     });
+    // data-translate (backward compatibility)
+    document.querySelectorAll('[data-translate]').forEach(el => {
+      const key = el.getAttribute('data-translate');
+      if (map[key]) el.textContent = map[key];
+    });
+    // set page lang
+    document.documentElement.lang = lang;
+    // set select value if present
+    const select = document.getElementById('language-select');
+    if (select) select.value = lang;
   }
 
-  document.addEventListener('DOMContentLoaded', () => {
+  async function init(){
+    try {
+      const res = await fetch('data/languages.json');
+      dict = await res.json();
+    } catch(e) { dict = {}; }
+    applyLang(current);
     const select = document.getElementById('language-select');
-    const saved = localStorage.getItem('lang') || 'nl';
-    if (select) select.value = saved;
-    applyLang(saved);
     if (select) {
       select.addEventListener('change', () => {
-        localStorage.setItem('lang', select.value);
-        applyLang(select.value);
+        current = select.value;
+        localStorage.setItem('lang', current);
+        applyLang(current);
       });
     }
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', init);
 })();
