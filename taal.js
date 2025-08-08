@@ -244,16 +244,10 @@ function updateLanguageNavButtons() {
     nextBtn.disabled = languageAnswers[currentLanguageQuestionIndex] === undefined;
     
     const onLast = currentLanguageQuestionIndex === currentLanguageTest.length - 1;
-    if (onLast) {
-        nextBtn.style.display = 'none';
-        const canFinish = languageAnswers[currentLanguageQuestionIndex] !== undefined;
-        finishBtn.style.display = canFinish ? 'block' : 'none';
-        endBtn.style.display = canFinish ? 'block' : 'none';
-    } else {
-        nextBtn.style.display = 'block';
-        finishBtn.style.display = 'none';
-        endBtn.style.display = 'none';
-    }
+    // Show Einde only on last question
+    endBtn.style.display = onLast && languageAnswers[currentLanguageQuestionIndex] !== undefined ? 'block' : 'none';
+    // Always show Test Afronden
+    finishBtn.style.display = 'block';
 }
 
 function endGlobalLanguageResults() {
@@ -263,12 +257,14 @@ function endGlobalLanguageResults() {
 
 // Finish language test
 function finishLanguageTest() {
-    // Calculate score
+    // Calculate score based on answered questions
+    const answeredCount = languageAnswers.filter(a => a !== undefined).length;
     languageScore = 0;
     const results = [];
     
     currentLanguageTest.forEach((question, index) => {
         const userAnswer = languageAnswers[index];
+        if (userAnswer === undefined) return; // only count answered
         const correct = userAnswer === question.antwoord;
         if (correct) languageScore++;
         
@@ -288,14 +284,14 @@ function finishLanguageTest() {
             type: 'taal',
             category: languageTestCategory,
             score: languageScore,
-            total: currentLanguageTest.length,
-            percentage: Math.round((languageScore / currentLanguageTest.length) * 100),
+            total: answeredCount,
+            percentage: answeredCount > 0 ? Math.round((languageScore / answeredCount) * 100) : 0,
             questions: results
         };
         localStorage.setItem('lastQuizResult', JSON.stringify(payload));
     } catch (e) {}
     
-    // Hide test interface and show results
+    // Hide test interface and show results panel too
     document.getElementById('language-test-interface').style.display = 'none';
     document.getElementById('language-test-results').style.display = 'block';
     

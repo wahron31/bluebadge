@@ -10,32 +10,25 @@
     .quiz-header h1 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 2rem; }
     .quiz-header p { color: var(--text-secondary); font-size: 1.1rem; }
     .quiz-container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
-    .question-box { background: #181c24 !important; color: #fff !important; backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-dark); transition: all 0.3s ease; }
-    .question-box:hover { transform: translateY(-2px); box-shadow: var(--shadow-blue); }
-    .question { font-weight: 600; margin-bottom: 1.5rem; color: #fff !important; font-size: 1.1rem; line-height: 1.6; }
+    .question-box { background: #ffffff !important; color: #000000 !important; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    .question { font-weight: 600; margin-bottom: 1.5rem; color: #000000 !important; font-size: 1.1rem; line-height: 1.6; }
     .options { display: grid; gap: 1rem; }
-    .options button { display: block; padding: 1rem 1.5rem; width: 100%; border: 2px solid var(--glass-border); background: #23283a !important; color: #fff !important; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-align: left; backdrop-filter: blur(10px); }
-    .options button:hover:not(:disabled) { background: var(--navy-medium); border-color: var(--accent-blue); color: var(--text-primary); transform: translateX(5px); }
-    .options button.correct { background: linear-gradient(135deg, var(--success), #22c55e); border-color: var(--success); color: var(--text-primary); }
-    .options button.wrong { background: linear-gradient(135deg, var(--danger), #ef4444); border-color: var(--danger); color: var(--text-primary); }
+    .options button { display: block; padding: 1rem 1.25rem; width: 100%; border: 1px solid #d1d5db; background: #ffffff !important; color: #000000 !important; border-radius: 10px; cursor: pointer; transition: all 0.2s ease; font-size: 1rem; text-align: left; }
+    .options button:hover:not(:disabled) { background: #f8fafc; border-color: #3b82f6; color: #000000; transform: translateX(4px); }
+    .options button.correct { background: linear-gradient(135deg, var(--success), #22c55e); border-color: var(--success); color: #ffffff !important; }
+    .options button.wrong { background: linear-gradient(135deg, var(--danger), #ef4444); border-color: var(--danger); color: #ffffff !important; }
     .options button:disabled { cursor: not-allowed; opacity: 0.8; }
-    .quiz-results { text-align: center; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 3rem 2rem; margin: 2rem auto; max-width: 600px; box-shadow: var(--shadow-dark); }
-    .score-big { font-size: 3rem; font-weight: bold; color: var(--accent-blue); margin-bottom: 1rem; }
-    .score-percentage { font-size: 1.5rem; color: var(--text-secondary); margin-left: 1rem; }
-    .result-feedback { font-size: 1.2rem; margin: 2rem 0; color: var(--text-primary); }
     .result-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
     .btn-primary, .btn-secondary { padding: 1rem 2rem; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
     .btn-primary { background: var(--accent-blue); color: var(--text-primary); }
     .btn-secondary { background: var(--accent-steel); color: var(--text-primary); }
     .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-blue); }
-    @media (max-width: 768px) { .quiz-header { padding: 1.5rem 1rem; } .quiz-header h1 { font-size: 1.5rem; } .quiz-header p { font-size: 1rem; } .question-box { padding: 1.5rem; margin-bottom: 1.5rem; } .question { font-size: 1rem; } .options button { padding: 0.75rem 1rem; font-size: 0.9rem; } .quiz-results { padding: 2rem 1rem; margin: 1.5rem 1rem; } .score-big { font-size: 2.5rem; } .result-actions { flex-direction: column; align-items: center; } .btn-primary, .btn-secondary { width: 100%; max-width: 300px; text-align: center; } }
-    @media (max-width: 480px) { .quiz-header { padding: 1rem; } .quiz-header h1 { font-size: 1.3rem; } .question-box { padding: 1rem; } .options button { padding: 0.6rem 0.8rem; font-size: 0.85rem; } .score-big { font-size: 2rem; } }
   </style>
 </head>
 <body>
   <header>
     <nav class="top-nav">
-      <div class="nav-brand"><h1>🚔 BlueBadge</h1></div>
+      <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
       <div class="nav-links">
         <a href="index.html" data-i18n="nav.dashboard">Dashboard</a>
         <a href="quiz.html" data-i18n="nav.quiz">Dagelijkse Quiz</a>
@@ -72,52 +65,70 @@
   <script src="i18n.js"></script>
   <script src="app.js"></script>
   <script>
-    const vragen = [
-      { vraag: "Wat betekent het woord 'toepassing'?", opties: ["Vakantie", "Gebruik", "Vlucht", "Verlies"], antwoord: 1 },
-      { vraag: "Wat is een 'uitkering'?", opties: ["Boek", "Werkloosheidsgeld", "Belasting", "Overeenkomst"], antwoord: 1 },
-      { vraag: "Wat betekent 'omtrent'?", opties: ["In de buurt van", "Specifiek", "Onder", "Buiten"], antwoord: 0 },
-      { vraag: "Wat is een correcte zin?", opties: ["Hij heb een auto.", "Hij heeft een auto.", "Hij hebben een auto.", "Hij ben een auto."], antwoord: 1 },
-      { vraag: "Kies het juiste lidwoord: ... universiteit", opties: ["De", "Het"], antwoord: 0 },
-      { vraag: "Wat betekent 'beoordelen'?", opties: ["Behandelen", "Oordelen", "Ontvangen", "Vervelen"], antwoord: 1 },
-      { vraag: "Wat is de verleden tijd van 'vinden'?", opties: ["Vond", "Vindt", "Vinden", "Vondt"], antwoord: 0 }
-    ];
-
-    const shuffle = arr => arr.sort(() => 0.5 - Math.random());
-    const quizContainer = document.getElementById("quiz-container");
-    const gekozen = shuffle(vragen).slice(0, 5);
+    const quizContainer = document.getElementById('quiz-container');
+    let vragen = [];
+    let gekozen = [];
     let currentIndex = 0;
     let score = 0;
 
+    function fisherYatesShuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    async function loadQuiz() {
+      try {
+        const res = await fetch('data/quiz_questions.json');
+        vragen = await res.json();
+      } catch (e) {
+        vragen = [];
+      }
+      if (!Array.isArray(vragen) || vragen.length === 0) {
+        vragen = [];
+      }
+      gekozen = fisherYatesShuffle(vragen).slice(0, 5);
+      currentIndex = 0;
+      score = 0;
+      render(currentIndex);
+    }
+
     function render(index) {
       const q = gekozen[index];
+      if (!q) return;
       quizContainer.innerHTML = `
         <div class="question-box">
           <div class="question">${index + 1}. ${q.vraag}</div>
           <div class="options">
-            ${q.opties.map((opt, i) => `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`).join("")}
+            ${q.opties.map((opt, i) => `<button onclick=\"beoordeel(this, ${i === q.antwoord})\">${opt}</button>`).join('')}
           </div>
         </div>`;
-      document.getElementById('end-quiz-btn').style.display = 'inline-block';
+      // Einde button only on last question
+      document.getElementById('end-quiz-btn').style.display = (index === gekozen.length - 1) ? 'inline-block' : 'none';
     }
 
-    render(currentIndex);
-
     window.beoordeel = function (btn, juist) {
-      const knoppen = btn.parentNode.querySelectorAll("button");
+      const knoppen = btn.parentNode.querySelectorAll('button');
       knoppen.forEach(b => b.disabled = true);
-      if (juist) { btn.classList.add("correct"); score++; } else { btn.classList.add("wrong"); }
+      if (juist) { btn.classList.add('correct'); score++; } else { btn.classList.add('wrong'); }
       setTimeout(() => {
         currentIndex++;
         if (currentIndex < gekozen.length) { render(currentIndex); } else { endQuizEarly(); }
-      }, 500);
-    }
+      }, 400);
+    };
 
     window.endQuizEarly = function() {
-      const percentage = Math.round((score / gekozen.length) * 100);
-      const payload = { type: 'daily-quiz', score, total: gekozen.length, percentage, questions: gekozen };
+      const answered = Math.min(currentIndex + 1, gekozen.length);
+      const percentage = answered > 0 ? Math.round((score / answered) * 100) : 0;
+      const payload = { type: 'daily-quiz', score, total: answered, percentage, questions: gekozen.slice(0, answered) };
       localStorage.setItem('lastQuizResult', JSON.stringify(payload));
       location.href = 'resultaten.html';
-    }
+    };
+
+    document.addEventListener('DOMContentLoaded', loadQuiz);
   </script>
 </body>
 </html>

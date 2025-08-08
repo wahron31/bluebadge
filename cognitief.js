@@ -138,26 +138,22 @@ function updateCognitiveNavButtons() {
     nextBtn.disabled = cognitiveAnswers[currentQuestionIndex] === undefined;
     
     const onLast = currentQuestionIndex === currentCognitiveTest.length - 1;
-    if (onLast) {
-        nextBtn.style.display = 'none';
-        const canFinish = cognitiveAnswers[currentQuestionIndex] !== undefined;
-        finishBtn.style.display = canFinish ? 'block' : 'none';
-        endBtn.style.display = canFinish ? 'block' : 'none';
-    } else {
-        nextBtn.style.display = 'block';
-        finishBtn.style.display = 'none';
-        endBtn.style.display = 'none';
-    }
+    // Show Einde only on last question
+    endBtn.style.display = onLast && cognitiveAnswers[currentQuestionIndex] !== undefined ? 'block' : 'none';
+    // Always show Test Afronden
+    finishBtn.style.display = 'block';
 }
 
 // Finish test
 function finishTest() {
-    // Calculate score
+    // Calculate score based on answered questions
+    const answeredCount = cognitiveAnswers.filter(a => a !== undefined).length;
     cognitiveScore = 0;
     const results = [];
     
     currentCognitiveTest.forEach((question, index) => {
         const userAnswer = cognitiveAnswers[index];
+        if (userAnswer === undefined) return; // only count answered
         const correct = userAnswer === question.antwoord;
         if (correct) cognitiveScore++;
         
@@ -177,8 +173,8 @@ function finishTest() {
             type: 'cognitief',
             category: testCategory,
             score: cognitiveScore,
-            total: currentCognitiveTest.length,
-            percentage: Math.round((cognitiveScore / currentCognitiveTest.length) * 100),
+            total: answeredCount,
+            percentage: answeredCount > 0 ? Math.round((cognitiveScore / answeredCount) * 100) : 0,
             questions: results
         };
         localStorage.setItem('lastQuizResult', JSON.stringify(payload));
