@@ -2,21 +2,23 @@
   let dict = {};
   let current = localStorage.getItem('lang') || 'nl';
 
+  function t(key){
+    const map = dict[current] || {};
+    return map[key] || map[key?.trim?.()] || key;
+  }
+
   function applyLang(lang){
+    current = lang;
     const map = dict[lang] || {};
-    // data-i18n
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (map[key]) el.textContent = map[key];
     });
-    // data-translate (backward compatibility)
     document.querySelectorAll('[data-translate]').forEach(el => {
       const key = el.getAttribute('data-translate');
       if (map[key]) el.textContent = map[key];
     });
-    // set page lang
     document.documentElement.lang = lang;
-    // set select value if present
     const select = document.getElementById('language-select');
     if (select) select.value = lang;
   }
@@ -30,12 +32,14 @@
     const select = document.getElementById('language-select');
     if (select) {
       select.addEventListener('change', () => {
-        current = select.value;
-        localStorage.setItem('lang', current);
-        applyLang(current);
+        const lang = select.value;
+        localStorage.setItem('lang', lang);
+        applyLang(lang);
       });
     }
   }
+
+  window.i18n = { t, apply: applyLang, get lang(){ return current; }, get dict(){ return dict; } };
 
   document.addEventListener('DOMContentLoaded', init);
 })();
