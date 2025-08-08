@@ -1667,44 +1667,17 @@ a:focus {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-<<<<<<< HEAD
+/* Remove conflict markers and keep notification/tabs styles */
 /* Achievement notification animations */
 @keyframes slideInRight {
-  from {
-    opacity: 0;
-    transform: translateX(100px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(100px); }
+  to { opacity: 1; transform: translateX(0); }
 }
-
 @keyframes slideOutRight {
-  from {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  to {
-    opacity: 0;
-    transform: translateX(100px);
-  }
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(100px); }
 }
-
-.achievement-notification {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: linear-gradient(135deg, #16a34a, #22c55e);
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  font-weight: 600;
-  animation: slideInRight 0.5s ease-out;
-}
-
+.achievement-notification { position: fixed; top: 20px; right: 20px; background: linear-gradient(135deg, #16a34a, #22c55e); color: white; padding: 1rem 2rem; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.3); z-index: 1000; font-weight: 600; animation: slideInRight 0.5s ease-out; }
 /* Enhanced activity items */
 .activity-item.needs-improvement .activity-score {
   background: linear-gradient(135deg, #dc2626, #ef4444);
@@ -2038,13 +2011,4 @@ a:focus {
 
 .reading-passage .passage-text {
   color: #000000;
-=======
-/* Quiz görünürlüğü override - KOYU MAVİ YAZI */
-.question-box,
-.question {
-  color: #264b7a !important;
-}
-.options button {
-  color: #264b7a !important;
->>>>>>> origin/bluebadge-branch
 }

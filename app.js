@@ -774,7 +774,6 @@ if (!document.getElementById('quiz-styles')) {
     document.head.appendChild(styleSheet);
 }
 
-<<<<<<< HEAD
 function goToResultsPage(payload) {
     try {
         localStorage.setItem('lastQuizResult', JSON.stringify(payload));
@@ -783,7 +782,7 @@ function goToResultsPage(payload) {
         console.error('Cannot store results:', e);
     }
 }
-=======
+
 // Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     loadData();
@@ -793,4 +792,3 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeQuizPage();
     }
 });
->>>>>>> origin/bluebadge-branch

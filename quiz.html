@@ -6,351 +6,80 @@
   <title>BlueBadge - Quiz</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .quiz-header {
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--glass-border);
-      padding: 2rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    .quiz-header h1 {
-      color: var(--text-primary);
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-    }
-
-    .quiz-header p {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-
-    .quiz-container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-
-    .question-box {
-      background: #181c24 !important;
-      color: #fff !important;
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 15px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: var(--shadow-dark);
-      transition: all 0.3s ease;
-    }
-
-    .question-box:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-blue);
-    }
-
-    .question {
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-      color: #fff !important;
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    .options {
-      display: grid;
-      gap: 1rem;
-    }
-
-    .options button {
-      display: block;
-      padding: 1rem 1.5rem;
-      width: 100%;
-      border: 2px solid var(--glass-border);
-      background: #23283a !important;
-      color: #fff !important;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      font-size: 1rem;
-      text-align: left;
-      backdrop-filter: blur(10px);
-    }
-
-    .options button:hover:not(:disabled) {
-      background: var(--navy-medium);
-      border-color: var(--accent-blue);
-      color: var(--text-primary);
-      transform: translateX(5px);
-    }
-
-    .options button.correct {
-      background: linear-gradient(135deg, var(--success), #22c55e);
-      border-color: var(--success);
-      color: var(--text-primary);
-    }
-
-    .options button.wrong {
-      background: linear-gradient(135deg, var(--danger), #ef4444);
-      border-color: var(--danger);
-      color: var(--text-primary);
-    }
-
-    .options button:disabled {
-      cursor: not-allowed;
-      opacity: 0.8;
-    }
-
-    .quiz-results {
-      text-align: center;
-      background: var(--glass-bg);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      padding: 3rem 2rem;
-      margin: 2rem auto;
-      max-width: 600px;
-      box-shadow: var(--shadow-dark);
-    }
-
-    .score-big {
-      font-size: 3rem;
-      font-weight: bold;
-      color: var(--accent-blue);
-      margin-bottom: 1rem;
-    }
-
-    .score-percentage {
-      font-size: 1.5rem;
-      color: var(--text-secondary);
-      margin-left: 1rem;
-    }
-
-    .result-feedback {
-      font-size: 1.2rem;
-      margin: 2rem 0;
-      color: var(--text-primary);
-    }
-
-    .result-actions {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary, .btn-secondary {
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 25px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .btn-primary {
-      background: var(--accent-blue);
-      color: var(--text-primary);
-    }
-
-    .btn-secondary {
-      background: var(--accent-steel);
-      color: var(--text-primary);
-    }
-
-    .btn-primary:hover, .btn-secondary:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-blue);
-    }
-
-    @media (max-width: 768px) {
-      .quiz-header {
-        padding: 1.5rem 1rem;
-      }
-
-      .quiz-header h1 {
-        font-size: 1.5rem;
-      }
-
-      .quiz-header p {
-        font-size: 1rem;
-      }
-
-      .question-box {
-        padding: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .question {
-        font-size: 1rem;
-      }
-
-      .options button {
-        padding: 0.75rem 1rem;
-        font-size: 0.9rem;
-      }
-
-      .quiz-results {
-        padding: 2rem 1rem;
-        margin: 1.5rem 1rem;
-      }
-
-      .score-big {
-        font-size: 2.5rem;
-      }
-
-      .result-actions {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .btn-primary, .btn-secondary {
-        width: 100%;
-        max-width: 300px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .quiz-header {
-        padding: 1rem;
-      }
-
-      .quiz-header h1 {
-        font-size: 1.3rem;
-      }
-
-      .question-box {
-        padding: 1rem;
-      }
-
-      .options button {
-        padding: 0.6rem 0.8rem;
-        font-size: 0.85rem;
-      }
-
-      .score-big {
-        font-size: 2rem;
-      }
-    }
+    .quiz-header { background: var(--glass-bg); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); padding: 2rem; text-align: center; margin-bottom: 2rem; }
+    .quiz-header h1 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 2rem; }
+    .quiz-header p { color: var(--text-secondary); font-size: 1.1rem; }
+    .quiz-container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
+    .question-box { background: #181c24 !important; color: #fff !important; backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 15px; padding: 2rem; margin-bottom: 2rem; box-shadow: var(--shadow-dark); transition: all 0.3s ease; }
+    .question-box:hover { transform: translateY(-2px); box-shadow: var(--shadow-blue); }
+    .question { font-weight: 600; margin-bottom: 1.5rem; color: #fff !important; font-size: 1.1rem; line-height: 1.6; }
+    .options { display: grid; gap: 1rem; }
+    .options button { display: block; padding: 1rem 1.5rem; width: 100%; border: 2px solid var(--glass-border); background: #23283a !important; color: #fff !important; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; font-size: 1rem; text-align: left; backdrop-filter: blur(10px); }
+    .options button:hover:not(:disabled) { background: var(--navy-medium); border-color: var(--accent-blue); color: var(--text-primary); transform: translateX(5px); }
+    .options button.correct { background: linear-gradient(135deg, var(--success), #22c55e); border-color: var(--success); color: var(--text-primary); }
+    .options button.wrong { background: linear-gradient(135deg, var(--danger), #ef4444); border-color: var(--danger); color: var(--text-primary); }
+    .options button:disabled { cursor: not-allowed; opacity: 0.8; }
+    .quiz-results { text-align: center; background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--glass-border); border-radius: 20px; padding: 3rem 2rem; margin: 2rem auto; max-width: 600px; box-shadow: var(--shadow-dark); }
+    .score-big { font-size: 3rem; font-weight: bold; color: var(--accent-blue); margin-bottom: 1rem; }
+    .score-percentage { font-size: 1.5rem; color: var(--text-secondary); margin-left: 1rem; }
+    .result-feedback { font-size: 1.2rem; margin: 2rem 0; color: var(--text-primary); }
+    .result-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
+    .btn-primary, .btn-secondary { padding: 1rem 2rem; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
+    .btn-primary { background: var(--accent-blue); color: var(--text-primary); }
+    .btn-secondary { background: var(--accent-steel); color: var(--text-primary); }
+    .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-blue); }
+    @media (max-width: 768px) { .quiz-header { padding: 1.5rem 1rem; } .quiz-header h1 { font-size: 1.5rem; } .quiz-header p { font-size: 1rem; } .question-box { padding: 1.5rem; margin-bottom: 1.5rem; } .question { font-size: 1rem; } .options button { padding: 0.75rem 1rem; font-size: 0.9rem; } .quiz-results { padding: 2rem 1rem; margin: 1.5rem 1rem; } .score-big { font-size: 2.5rem; } .result-actions { flex-direction: column; align-items: center; } .btn-primary, .btn-secondary { width: 100%; max-width: 300px; text-align: center; } }
+    @media (max-width: 480px) { .quiz-header { padding: 1rem; } .quiz-header h1 { font-size: 1.3rem; } .question-box { padding: 1rem; } .options button { padding: 0.6rem 0.8rem; font-size: 0.85rem; } .score-big { font-size: 2rem; } }
   </style>
 </head>
 <body>
   <header>
     <nav class="top-nav">
-      <div class="nav-brand">
-        <h1>🚔 BlueBadge</h1>
-      </div>
-      
-      <!-- Language Selector -->
-      <div class="language-selector">
-        <button class="lang-btn" onclick="toggleLanguageMenu()">
-          <span id="current-lang">🇳🇱 NL</span>
-          <span class="lang-arrow">▼</span>
-        </button>
-        <div class="lang-menu" id="lang-menu">
-          <div class="lang-option" onclick="changeLanguage('nl')">
-            <span class="lang-flag">🇳🇱</span>
-            <span class="lang-name">Vlaams</span>
-          </div>
-          <div class="lang-option" onclick="changeLanguage('fr')">
-            <span class="lang-flag">🇫🇷</span>
-            <span class="lang-name">Français</span>
-          </div>
-          <div class="lang-option" onclick="changeLanguage('de')">
-            <span class="lang-flag">🇩🇪</span>
-            <span class="lang-name">Deutsch</span>
-          </div>
-          <div class="lang-option" onclick="changeLanguage('tr')">
-            <span class="lang-flag">🇹🇷</span>
-            <span class="lang-name">Türkçe</span>
-          </div>
-        </div>
-      </div>
-
+      <div class="nav-brand"><h1>🚔 BlueBadge</h1></div>
       <div class="nav-links">
-        <a href="index.html" data-translate="dashboard">Dashboard</a>
-        <a href="quiz.html" data-translate="daily_quiz">Dagelijkse Quiz</a>
-        <a href="cognitief.html" data-translate="cognitive_skills">Cognitieve Vaardigheden</a>
-        <a href="taal.html" data-translate="language_training">Taaltraining</a>
-        <a href="voortgang.html" data-translate="progress">Voortgang</a>
+        <a href="index.html" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="quiz.html" data-i18n="nav.quiz">Dagelijkse Quiz</a>
+        <a href="cognitief.html" data-i18n="nav.cognitive">Cognitieve Vaardigheden</a>
+        <a href="taal.html" data-i18n="nav.language">Taaltraining</a>
+        <a href="voortgang.html" data-i18n="nav.progress">Voortgang</a>
+        <select id="language-select" aria-label="Language" style="margin-left: 8px;">
+          <option value="nl">NL</option>
+          <option value="tr">TR</option>
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="de">DE</option>
+        </select>
       </div>
-      
-      <!-- Mobile Menu Button -->
-      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
     </nav>
   </header>
 
-<<<<<<< HEAD
-  <main id="quiz-container"></main>
-  <div style="text-align:center; margin: 1rem 0;">
-    <button id="end-quiz-btn" class="btn-primary" style="display:none;" onclick="endQuizEarly()">Einde</button>
-  </div>
-=======
   <div class="quiz-header">
     <h1 data-translate="daily_quiz">Dagelijkse Quiz</h1>
     <p data-translate="answer_5_questions">Beantwoord de 5 vragen hieronder</p>
   </div>
 
   <main class="quiz-container" id="quiz-container"></main>
->>>>>>> origin/bluebadge-branch
+  <div style="text-align:center; margin: 1rem 0;">
+    <button id="end-quiz-btn" class="btn-primary" style="display:none;" onclick="endQuizEarly()">Einde</button>
+  </div>
 
   <footer>
     <p data-translate="copyright">© 2025 BlueBadge | Classified Training System</p>
     <p class="footer-note" data-translate="stay_sharp">Stay sharp. Stay ready. 🔍</p>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
   <script>
-<<<<<<< HEAD
     const vragen = [
-      {
-        vraag: "Wat betekent het woord 'toepassing'?",
-        opties: ["Vakantie", "Gebruik", "Vlucht", "Verlies"],
-        antwoord: 1
-      },
-      {
-        vraag: "Wat is een 'uitkering'?",
-        opties: ["Boek", "Werkloosheidsgeld", "Belasting", "Overeenkomst"],
-        antwoord: 1
-      },
-      {
-        vraag: "Wat betekent 'omtrent'?",
-        opties: ["In de buurt van", "Specifiek", "Onder", "Buiten"],
-        antwoord: 0
-      },
-      {
-        vraag: "Wat is een correcte zin?",
-        opties: [
-          "Hij heb een auto.",
-          "Hij heeft een auto.",
-          "Hij hebben een auto.",
-          "Hij ben een auto."
-        ],
-        antwoord: 1
-      },
-      {
-        vraag: "Kies het juiste lidwoord: ... universiteit",
-        opties: ["De", "Het"],
-        antwoord: 0
-      },
-      {
-        vraag: "Wat betekent 'beoordelen'?",
-        opties: ["Behandelen", "Oordelen", "Ontvangen", "Vervelen"],
-        antwoord: 1
-      },
-      {
-        vraag: "Wat is de verleden tijd van 'vinden'?",
-        opties: ["Vond", "Vindt", "Vinden", "Vondt"],
-        antwoord: 0
-      }
+      { vraag: "Wat betekent het woord 'toepassing'?", opties: ["Vakantie", "Gebruik", "Vlucht", "Verlies"], antwoord: 1 },
+      { vraag: "Wat is een 'uitkering'?", opties: ["Boek", "Werkloosheidsgeld", "Belasting", "Overeenkomst"], antwoord: 1 },
+      { vraag: "Wat betekent 'omtrent'?", opties: ["In de buurt van", "Specifiek", "Onder", "Buiten"], antwoord: 0 },
+      { vraag: "Wat is een correcte zin?", opties: ["Hij heb een auto.", "Hij heeft een auto.", "Hij hebben een auto.", "Hij ben een auto."], antwoord: 1 },
+      { vraag: "Kies het juiste lidwoord: ... universiteit", opties: ["De", "Het"], antwoord: 0 },
+      { vraag: "Wat betekent 'beoordelen'?", opties: ["Behandelen", "Oordelen", "Ontvangen", "Vervelen"], antwoord: 1 },
+      { vraag: "Wat is de verleden tijd van 'vinden'?", opties: ["Vond", "Vindt", "Vinden", "Vondt"], antwoord: 0 }
     ];
 
     const shuffle = arr => arr.sort(() => 0.5 - Math.random());
@@ -365,67 +94,30 @@
         <div class="question-box">
           <div class="question">${index + 1}. ${q.vraag}</div>
           <div class="options">
-            ${q.opties.map((opt, i) =>
-              `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`
-            ).join("")}
+            ${q.opties.map((opt, i) => `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`).join("")}
           </div>
-        </div>
-      `;
+        </div>`;
       document.getElementById('end-quiz-btn').style.display = 'inline-block';
     }
 
-    gekozen.forEach((_, idx) => {}); // no-op to keep structure
     render(currentIndex);
 
     window.beoordeel = function (btn, juist) {
       const knoppen = btn.parentNode.querySelectorAll("button");
       knoppen.forEach(b => b.disabled = true);
-      if (juist) {
-        btn.classList.add("correct");
-        score++;
-      } else {
-        btn.classList.add("wrong");
-      }
+      if (juist) { btn.classList.add("correct"); score++; } else { btn.classList.add("wrong"); }
       setTimeout(() => {
         currentIndex++;
-        if (currentIndex < gekozen.length) {
-          render(currentIndex);
-        } else {
-          endQuizEarly();
-        }
+        if (currentIndex < gekozen.length) { render(currentIndex); } else { endQuizEarly(); }
       }, 500);
     }
 
     window.endQuizEarly = function() {
       const percentage = Math.round((score / gekozen.length) * 100);
-      const payload = {
-        type: 'daily-quiz',
-        score,
-        total: gekozen.length,
-        percentage,
-        questions: gekozen
-      };
+      const payload = { type: 'daily-quiz', score, total: gekozen.length, percentage, questions: gekozen };
       localStorage.setItem('lastQuizResult', JSON.stringify(payload));
       location.href = 'resultaten.html';
     }
-=======
-    // Quiz sayfası açıldığında her zaman yeni quiz başlat
-    document.addEventListener('DOMContentLoaded', function() {
-      // Eski quiz verisini sil
-      localStorage.removeItem('currentQuiz');
-      localStorage.removeItem('quizCategory');
-      // Tüm sorular yüklenene kadar bekle
-      setTimeout(function() {
-        if (window.cognitiefData && cognitiefData.length >= 5) {
-          const shuffled = cognitiefData.sort(() => 0.5 - Math.random());
-          const selected = shuffled.slice(0, 5);
-          localStorage.setItem('currentQuiz', JSON.stringify(selected));
-          localStorage.setItem('quizCategory', 'cognitief');
-          location.reload();
-        }
-      }, 500);
-    });
->>>>>>> origin/bluebadge-branch
   </script>
 </body>
 </html>
