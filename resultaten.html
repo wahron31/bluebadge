@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Resultaten</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand">
+        <h1>🚔 BlueBadge</h1>
+      </div>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="quiz.html" data-i18n="nav.quiz">Dagelijkse Quiz</a>
+        <a href="cognitief.html" data-i18n="nav.cognitive">Cognitieve Vaardigheden</a>
+        <a href="taal.html" data-i18n="nav.language">Taaltraining</a>
+        <a href="voortgang.html" data-i18n="nav.progress">Voortgang</a>
+        <select id="language-select" aria-label="Language" style="margin-left: 8px;">
+          <option value="nl">NL</option>
+          <option value="tr">TR</option>
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="de">DE</option>
+        </select>
+      </div>
+    </nav>
+    <div class="hero-section">
+      <h2>RESULTATEN</h2>
+      <p>Overzicht van je laatste test of quiz</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="test-results" style="display:block;">
+      <h3>🎯 Jouw Score</h3>
+      <div class="results-container">
+        <div class="score-display">
+          <div class="main-score">
+            <span class="score-number" id="res-score">0</span>
+            <span class="score-total" id="res-total">/ 0</span>
+          </div>
+          <div class="percentage-score" id="res-percentage">0%</div>
+          <div class="performance-rating" id="res-rating">Blijf oefenen!</div>
+        </div>
+        <div class="detailed-results">
+          <div class="result-breakdown">
+            <h4>Details</h4>
+            <div id="res-details"></div>
+          </div>
+        </div>
+        <div class="result-actions">
+          <button class="challenge-btn" onclick="window.history.back()">Terug</button>
+          <button class="module-btn" onclick="location.href='index.html'">Dashboard</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BlueBadge | Classified Training System</p>
+    <p class="footer-note">Stay sharp. Stay ready. 🔍</p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script>
+    (function(){
+      const data = JSON.parse(localStorage.getItem('lastQuizResult') || 'null');
+      if (!data) return;
+      const scoreEl = document.getElementById('res-score');
+      const totalEl = document.getElementById('res-total');
+      const percEl = document.getElementById('res-percentage');
+      const ratingEl = document.getElementById('res-rating');
+      const detailsEl = document.getElementById('res-details');
+
+      scoreEl.textContent = data.score;
+      totalEl.textContent = `/ ${data.total}`;
+      percEl.textContent = `${data.percentage}%`;
+
+      if (data.percentage >= 80) {
+        ratingEl.textContent = 'Uitstekend!';
+        ratingEl.className = 'performance-rating excellent';
+      } else if (data.percentage >= 60) {
+        ratingEl.textContent = 'Goed gedaan!';
+        ratingEl.className = 'performance-rating good';
+      } else {
+        ratingEl.textContent = 'Blijf oefenen!';
+        ratingEl.className = 'performance-rating needs-improvement';
+      }
+
+      if (Array.isArray(data.questions)) {
+        detailsEl.innerHTML = data.questions.map((q, i) => `
+          <div style="text-align:left; margin-bottom:1rem;">
+            <div style="font-weight:600;">${i+1}. ${q.vraag || q.question || ''}</div>
+            ${Array.isArray(q.opties) ? `<div style='font-size:0.95rem;'>Opties: ${q.opties.join(' • ')}</div>` : ''}
+          </div>
+        `).join('');
+      }
+    })();
+  </script>
+</body>
+</html>

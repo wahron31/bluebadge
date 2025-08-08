@@ -825,15 +825,15 @@ footer::before {
 }
 
 .question-container {
-  background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(10, 10, 10, 0.9));
-  border: 1px solid var(--navy-medium);
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 2rem;
   margin-bottom: 2rem;
 }
 
 .question-text {
-  color: var(--text-primary);
+  color: #000000;
   font-size: 1.1rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -845,21 +845,21 @@ footer::before {
 }
 
 .option-btn {
-  background: rgba(26, 26, 46, 0.8);
-  border: 1px solid var(--navy-medium);
-  color: var(--text-secondary);
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #000000;
   padding: 1rem 1.5rem;
   border-radius: 8px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   text-align: left;
   font-size: 1rem;
 }
 
 .option-btn:hover {
-  background: rgba(74, 144, 226, 0.1);
-  border-color: var(--accent-blue);
-  color: var(--text-primary);
+  background: #f8fafc;
+  border-color: #3b82f6;
+  color: #000000;
   transform: translateX(4px);
 }
 
@@ -872,11 +872,13 @@ footer::before {
 .option-btn.correct {
   background: linear-gradient(135deg, var(--success), #22c55e);
   border-color: var(--success);
+  color: #ffffff;
 }
 
 .option-btn.incorrect {
   background: linear-gradient(135deg, var(--danger), #ef4444);
   border-color: var(--danger);
+  color: #ffffff;
 }
 
 .test-controls {

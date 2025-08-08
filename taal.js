@@ -16,8 +16,13 @@ async function loadLanguageData() {
             fetch('data/taal_woorden.json').then(res => res.json()).catch(() => []),
             fetch('data/taal_grammatica.json').then(res => res.json()).catch(() => [])
         ]);
-        
-        return { lezen, luisteren, woorden, grammatica };
+        const samples = generateSampleLanguageData();
+        return {
+            lezen: (lezen && lezen.length ? lezen : samples.lezen),
+            luisteren: (luisteren && luisteren.length ? luisteren : samples.luisteren),
+            woorden: (woorden && woorden.length ? woorden : samples.woorden),
+            grammatica: (grammatica && grammatica.length ? grammatica : samples.grammatica)
+        };
     } catch (error) {
         console.error('Error loading language data:', error);
         return generateSampleLanguageData();
@@ -228,17 +233,27 @@ function updateLanguageNavButtons() {
     const prevBtn = document.getElementById('lang-prev-btn');
     const nextBtn = document.getElementById('lang-next-btn');
     const finishBtn = document.getElementById('lang-finish-btn');
+    const endBtn = document.getElementById('lang-end-global-btn');
     
     prevBtn.disabled = currentLanguageQuestionIndex === 0;
     nextBtn.disabled = languageAnswers[currentLanguageQuestionIndex] === undefined;
     
-    if (currentLanguageQuestionIndex === currentLanguageTest.length - 1) {
+    const onLast = currentLanguageQuestionIndex === currentLanguageTest.length - 1;
+    if (onLast) {
         nextBtn.style.display = 'none';
-        finishBtn.style.display = languageAnswers[currentLanguageQuestionIndex] !== undefined ? 'block' : 'none';
+        const canFinish = languageAnswers[currentLanguageQuestionIndex] !== undefined;
+        finishBtn.style.display = canFinish ? 'block' : 'none';
+        endBtn.style.display = canFinish ? 'block' : 'none';
     } else {
         nextBtn.style.display = 'block';
         finishBtn.style.display = 'none';
+        endBtn.style.display = 'none';
     }
+}
+
+function endGlobalLanguageResults() {
+    finishLanguageTest();
+    window.location.href = 'resultaten.html';
 }
 
 // Finish language test
@@ -253,22 +268,27 @@ function finishLanguageTest() {
         if (correct) languageScore++;
         
         results.push({
-            question: question.vraag,
-            userAnswer: question.opties[userAnswer],
-            correctAnswer: question.opties[question.antwoord],
+            vraag: question.vraag,
+            opties: question.opties,
+            userIndex: userAnswer,
+            correctIndex: question.antwoord,
             correct: correct,
-            explanation: question.uitleg
+            uitleg: question.uitleg || ''
         });
-        
-        // Add new words to learned vocabulary
-        if (question.type === 'woorden' && !correct) {
-            languageWordsLearned.push({
-                word: question.vraag,
-                meaning: question.uitleg,
-                correct: false
-            });
-        }
     });
+    
+    // Persist summary for global results page
+    try {
+        const payload = {
+            type: 'taal',
+            category: languageTestCategory,
+            score: languageScore,
+            total: currentLanguageTest.length,
+            percentage: Math.round((languageScore / currentLanguageTest.length) * 100),
+            questions: results
+        };
+        localStorage.setItem('lastQuizResult', JSON.stringify(payload));
+    } catch (e) {}
     
     // Hide test interface and show results
     document.getElementById('language-test-interface').style.display = 'none';

@@ -13,11 +13,18 @@
         <h1>🚔 BlueBadge</h1>
       </div>
       <div class="nav-links">
-        <a href="index.html">Dashboard</a>
-        <a href="quiz.html">Dagelijkse Quiz</a>
-        <a href="cognitief.html">Cognitieve Vaardigheden</a>
-        <a href="taal.html">Taaltraining</a>
-        <a href="voortgang.html">Voortgang</a>
+        <a href="index.html" data-i18n="nav.dashboard">Dashboard</a>
+        <a href="quiz.html" data-i18n="nav.quiz">Dagelijkse Quiz</a>
+        <a href="cognitief.html" data-i18n="nav.cognitive">Cognitieve Vaardigheden</a>
+        <a href="taal.html" data-i18n="nav.language">Taaltraining</a>
+        <a href="voortgang.html" data-i18n="nav.progress">Voortgang</a>
+        <select id="language-select" aria-label="Language" style="margin-left: 8px;">
+          <option value="nl">NL</option>
+          <option value="tr">TR</option>
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+          <option value="de">DE</option>
+        </select>
       </div>
     </nav>
     <div class="hero-section">
@@ -111,6 +118,7 @@
           <button class="control-btn secondary" onclick="previousQuestion()" id="prev-btn" disabled>Vorige</button>
           <button class="control-btn primary" onclick="nextQuestion()" id="next-btn">Volgende</button>
           <button class="control-btn success" onclick="finishTest()" id="finish-btn" style="display: none;">Test Afronden</button>
+          <button class="control-btn" onclick="endGlobalResults()" id="end-global-btn" style="display: none;">Einde</button>
         </div>
       </div>
     </section>
@@ -192,6 +200,7 @@
     <p class="footer-note">Stay sharp. Stay ready. 🔍</p>
   </footer>
 
+  <script src="i18n.js"></script>
   <script src="app.js"></script>
   <script src="cognitief.js"></script>
 </body>

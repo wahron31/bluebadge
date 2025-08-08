@@ -43,6 +43,9 @@
   </header>
 
   <main id="quiz-container"></main>
+  <div style="text-align:center; margin: 1rem 0;">
+    <button id="end-quiz-btn" class="btn-primary" style="display:none;" onclick="endQuizEarly()">Einde</button>
+  </div>
 
   <footer>
     <p>BlueBadge &copy; 2025</p>
@@ -95,34 +98,57 @@
     const shuffle = arr => arr.sort(() => 0.5 - Math.random());
     const quizContainer = document.getElementById("quiz-container");
     const gekozen = shuffle(vragen).slice(0, 5);
+    let currentIndex = 0;
+    let score = 0;
 
-    gekozen.forEach((q, idx) => {
-      const div = document.createElement("div");
-      div.className = "question-box";
-      div.innerHTML = `
-        <div class="question">${idx + 1}. ${q.vraag}</div>
-        <div class="options">
-          ${q.opties.map((opt, i) =>
-            `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`
-          ).join("")}
+    function render(index) {
+      const q = gekozen[index];
+      quizContainer.innerHTML = `
+        <div class="question-box">
+          <div class="question">${index + 1}. ${q.vraag}</div>
+          <div class="options">
+            ${q.opties.map((opt, i) =>
+              `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`
+            ).join("")}
+          </div>
         </div>
       `;
-      quizContainer.appendChild(div);
-    });
+      document.getElementById('end-quiz-btn').style.display = 'inline-block';
+    }
+
+    gekozen.forEach((_, idx) => {}); // no-op to keep structure
+    render(currentIndex);
 
     window.beoordeel = function (btn, juist) {
       const knoppen = btn.parentNode.querySelectorAll("button");
       knoppen.forEach(b => b.disabled = true);
       if (juist) {
         btn.classList.add("correct");
+        score++;
       } else {
         btn.classList.add("wrong");
-        knoppen.forEach(b => {
-          if (b.innerText === btn.parentNode.parentNode.dataset.correct) {
-            b.classList.add("correct");
-          }
-        });
       }
+      setTimeout(() => {
+        currentIndex++;
+        if (currentIndex < gekozen.length) {
+          render(currentIndex);
+        } else {
+          endQuizEarly();
+        }
+      }, 500);
+    }
+
+    window.endQuizEarly = function() {
+      const percentage = Math.round((score / gekozen.length) * 100);
+      const payload = {
+        type: 'daily-quiz',
+        score,
+        total: gekozen.length,
+        percentage,
+        questions: gekozen
+      };
+      localStorage.setItem('lastQuizResult', JSON.stringify(payload));
+      location.href = 'resultaten.html';
     }
   </script>
 </body>

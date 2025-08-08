@@ -686,3 +686,12 @@ if (!document.getElementById('quiz-styles')) {
     styleSheet.textContent = quizStyles;
     document.head.appendChild(styleSheet);
 }
+
+function goToResultsPage(payload) {
+    try {
+        localStorage.setItem('lastQuizResult', JSON.stringify(payload));
+        window.location.href = 'resultaten.html';
+    } catch (e) {
+        console.error('Cannot store results:', e);
+    }
+}

@@ -1,0 +1,5 @@
+[
+  {"type":"woorden","vraag":"Wat betekent 'aanwijzing' in een onderzoek?","opties":["Straaf","Hint","Regel","Afspraak"],"antwoord":1,"uitleg":"Een aanwijzing is een hint of indicatie in een onderzoek."},
+  {"type":"woorden","vraag":"Kies de beste synoniem voor 'verdenken'","opties":["Beschuldigen","Wantrouwen","Verdwijnen","Verwarren"],"antwoord":1,"uitleg":"'Verdachten' is iemand wantrouwen of vermoeden van schuld."},
+  {"type":"woorden","vraag":"Wat betekent 'omstandig'?","opties":["Kort","Uitvoerig","Vlug","Scherp"],"antwoord":1,"uitleg":"Omstandig betekent uitgebreid/uitvoerig."}
+]

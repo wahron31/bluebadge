@@ -132,16 +132,21 @@ function updateCognitiveNavButtons() {
     const prevBtn = document.getElementById('prev-btn');
     const nextBtn = document.getElementById('next-btn');
     const finishBtn = document.getElementById('finish-btn');
+    const endBtn = document.getElementById('end-global-btn');
     
     prevBtn.disabled = currentQuestionIndex === 0;
     nextBtn.disabled = cognitiveAnswers[currentQuestionIndex] === undefined;
     
-    if (currentQuestionIndex === currentCognitiveTest.length - 1) {
+    const onLast = currentQuestionIndex === currentCognitiveTest.length - 1;
+    if (onLast) {
         nextBtn.style.display = 'none';
-        finishBtn.style.display = cognitiveAnswers[currentQuestionIndex] !== undefined ? 'block' : 'none';
+        const canFinish = cognitiveAnswers[currentQuestionIndex] !== undefined;
+        finishBtn.style.display = canFinish ? 'block' : 'none';
+        endBtn.style.display = canFinish ? 'block' : 'none';
     } else {
         nextBtn.style.display = 'block';
         finishBtn.style.display = 'none';
+        endBtn.style.display = 'none';
     }
 }
 
@@ -157,13 +162,27 @@ function finishTest() {
         if (correct) cognitiveScore++;
         
         results.push({
-            question: question.vraag,
-            userAnswer: question.opties[userAnswer],
-            correctAnswer: question.opties[question.antwoord],
+            vraag: question.vraag,
+            opties: question.opties,
+            userIndex: userAnswer,
+            correctIndex: question.antwoord,
             correct: correct,
-            explanation: question.uitleg
+            uitleg: question.uitleg || ''
         });
     });
+    
+    // Save for global results page
+    try {
+        const payload = {
+            type: 'cognitief',
+            category: testCategory,
+            score: cognitiveScore,
+            total: currentCognitiveTest.length,
+            percentage: Math.round((cognitiveScore / currentCognitiveTest.length) * 100),
+            questions: results
+        };
+        localStorage.setItem('lastQuizResult', JSON.stringify(payload));
+    } catch (e) {}
     
     // Hide test interface and show results
     document.getElementById('test-interface').style.display = 'none';
@@ -355,3 +374,9 @@ function startTestTimer() {
 document.addEventListener('DOMContentLoaded', function() {
     updateCognitiveProgress();
 });
+
+function endGlobalResults() {
+    // Ensure results are computed and stored
+    finishTest();
+    window.location.href = 'resultaten.html';
+}
