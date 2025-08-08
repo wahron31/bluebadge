@@ -17,11 +17,16 @@ async function loadLanguageData() {
             fetch('data/taal_grammatica.json').then(res => res.json()).catch(() => [])
         ]);
         const samples = generateSampleLanguageData();
+        const imported = {
+            lezen: JSON.parse(localStorage.getItem('import_lezen') || '[]'),
+            woorden: JSON.parse(localStorage.getItem('import_woorden') || '[]'),
+            grammatica: JSON.parse(localStorage.getItem('import_grammatica') || '[]')
+        };
         return {
-            lezen: (lezen && lezen.length ? lezen : samples.lezen),
+            lezen: (imported.lezen.length ? imported.lezen : (lezen && lezen.length ? lezen : samples.lezen)),
             luisteren: (luisteren && luisteren.length ? luisteren : samples.luisteren),
-            woorden: (woorden && woorden.length ? woorden : samples.woorden),
-            grammatica: (grammatica && grammatica.length ? grammatica : samples.grammatica)
+            woorden: (imported.woorden.length ? imported.woorden : (woorden && woorden.length ? woorden : samples.woorden)),
+            grammatica: (imported.grammatica.length ? imported.grammatica : (grammatica && grammatica.length ? grammatica : samples.grammatica))
         };
     } catch (error) {
         console.error('Error loading language data:', error);
@@ -558,4 +563,60 @@ document.addEventListener('DOMContentLoaded', function() {
     updateLanguageProgress();
     initializeDailyWord();
     updateWordStats();
+
+    const rules = [
+        'Werkwoordspelling: stam, tegenwoordige/verleden tijd, voltooid deelwoord',
+        'd/t-regel: jij/hij/zij-vormen, gebiedende wijs',
+        'De/Het: geslacht van zelfstandige naamwoorden, verkleinwoorden',
+        'Meervouden: -en/-s, uitzonderingen',
+        'Voorzetsels: vaste combinaties (rekening houden met, afhankelijk van)',
+        'Woordvolgorde: bijzin-hoofdzin, inversie, plaats van niet/geen',
+        'Naamvallen in uitdrukkingen: ter plaatse, in het belang van',
+        'Voornaamwoorden: persoonlijk, bezittelijk, wederkerend',
+        'Vergelijkingen: stellende, vergrotende, overtreffende trap',
+        'Zinsontleding: onderwerp, gezegde, lijdend/meewerkend voorwerp',
+        'Tijdsbepalingen en volgorde: toen/wanneer, voordat/nadat',
+        'Samentrekkingen en congruentie: onderwerp-werkwoord',
+        'Leestekens: komma’s, dubbele punt, puntkomma, aanhalingstekens',
+        'Samenstellingen en koppelteken: streepjesregels',
+        'Modaliteit: kunnen, moeten, mogen, willen',
+        'Passieve vorm: worden/zijn + voltooid deelwoord'
+    ];
+    const container = document.getElementById('grammar-rules-container');
+    if (container) {
+        container.innerHTML = rules.map(r => `<div class="overview-card" style="padding:1rem;">${r}</div>`).join('');
+    }
 });
+
+window.handleImportFile = function(evt, kind) {
+    const file = evt.target.files && evt.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => {
+        try {
+            if (file.type === 'text/csv') {
+                // very simple CSV -> array parser (expects vraag;optie1;optie2;optie3;optie4;antwoordIndex;uitleg)
+                const lines = reader.result.split(/\r?\n/).filter(Boolean);
+                const parsed = lines.map(line => {
+                    const parts = line.split(';');
+                    return {
+                        type: kind,
+                        vraag: parts[0],
+                        opties: parts.slice(1,5),
+                        antwoord: parseInt(parts[5], 10) || 0,
+                        uitleg: parts[6] || ''
+                    };
+                });
+                localStorage.setItem('import_'+kind, JSON.stringify(parsed));
+                alert('Geïmporteerd: '+parsed.length+' items ('+kind+')');
+            } else {
+                const json = JSON.parse(reader.result);
+                localStorage.setItem('import_'+kind, JSON.stringify(json));
+                alert('Geïmporteerd: '+(Array.isArray(json) ? json.length : 1)+' items ('+kind+')');
+            }
+        } catch (e) {
+            alert('Bestand kon niet worden gelezen: '+e.message);
+        }
+    };
+    reader.readAsText(file);
+};

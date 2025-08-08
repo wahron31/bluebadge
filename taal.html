@@ -245,6 +245,37 @@
         </div>
       </div>
     </section>
+
+    <section class="grammar-overview" id="grammar-overview" style="margin-top:2rem;">
+      <h3>📘 Grammatica Overzicht</h3>
+      <div id="grammar-rules-container"></div>
+    </section>
+
+    <section class="data-import" style="margin-top:2rem;">
+      <h3>🗂️ Data Import</h3>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <h4>Begrijpend Lezen (JSON)</h4>
+          <input type="file" accept="application/json" onchange="handleImportFile(event, 'lezen')" />
+          <p style="margin-top:0.5rem; color: var(--text-secondary);">Array van {type:'lezen', passage, vraag, opties[], antwoord}</p>
+        </div>
+        <div class="overview-card">
+          <h4>Woordenschat (JSON/CSV)</h4>
+          <input type="file" accept="application/json,text/csv" onchange="handleImportFile(event, 'woorden')" />
+          <p style="margin-top:0.5rem; color: var(--text-secondary);">Vraag/opties/antwoord/uitleg</p>
+        </div>
+        <div class="overview-card">
+          <h4>Grammatica (JSON/CSV)</h4>
+          <input type="file" accept="application/json,text/csv" onchange="handleImportFile(event, 'grammatica')" />
+          <p style="margin-top:0.5rem; color: var(--text-secondary);">Vraag/opties/antwoord/uitleg</p>
+        </div>
+        <div class="overview-card">
+          <h4>Dagelijkse Woorden (JSON)</h4>
+          <input type="file" accept="application/json" onchange="handleImportFile(event, 'dailyWords')" />
+          <p style="margin-top:0.5rem; color: var(--text-secondary);">Array van {woord, betekenis, voorbeeld, type, niveau}</p>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer>

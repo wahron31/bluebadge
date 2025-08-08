@@ -91,12 +91,30 @@
       }
 
       if (Array.isArray(data.questions)) {
-        detailsEl.innerHTML = data.questions.map((q, i) => `
-          <div style="text-align:left; margin-bottom:1rem;">
-            <div style="font-weight:600;">${i+1}. ${q.vraag || q.question || ''}</div>
-            ${Array.isArray(q.opties) ? `<div style='font-size:0.95rem;'>Opties: ${q.opties.join(' • ')}</div>` : ''}
-          </div>
-        `).join('');
+        detailsEl.innerHTML = data.questions.map((q, i) => {
+          const vraag = q.vraag || q.question || '';
+          const opties = Array.isArray(q.opties) ? q.opties : [];
+          const userIdx = typeof q.userIndex === 'number' ? q.userIndex : null;
+          const correctIdx = typeof q.correctIndex === 'number' ? q.correctIndex : null;
+          const correct = q.correct === true || (userIdx !== null && correctIdx !== null && userIdx === correctIdx);
+          return `
+            <div style="text-align:left; margin-bottom:1rem; padding:0.75rem; border:1px solid rgba(0,0,0,0.1); border-radius:8px; background:#fff;">
+              <div style="font-weight:700; color:${correct ? '#16a34a' : '#dc2626'}">${i+1}. ${vraag}</div>
+              ${opties.length ? `<ul style='margin:0.5rem 0 0; padding-left:1.25rem;'>${optesList(opties, userIdx, correctIdx)}</ul>` : ''}
+              ${typeof q.uitleg === 'string' && q.uitleg ? `<div style='margin-top:0.5rem; font-size:0.9rem; color:#374151;'>${q.uitleg}</div>` : ''}
+            </div>
+          `;
+        }).join('');
+      }
+
+      function optesList(opties, userIdx, correctIdx){
+        return opties.map((opt, idx) => {
+          const isCorrect = (idx === correctIdx);
+          const isUser = (idx === userIdx);
+          const marker = isCorrect ? '✅' : (isUser ? '➤' : '•');
+          const color = isCorrect ? '#16a34a' : (isUser ? '#1f2937' : '#111827');
+          return `<li style='color:${color}'>${marker} ${opt}</li>`;
+        }).join('');
       }
     })();
   </script>
