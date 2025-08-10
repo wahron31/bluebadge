@@ -469,6 +469,10 @@ function updateDashboard() {
     
     // Update achievement indicators
     updateAchievementIndicators();
+
+    // Smart suggestions and badges
+    renderSmartSuggestions();
+    renderBadges();
 }
 
 // Update achievement indicators
@@ -591,6 +595,51 @@ function renderDashboardBars(){
         const b=document.createElement('div'); b.style.height=v+'%'; b.style.width='12%'; b.style.background=v>=80?'#16a34a':v>=60?'#f59e0b':'#dc2626'; b.title=`${day}: ${v}%`;
         el.appendChild(b);
     });
+}
+
+// Smart suggestions based on weakest categories and streak/goals
+function renderSmartSuggestions(){
+    const el = document.getElementById('bb-suggestions'); if(!el) return;
+    const all = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+    ];
+    const byCat = {};
+    all.forEach(r=>{ const k=r.category||r.type||'genel'; (byCat[k]=byCat[k]||[]).push(r.percentage); });
+    const ranking = Object.entries(byCat).map(([k,arr])=>({k,avg:Math.round(arr.reduce((s,v)=>s+v,0)/arr.length)})).sort((a,b)=>a.avg-b.avg);
+    const tips = [];
+    if (ranking.length){ const w = ranking[0]; tips.push(`Zayıf alan: ${w.k} • Bugün 10 soru çöz.`); }
+    const streak = calculateStreakDays?.() || 0;
+    if (streak<3) tips.push('Streak başlat: bugün en az 1 test çöz.'); else tips.push(`Streak ${streak} gün — devam!`);
+    const goals = JSON.parse(localStorage.getItem('bbGoals')||'null') || userData.goals;
+    tips.push(`Günlük hedef: ${goals.questionsPerDay} soru, ${goals.wordsPerDay} kelime, ${goals.readingsPerDay} okuma.`);
+    el.innerHTML = tips.map(t=>`<li>${t}</li>`).join('');
+}
+
+// Badges
+function renderBadges(){
+    const el = document.getElementById('bb-badges'); if(!el) return;
+    const badges = computeBadges();
+    localStorage.setItem('bbBadges', JSON.stringify(badges));
+    el.innerHTML = badges.map(b=>`<div title="${b.title}\n${b.desc}" style="padding:8px 12px; border:1px solid var(--glass-border); border-radius:999px; background:${b.earned?'#16a34a33':'rgba(26,26,46,0.6)'}; color:${b.earned?'#16a34a':'var(--text-secondary)'};">${b.icon} ${b.title}</div>`).join('');
+}
+
+function computeBadges(){
+    const all = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+    ];
+    const perfect = all.some(r=>r.percentage===100);
+    const streak = calculateStreakDays?.() || 0;
+    const known = JSON.parse(localStorage.getItem('knownWords')||'[]');
+    const badgeList = [
+        { key:'perfect', icon:'🎯', title:'Perfect', desc:'Bir testte %100', earned: perfect },
+        { key:'streak7', icon:'🔥', title:'7-Gün Serisi', desc:'7 gün üst üste çalışma', earned: streak>=7 },
+        { key:'words100', icon:'📚', title:'100 Kelime', desc:'100+ kelime işaretli', earned: known.length>=100 }
+    ];
+    return badgeList;
 }
 
 // Sayfa yüklendikende

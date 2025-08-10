@@ -37,13 +37,13 @@
   const origSetItem = localStorage.setItem.bind(localStorage);
 
   localStorage.getItem = function(k){
-    if (['cognitiveResults','languageResults','quizResults','activityHistory','learnedVocabulary','knownWords','studyWords'].includes(k)){
+    if (['cognitiveResults','languageResults','quizResults','activityHistory','learnedVocabulary','knownWords','studyWords','bbGoals','bbBadges'].includes(k)){
       return origGetItem(scopeKey(k));
     }
     return origGetItem(k);
   };
   localStorage.setItem = function(k, v){
-    if (['cognitiveResults','languageResults','quizResults','activityHistory','learnedVocabulary','knownWords','studyWords'].includes(k)){
+    if (['cognitiveResults','languageResults','quizResults','activityHistory','learnedVocabulary','knownWords','studyWords','bbGoals','bbBadges'].includes(k)){
       return origSetItem(scopeKey(k), v);
     }
     return origSetItem(k, v);
