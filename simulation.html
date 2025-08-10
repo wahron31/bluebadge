@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlueBadge – Sınav Simülasyonu</title>
+  <title>BlueBadge – Examsimulatie</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -33,7 +33,7 @@
 
   <main style="max-width:900px;margin:24px auto;">
     <section class="test-interface" id="sim-interface" style="display:block;">
-      <h3 id="sim-title">Genel Sınav – 30 Soru</h3>
+      <h3 id="sim-title">Algemene toets – 30 vragen</h3>
       <div class="test-container">
         <div id="sim-config" style="margin-bottom:16px; padding:12px; border:1px solid var(--glass-border); border-radius:8px; background: rgba(26,26,46,0.6);">
           <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
@@ -42,25 +42,25 @@
               <div id="sim-categories" style="display:flex; gap:8px; flex-wrap:wrap;"></div>
             </div>
             <div>
-              <label for="sim-tags" style="display:block; font-weight:600; margin-bottom:4px;">Etiketler</label>
+              <label for="sim-tags" style="display:block; font-weight:600; margin-bottom:4px;">Tags</label>
               <input id="sim-tags" placeholder="virgülle: trafik,prosedür" style="width:220px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
             </div>
             <div>
-              <label for="sim-count" style="display:block; font-weight:600; margin-bottom:4px;">Soru</label>
+              <label for="sim-count" style="display:block; font-weight:600; margin-bottom:4px;">Vragen</label>
               <input id="sim-count" type="number" min="5" max="100" value="30" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
             </div>
             <div>
-              <label for="sim-min" style="display:block; font-weight:600; margin-bottom:4px;">Süre (dk)</label>
+              <label for="sim-min" style="display:block; font-weight:600; margin-bottom:4px;">Tijd (min)</label>
               <input id="sim-min" type="number" min="5" max="120" value="20" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
             </div>
             <div style="align-self:flex-end;">
-              <button class="control-btn primary" id="sim-start">Başlat</button>
+              <button class="control-btn primary" id="sim-start">Starten</button>
             </div>
           </div>
         </div>
         <div class="test-header">
           <div class="test-info">
-            <span id="sim-counter">Soru 1/30</span>
+            <span id="sim-counter">Vraag 1/30</span>
             <span id="sim-timer">20:00</span>
           </div>
           <div class="test-progress">
@@ -140,12 +140,12 @@
       corrects = qs.map(q=>q.antwoord);
       answers = new Array(qs.length).fill(undefined);
       idx = 0; document.getElementById('sim-config').style.display='none';
-      document.getElementById('sim-title').textContent = `Genel Sınav – ${qs.length} Soru`;
+      document.getElementById('sim-title').textContent = `Algemene toets – ${qs.length} vragen`;
       render(); startTimer();
     }
     function render(){
       const q = qs[idx]; const total = qs.length;
-      document.getElementById('sim-counter').textContent = `Soru ${idx+1}/${total}`;
+      document.getElementById('sim-counter').textContent = `Vraag ${idx+1}/${total}`;
       document.getElementById('sim-progress-fill').style.width = (((idx+1)/total)*100)+'%';
       document.getElementById('sim-question').innerHTML = `<h4>${idx+1}</h4><p>${q.vraag}</p>`;
       const opts = document.getElementById('sim-options'); opts.innerHTML = '';

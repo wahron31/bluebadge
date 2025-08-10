@@ -14,7 +14,7 @@
         <a href="index.html">Dashboard</a>
       </div>
     </nav>
-    <div class="hero-section"><h2>Content Yönetimi</h2><p>CSV/JSON içe aktar • Düzenle • İndir • Uygula</p></div>
+    <div class="hero-section"><h2>Contentbeheer</h2><p>CSV/JSON importeren • Bewerken • Downloaden • Toepassen</p></div>
   </header>
   <main style="max-width:1100px;margin:24px auto;">
     <section class="test-interface" style="display:block;">
@@ -22,27 +22,27 @@
         <div class="overview-grid">
           <div class="overview-card">
             <h4>Lezen (JSON)</h4>
-            <p style="font-size:12px;opacity:0.8">Alanlar: passage, vraag, opties[4], antwoord(int), uitleg</p>
+            <p style="font-size:12px;opacity:0.8">Alanen: passage, vraag, opties[4], antwoord(int), uitleg</p>
             <input type="file" accept="application/json" id="imp-lezen" />
           </div>
           <div class="overview-card">
             <h4>Luisteren (JSON/CSV)</h4>
-            <p style="font-size:12px;opacity:0.8">Alanlar: audioText, vraag, opties[4], antwoord(int), uitleg</p>
+            <p style="font-size:12px;opacity:0.8">Alanen: audioText, vraag, opties[4], antwoord(int), uitleg</p>
             <input type="file" accept="application/json,text/csv" id="imp-luisteren" />
           </div>
           <div class="overview-card">
             <h4>Woordenschat (JSON/CSV)</h4>
-            <p style="font-size:12px;opacity:0.8">Alanlar: vraag, opties[4], antwoord(int), uitleg</p>
+            <p style="font-size:12px;opacity:0.8">Alanen: vraag, opties[4], antwoord(int), uitleg</p>
             <input type="file" accept="application/json,text/csv" id="imp-woorden" />
           </div>
           <div class="overview-card">
             <h4>Grammatica (JSON/CSV)</h4>
-            <p style="font-size:12px;opacity:0.8">Alanlar: vraag, opties[4], antwoord(int), uitleg</p>
+            <p style="font-size:12px;opacity:0.8">Alanen: vraag, opties[4], antwoord(int), uitleg</p>
             <input type="file" accept="application/json,text/csv" id="imp-grammatica" />
           </div>
           <div class="overview-card">
             <h4>Quiz (JSON/CSV)</h4>
-            <p style="font-size:12px;opacity:0.8">Alanlar: vraag, opt1..opt4, antwoord(int), categorie, tags(virgülle), uitleg</p>
+            <p style="font-size:12px;opacity:0.8">Alanen: vraag, opt1..opt4, antwoord(int), categorie, tags(virgülle), uitleg</p>
             <input type="file" accept="application/json,text/csv" id="imp-quiz" />
           </div>
           <div class="overview-card">
@@ -53,32 +53,32 @@
         </div>
 
         <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
-          <button class="challenge-btn" id="clear-imports">İçe aktarılanları temizle</button>
-          <button class="module-btn" id="validate-data">Doğrula</button>
-          <button class="module-btn" id="apply-data">Kaydet (localStorage)</button>
-          <button class="module-btn" id="export-data">JSON İndir</button>
-          <button class="module-btn" id="export-bundle">Bundle İndir</button>
+          <button class="challenge-btn" id="clear-imports">Import leegmaken</button>
+          <button class="module-btn" id="validate-data">Valideren</button>
+          <button class="module-btn" id="apply-data">Opslaan (localStorage)</button>
+          <button class="module-btn" id="export-data">JSON Downloaden</button>
+          <button class="module-btn" id="export-bundle">Bundle Downloaden</button>
           <input type="file" id="import-bundle" accept="application/json" style="display:none;" />
-          <button class="module-btn" id="import-bundle-btn">Bundle Yükle</button>
+          <button class="module-btn" id="import-bundle-btn">Bundle Importeren</button>
           <span style="flex:1"></span>
-          <input id="filter-cat" placeholder="Kategori" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
-          <input id="filter-tag" placeholder="Etiket" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
-          <button class="module-btn" id="apply-filter">Filtrele</button>
-          <button class="module-btn" id="clear-filter">Temizle</button>
-          <button class="module-btn" id="delete-selected">Seçili Sil</button>
-          <button class="module-btn" id="dedupe">Duplikeleri Temizle</button>
+          <input id="filter-cat" placeholder="Categorie" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
+          <input id="filter-tag" placeholder="Tag" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
+          <button class="module-btn" id="apply-filter">Filteren</button>
+          <button class="module-btn" id="clear-filter">Wissen</button>
+          <button class="module-btn" id="delete-selected">Selectie Verwijderen</button>
+          <button class="module-btn" id="dedupe">Duplicaten Verwijderen</button>
         </div>
 
         <div style="margin-top:16px; padding:12px; border:1px solid var(--glass-border); border-radius:8px; background: rgba(26,26,46,0.6);">
-          <h4>Toplu İçerik Üret</h4>
+          <h4>Bulkinhoud genereren</h4>
           <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
             <label>Woordenschat: <input id="gen-woorden" type="number" value="500" min="100" max="10000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
             <label>Lezen: <input id="gen-lezen" type="number" value="100" min="20" max="1000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
             <label>Grammatica: <input id="gen-gram" type="number" value="200" min="50" max="2000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
             <label>Quiz: <input id="gen-quiz" type="number" value="300" min="50" max="5000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
-            <button class="challenge-btn" id="gen-run">Üret ve Kaydet</button>
+            <button class="challenge-btn" id="gen-run">Genereren en opslaan</button>
           </div>
-          <p style="margin-top:6px; color:#94a3b8; font-size:12px;">Rastgele üretim eğitim amaçlıdır. Gerçek içerik için CSV/JSON içe aktarın.</p>
+          <p style="margin-top:6px; color:#94a3b8; font-size:12px;">Rastgele generatie is voor opleiding. Importeer CSV/JSON voor echte inhoud.</p>
         </div>
 
         <div style="margin-top:16px;">
@@ -136,8 +136,8 @@
             data = JSON.parse(reader.result);
           }
           setCurrent(key, data);
-          document.getElementById('preview-status').textContent = `Yüklendi: ${key} • Kayıt: ${Array.isArray(data)? data.length: 0}`;
-        } catch(e){ alert('Hata: '+e.message); }
+          document.getElementById('preview-status').textContent = `Geladen: ${key} • Records: ${Array.isArray(data)? data.length: 0}`;
+        } catch(e){ alert('Fout: '+e.message); }
       };
       reader.readAsText(file);
     }
@@ -175,7 +175,7 @@
 
     function validateData(){
       const errors = [];
-      if (!currentKey || !Array.isArray(workingData) || !workingData.length){ errors.push('Veri yok'); }
+      if (!currentKey || !Array.isArray(workingData) || !workingData.length){ errors.push('Geen data'); }
       const reqByKey = {
         lezen:['vraag','opties','antwoord'],
         luisteren:['vraag','opties','antwoord'],
@@ -188,15 +188,15 @@
       workingData.forEach((r,i)=>{
         req.forEach((k)=>{
           if (r[k]===undefined || r[k]===null || (Array.isArray(r[k]) && r[k].length===0) || (typeof r[k]==='string' && r[k].trim()==='')){
-            errors.push(`#${i+1} eksik alan: ${k}`);
+            errors.push(`#${i+1} ontbrekend veld: ${k}`);
           }
         });
       });
-      document.getElementById('preview-status').textContent = errors.length? ('Hatalar:\n'+errors.join('\n')): 'Veri geçerli';
+      document.getElementById('preview-status').textContent = errors.length? ('Fouten:\n'+errors.join('\n')): 'Data geldig';
     }
 
     function applyData(){
-      if (!currentKey) return alert('Önce veri yükleyin');
+      if (!currentKey) return alert('Voeg eerst gegevens toe');
       if (currentKey==='quiz'){
         localStorage.setItem('import_quiz', JSON.stringify(workingData));
       } else if (currentKey==='cases'){
@@ -204,11 +204,11 @@
       } else {
         localStorage.setItem('import_'+currentKey, JSON.stringify(workingData));
       }
-      alert('Kaydedildi: '+currentKey);
+      alert('Opgeslagen: '+currentKey);
     }
 
     function exportData(){
-      if (!currentKey) return alert('Veri yok');
+      if (!currentKey) return alert('Geen data');
       const blob = new Blob([JSON.stringify(workingData, null, 2)], {type:'application/json'});
       const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = currentKey+".json"; a.click();
     }
@@ -224,7 +224,7 @@
       ['lezen','luisteren','woorden','grammatica'].forEach(k=> localStorage.removeItem('import_'+k));
       localStorage.removeItem('import_quiz');
       localStorage.removeItem('import_cases');
-      alert('Temizlendi'); document.getElementById('preview-status').textContent='';
+      alert('Leeggemaakt'); document.getElementById('preview-status').textContent='';
       document.getElementById('preview-head').innerHTML='';
       document.getElementById('preview-body').innerHTML='';
       currentKey=null; currentData=[]; workingData=[];
@@ -280,8 +280,8 @@
     function importBundle(file){
       const reader = new FileReader();
       reader.onload = ()=>{
-        try { const b = JSON.parse(reader.result); Object.keys(b||{}).forEach(k=>{ if(/^import_/.test(k)){ localStorage.setItem(k, JSON.stringify(b[k]||[])); } }); alert('Bundle yüklendi'); }
-        catch(e){ alert('Hata: '+e.message); }
+        try { const b = JSON.parse(reader.result); Object.keys(b||{}).forEach(k=>{ if(/^import_/.test(k)){ localStorage.setItem(k, JSON.stringify(b[k]||[])); } }); alert('Bundle geïmporteerd'); }
+        catch(e){ alert('Fout: '+e.message); }
       };
       reader.readAsText(file);
     }
@@ -292,10 +292,10 @@
     // Bulk generate
     function randPick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
     function range(n){ return Array.from({length:n}, (_,i)=>i); }
-    function genWords(n){ const roots=['politie','verhoor','controle','dienst','rapport','patrouille','melding','verdachte','getuige','bewijs','wijk']; const defs=['tanım','kavram','bağlam','durum']; return range(n).map(i=>({ type:'woorden', vraag:`Kelime anlamı (${i+1})`, opties:['A','B','C','D'], antwoord:i%4, uitleg:`${randPick(roots)} ${randPick(defs)} örnek` })); }
-    function genLezen(n){ return range(n).map(i=>({ type:'lezen', passage:`Kısa metin ${i+1}: ...`, vraag:`Metne göre (${i+1})?`, opties:['X','Y','Z','T'], antwoord:(i+1)%4, uitleg:'Metin içinde ipucu' })); }
-    function genGram(n){ const rules=['dt','de-het','woordvolgorde','meervoud']; return range(n).map(i=>({ type:'grammatica', vraag:`Gramer kuralı (${randPick(rules)}) ${i+1}`, opties:['Seç1','Seç2','Seç3','Seç4'], antwoord:i%4, uitleg:'Kural açıklaması' })); }
-    function genQuiz(n){ const cats=['taal','cognitief','situationeel']; const tags=['trafik','prosedür','iletişim','hukuk']; return range(n).map(i=>({ vraag:`Genel soru ${i+1}`, opties:['1','2','3','4'], antwoord:i%4, categorie: randPick(cats), tags:[randPick(tags)], uitleg:'Kısa açıklama' })); }
+    function genWords(n){ const roots=['politie','verhoor','controle','dienst','rapport','patrouille','melding','verdachte','getuige','bewijs','wijk']; const defs=['tanım','kavram','bağlam','durum']; return range(n).map(i=>({ type:'woorden', vraag:`Kelime anlamı (${i+1})`, opties:['A','B','C','D'], antwoord:i%4, uitleg:`${randPick(roots)} ${randPick(defs)} voorbeeld` })); }
+    function genLezen(n){ return range(n).map(i=>({ type:'lezen', passage:`Korte tekst ${i+1}: ...`, vraag:`Tekst naar vraag (${i+1})?`, opties:['X','Y','Z','T'], antwoord:(i+1)%4, uitleg:'Tekst bevat hint' })); }
+    function genGram(n){ const rules=['dt','de-het','woordvolgorde','meervoud']; return range(n).map(i=>({ type:'grammatica', vraag:`Grammatica regel (${randPick(rules)}) ${i+1}`, opties:['Optie1','Optie2','Optie3','Optie4'], antwoord:i%4, uitleg:'Regel uitleg' })); }
+    function genQuiz(n){ const cats=['taal','cognitief','situatieel']; const tags=['verkeer','prosedure','communicatie','recht']; return range(n).map(i=>({ vraag:`Algemene vraag ${i+1}`, opties:['1','2','3','4'], antwoord:i%4, categorie: randPick(cats), tags:[randPick(tags)], uitleg:'Korte uitleg' })); }
     document.getElementById('gen-run').addEventListener('click', ()=>{
       const w = parseInt(document.getElementById('gen-woorden').value||'0');
       const l = parseInt(document.getElementById('gen-lezen').value||'0');
@@ -305,7 +305,7 @@
       if(l>0) localStorage.setItem('import_lezen', JSON.stringify(genLezen(l)));
       if(g>0) localStorage.setItem('import_grammatica', JSON.stringify(genGram(g)));
       if(q>0) localStorage.setItem('import_quiz', JSON.stringify(genQuiz(q)));
-      alert('Üretildi ve kaydedildi');
+      alert('Gegenereerd en opgeslagen');
     });
   </script>
 </body>

@@ -42,14 +42,14 @@
           </div>
         </div>
         <div style="margin-top:16px;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;">
-          <button class="word-btn study" id="fc-hard">Zor</button>
-          <button class="word-btn know" id="fc-good">İyi</button>
-          <button class="word-btn next" id="fc-easy">Kolay</button>
-          <button class="word-btn next" id="fc-next">Sonraki</button>
-          <button class="word-btn" id="fc-mark-know">Biliyorum</button>
-          <button class="word-btn" id="fc-mark-study">Çalış</button>
+          <button class="word-btn study" id="fc-hard">Moeilijk</button>
+          <button class="word-btn know" id="fc-good">Goed</button>
+          <button class="word-btn next" id="fc-easy">Makkelijk</button>
+          <button class="word-btn next" id="fc-next">Volgende</button>
+          <button class="word-btn" id="fc-mark-know">Ik weet het</button>
+          <button class="word-btn" id="fc-mark-study">Studeren</button>
         </div>
-        <p style="margin-top:8px;color:var(--text-secondary);"><span id="fc-progress">0/0</span> • <span id="fc-counters">0 biliyorum • 0 çalış</span></p>
+        <p style="margin-top:8px;color:var(--text-secondary);"><span id="fc-progress">0/0</span> • <span id="fc-counters">0 ik weet • 0 studeren</span></p>
       </div>
     </section>
   </main>
@@ -106,7 +106,7 @@
     }
     function next(){ idx = (idx + 1) % queue.length; updateProgress(); show(); }
     function updateProgress(){ document.getElementById('fc-progress').textContent = (idx+1)+"/"+queue.length }
-    function updateCounters(){ document.getElementById('fc-counters').textContent = `${known.length} biliyorum • ${study.length} çalış`; }
+    function updateCounters(){ document.getElementById('fc-counters').textContent = `${known.length} ik weet • ${study.length} studeren`; }
     function markKnow(){ const card = queue[idx]; if(!card) return; const key = card.woord||card.id; if(!known.includes(key)){ known.push(key); localStorage.setItem('knownWords', JSON.stringify(known)); updateCounters(); } }
     function markStudy(){ const card = queue[idx]; if(!card) return; const key = card.woord||card.id; if(!study.includes(key)){ study.push(key); localStorage.setItem('studyWords', JSON.stringify(study)); updateCounters(); } }
 
