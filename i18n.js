@@ -25,8 +25,9 @@
 
   async function init(){
     try {
-      const res = await fetch('data/languages.json');
-      dict = await res.json();
+      const override = localStorage.getItem('i18n_override');
+      if (override) { dict = JSON.parse(override); }
+      else { const res = await fetch('data/languages.json'); dict = await res.json(); }
     } catch(e) { dict = {}; }
     applyLang(current);
     const select = document.getElementById('language-select');

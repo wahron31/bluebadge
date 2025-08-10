@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – i18n Editor</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+      </div>
+    </nav>
+    <div class="hero-section"><h2>i18n Editor</h2><p>Çeviri anahtarlarını düzenle ve indir</p></div>
+  </header>
+  <main style="max-width:1000px;margin:24px auto;">
+    <div style="display:flex; gap:16px;">
+      <textarea id="i18n-raw" style="flex:1; min-height:400px; background:#0f172a; color:#e2e8f0; border:1px solid #334; border-radius:8px; padding:12px;"></textarea>
+      <div style="width:280px; display:flex; flex-direction:column; gap:8px;">
+        <button class="challenge-btn" id="load">Yükle</button>
+        <button class="module-btn" id="apply">Uygula</button>
+        <button class="challenge-btn" id="download">JSON indir</button>
+      </div>
+    </div>
+  </main>
+  <script>
+    let data = {};
+    async function fetchLang(){ const r = await fetch('data/languages.json'); data = await r.json(); document.getElementById('i18n-raw').value = JSON.stringify(data, null, 2); }
+    function apply(){ try { data = JSON.parse(document.getElementById('i18n-raw').value); localStorage.setItem('i18n_override', JSON.stringify(data)); alert('Uygulandı (geçici).'); } catch(e){ alert('JSON hatası: '+e.message) } }
+    function download(){ const blob = new Blob([JSON.stringify(data, null, 2)], {type:'application/json'}); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'languages.json'; a.click(); }
+    document.getElementById('load').onclick = fetchLang;
+    document.getElementById('apply').onclick = apply;
+    document.getElementById('download').onclick = download;
+  </script>
+</body>
+</html>
