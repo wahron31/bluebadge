@@ -45,7 +45,13 @@ Deze website helpt je bij het voorbereiden op:
 
 ## 🚀 Website Starten
 
-### Methode 1: Python Server (Aanbevolen)
+### Methode 1: GitHub Pages (Canlı Site)
+Site otomatik olarak GitHub Pages'de yayınlanır:
+- **Canlı URL**: https://wahron31.github.io/bluebadge/
+- **Otomatik güncelleme**: Her push'ta otomatik olarak güncellenir
+- **Branch**: `gh-pages` branch'inden servis edilir
+
+### Methode 2: Python Server (Lokal Geliştirme)
 ```bash
 # In de projectmap:
 python3 -m http.server 8000
@@ -54,9 +60,28 @@ python3 -m http.server 8000
 http://localhost:8000
 ```
 
-### Methode 2: Direct openen
+### Methode 3: Direct openen
 - Open `index.html` direct in je browser
 - Let op: Sommige functies werken beter via een server
+
+## 🔧 GitHub Pages Deployment
+
+### Otomatik Deployment
+- Her `main` branch'e push yapıldığında otomatik olarak deploy edilir
+- GitHub Actions workflow kullanılır (`.github/workflows/deploy.yml`)
+- `gh-pages` branch'i otomatik olarak güncellenir
+
+### Manuel Deployment Gerekirse
+```bash
+# gh-pages branch'ine geç
+git checkout gh-pages
+
+# Main branch'ten güncelle
+git reset --hard main
+
+# Force push
+git push origin gh-pages --force
+```
 
 ## 📁 Projectstructuur
 
