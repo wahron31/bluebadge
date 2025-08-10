@@ -4210,3 +4210,191 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+/* Test Leaderboard Styles */
+.test-leaderboard {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.test-leaderboard h3 {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.test-leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(17, 24, 39, 0.3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+}
+
+.test-leaderboard-title {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.test-leaderboard-period {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.test-leaderboard-period-btn {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.test-leaderboard-period-btn:hover,
+.test-leaderboard-period-btn.active {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+  background: rgba(59, 130, 246, 0.1);
+}
+
+.test-leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.test-leaderboard-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(17, 24, 39, 0.3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-normal);
+}
+
+.test-leaderboard-item:hover {
+  transform: translateX(5px);
+  border-color: var(--accent-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.test-leaderboard-item.rank-1 {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+  border-color: #ffd700;
+}
+
+.test-leaderboard-item.rank-2 {
+  background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.1));
+  border-color: #c0c0c0;
+}
+
+.test-leaderboard-item.rank-3 {
+  background: linear-gradient(135deg, rgba(205, 127, 50, 0.2), rgba(205, 127, 50, 0.1));
+  border-color: #cd7f32;
+}
+
+.test-leaderboard-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  flex-shrink: 0;
+}
+
+.test-leaderboard-item.rank-1 .test-leaderboard-rank {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.test-leaderboard-item.rank-2 .test-leaderboard-rank {
+  background: linear-gradient(135deg, #c0c0c0, #e5e5e5);
+  box-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
+}
+
+.test-leaderboard-item.rank-3 .test-leaderboard-rank {
+  background: linear-gradient(135deg, #cd7f32, #daa520);
+  box-shadow: 0 0 20px rgba(205, 127, 50, 0.5);
+}
+
+.test-leaderboard-item:not(.rank-1):not(.rank-2):not(.rank-3) .test-leaderboard-rank {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-secondary);
+}
+
+.test-leaderboard-user {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  flex: 1;
+}
+
+.test-leaderboard-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.test-leaderboard-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.test-leaderboard-username {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.test-leaderboard-user-details {
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.test-leaderboard-score {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--spacing-xs);
+}
+
+.test-leaderboard-score-value {
+  color: var(--accent-primary);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.test-leaderboard-score-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
