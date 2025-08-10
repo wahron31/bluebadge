@@ -2133,6 +2133,11 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
 .sidebar-collapsed .sidebar { width: 72px; }
 .sidebar-collapsed .with-sidebar main, .sidebar-collapsed .with-sidebar header .hero-section, .sidebar-collapsed .with-sidebar .hero-section { margin-left: 72px; }
 .sidebar-collapsed .sidebar .label { display:none; }
+.more-group { margin-top: 8px; }
+.more-group .submenu { display:none; padding-top:6px; }
+.more-group.open .submenu { display:block; }
+.more-group .submenu a { padding:8px 10px; }
+.sidebar-collapsed #bb-more-btn .label { display:none; }
 
 /* Center feed width */
 .with-sidebar main { max-width: 860px; }

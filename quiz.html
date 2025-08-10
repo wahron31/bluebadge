@@ -25,7 +25,7 @@
     .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-blue); }
   </style>
 </head>
-<body>
+<body class="with-sidebar with-right">
   <header>
     <nav class="top-nav" role="navigation" aria-label="Hoofdnavigatie">
       <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
@@ -65,6 +65,7 @@
 
   <script src="i18n.js"></script>
   <script src="app.js"></script>
+  <script src="layout.js"></script>
   <script>
     const quizContainer = document.getElementById('quiz-container');
     let vragen = [];

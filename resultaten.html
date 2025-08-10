@@ -6,7 +6,7 @@
   <title>BlueBadge – Resultaten</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="with-sidebar with-right">
   <header>
     <nav class="top-nav">
       <div class="nav-brand">
@@ -69,6 +69,7 @@
 
   <script src="i18n.js"></script>
   <script src="auth.js"></script>
+  <script src="layout.js"></script>
   <script>
     function sanitizeText(input){ if(typeof input !== 'string') return ''; return input.replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;' }[c])); }
     (function(){

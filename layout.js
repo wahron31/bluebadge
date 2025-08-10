@@ -2,39 +2,50 @@
   if (window.__bbLayoutApplied) return; window.__bbLayoutApplied = true;
   const body = document.body; if (!body) return;
   body.classList.add('with-sidebar'); body.classList.add('with-right');
-  const collapsed = localStorage.getItem('bbSidebarCollapsed')==='1';
-  if (collapsed) body.classList.add('sidebar-collapsed');
+  if (localStorage.getItem('bbSidebarCollapsed')==='1') body.classList.add('sidebar-collapsed');
+
+  const primaryLinks = [
+    { href:'index.html', icon:'🏠', label:'Dashboard' },
+    { href:'quiz.html', icon:'🗓', label:'Dagelijkse Quiz' },
+    { href:'cognitief.html', icon:'🧠', label:'Cognitief' },
+    { href:'taal.html', icon:'💬', label:'Taal' },
+    { href:'simulation.html', icon:'⏱', label:'Simulatie' },
+    { href:'voortgang.html', icon:'📈', label:'Voortgang' }
+  ];
+  const moreLinks = [
+    { href:'flashcards.html', icon:'🗂', label:'Flashcards' },
+    { href:'listening.html', icon:'🎧', label:'Luisteren' },
+    { href:'cases.html', icon:'🧩', label:'Mini-Case' },
+    { href:'scenarios.html', icon:'📋', label:"Scenario's" },
+    { href:'gesprek.html', icon:'🗣', label:'Gesprek' },
+    { href:'analytics.html', icon:'📊', label:'Analytisch' },
+    { href:'wrongs.html', icon:'📚', label:'Foutenboek' },
+    { href:'content-admin.html', icon:'🛠', label:'Content' },
+    { href:'i18n-editor.html', icon:'🌐', label:'i18n' },
+    { href:'settings.html', icon:'⚙️', label:'Instellingen' }
+  ];
 
   function buildSidebar(){
     const el = document.createElement('aside');
     el.className = 'sidebar'; el.setAttribute('role','navigation'); el.setAttribute('aria-label','Zijbalk');
+    const activePath = location.pathname.split('/').pop();
     el.innerHTML = `
       <div class="brand" style="display:flex;justify-content:space-between;align-items:center;">
         <h1 style="margin:0;"><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1>
         <button id="bb-toggle-sidebar" class="module-btn" title="Sidebar inklappen" style="padding:6px 8px;">⇔</button>
       </div>
-      <nav>
-        <a href="index.html"><span class="icon">🏠</span><span class="label">Dashboard</span></a>
-        <div style="margin:8px 0; font-size:.8rem; color:#94a3b8; text-transform:uppercase; letter-spacing:.08em;">Training</div>
-        <a href="quiz.html"><span class="icon">🗓</span><span class="label">Dagelijkse Quiz</span></a>
-        <a href="cognitief.html"><span class="icon">🧠</span><span class="label">Cognitief</span></a>
-        <a href="taal.html"><span class="icon">💬</span><span class="label">Taal</span></a>
-        <a href="flashcards.html"><span class="icon">🗂</span><span class="label">Flashcards</span></a>
-        <a href="listening.html"><span class="icon">🎧</span><span class="label">Luisteren</span></a>
-        <div style="margin:8px 0; font-size:.8rem; color:#94a3b8; text-transform:uppercase; letter-spacing:.08em;">Scenario</div>
-        <a href="simulation.html"><span class="icon">⏱</span><span class="label">Simulatie</span></a>
-        <a href="cases.html"><span class="icon">🧩</span><span class="label">Mini-Case</span></a>
-        <a href="scenarios.html"><span class="icon">📋</span><span class="label">Scenario's</span></a>
-        <a href="gesprek.html"><span class="icon">🗣</span><span class="label">Gesprek</span></a>
-        <div style="margin:8px 0; font-size:.8rem; color:#94a3b8; text-transform:uppercase; letter-spacing:.08em;">Analyse</div>
-        <a href="voortgang.html"><span class="icon">📈</span><span class="label">Voortgang</span></a>
-        <a href="analytics.html"><span class="icon">📊</span><span class="label">Analytisch</span></a>
-        <a href="wrongs.html"><span class="icon">📚</span><span class="label">Foutenboek</span></a>
-        <div style="margin:8px 0; font-size:.8rem; color:#94a3b8; text-transform:uppercase; letter-spacing:.08em;">Beheer</div>
-        <a href="content-admin.html"><span class="icon">🛠</span><span class="label">Content</span></a>
-        <a href="i18n-editor.html"><span class="icon">🌐</span><span class="label">i18n</span></a>
-        <a href="settings.html"><span class="icon">⚙️</span><span class="label">Instellingen</span></a>
-      </nav>`;
+      <nav id="bb-nav"></nav>
+    `;
+    const nav = el.querySelector('#bb-nav');
+    function aTag(l){ const a=document.createElement('a'); a.href=l.href; a.innerHTML=`<span class="icon">${l.icon}</span><span class="label">${l.label}</span>`; if (l.href===activePath) a.classList.add('active'); return a; }
+    primaryLinks.forEach(l=> nav.appendChild(aTag(l)));
+    const more = document.createElement('div'); more.className = 'more-group';
+    more.innerHTML = `<button class="module-btn" id="bb-more-btn" aria-expanded="false" style="width:100%; justify-content:flex-start; gap:10px;"><span class="icon">⋯</span><span class="label">Meer</span></button><div class="submenu" id="bb-more-menu"></div>`;
+    const sm = more.querySelector('#bb-more-menu'); moreLinks.forEach(l=> sm.appendChild(aTag(l)));
+    nav.appendChild(more);
+    // toggle more
+    const mb = more.querySelector('#bb-more-btn');
+    mb.addEventListener('click', ()=>{ const open = more.classList.toggle('open'); mb.setAttribute('aria-expanded', String(open)); });
     return el;
   }
 
