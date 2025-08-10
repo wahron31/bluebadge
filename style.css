@@ -1481,13 +1481,7 @@ footer p {
 .lang-switcher, .lang-current, .lang-menu, .lang-item { display:none !important; }
 
 /* Responsive utilities */
-@media (max-width: 768px) {
-  .hero-section { margin: 1rem; padding: 2rem 1rem; }
-  .overview-grid { grid-template-columns: 1fr !important; }
-  .modules-grid { grid-template-columns: 1fr !important; }
-  .test-container { padding: 1rem; }
-  .nav-links { flex-wrap: wrap; }
-}
+@media (max-width: 768px) { .hero-section { margin: 1rem; padding: 2rem 1rem; } .overview-grid { grid-template-columns: 1fr !important; } .modules-grid { grid-template-columns: 1fr !important; } .test-container { padding: 1rem; } .nav-links { flex-wrap: wrap; } }
 
 /* Accessibility */
 button:focus, input:focus, select:focus, textarea:focus {
@@ -3313,4 +3307,66 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   color: var(--accent-warning);
   font-size: 14px;
   font-weight: 600;
+}
+
+/* Test Tips Styles */
+.test-tips {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.test-tips h3 {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.test-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.test-tip-item {
+  display: flex;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: rgba(17, 24, 39, 0.3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  transition: var(--transition-normal);
+}
+
+.test-tip-item:hover {
+  transform: translateX(5px);
+  border-color: var(--accent-warning);
+  box-shadow: var(--shadow-md);
+}
+
+.test-tip-icon {
+  font-size: 24px;
+  color: var(--accent-warning);
+  flex-shrink: 0;
+}
+
+.test-tip-content {
+  flex: 1;
+}
+
+.test-tip-title {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-xs);
+}
+
+.test-tip-description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
 }
