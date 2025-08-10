@@ -45,6 +45,11 @@
             <p style="font-size:12px;opacity:0.8">Alanlar: vraag, opt1..opt4, antwoord(int), categorie, tags(virgülle), uitleg</p>
             <input type="file" accept="application/json,text/csv" id="imp-quiz" />
           </div>
+          <div class="overview-card">
+            <h4>Cases (JSON/CSV)</h4>
+            <p style="font-size:12px;opacity:0.8">JSON: [{title, context, steps:[{vraag,opties[4],best(int),uitleg}]}] • CSV: title;context;vraag;opt1..opt4;best;uitleg</p>
+            <input type="file" accept="application/json,text/csv" id="imp-cases" />
+          </div>
         </div>
 
         <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
@@ -52,6 +57,13 @@
           <button class="module-btn" id="validate-data">Doğrula</button>
           <button class="module-btn" id="apply-data">Kaydet (localStorage)</button>
           <button class="module-btn" id="export-data">JSON İndir</button>
+          <span style="flex:1"></span>
+          <input id="filter-cat" placeholder="Kategori" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
+          <input id="filter-tag" placeholder="Etiket" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
+          <button class="module-btn" id="apply-filter">Filtrele</button>
+          <button class="module-btn" id="clear-filter">Temizle</button>
+          <button class="module-btn" id="delete-selected">Seçili Sil</button>
+          <button class="module-btn" id="dedupe">Duplikeleri Temizle</button>
         </div>
 
         <div style="margin-top:16px;">
@@ -69,6 +81,7 @@
   <script>
     let currentKey = null; // 'lezen'|'luisteren'|'woorden'|'grammatica'|'quiz'
     let currentData = [];
+    let workingData = [];
 
     function parseCSV(text){
       const lines = text.split(/\r?\n/).filter(Boolean);
@@ -79,6 +92,9 @@
       return rows.map(r => {
         if(key==='quiz'){
           return { vraag: r[0], opties: [r[1],r[2],r[3],r[4]].filter(Boolean), antwoord: parseInt(r[5]||'0'), categorie: r[6]||'', tags: (r[7]||'').split(',').map(s=>s.trim()).filter(Boolean), uitleg: r[8]||'' };
+        }
+        if(key==='cases'){
+          return { title: r[0]||'', context: r[1]||'', vraag: r[2]||'', opties:[r[3],r[4],r[5],r[6]].filter(Boolean), best: parseInt(r[7]||'0'), uitleg: r[8]||'' };
         }
         if(key==='lezen'){
           return { type:'lezen', passage: r[0]||'', vraag:r[1], opties:[r[2],r[3],r[4],r[5]].filter(Boolean), antwoord: parseInt(r[6]||'0'), uitleg:r[7]||'' };
@@ -91,7 +107,7 @@
       });
     }
 
-    function setCurrent(key, data){ currentKey = key; currentData = Array.isArray(data)? data: []; renderPreview(); }
+    function setCurrent(key, data){ currentKey = key; currentData = Array.isArray(data)? data: []; workingData = [...currentData]; renderPreview(); }
 
     function handle(file, key){
       const reader = new FileReader();
@@ -115,14 +131,15 @@
       const head = document.getElementById('preview-head');
       const body = document.getElementById('preview-body');
       head.innerHTML = ''; body.innerHTML = '';
-      if (!currentData || !currentData.length){ return; }
-      const columns = Array.from(new Set(currentData.flatMap(o=>Object.keys(o))));
-      head.innerHTML = `<tr>${columns.map(c=>`<th style='text-align:left; padding:8px; border-bottom:1px solid #334;'>${c}</th>`).join('')}</tr>`;
-      currentData.forEach((row, ri)=>{
+      if (!workingData || !workingData.length){ return; }
+      const columns = ['select', ...Array.from(new Set(workingData.flatMap(o=>Object.keys(o))))];
+      head.innerHTML = `<tr>${columns.map(c=>`<th style='text-align:left; padding:8px; border-bottom:1px solid #334;'>${c==='select'?'':c}</th>`).join('')}</tr>`;
+      workingData.forEach((row, ri)=>{
         const tr = document.createElement('tr');
         columns.forEach((col)=>{
           const td = document.createElement('td');
           td.style.padding = '6px 8px'; td.style.borderBottom = '1px solid #1f2937';
+          if (col==='select'){ td.innerHTML = `<input type='checkbox' data-row='${ri}' />`; tr.appendChild(td); return; }
           let val = row[col];
           if (Array.isArray(val)) val = val.join(' | ');
           if (typeof val === 'object' && val!==null) val = JSON.stringify(val);
@@ -132,6 +149,7 @@
             if (Array.isArray(row[col])) row[col] = newVal.split('|').map(s=>s.trim()).filter(Boolean);
             else if (col==='antwoord') row[col] = parseInt(newVal||'0');
             else if (col==='tags') row[col] = newVal.split(',').map(s=>s.trim()).filter(Boolean);
+            else if (col==='best') row[col] = parseInt(newVal||'0');
             else row[col] = newVal;
           };
           tr.appendChild(td);
@@ -142,16 +160,17 @@
 
     function validateData(){
       const errors = [];
-      if (!currentKey || !Array.isArray(currentData) || !currentData.length){ errors.push('Veri yok'); }
+      if (!currentKey || !Array.isArray(workingData) || !workingData.length){ errors.push('Veri yok'); }
       const reqByKey = {
         lezen:['vraag','opties','antwoord'],
         luisteren:['vraag','opties','antwoord'],
         woorden:['vraag','opties','antwoord'],
         grammatica:['vraag','opties','antwoord'],
-        quiz:['vraag','opties','antwoord','categorie']
+        quiz:['vraag','opties','antwoord','categorie'],
+        cases:['title','vraag','opties','best']
       };
       const req = reqByKey[currentKey]||[];
-      currentData.forEach((r,i)=>{
+      workingData.forEach((r,i)=>{
         req.forEach((k)=>{
           if (r[k]===undefined || r[k]===null || (Array.isArray(r[k]) && r[k].length===0) || (typeof r[k]==='string' && r[k].trim()==='')){
             errors.push(`#${i+1} eksik alan: ${k}`);
@@ -164,16 +183,18 @@
     function applyData(){
       if (!currentKey) return alert('Önce veri yükleyin');
       if (currentKey==='quiz'){
-        localStorage.setItem('import_quiz', JSON.stringify(currentData));
+        localStorage.setItem('import_quiz', JSON.stringify(workingData));
+      } else if (currentKey==='cases'){
+        localStorage.setItem('import_cases', JSON.stringify(workingData));
       } else {
-        localStorage.setItem('import_'+currentKey, JSON.stringify(currentData));
+        localStorage.setItem('import_'+currentKey, JSON.stringify(workingData));
       }
       alert('Kaydedildi: '+currentKey);
     }
 
     function exportData(){
       if (!currentKey) return alert('Veri yok');
-      const blob = new Blob([JSON.stringify(currentData, null, 2)], {type:'application/json'});
+      const blob = new Blob([JSON.stringify(workingData, null, 2)], {type:'application/json'});
       const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = currentKey+".json"; a.click();
     }
 
@@ -182,18 +203,51 @@
     document.getElementById('imp-woorden').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'woorden'); });
     document.getElementById('imp-grammatica').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'grammatica'); });
     document.getElementById('imp-quiz').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'quiz'); });
+    document.getElementById('imp-cases').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'cases'); });
 
     document.getElementById('clear-imports').addEventListener('click', ()=>{
       ['lezen','luisteren','woorden','grammatica'].forEach(k=> localStorage.removeItem('import_'+k));
       localStorage.removeItem('import_quiz');
+      localStorage.removeItem('import_cases');
       alert('Temizlendi'); document.getElementById('preview-status').textContent='';
       document.getElementById('preview-head').innerHTML='';
       document.getElementById('preview-body').innerHTML='';
-      currentKey=null; currentData=[];
+      currentKey=null; currentData=[]; workingData=[];
     });
     document.getElementById('validate-data').addEventListener('click', validateData);
     document.getElementById('apply-data').addEventListener('click', applyData);
     document.getElementById('export-data').addEventListener('click', exportData);
+
+    // Filters and bulk tools
+    function applyFilter(){
+      if (!currentData.length) return; const c = document.getElementById('filter-cat').value.trim().toLowerCase(); const t = document.getElementById('filter-tag').value.trim().toLowerCase();
+      workingData = currentData.filter(r=>{
+        const cat = (r.categorie||r.category||'').toLowerCase();
+        const tags = Array.isArray(r.tags)? r.tags.map(x=>String(x).toLowerCase()): [];
+        const okCat = c? cat.includes(c): true;
+        const okTag = t? tags.some(x=> x.includes(t)): true;
+        return okCat && okTag;
+      });
+      renderPreview();
+    }
+    function clearFilter(){ workingData = [...currentData]; document.getElementById('filter-cat').value=''; document.getElementById('filter-tag').value=''; renderPreview(); }
+    function deleteSelected(){
+      const checks = Array.from(document.querySelectorAll('#preview-body input[type="checkbox"]:checked'));
+      if (!checks.length) return; const idxs = checks.map(ch=> parseInt(ch.getAttribute('data-row'))).sort((a,b)=>b-a);
+      idxs.forEach(i=> workingData.splice(i,1));
+      // Also remove from currentData by matching by vraag+opties
+      currentData = currentData.filter((row)=> workingData.some(w=> (w.vraag||w.title) === (row.vraag||row.title)));
+      renderPreview();
+    }
+    function dedupe(){
+      const seen = new Set(); const out=[];
+      for(const r of workingData){ const key = (r.vraag||r.title||'')+'|'+(Array.isArray(r.opties)? r.opties.join('·'):JSON.stringify(r.opties||{})); if(!seen.has(key)){ seen.add(key); out.push(r); } }
+      workingData = out; currentData = out; renderPreview();
+    }
+    document.getElementById('apply-filter').addEventListener('click', applyFilter);
+    document.getElementById('clear-filter').addEventListener('click', clearFilter);
+    document.getElementById('delete-selected').addEventListener('click', deleteSelected);
+    document.getElementById('dedupe').addEventListener('click', dedupe);
   </script>
 </body>
 </html>
