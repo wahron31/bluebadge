@@ -215,6 +215,7 @@
     <section class="smart-suggestions" style="margin:24px 2rem;">
       <h3>🧭 Akıllı Öneriler</h3>
       <ul id="bb-suggestions" style="margin-top:8px; line-height:1.6;"></ul>
+      <div id="bb-quick-tags" style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;"></div>
     </section>
 
     <section class="badges" style="margin:24px 2rem;">
@@ -256,6 +257,8 @@
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('sw.js');
     }
+    // quick-start helper for tags
+    function bbQuickStart(tags){ try { localStorage.setItem('sim_prefill_tags', tags.join(',')); location.href='simulation.html'; } catch(e){} }
   </script>
 </body>
 </html>

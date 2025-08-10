@@ -94,6 +94,12 @@
       try { const r = await fetch('data/quiz_questions.json'); all = await r.json(); } catch { all = []; }
       try { const imp = JSON.parse(localStorage.getItem('import_quiz')||'[]'); if(Array.isArray(imp)&&imp.length){ all = imp; } } catch {}
       renderCategoryFilters();
+      // prefill tags and auto start
+      const pre = (localStorage.getItem('sim_prefill_tags')||'').trim();
+      if (pre){
+        const input = document.getElementById('sim-tags'); if (input) input.value = pre;
+        setTimeout(()=>{ document.getElementById('sim-start')?.click(); localStorage.removeItem('sim_prefill_tags'); }, 0);
+      }
     }
     function shuffle(a){ const s=[...a]; for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]]} return s }
     function startTimer(){
@@ -169,7 +175,7 @@
         if(!byCat[cat]) byCat[cat] = {correct:0,total:0};
         byCat[cat].total += 1;
         if(answers[i]===corrects[i]){ score++; byCat[cat].correct += 1; }
-        else if(answers[i]!==undefined){ wrongBook.push({ vraag:q.vraag, opties:q.opties, correctIndex: corrects[i], userIndex: answers[i], categorie: cat }) }
+        else if(answers[i]!==undefined){ wrongBook.push({ vraag:q.vraag, opties:q.opties, correctIndex: corrects[i], userIndex: answers[i], categorie: cat, tags: Array.isArray(q.tags)? q.tags: [] }) }
       });
       // store results
       const percentage = Math.round((score/total)*100);

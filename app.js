@@ -616,6 +616,19 @@ function renderSmartSuggestions(){
     const goals = JSON.parse(localStorage.getItem('bbGoals')||'null') || userData.goals;
     tips.push(`Günlük hedef: ${goals.questionsPerDay} soru, ${goals.wordsPerDay} kelime, ${goals.readingsPerDay} okuma.`);
     el.innerHTML = tips.map(t=>`<li>${t}</li>`).join('');
+    // weak tags quick buttons from lastQuizResult.tagsBreakdown lowest
+    try{
+      const last = JSON.parse(localStorage.getItem('lastQuizResult')||'null');
+      const tb = last && last.tagsBreakdown ? last.tagsBreakdown : null;
+      const quick = document.getElementById('bb-quick-tags'); if(quick){
+        if(tb){
+          const items = Object.entries(tb).sort((a,b)=>a[1].percentage-b[1].percentage).slice(0,3);
+          quick.innerHTML = items.map(([tag])=>`<button class="module-btn" onclick="bbQuickStart(['${tag}'])">#${tag}</button>`).join('');
+        } else {
+          quick.innerHTML = '';
+        }
+      }
+    } catch(e){}
 }
 
 // Badges
