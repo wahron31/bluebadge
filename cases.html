@@ -39,33 +39,45 @@
   </footer>
   <script src="i18n.js"></script>
   <script>
-    let cases = []; let current = null; let step = 0; let answers = []; let score=0;
+    let cases = []; let current = null; let steps = []; let step = 0; let answers = []; let score=0;
     async function load(){
       try { const imp = JSON.parse(localStorage.getItem('import_cases')||'[]'); if(Array.isArray(imp)&&imp.length){ cases = imp; } } catch{}
-      if (!cases.length){ cases = [ { title:'Gece Gürültü', context:'03:00 sularında apartmandan yüksek ses şikayeti alındı.', vraag:'İlk adım ne olmalı?', opties:['Hemen ceza yaz','Yerinde durum değerlendirmesi','Şikayetçiyi azarla','Bekle'], best:1, uitleg:'Önce yerinde durum değerlendirmesi yapılır.' } ]; }
-      current = cases[0]; step=0; answers=[]; score=0; render();
+      if (!cases.length){
+        cases = [ { title:'Gece Gürültü', context:'03:00 sularında apartmandan yüksek ses şikayeti alındı.', steps:[
+          { vraag:'İlk adım ne olmalı?', opties:['Hemen ceza yaz','Yerinde durum değerlendirmesi','Şikayetçiyi azarla','Bekle'], best:1, uitleg:'Önce yerinde durum değerlendirmesi yapılır.', tags:['prosedür'] },
+          { vraag:'Şikayetçi ile iletişim nasıl kurulmalı?', opties:['Emredici','Sakin ve açıklayıcı','Alaycı','Kaba'], best:1, uitleg:'Sakin ve açıklayıcı iletişim kurmak gerekir.', tags:['iletişim'] }
+        ] } ];
+      }
+      // pick first case
+      current = cases[0];
+      steps = Array.isArray(current.steps) && current.steps.length ? current.steps : [{ vraag: current.vraag, opties: current.opties, best: current.best, uitleg: current.uitleg, tags: current.tags||[] }];
+      step=0; answers=new Array(steps.length).fill(undefined); score=0; render();
     }
     function render(){
       document.getElementById('case-title').textContent = current.title || 'Mini-Case';
-      document.getElementById('case-step').textContent = `${step+1}/1`;
+      document.getElementById('case-step').textContent = `${step+1}/${steps.length}`;
       document.getElementById('case-context').textContent = current.context || '';
-      document.getElementById('case-question').textContent = current.vraag || '...';
+      const cur = steps[step] || {};
+      document.getElementById('case-question').textContent = cur.vraag || '...';
       const opts = document.getElementById('case-options'); opts.innerHTML='';
-      (current.opties||[]).forEach((o,i)=>{ const b=document.createElement('button'); b.className='option-btn'; b.textContent=o; b.onclick=()=>{ answers[step]=i; updateNav(); }; if(answers[step]===i) b.classList.add('selected'); opts.appendChild(b); });
+      (cur.opties||[]).forEach((o,i)=>{ const b=document.createElement('button'); b.className='option-btn'; b.textContent=o; b.onclick=()=>{ answers[step]=i; updateNav(); }; if(answers[step]===i) b.classList.add('selected'); opts.appendChild(b); });
       updateNav();
     }
     function updateNav(){
       document.getElementById('case-prev').disabled = step===0;
-      const answered = answers[step]!==undefined; document.getElementById('case-next').disabled = !answered;
-      document.getElementById('case-end').style.display = answered? 'block':'none';
+      const answered = answers[step]!==undefined; document.getElementById('case-next').disabled = !answered || step===steps.length-1;
+      const onLast = step===steps.length-1;
+      document.getElementById('case-end').style.display = onLast && answered? 'block':'none';
     }
     function prev(){ if(step>0){ step--; render(); } }
-    function next(){ if(step<0){ step++; render(); } }
+    function next(){ if(step<steps.length-1){ step++; render(); } }
     function end(){
-      score = answers[0]=== (typeof current.best==='number'? current.best:0) ? 1: 0;
-      const result = { date: new Date().toISOString().split('T')[0], time:new Date().toLocaleTimeString('nl-NL'), category:'case', score, total:1, percentage: score*100, type:'case' };
+      score = 0; const results=[];
+      steps.forEach((s,i)=>{ const u=answers[i]; const c = typeof s.best==='number'? s.best:0; const ok = u===c; if(ok) score++; results.push({ vraag:s.vraag, opties:s.opties, userIndex:u, correctIndex:c, uitleg:s.uitleg||'', tags: Array.isArray(s.tags)? s.tags: [] }); });
+      const total = steps.length; const percentage = Math.round((score/total)*100);
+      const result = { date: new Date().toISOString().split('T')[0], time:new Date().toLocaleTimeString('nl-NL'), category:'case', score, total, percentage, type:'case' };
       const list = JSON.parse(localStorage.getItem('quizResults')||'[]'); list.unshift(result); localStorage.setItem('quizResults', JSON.stringify(list.slice(0,100)));
-      localStorage.setItem('lastQuizResult', JSON.stringify({ type:'case', score, total:1, percentage: score*100, questions:[{ vraag: current.vraag, opties: current.opties, userIndex: answers[0], correctIndex: current.best, uitleg: current.uitleg||'' }] }));
+      localStorage.setItem('lastQuizResult', JSON.stringify({ type:'case', score, total, percentage, questions: results }));
       location.href='resultaten.html';
     }
     document.addEventListener('DOMContentLoaded', ()=>{
