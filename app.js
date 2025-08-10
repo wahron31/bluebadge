@@ -1,3 +1,28 @@
+// Global loading object
+window.bbLoading = {
+  show: function() {
+    // Create loading overlay if it doesn't exist
+    if (!document.getElementById('bb-loading-overlay')) {
+      const overlay = document.createElement('div');
+      overlay.id = 'bb-loading-overlay';
+      overlay.innerHTML = `
+        <div class="bb-loading-spinner">
+          <div class="bb-loading-circle"></div>
+          <div class="bb-loading-text">Laden...</div>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+    }
+    document.getElementById('bb-loading-overlay').style.display = 'flex';
+  },
+  hide: function() {
+    const overlay = document.getElementById('bb-loading-overlay');
+    if (overlay) {
+      overlay.style.display = 'none';
+    }
+  }
+};
+
 // Global variables
 let quizData = [];
 let woordenData = [];
@@ -1903,4 +1928,74 @@ function updateProgressCalendar() {
         
         calendarGrid.innerHTML = calendarHTML;
     }
+}
+
+// Interview Training Functions
+function startInterview(type) {
+    // Show loading
+    bbLoading.show();
+    
+    // Simulate loading delay
+    setTimeout(() => {
+        bbLoading.hide();
+        
+        // Redirect to appropriate interview page or show interview interface
+        switch(type) {
+            case 'sollicitatie':
+                alert('Sollicitatie interview training wordt gestart...');
+                break;
+            case 'nood':
+                alert('Nood interview training wordt gestart...');
+                break;
+            case 'onderzoek':
+                alert('Onderzoek interview training wordt gestart...');
+                break;
+            case 'team':
+                alert('Team interview training wordt gestart...');
+                break;
+            case 'radio':
+                alert('Radio interview training wordt gestart...');
+                break;
+            case 'rolspel':
+                alert('Rolspel interview training wordt gestart...');
+                break;
+            default:
+                alert('Interview training wordt gestart...');
+        }
+    }, 1000);
+}
+
+// Scenario Training Functions
+function startScenario(type) {
+    // Show loading
+    bbLoading.show();
+    
+    // Simulate loading delay
+    setTimeout(() => {
+        bbLoading.hide();
+        
+        // Redirect to appropriate scenario page or show scenario interface
+        switch(type) {
+            case 'verkeer':
+                alert('Verkeer scenario wordt gestart...');
+                break;
+            case 'huiszoeking':
+                alert('Huiszoeking scenario wordt gestart...');
+                break;
+            case 'massa':
+                alert('Massa scenario wordt gestart...');
+                break;
+            case 'pursuit':
+                alert('Pursuit scenario wordt gestart...');
+                break;
+            case 'recherche':
+                alert('Recherche scenario wordt gestart...');
+                break;
+            case 'nood':
+                alert('Nood scenario wordt gestart...');
+                break;
+            default:
+                alert('Scenario wordt gestart...');
+        }
+    }, 1000);
 }
