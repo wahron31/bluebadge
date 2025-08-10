@@ -2484,3 +2484,55 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
 }
+
+/* Daily Activity Styles */
+.daily-activity {
+  margin-bottom: var(--spacing-xl);
+}
+
+.daily-activity h3 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Detailed Stats Styles */
+.detailed-stats {
+  margin-bottom: var(--spacing-xl);
+}
+
+.detailed-stats h3 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Progress Calendar Styles */
+.progress-calendar {
+  margin-bottom: var(--spacing-xl);
+}
+
+.progress-calendar h3 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Interview Tips Styles */
+.interview-tips {
+  margin-bottom: var(--spacing-xl);
+}
+
+.interview-tips h3 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
