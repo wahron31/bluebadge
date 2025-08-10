@@ -142,6 +142,90 @@
       </div>
     </section>
 
+    <section class="progress-calendar" id="progress-calendar-section">
+      <h3>📅 Voortgang Kalender</h3>
+      <div class="calendar-container">
+        <div class="calendar-header">
+          <button class="calendar-nav" onclick="previousMonth()">‹</button>
+          <h4 id="current-month">Januari 2025</h4>
+          <button class="calendar-nav" onclick="nextMonth()">›</button>
+        </div>
+        <div class="calendar-grid" id="progress-calendar-grid">
+          <!-- Kalender wordt dynamisch gegenereerd -->
+        </div>
+        <div class="calendar-legend">
+          <div class="legend-item">
+            <div class="legend-dot no-activity"></div>
+            <span>Geen activiteit</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot low-activity"></div>
+            <span>Laag</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot medium-activity"></div>
+            <span>Gemiddeld</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot high-activity"></div>
+            <span>Hoog</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-summary" id="stats-summary-section">
+      <h3>📊 Samenvatting</h3>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h4>Totaal Score</h4>
+          <div class="stat-value" id="total-score">78%</div>
+        </div>
+        <div class="stat-card">
+          <h4>Gemiddelde per Dag</h4>
+          <div class="stat-value" id="daily-average">85%</div>
+        </div>
+        <div class="stat-card">
+          <h4>Beste Dag</h4>
+          <div class="stat-value" id="best-day">92%</div>
+        </div>
+        <div class="stat-card">
+          <h4>Streak</h4>
+          <div class="stat-value" id="current-streak">7 dagen</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="type-stats" id="type-stats-section">
+      <h3>📈 Prestatie per Type</h3>
+      <div class="stats-table">
+        <div class="type-stat">
+          <span class="type-name">Cognitief</span>
+          <span class="type-score">85%</span>
+          <span class="type-avg">Gemiddeld</span>
+          <span class="type-count">45 tests</span>
+        </div>
+        <div class="type-stat">
+          <span class="type-name">Taal</span>
+          <span class="type-score">72%</span>
+          <span class="type-avg">Gemiddeld</span>
+          <span class="type-count">38 tests</span>
+        </div>
+        <div class="type-stat">
+          <span class="type-name">Scenario's</span>
+          <span class="type-score">68%</span>
+          <span class="type-avg">Gemiddeld</span>
+          <span class="type-count">23 tests</span>
+        </div>
+        <div class="type-stat">
+          <span class="type-name">Gesprekken</span>
+          <span class="type-score">75%</span>
+          <span class="type-avg">Gemiddeld</span>
+          <span class="type-count">31 tests</span>
+        </div>
+      </div>
+    </section>
+
     <section class="daily-activity">
       <h3>📅 Dagelijkse Activiteit</h3>
       <div class="activity-calendar">

@@ -1877,3 +1877,97 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   font-size: 10px;
   color: var(--text-secondary);
 }
+
+/* Calendar Container Styles */
+.calendar-container {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+.calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--spacing-md);
+}
+
+.calendar-nav {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: var(--transition-normal);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.calendar-nav:hover {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-md);
+}
+
+.calendar-legend {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid var(--glass-border);
+}
+
+.legend-dot.no-activity {
+  background: transparent;
+}
+
+.legend-dot.low-activity {
+  background: var(--accent-secondary);
+}
+
+.legend-dot.medium-activity {
+  background: var(--accent-primary);
+}
+
+.legend-dot.high-activity {
+  background: var(--accent-success);
+}
+
+/* Stats Grid Styles */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Stats Table Styles */
+.stats-table {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
