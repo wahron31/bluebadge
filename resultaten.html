@@ -51,6 +51,7 @@
             <h4>Details</h4>
             <div id="res-details"></div>
             <div id="res-breakdown" style="margin-top:12px;"></div>
+            <div id="res-tags-breakdown" style="margin-top:12px;"></div>
           </div>
         </div>
         <div class="result-actions">
@@ -104,6 +105,7 @@
             <div style="text-align:left; margin-bottom:1rem; padding:0.75rem; border:1px solid rgba(0,0,0,0.1); border-radius:8px; background:#fff;">
               <div style="font-weight:700; color:${correct ? '#16a34a' : '#dc2626'}">${i+1}. ${vraag}</div>
               ${opties.length ? `<ul style='margin:0.5rem 0 0; padding-left:1.25rem;'>${optesList(opties, userIdx, correctIdx)}</ul>` : ''}
+              ${Array.isArray(q.tags) && q.tags.length ? `<div style='margin-top:0.25rem; font-size:0.85rem; color:#6b7280;'>Etiketler: ${q.tags.join(', ')}</div>`: ''}
               ${typeof q.uitleg === 'string' && q.uitleg ? `<div style='margin-top:0.5rem; font-size:0.9rem; color:#374151;'>${q.uitleg}</div>` : ''}
             </div>
           `;
@@ -117,6 +119,15 @@
           return `<li style='display:flex; justify-content:space-between; gap:8px;'><span>${k}</span><span>${v.correct}/${v.total} (${v.percentage}%)</span></li>`;
         }).join('');
         document.getElementById('res-breakdown').innerHTML = `<h4 style='margin-top:12px;'>Per Kategori</h4><ul style='margin:6px 0 0 0; padding-left:1rem;'>${list}</ul>`;
+      }
+
+      // Tags breakdown
+      if (data.tagsBreakdown && typeof data.tagsBreakdown === 'object'){
+        const tb = data.tagsBreakdown;
+        const list = Object.entries(tb).map(([k,v])=>{
+          return `<li style='display:flex; justify-content:space-between; gap:8px;'><span>#${k}</span><span>${v.correct}/${v.total} (${v.percentage}%)</span></li>`;
+        }).join('');
+        document.getElementById('res-tags-breakdown').innerHTML = `<h4 style='margin-top:12px;'>Etiketler</h4><ul style='margin:6px 0 0 0; padding-left:1rem;'>${list}</ul>`;
       }
 
       function optesList(opties, userIdx, correctIdx){

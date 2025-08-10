@@ -57,6 +57,9 @@
           <button class="module-btn" id="validate-data">Doğrula</button>
           <button class="module-btn" id="apply-data">Kaydet (localStorage)</button>
           <button class="module-btn" id="export-data">JSON İndir</button>
+          <button class="module-btn" id="export-bundle">Bundle İndir</button>
+          <input type="file" id="import-bundle" accept="application/json" style="display:none;" />
+          <button class="module-btn" id="import-bundle-btn">Bundle Yükle</button>
           <span style="flex:1"></span>
           <input id="filter-cat" placeholder="Kategori" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
           <input id="filter-tag" placeholder="Etiket" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
@@ -248,6 +251,31 @@
     document.getElementById('clear-filter').addEventListener('click', clearFilter);
     document.getElementById('delete-selected').addEventListener('click', deleteSelected);
     document.getElementById('dedupe').addEventListener('click', dedupe);
+
+    // Bundle export/import
+    function exportBundle(){
+      const bundle = {
+        import_quiz: JSON.parse(localStorage.getItem('import_quiz')||'[]'),
+        import_lezen: JSON.parse(localStorage.getItem('import_lezen')||'[]'),
+        import_luisteren: JSON.parse(localStorage.getItem('import_luisteren')||'[]'),
+        import_woorden: JSON.parse(localStorage.getItem('import_woorden')||'[]'),
+        import_grammatica: JSON.parse(localStorage.getItem('import_grammatica')||'[]'),
+        import_cases: JSON.parse(localStorage.getItem('import_cases')||'[]'),
+      };
+      const blob = new Blob([JSON.stringify(bundle, null, 2)], {type:'application/json'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'bluebadge_bundle.json'; a.click();
+    }
+    function importBundle(file){
+      const reader = new FileReader();
+      reader.onload = ()=>{
+        try { const b = JSON.parse(reader.result); Object.keys(b||{}).forEach(k=>{ if(/^import_/.test(k)){ localStorage.setItem(k, JSON.stringify(b[k])); } }); alert('Bundle yüklendi'); }
+        catch(e){ alert('Hata: '+e.message); }
+      };
+      reader.readAsText(file);
+    }
+    document.getElementById('export-bundle').addEventListener('click', exportBundle);
+    document.getElementById('import-bundle-btn').addEventListener('click', ()=> document.getElementById('import-bundle').click());
+    document.getElementById('import-bundle').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) importBundle(f); });
   </script>
 </body>
 </html>

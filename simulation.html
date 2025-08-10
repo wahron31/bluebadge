@@ -42,6 +42,10 @@
               <div id="sim-categories" style="display:flex; gap:8px; flex-wrap:wrap;"></div>
             </div>
             <div>
+              <label for="sim-tags" style="display:block; font-weight:600; margin-bottom:4px;">Etiketler</label>
+              <input id="sim-tags" placeholder="virgülle: trafik,prosedür" style="width:220px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
+            </div>
+            <div>
               <label for="sim-count" style="display:block; font-weight:600; margin-bottom:4px;">Soru</label>
               <input id="sim-count" type="number" min="5" max="100" value="30" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
             </div>
@@ -115,7 +119,14 @@
     function startExam(){
       if (started) return; started = true;
       const selected = Array.from(document.querySelectorAll('#sim-categories input[type="checkbox"]:checked')).map(i=>i.value);
-      const pool = all.filter(q=> selected.length? selected.includes(q.categorie||q.category): true);
+      const tagText = (document.getElementById('sim-tags').value||'').toLowerCase();
+      const wantedTags = tagText.split(',').map(s=>s.trim()).filter(Boolean);
+      const pool = all.filter(q=>{
+        const okCat = selected.length? selected.includes(q.categorie||q.category): true;
+        const qtags = Array.isArray(q.tags)? q.tags.map(x=>String(x).toLowerCase()): [];
+        const okTag = wantedTags.length? wantedTags.some(t=> qtags.some(x=> x.includes(t))): true;
+        return okCat && okTag;
+      });
       const count = Math.max(5, Math.min(100, parseInt(document.getElementById('sim-count').value||'30')));
       const minutes = Math.max(5, Math.min(120, parseInt(document.getElementById('sim-min').value||'20')));
       timeLeft = minutes*60;
@@ -163,13 +174,24 @@
       // store results
       const percentage = Math.round((score/total)*100);
       const breakdown = Object.fromEntries(Object.entries(byCat).map(([k,v])=>[k,{...v, percentage: Math.round((v.correct/(v.total||1))*100)}]));
+      // tags breakdown
+      const byTag = {};
+      qs.forEach((q,i)=>{
+        const tags = Array.isArray(q.tags)? q.tags: [];
+        tags.forEach(t=>{
+          if(!byTag[t]) byTag[t] = {correct:0,total:0};
+          byTag[t].total += 1;
+          if(answers[i]===corrects[i]) byTag[t].correct += 1;
+        });
+      });
+      const tagsBreakdown = Object.fromEntries(Object.entries(byTag).map(([k,v])=>[k,{...v, percentage: Math.round((v.correct/(v.total||1))*100)}]));
       const result = { date: new Date().toISOString().split('T')[0], time: new Date().toLocaleTimeString('nl-NL'), category: 'exam', score, total, percentage, type:'exam', breakdown };
       let quizResults = JSON.parse(localStorage.getItem('quizResults')||'[]'); quizResults.unshift(result); quizResults = quizResults.slice(0,100); localStorage.setItem('quizResults', JSON.stringify(quizResults));
       // save wrongs
       const prevWrong = JSON.parse(localStorage.getItem('wrongBook')||'[]');
       localStorage.setItem('wrongBook', JSON.stringify(prevWrong.concat(wrongBook).slice(-500)));
       // go to results
-      localStorage.setItem('lastQuizResult', JSON.stringify({ type:'exam', score, total, percentage, breakdown, questions: qs.map((q,i)=>({ vraag:q.vraag, opties:q.opties, userIndex: answers[i], correctIndex: corrects[i], categorie: q.categorie||q.category })) }));
+      localStorage.setItem('lastQuizResult', JSON.stringify({ type:'exam', score, total, percentage, breakdown, tagsBreakdown, questions: qs.map((q,i)=>({ vraag:q.vraag, opties:q.opties, userIndex: answers[i], correctIndex: corrects[i], categorie: q.categorie||q.category, tags: Array.isArray(q.tags)? q.tags: [] })) }));
       location.href = 'resultaten.html';
     }
     document.addEventListener('DOMContentLoaded', ()=>{
