@@ -2142,3 +2142,6 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
 /* Center feed width */
 .with-sidebar main { max-width: 860px; }
 @media (min-width: 1280px){ .with-right.with-sidebar main { margin-right: 300px; } }
+
+.kpi-chips { display:flex; gap:8px; justify-content:center; margin-top:12px; }
+.kpi-chips .chip { display:inline-flex; align-items:center; justify-content:center; padding:6px 10px; border-radius:999px; border:1px solid var(--glass-border); background: rgba(148,163,184,.12); color:#e5e7eb; font-weight:700; min-width:60px; }
