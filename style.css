@@ -4048,3 +4048,165 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   font-size: 14px;
   line-height: 1.5;
 }
+
+/* Test Certificate Styles */
+.test-certificate {
+  background: linear-gradient(135deg, var(--glass-bg), rgba(17, 24, 39, 0.6));
+  border: 2px solid var(--accent-primary);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-xl);
+  margin: var(--spacing-xl) auto;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.test-certificate::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+  animation: rotate 10s linear infinite;
+  pointer-events: none;
+}
+
+.test-certificate::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" patternUnits="userSpaceOnUse" width="100" height="100"><circle cx="20" cy="20" r="1" fill="rgba(59,130,246,0.3)"/><circle cx="80" cy="40" r="1" fill="rgba(59,130,246,0.3)"/><circle cx="40" cy="80" r="1" fill="rgba(59,130,246,0.3)"/><circle cx="90" cy="90" r="1" fill="rgba(59,130,246,0.3)"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>');
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.test-certificate-header {
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.test-certificate-title {
+  color: var(--accent-primary);
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: var(--spacing-sm);
+  text-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.test-certificate-subtitle {
+  color: var(--text-secondary);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.test-certificate-content {
+  margin: var(--spacing-lg) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.test-certificate-name {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.test-certificate-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: var(--spacing-md);
+  margin: var(--spacing-lg) 0;
+}
+
+.test-certificate-detail {
+  text-align: center;
+  padding: var(--spacing-md);
+  background: rgba(17, 24, 39, 0.4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+}
+
+.test-certificate-detail-label {
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.test-certificate-detail-value {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.test-certificate-score {
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--accent-success);
+  margin: var(--spacing-lg) 0;
+  text-shadow: 0 0 30px rgba(34, 197, 94, 0.5);
+}
+
+.test-certificate-footer {
+  margin-top: var(--spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.test-certificate-date {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.test-certificate-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+}
+
+.test-certificate-btn {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  min-width: 120px;
+}
+
+.test-certificate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
+
+.test-certificate-btn.secondary {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--text-primary);
+}
+
+.test-certificate-btn.secondary:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
