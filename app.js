@@ -938,3 +938,67 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeQuizPage();
     }
 });
+
+// Security and utilities
+(function(){
+  // Config and feature flags
+  const defaultConfig = { enableAnalytics: true, enableErrorLogging: true };
+  try { window.BB_CONFIG = { ...defaultConfig, ...(JSON.parse(localStorage.getItem('bbConfig')||'{}')||{}) }; } catch { window.BB_CONFIG = defaultConfig; }
+
+  // CSRF token (for future backend calls)
+  function getCsrf(){ try { let t = sessionStorage.getItem('bb_csrf'); if(!t){ t = crypto.getRandomValues(new Uint32Array(4)).join('-'); sessionStorage.setItem('bb_csrf', t); } return t; } catch { return 'csrf-dev'; } }
+  window.getCsrfToken = getCsrf;
+
+  // Sanitization
+  function sanitizeText(input){ if(typeof input !== 'string') return ''; return input.replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;' }[c])); }
+  window.sanitizeText = sanitizeText;
+
+  // Loading indicator
+  function showLoading(){ let el=document.getElementById('bb-loading'); if(!el){ el=document.createElement('div'); el.id='bb-loading'; el.setAttribute('role','status'); el.setAttribute('aria-live','polite'); el.style.cssText='position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,.3);z-index:3000;color:#fff;font-weight:600;'; el.innerHTML='<div style="background:#111827;padding:12px 16px;border-radius:8px;border:1px solid rgba(255,255,255,.15)">Laden...</div>'; document.body.appendChild(el);} el.style.display='flex'; }
+  function hideLoading(){ const el=document.getElementById('bb-loading'); if(el) el.style.display='none'; }
+  window.bbLoading = { show: showLoading, hide: hideLoading };
+
+  // Fetch wrapper with timeout and JSON validation
+  async function fetchJSON(url, { method='GET', headers={}, body, timeoutMs=10000, validate }={}){
+    const ctrl = new AbortController(); const to = setTimeout(()=>ctrl.abort(), timeoutMs);
+    try {
+      const res = await fetch(url, { method, headers: { 'Accept':'application/json', 'X-CSRF-Token': getCsrf(), ...headers }, body, signal: ctrl.signal });
+      if(!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (typeof validate==='function' && !validate(data)) throw new Error('INVALID_JSON_SCHEMA');
+      return data;
+    } catch (e){
+      if (window.BB_CONFIG.enableErrorLogging){ try { const logs = JSON.parse(localStorage.getItem('errorLogs')||'[]'); logs.unshift({ time: Date.now(), url, message: e.message }); localStorage.setItem('errorLogs', JSON.stringify(logs.slice(0,200))); } catch {} }
+      throw e;
+    } finally { clearTimeout(to); }
+  }
+  window.fetchJSON = fetchJSON;
+
+  // Data migration and cleanup
+  try {
+    const ver = parseInt(localStorage.getItem('bbDataVersion')||'1');
+    if (ver < 2){
+      // Example cleanup: trim wrongBook to 500
+      const wb = JSON.parse(localStorage.getItem('wrongBook')||'[]');
+      if (Array.isArray(wb) && wb.length>500) localStorage.setItem('wrongBook', JSON.stringify(wb.slice(-500)));
+      localStorage.setItem('bbDataVersion','2');
+    }
+  } catch {}
+
+  // Mobile menu ARIA improvements
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+  if (mobileBtn && navLinks){
+    mobileBtn.setAttribute('aria-controls','nav-links');
+    mobileBtn.setAttribute('aria-expanded','false');
+    navLinks.id = 'nav-links';
+    const orig = window.toggleMobileMenu;
+    window.toggleMobileMenu = function(){ try { navLinks.classList.toggle('active'); const expanded = navLinks.classList.contains('active'); mobileBtn.classList.toggle('active', expanded); mobileBtn.setAttribute('aria-expanded', String(expanded)); if(expanded){ navLinks.querySelector('a,button,select')?.focus(); } } catch {} (orig && typeof orig==='function') && orig(); };
+  }
+
+  // Global error logging
+  if (window.BB_CONFIG.enableErrorLogging){
+    window.addEventListener('error', (e)=>{ try{ const logs = JSON.parse(localStorage.getItem('errorLogs')||'[]'); logs.unshift({ time: Date.now(), message: String(e.error||e.message||'error') }); localStorage.setItem('errorLogs', JSON.stringify(logs.slice(0,200))); }catch{} });
+    window.addEventListener('unhandledrejection', (e)=>{ try{ const logs = JSON.parse(localStorage.getItem('errorLogs')||'[]'); logs.unshift({ time: Date.now(), message: 'promise:'+String(e.reason) }); localStorage.setItem('errorLogs', JSON.stringify(logs.slice(0,200))); }catch{} });
+  }
+})();
