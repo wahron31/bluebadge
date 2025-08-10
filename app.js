@@ -110,24 +110,7 @@ function loadSampleData() {
     updateDashboard();
 }
 
-// Dashboard güncellemeleri
-function updateDashboard() {
-    // İstatistikleri güncelle
-    document.getElementById('total-questions').textContent = userData.totalQuestions;
-    document.getElementById('success-rate').textContent = userData.successRate + '%';
-    document.getElementById('streak-days').textContent = userData.streakDays;
-    
-    // Günlük kelimeyi güncelle
-    updateDailyWord();
-    
-    // İlerleme barlarını güncelle
-    updateProgressBars();
 
-    // Goals section
-    renderGoals();
-    // Mini chart
-    renderDashboardBars();
-}
 
 // Update daily word
 function updateDailyWord() {
@@ -345,25 +328,18 @@ function formatActivityDate(dateString) {
     if (dateString === yesterday) return 'Gisteren';
     
     const daysAgo = Math.floor((Date.now() - date.getTime()) / (24*60*60*1000));
-    return `${daysAgo} dagen geleden`;
-}
-
-// Format activity date
-function formatActivityDate(dateString) {
-    const date = new Date(dateString);
-    const now = new Date();
-    const diffTime = Math.abs(now - date);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
     
-    if (diffDays === 1) return 'Gisteren';
-    if (diffDays === 2) return '2 gün önce';
-    if (diffDays < 7) return `${diffDays} gün önce`;
+    if (daysAgo < 7) {
+        return `${daysAgo} dagen geleden`;
+    }
     
     return date.toLocaleDateString('nl-NL', { 
         day: 'numeric', 
         month: 'short' 
     });
 }
+
+
 
 // Get score class for styling
 function getScoreClass(score, total) {
@@ -427,6 +403,12 @@ function updateDashboard() {
     
     // Update progress bars
     updateProgressBars();
+    
+    // Goals section
+    renderGoals();
+    
+    // Mini chart
+    renderDashboardBars();
     
     // Update recent activity
     updateRecentActivityDisplay();
@@ -1113,26 +1095,7 @@ function loadBadges() {
     `).join('');
 }
 
-// Compute user badges
-function computeBadges() {
-    const badges = [];
-    const userProgress = getUserProgress();
-    
-    if (userProgress.cognitief >= 80) {
-        badges.push({ icon: '🧠', name: 'Logic Master', description: 'Cognitieve vaardigheden tamamlandı' });
-    }
-    if (userProgress.taal >= 70) {
-        badges.push({ icon: '💬', name: 'Language Expert', description: 'Taalvaardigheid geliştirildi' });
-    }
-    if (userProgress.scenarios >= 60) {
-        badges.push({ icon: '👮', name: 'Scenario Pro', description: 'Politie scenario\'s başarıyla tamamlandı' });
-    }
-    if (userProgress.gesprek >= 50) {
-        badges.push({ icon: '📋', name: 'Interview Ready', description: 'Gesprekstraining tamamlandı' });
-    }
-    
-    return badges;
-}
+
 
 // Get user progress
 function getUserProgress() {
