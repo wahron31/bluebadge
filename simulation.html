@@ -88,6 +88,7 @@
     let timeLeft = 20*60; let timerId = null; let started = false;
     async function load(){
       try { const r = await fetch('data/quiz_questions.json'); all = await r.json(); } catch { all = []; }
+      try { const imp = JSON.parse(localStorage.getItem('import_quiz')||'[]'); if(Array.isArray(imp)&&imp.length){ all = imp; } } catch {}
       renderCategoryFilters();
     }
     function shuffle(a){ const s=[...a]; for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]]} return s }

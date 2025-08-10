@@ -105,7 +105,8 @@ async function loadData() {
             fetch('data/languages.json').then(res => res.json()).catch(() => {})
         ]);
         
-        quizData = quiz;
+        const importQuiz = JSON.parse(localStorage.getItem('import_quiz')||'[]');
+        quizData = Array.isArray(importQuiz) && importQuiz.length ? importQuiz : quiz;
         woordenData = woorden;
         // Cognitieve soruları birleştir
         cognitiefData = [...abstractRed, ...verbaalRed, ...numeriekRed];
