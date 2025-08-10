@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Content Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+      </div>
+    </nav>
+    <div class="hero-section"><h2>Content Yönetimi</h2><p>CSV/JSON içe aktar</p></div>
+  </header>
+  <main style="max-width:1000px;margin:24px auto;">
+    <section class="test-interface" style="display:block;">
+      <div class="test-container">
+        <div class="overview-grid">
+          <div class="overview-card">
+            <h4>Lezen (JSON)</h4>
+            <input type="file" accept="application/json" id="imp-lezen" />
+          </div>
+          <div class="overview-card">
+            <h4>Luisteren (JSON/CSV)</h4>
+            <input type="file" accept="application/json,text/csv" id="imp-luisteren" />
+          </div>
+          <div class="overview-card">
+            <h4>Woordenschat (JSON/CSV)</h4>
+            <input type="file" accept="application/json,text/csv" id="imp-woorden" />
+          </div>
+          <div class="overview-card">
+            <h4>Grammatica (JSON/CSV)</h4>
+            <input type="file" accept="application/json,text/csv" id="imp-grammatica" />
+          </div>
+        </div>
+        <div style="margin-top:16px; text-align:center;">
+          <button class="challenge-btn" id="clear-imports">İçe aktarılanları temizle</button>
+        </div>
+        <pre id="preview" style="margin-top:16px; background:#0f172a; color:#e2e8f0; padding:12px; border-radius:8px; overflow:auto;"></pre>
+      </div>
+    </section>
+  </main>
+  <script>
+    function parseCSV(text){
+      const lines = text.split(/\r?\n/).filter(Boolean);
+      return lines.map(line => line.split(';'));
+    }
+    function handle(file, key){
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          let data;
+          if (file.type === 'text/csv'){
+            const rows = parseCSV(reader.result);
+            // Basit şema: type;question;opt1;opt2;opt3;opt4;answer;extra
+            data = rows.map(r => ({ type: key, vraag:r[1], opties: r.slice(2,6), antwoord: parseInt(r[6]||'0'), uitleg: r[7]||'' }));
+          } else {
+            data = JSON.parse(reader.result);
+          }
+          localStorage.setItem('import_'+key, JSON.stringify(data));
+          document.getElementById('preview').textContent = JSON.stringify({ key, count: Array.isArray(data)? data.length : 1 }, null, 2);
+          alert('İçe aktarıldı: '+key);
+        } catch(e){ alert('Hata: '+e.message); }
+      };
+      reader.readAsText(file);
+    }
+    document.getElementById('imp-lezen').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'lezen'); });
+    document.getElementById('imp-luisteren').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'luisteren'); });
+    document.getElementById('imp-woorden').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'woorden'); });
+    document.getElementById('imp-grammatica').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'grammatica'); });
+    document.getElementById('clear-imports').addEventListener('click', ()=>{
+      ['lezen','luisteren','woorden','grammatica'].forEach(k=> localStorage.removeItem('import_'+k));
+      alert('Temizlendi'); document.getElementById('preview').textContent='';
+    });
+  </script>
+</body>
+</html>

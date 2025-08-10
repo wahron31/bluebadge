@@ -19,12 +19,13 @@ async function loadLanguageData() {
         const samples = generateSampleLanguageData();
         const imported = {
             lezen: JSON.parse(localStorage.getItem('import_lezen') || '[]'),
+            luisteren: JSON.parse(localStorage.getItem('import_luisteren') || '[]'),
             woorden: JSON.parse(localStorage.getItem('import_woorden') || '[]'),
             grammatica: JSON.parse(localStorage.getItem('import_grammatica') || '[]')
         };
         return {
             lezen: (imported.lezen.length ? imported.lezen : (lezen && lezen.length ? lezen : samples.lezen)),
-            luisteren: (luisteren && luisteren.length ? luisteren : samples.luisteren),
+            luisteren: (imported.luisteren.length ? imported.luisteren : (luisteren && luisteren.length ? luisteren : samples.luisteren)),
             woorden: (imported.woorden.length ? imported.woorden : (woorden && woorden.length ? woorden : samples.woorden)),
             grammatica: (imported.grammatica.length ? imported.grammatica : (grammatica && grammatica.length ? grammatica : samples.grammatica))
         };
