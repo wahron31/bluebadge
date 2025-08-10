@@ -292,22 +292,56 @@ function showDayDetails(date, activities) {
     alert(`Activiteiten op ${date}:\n\n${details}`);
 }
 
-// Update detailed statistics
-function updateDetailedStats() {
-    generateScoreChart();
-    updateTimeBreakdown();
+// Update detailed statistics based on period
+function updateDetailedStats(period = 'week') {
+  // Filter results based on period
+  let filteredResults = [];
+  const now = new Date();
+  
+  if (period === 'week') {
+    const weekAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+    filteredResults = getAllResults().filter(result => 
+      new Date(result.date) >= weekAgo
+    );
+  } else if (period === 'month') {
+    const monthAgo = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000);
+    filteredResults = getAllResults().filter(result => 
+      new Date(result.date) >= monthAgo
+    );
+  } else {
+    // 'all' period
+    filteredResults = getAllResults();
+  }
+  
+  // Update charts and stats
+  generateScoreChart(filteredResults);
+  updateTimeBreakdown(filteredResults);
+  
+  // Update activity log
+  loadActivityLog(filteredResults);
+}
+
+// Get all results from localStorage
+function getAllResults() {
+  const cognitiveResults = JSON.parse(localStorage.getItem('cognitiveResults') || '[]');
+  const languageResults = JSON.parse(localStorage.getItem('languageResults') || '[]');
+  const quizResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
+  const scenarioResults = JSON.parse(localStorage.getItem('scenarioResults') || '[]');
+  const interviewResults = JSON.parse(localStorage.getItem('interviewResults') || '[]');
+  
+  return [
+    ...cognitiveResults.map(r => ({ ...r, type: 'cognitief' })),
+    ...languageResults.map(r => ({ ...r, type: 'taal' })),
+    ...quizResults.map(r => ({ ...r, type: 'quiz' })),
+    ...scenarioResults.map(r => ({ ...r, type: 'scenario' })),
+    ...interviewResults.map(r => ({ ...r, type: 'interview' }))
+  ];
 }
 
 // Generate simple score chart
-function generateScoreChart() {
+function generateScoreChart(results) {
     const chartBars = document.getElementById('score-bars');
     if (!chartBars) return;
-    
-    const allResults = [
-        ...JSON.parse(localStorage.getItem('cognitiveResults') || '[]'),
-        ...JSON.parse(localStorage.getItem('languageResults') || '[]'),
-        ...JSON.parse(localStorage.getItem('quizResults') || '[]')
-    ];
     
     // Group by date and get last 7 days
     const last7Days = [];
@@ -320,7 +354,7 @@ function generateScoreChart() {
     chartBars.innerHTML = '';
     
     last7Days.forEach(date => {
-        const dayResults = allResults.filter(r => r.date === date);
+        const dayResults = results.filter(r => r.date === date);
         const avgScore = dayResults.length > 0 
             ? Math.round(dayResults.reduce((sum, r) => sum + r.percentage, 0) / dayResults.length)
             : 0;
@@ -350,10 +384,10 @@ function generateScoreChart() {
 }
 
 // Update time breakdown
-function updateTimeBreakdown() {
-    const cognitiveResults = JSON.parse(localStorage.getItem('cognitiveResults') || '[]');
-    const languageResults = JSON.parse(localStorage.getItem('languageResults') || '[]');
-    const quizResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
+function updateTimeBreakdown(results) {
+    const cognitiveResults = results.filter(r => r.type === 'cognitief');
+    const languageResults = results.filter(r => r.type === 'taal');
+    const quizResults = results.filter(r => r.type === 'quiz');
     
     // Calculate total time spent (mock calculation based on number of tests)
     const cognitiveTime = cognitiveResults.length * 8; // 8 minutes per test average
@@ -453,41 +487,86 @@ function showStatsTab(period) {
     document.querySelector(`.tab-btn:nth-child(${period === 'week' ? 1 : period === 'month' ? 2 : 3})`).classList.add('active');
     
     // Update chart based on period
-    generateScoreChart(period);
+    updateDetailedStats(period);
 }
 
 // Load activity log
-function loadActivityLog() {
-    const timeline = document.getElementById('activity-timeline');
-    if (!timeline) return;
-    
-    const allResults = [
-        ...JSON.parse(localStorage.getItem('cognitiveResults') || '[]'),
-        ...JSON.parse(localStorage.getItem('languageResults') || '[]'),
-        ...JSON.parse(localStorage.getItem('quizResults') || '[]')
-    ];
-    
-    // Sort by date and time (most recent first)
-    allResults.sort((a, b) => {
-        const dateA = new Date(`${a.date} ${a.time}`);
-        const dateB = new Date(`${b.date} ${b.time}`);
-        return dateB - dateA;
-    });
-    
-    // Take last 20 activities
-    const recentActivities = allResults.slice(0, 20);
-    
-    timeline.innerHTML = recentActivities.map(activity => `
-        <div class="activity-log-item">
-            <div class="activity-time">${activity.date} ${activity.time}</div>
-            <div class="activity-description">
-                ${getActivityDescription(activity)}
-            </div>
-            <div class="activity-score ${getScoreClass(activity.percentage)}">
-                ${activity.percentage}%
-            </div>
+function loadActivityLog(results = null) {
+  const timeline = document.getElementById('activity-timeline');
+  if (!timeline) return;
+  
+  // If no results provided, get all results
+  if (!results) {
+    results = getAllResults();
+  }
+  
+  // Sort by date and time (most recent first)
+  const sortedResults = results.sort((a, b) => {
+    const dateA = new Date(a.date);
+    const dateB = new Date(b.date);
+    return dateB - dateA;
+  });
+  
+  // Take last 20 activities
+  const recentActivities = sortedResults.slice(0, 20);
+  
+  timeline.innerHTML = recentActivities.map(activity => `
+    <div class="activity-log-item">
+      <div class="activity-icon">${getActivityIcon(activity.type)}</div>
+      <div class="activity-details">
+        <div class="activity-title">${getActivityTitle(activity)}</div>
+        <div class="activity-meta">
+          <span class="activity-date">${formatDate(activity.date)}</span>
+          <span class="activity-score ${getScoreClass(activity.percentage)}">${activity.percentage}%</span>
         </div>
-    `).join('');
+      </div>
+    </div>
+  `).join('');
+}
+
+// Get activity icon based on type
+function getActivityIcon(type) {
+  const icons = {
+    'cognitief': '🧠',
+    'taal': '📚',
+    'quiz': '❓',
+    'scenario': '👮',
+    'interview': '🎤'
+  };
+  return icons[type] || '📊';
+}
+
+// Get activity title based on type and category
+function getActivityTitle(activity) {
+  const titles = {
+    'cognitief': `Cognitieve Test - ${activity.category || 'Algemeen'}`,
+    'taal': `Taaltest - ${activity.category || 'Algemeen'}`,
+    'quiz': `Dagelijkse Quiz`,
+    'scenario': `Politie Scenario - ${activity.scenario || 'Algemeen'}`,
+    'interview': `Interview Training - ${activity.interview || 'Algemeen'}`
+  };
+  return titles[activity.type] || 'Activiteit';
+}
+
+// Format date for display
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  const now = new Date();
+  const diffTime = Math.abs(now - date);
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+  
+  if (diffDays === 1) {
+    return 'Vandaag';
+  } else if (diffDays === 2) {
+    return 'Gisteren';
+  } else if (diffDays <= 7) {
+    return `${diffDays - 1} dagen geleden`;
+  } else {
+    return date.toLocaleDateString('nl-NL', { 
+      day: 'numeric', 
+      month: 'short' 
+    });
+  }
 }
 
 // Get activity description

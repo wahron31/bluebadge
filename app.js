@@ -535,6 +535,259 @@ function showAchievementNotification(message) {
     }, 3000);
 }
 
+// Scenario functions
+function startScenario(scenarioType) {
+  console.log('Starting scenario:', scenarioType);
+  
+  // Store scenario type for tracking
+  localStorage.setItem('currentScenario', scenarioType);
+  
+  // Show scenario interface
+  const mainContent = document.querySelector('main');
+  if (mainContent) {
+    mainContent.innerHTML = `
+      <section class="scenario-interface">
+        <h3>Scenario: ${getScenarioTitle(scenarioType)}</h3>
+        <div class="scenario-content">
+          <div class="scenario-description">
+            <p>${getScenarioDescription(scenarioType)}</p>
+          </div>
+          <div class="scenario-options">
+            <h4>Wat zou je doen?</h4>
+            <div class="option-buttons">
+              <button class="scenario-option" onclick="selectScenarioOption('${scenarioType}', 'A')">
+                ${getScenarioOption(scenarioType, 'A')}
+              </button>
+              <button class="scenario-option" onclick="selectScenarioOption('${scenarioType}', 'B')">
+                ${getScenarioOption(scenarioType, 'B')}
+              </button>
+              <button class="scenario-option" onclick="selectScenarioOption('${scenarioType}', 'C')">
+                ${getScenarioOption(scenarioType, 'C')}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="scenario-controls">
+          <button class="control-btn secondary" onclick="backToScenarios()">Terug naar Overzicht</button>
+        </div>
+      </section>
+    `;
+  }
+}
+
+function getScenarioTitle(type) {
+  const titles = {
+    'verkeer': 'Verkeerscontrole',
+    'huiszoeking': 'Huiszoeking',
+    'massa': 'Massale Ordeverstoring',
+    'pursuit': 'Pursuit Situatie',
+    'recherche': 'Recherche Onderzoek',
+    'nood': 'Noodsituatie'
+  };
+  return titles[type] || 'Onbekend Scenario';
+}
+
+function getScenarioDescription(type) {
+  const descriptions = {
+    'verkeer': 'Je controleert een verdachte bestuurder tijdens een routinecontrole. De bestuurder gedraagt zich nerveus en weigert zijn rijbewijs te tonen.',
+    'huiszoeking': 'Je moet een huiszoeking uitvoeren in een woning waar mogelijk drugs worden verhandeld. Er zijn kinderen aanwezig.',
+    'massa': 'Er is een massale ordeverstoring in het centrum van de stad. Demonstranten worden steeds agressiever.',
+    'pursuit': 'Je bent betrokken bij een achtervolging van een verdachte auto. De bestuurder rijdt gevaarlijk door de stad.',
+    'recherche': 'Je onderzoekt een inbraak in een winkel. Er zijn sporen van geweld en de eigenaar is gewond.',
+    'nood': 'Er is een schietpartij gemeld in een winkelcentrum. Je bent de eerste agent ter plaatse.'
+  };
+  return descriptions[type] || 'Geen beschrijving beschikbaar.';
+}
+
+function getScenarioOption(type, option) {
+  const options = {
+    'verkeer': {
+      'A': 'Direct aanhouden en boete uitschrijven',
+      'B': 'Rustig blijven en om verduidelijking vragen',
+      'C': 'Versterking oproepen en auto doorzoeken'
+    },
+    'huiszoeking': {
+      'A': 'Direct binnengaan en doorzoeken',
+      'B': 'Eerst de kinderen veiligstellen',
+      'C': 'Wachten op versterking en specialistische eenheid'
+    },
+    'massa': {
+      'A': 'Direct ingrijpen met geweld',
+      'B': 'Proberen te de-escaleren',
+      'C': 'Versterking oproepen en gebied afzetten'
+    },
+    'pursuit': {
+      'A': 'Doorgaan met achtervolging',
+      'B': 'Achtervolging stoppen vanwege veiligheidsrisico',
+      'C': 'Helikopter inzetten voor luchtsteun'
+    },
+    'recherche': {
+      'A': 'Direct sporen veiligstellen',
+      'B': 'Eerst slachtoffer helpen',
+      'C': 'Wachten op forensisch team'
+    },
+    'nood': {
+      'A': 'Direct naar binnen gaan',
+      'B': 'Eerst situatie inschatten',
+      'C': 'Versterking oproepen en gebied afzetten'
+    }
+  };
+  return options[type]?.[option] || 'Geen optie beschikbaar.';
+}
+
+function selectScenarioOption(scenarioType, option) {
+  console.log('Selected option:', option, 'for scenario:', scenarioType);
+  
+  // Store result
+  const scenarioResults = JSON.parse(localStorage.getItem('scenarioResults') || '{}');
+  if (!scenarioResults[scenarioType]) {
+    scenarioResults[scenarioType] = [];
+  }
+  scenarioResults[scenarioType].push({
+    option: option,
+    timestamp: new Date().toISOString(),
+    scenario: scenarioType
+  });
+  localStorage.setItem('scenarioResults', JSON.stringify(scenarioResults));
+  
+  // Show feedback
+  alert(`Je hebt optie ${option} gekozen. Goed gedaan!`);
+  
+  // Return to scenarios overview
+  backToScenarios();
+}
+
+function backToScenarios() {
+  window.location.href = 'scenarios.html';
+}
+
+// Interview functions
+function startInterview(interviewType) {
+  console.log('Starting interview:', interviewType);
+  
+  // Store interview type for tracking
+  localStorage.setItem('currentInterview', interviewType);
+  
+  // Show interview interface
+  const mainContent = document.querySelector('main');
+  if (mainContent) {
+    mainContent.innerHTML = `
+      <section class="interview-interface">
+        <h3>Interview Training: ${getInterviewTitle(interviewType)}</h3>
+        <div class="interview-content">
+          <div class="interview-question">
+            <h4>Vraag:</h4>
+            <p>${getInterviewQuestion(interviewType)}</p>
+          </div>
+          <div class="interview-options">
+            <h4>Antwoord opties:</h4>
+            <div class="option-buttons">
+              <button class="interview-option" onclick="selectInterviewOption('${interviewType}', 'A')">
+                ${getInterviewOption(interviewType, 'A')}
+              </button>
+              <button class="interview-option" onclick="selectInterviewOption('${interviewType}', 'B')">
+                ${getInterviewOption(interviewType, 'B')}
+              </button>
+              <button class="interview-option" onclick="selectInterviewOption('${interviewType}', 'C')">
+                ${getInterviewOption(interviewType, 'C')}
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="interview-controls">
+          <button class="control-btn secondary" onclick="backToInterviews()">Terug naar Overzicht</button>
+        </div>
+      </section>
+    `;
+  }
+}
+
+function getInterviewTitle(type) {
+  const titles = {
+    'sollicitatie': 'Sollicitatiegesprek',
+    'nood': 'Noodsituatie Interview',
+    'onderzoek': 'Onderzoeksinterview',
+    'team': 'Team Interview',
+    'radio': 'Radio Communicatie',
+    'rolspel': 'Rolspel Training'
+  };
+  return titles[type] || 'Onbekende Interview Type';
+}
+
+function getInterviewQuestion(type) {
+  const questions = {
+    'sollicitatie': 'Waarom wil je bij de politie werken?',
+    'nood': 'Hoe zou je reageren op een agressieve verdachte?',
+    'onderzoek': 'Hoe ga je om met tegenstrijdige verklaringen?',
+    'team': 'Beschrijf een situatie waarin je in een team werkte.',
+    'radio': 'Hoe communiceer je effectief via de radio?',
+    'rolspel': 'Je bent in een stressvolle situatie. Hoe blijf je kalm?'
+  };
+  return questions[type] || 'Geen vraag beschikbaar.';
+}
+
+function getInterviewOption(type, option) {
+  const options = {
+    'sollicitatie': {
+      'A': 'Ik wil mensen helpen en de samenleving beschermen',
+      'B': 'Het lijkt me een interessante baan',
+      'C': 'Ik heb geen andere opties'
+    },
+    'nood': {
+      'A': 'Direct ingrijpen met geweld',
+      'B': 'Proberen te de-escaleren',
+      'C': 'Versterking oproepen'
+    },
+    'onderzoek': {
+      'A': 'Beide verklaringen gelijk behandelen',
+      'B': 'Meer bewijs verzamelen',
+      'C': 'De geloofwaardigste kiezen'
+    },
+    'team': {
+      'A': 'Ik werkte samen met collega\'s aan een project',
+      'B': 'Ik deed mijn eigen werk',
+      'C': 'Ik had geen team ervaring'
+    },
+    'radio': {
+      'A': 'Kort en bondig communiceren',
+      'B': 'Alle details doorgeven',
+      'C': 'Wachten tot ik rustig ben'
+    },
+    'rolspel': {
+      'A': 'Ik blijf kalm en denk na',
+      'B': 'Ik raak in paniek',
+      'C': 'Ik handel instinctief'
+    }
+  };
+  return options[type]?.[option] || 'Geen optie beschikbaar.';
+}
+
+function selectInterviewOption(interviewType, option) {
+  console.log('Selected option:', option, 'for interview:', interviewType);
+  
+  // Store result
+  const interviewResults = JSON.parse(localStorage.getItem('interviewResults') || '{}');
+  if (!interviewResults[interviewType]) {
+    interviewResults[interviewType] = [];
+  }
+  interviewResults[interviewType].push({
+    option: option,
+    timestamp: new Date().toISOString(),
+    interview: interviewType
+  });
+  localStorage.setItem('interviewResults', JSON.stringify(interviewResults));
+  
+  // Show feedback
+  alert(`Je hebt optie ${option} gekozen. Goed gedaan!`);
+  
+  // Return to interviews overview
+  backToInterviews();
+}
+
+function backToInterviews() {
+  window.location.href = 'gesprek.html';
+}
+
 // Sayfa yüklendikende
 document.addEventListener('DOMContentLoaded', function() {
     // Kullanıcı verilerini yükle
@@ -801,3 +1054,182 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeQuizPage();
     }
 });
+
+// Word management functions
+function markWordKnown() {
+  const currentWord = JSON.parse(localStorage.getItem('currentWord') || '{}');
+  if (currentWord.word) {
+    const knownWords = JSON.parse(localStorage.getItem('knownWords') || '[]');
+    if (!knownWords.includes(currentWord.word)) {
+      knownWords.push(currentWord.word);
+      localStorage.setItem('knownWords', JSON.stringify(knownWords));
+    }
+    
+    // Remove from study words if present
+    const studyWords = JSON.parse(localStorage.getItem('studyWords') || '[]');
+    const updatedStudyWords = studyWords.filter(w => w !== currentWord.word);
+    localStorage.setItem('studyWords', JSON.stringify(updatedStudyWords));
+    
+    // Update stats
+    updateWordStats();
+    
+    // Show next word
+    nextWord();
+  }
+}
+
+function studyWord() {
+  const currentWord = JSON.parse(localStorage.getItem('currentWord') || '{}');
+  if (currentWord.word) {
+    const studyWords = JSON.parse(localStorage.getItem('studyWords') || '[]');
+    if (!studyWords.includes(currentWord.word)) {
+      studyWords.push(currentWord.word);
+      localStorage.setItem('studyWords', JSON.stringify(studyWords));
+    }
+    
+    // Show next word
+    nextWord();
+  }
+}
+
+function nextWord() {
+  // Load next word from daily words
+  const dailyWords = JSON.parse(localStorage.getItem('dailyWords') || '[]');
+  const currentIndex = parseInt(localStorage.getItem('currentWordIndex') || '0');
+  
+  if (currentIndex < dailyWords.length - 1) {
+    const nextIndex = currentIndex + 1;
+    localStorage.setItem('currentWordIndex', nextIndex.toString());
+    
+    const nextWord = dailyWords[nextIndex];
+    localStorage.setItem('currentWord', JSON.stringify(nextWord));
+    
+    // Update display
+    showCurrentWord();
+  } else {
+    // All words completed
+    alert('Alle woorden van vandaag zijn voltooid!');
+    window.location.href = 'taal.html';
+  }
+}
+
+function showCurrentWord() {
+  const currentWord = JSON.parse(localStorage.getItem('currentWord') || '{}');
+  if (currentWord.word) {
+    const wordMain = document.querySelector('.word-main');
+    if (wordMain) {
+      wordMain.innerHTML = `
+        <div class="word-text">${currentWord.word}</div>
+        <div class="word-type">${currentWord.type || 'zelfstandig naamwoord'}</div>
+        <div class="word-meaning">${currentWord.betekenis || 'Betekenis niet beschikbaar'}</div>
+        <div class="word-example">${currentWord.voorbeeld || 'Voorbeeld niet beschikbaar'}</div>
+      `;
+    }
+  }
+}
+
+function updateWordStats() {
+  const knownWords = JSON.parse(localStorage.getItem('knownWords') || '[]');
+  const studyWords = JSON.parse(localStorage.getItem('studyWords') || '[]');
+  
+  // Update display if elements exist
+  const knownCount = document.querySelector('.known-count');
+  const studyCount = document.querySelector('.study-count');
+  
+  if (knownCount) knownCount.textContent = knownWords.length;
+  if (studyCount) studyCount.textContent = studyWords.length;
+}
+
+// Quiz functions
+function beoordeel(button, isCorrect) {
+  // Remove previous selections
+  document.querySelectorAll('#quiz-options button').forEach(btn => {
+    btn.classList.remove('selected', 'correct', 'incorrect');
+  });
+  
+  // Mark selected button
+  button.classList.add('selected');
+  
+  if (isCorrect) {
+    button.classList.add('correct');
+    // Add to score
+    const currentScore = parseInt(localStorage.getItem('currentQuizScore') || '0');
+    localStorage.setItem('currentQuizScore', (currentScore + 1).toString());
+  } else {
+    button.classList.add('incorrect');
+  }
+  
+  // Show next question after delay
+  setTimeout(() => {
+    nextQuizQuestion();
+  }, 1500);
+}
+
+function nextQuizQuestion() {
+  const currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex') || '0');
+  const totalQuestions = parseInt(localStorage.getItem('totalQuestions') || '0');
+  
+  if (currentQuestionIndex < totalQuestions - 1) {
+    localStorage.setItem('currentQuestionIndex', (currentQuestionIndex + 1).toString());
+    renderQuiz();
+  } else {
+    // Quiz completed
+    endQuiz();
+  }
+}
+
+function endQuiz() {
+  const score = parseInt(localStorage.getItem('currentQuizScore') || '0');
+  const total = parseInt(localStorage.getItem('totalQuestions') || '0');
+  const percentage = Math.round((score / total) * 100);
+  
+  // Save result
+  const quizResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
+  quizResults.push({
+    score: score,
+    total: total,
+    percentage: percentage,
+    date: new Date().toISOString(),
+    category: localStorage.getItem('quizCategory') || 'general'
+  });
+  localStorage.setItem('quizResults', JSON.stringify(quizResults));
+  
+  // Show results
+  alert(`Quiz voltooid! Score: ${score}/${total} (${percentage}%)`);
+  
+  // Redirect to results page
+  window.location.href = 'resultaten.html';
+}
+
+// Calendar navigation functions
+function previousMonth() {
+  currentMonth--;
+  if (currentMonth < 0) {
+    currentMonth = 11;
+    currentYear--;
+  }
+  generateActivityCalendar();
+}
+
+function nextMonth() {
+  currentMonth++;
+  if (currentMonth > 11) {
+    currentMonth = 0;
+    currentYear++;
+  }
+  generateActivityCalendar();
+}
+
+// Stats tab functions
+function showStatsTab(period) {
+  // Remove active class from all tabs
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  
+  // Add active class to clicked tab
+  event.target.classList.add('active');
+  
+  // Update stats based on period
+  updateDetailedStats(period);
+}
