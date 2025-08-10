@@ -157,15 +157,7 @@ function updateDailyWord() {
     }
 }
 
-// İlerleme barlarını güncelle
-function updateProgressBars() {
-    Object.keys(userData.progress).forEach(key => {
-        const progressFill = document.querySelector(`[data-module="${key}"] .progress-fill`);
-        if (progressFill) {
-            progressFill.style.width = userData.progress[key] + '%';
-        }
-    });
-}
+// İlerleme barlarını güncelle - removed duplicate function
 
 // Günlük test başlatma
 function startDailyChallenge(type) {
