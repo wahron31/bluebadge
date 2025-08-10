@@ -116,6 +116,11 @@ function updateDashboard() {
     
     // İlerleme barlarını güncelle
     updateProgressBars();
+
+    // Goals section
+    renderGoals();
+    // Mini chart
+    renderDashboardBars();
 }
 
 // Günlük kelime güncelleme
@@ -401,6 +406,13 @@ function updateDashboard() {
     
     // Update achievement indicators
     updateAchievementIndicators();
+
+    // Smart suggestions and badges
+    renderSmartSuggestions();
+    renderBadges();
+
+    // Theme init
+    applyTheme(localStorage.getItem('bbTheme')||'dark');
 }
 
 // Update achievement indicators
@@ -467,258 +479,130 @@ function showAchievementNotification(message) {
     }, 3000);
 }
 
-// Scenario functions
-function startScenario(scenarioType) {
-  console.log('Starting scenario:', scenarioType);
-  
-  // Store scenario type for tracking
-  localStorage.setItem('currentScenario', scenarioType);
-  
-  // Show scenario interface
-  const mainContent = document.querySelector('main');
-  if (mainContent) {
-    mainContent.innerHTML = `
-      <section class="scenario-interface">
-        <h3>Scenario: ${getScenarioTitle(scenarioType)}</h3>
-        <div class="scenario-content">
-          <div class="scenario-description">
-            <p>${getScenarioDescription(scenarioType)}</p>
-          </div>
-          <div class="scenario-options">
-            <h4>Wat zou je doen?</h4>
-            <div class="option-buttons">
-              <button class="scenario-option" onclick="selectScenarioOption('${scenarioType}', 'A')">
-                ${getScenarioOption(scenarioType, 'A')}
-              </button>
-              <button class="scenario-option" onclick="selectScenarioOption('${scenarioType}', 'B')">
-                ${getScenarioOption(scenarioType, 'B')}
-              </button>
-              <button class="scenario-option" onclick="selectScenarioOption('${scenarioType}', 'C')">
-                ${getScenarioOption(scenarioType, 'C')}
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="scenario-controls">
-          <button class="control-btn secondary" onclick="backToScenarios()">Terug naar Overzicht</button>
-        </div>
-      </section>
-    `;
-  }
+// Goals
+function renderGoals(){
+    const saved = JSON.parse(localStorage.getItem('bbGoals')||'null');
+    if (saved){ userData.goals = { ...userData.goals, ...saved }; }
+    // set inputs and targets
+    document.getElementById('goal-q-input')?.setAttribute('value', userData.goals.questionsPerDay);
+    document.getElementById('goal-w-input')?.setAttribute('value', userData.goals.wordsPerDay);
+    document.getElementById('goal-r-input')?.setAttribute('value', userData.goals.readingsPerDay);
+    document.getElementById('goal-q-target')?.innerText = userData.goals.questionsPerDay;
+    document.getElementById('goal-w-target')?.innerText = userData.goals.wordsPerDay;
+    document.getElementById('goal-r-target')?.innerText = userData.goals.readingsPerDay;
+    // today counters
+    const today = new Date().toISOString().split('T')[0];
+    const all = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+    ].filter(r=>r.date===today);
+    const questionsToday = all.reduce((s,r)=> s + (r.total||0), 0);
+    // words known/study increments
+    const known = JSON.parse(localStorage.getItem('knownWords')||'[]');
+    const study = JSON.parse(localStorage.getItem('studyWords')||'[]');
+    const wordsToday = Math.min(known.length + Math.floor(study.length*0.5), userData.goals.wordsPerDay); // rough proxy
+    // readings from languageResults lezen today
+    const readingsToday = all.filter(r=> (r.category==='lezen' || r.type==='lezen')).length;
+    document.getElementById('goal-q-today')?.innerText = questionsToday;
+    document.getElementById('goal-w-today')?.innerText = wordsToday;
+    document.getElementById('goal-r-today')?.innerText = readingsToday;
+    // bars
+    const qPerc = Math.min(100, Math.round((questionsToday / Math.max(1,userData.goals.questionsPerDay))*100));
+    const wPerc = Math.min(100, Math.round((wordsToday / Math.max(1,userData.goals.wordsPerDay))*100));
+    const rPerc = Math.min(100, Math.round((readingsToday / Math.max(1,userData.goals.readingsPerDay))*100));
+    const qBar = document.getElementById('goal-q-bar'); if(qBar) qBar.style.width = qPerc+'%';
+    const wBar = document.getElementById('goal-w-bar'); if(wBar) wBar.style.width = wPerc+'%';
+    const rBar = document.getElementById('goal-r-bar'); if(rBar) rBar.style.width = rPerc+'%';
+    // save handlers
+    document.getElementById('goal-q-save')?.addEventListener('click', ()=>{ userData.goals.questionsPerDay = parseInt(document.getElementById('goal-q-input').value||'50'); localStorage.setItem('bbGoals', JSON.stringify(userData.goals)); renderGoals(); });
+    document.getElementById('goal-w-save')?.addEventListener('click', ()=>{ userData.goals.wordsPerDay = parseInt(document.getElementById('goal-w-input').value||'20'); localStorage.setItem('bbGoals', JSON.stringify(userData.goals)); renderGoals(); });
+    document.getElementById('goal-r-save')?.addEventListener('click', ()=>{ userData.goals.readingsPerDay = parseInt(document.getElementById('goal-r-input').value||'1'); localStorage.setItem('bbGoals', JSON.stringify(userData.goals)); renderGoals(); });
 }
 
-function getScenarioTitle(type) {
-  const titles = {
-    'verkeer': 'Verkeerscontrole',
-    'huiszoeking': 'Huiszoeking',
-    'massa': 'Massale Ordeverstoring',
-    'pursuit': 'Pursuit Situatie',
-    'recherche': 'Recherche Onderzoek',
-    'nood': 'Noodsituatie'
-  };
-  return titles[type] || 'Onbekend Scenario';
+// Dashboard 7-day mini bars
+function renderDashboardBars(){
+    const el = document.getElementById('dash-bars'); if(!el) return;
+    const all = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+    ];
+    const days=[]; for(let i=6;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); days.push(d.toISOString().split('T')[0]); }
+    el.innerHTML='';
+    days.forEach(day=>{
+        const f = all.filter(r=>r.date===day); const v = f.length? Math.round(f.reduce((s,r)=>s+r.percentage,0)/f.length):0;
+        const b=document.createElement('div'); b.style.height=v+'%'; b.style.width='12%'; b.style.background=v>=80?'#16a34a':v>=60?'#f59e0b':'#dc2626'; b.title=`${day}: ${v}%`;
+        el.appendChild(b);
+    });
 }
 
-function getScenarioDescription(type) {
-  const descriptions = {
-    'verkeer': 'Je controleert een verdachte bestuurder tijdens een routinecontrole. De bestuurder gedraagt zich nerveus en weigert zijn rijbewijs te tonen.',
-    'huiszoeking': 'Je moet een huiszoeking uitvoeren in een woning waar mogelijk drugs worden verhandeld. Er zijn kinderen aanwezig.',
-    'massa': 'Er is een massale ordeverstoring in het centrum van de stad. Demonstranten worden steeds agressiever.',
-    'pursuit': 'Je bent betrokken bij een achtervolging van een verdachte auto. De bestuurder rijdt gevaarlijk door de stad.',
-    'recherche': 'Je onderzoekt een inbraak in een winkel. Er zijn sporen van geweld en de eigenaar is gewond.',
-    'nood': 'Er is een schietpartij gemeld in een winkelcentrum. Je bent de eerste agent ter plaatse.'
-  };
-  return descriptions[type] || 'Geen beschrijving beschikbaar.';
+// Smart suggestions based on weakest categories and streak/goals
+function renderSmartSuggestions(){
+    const el = document.getElementById('bb-suggestions'); if(!el) return;
+    const all = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+    ];
+    const byCat = {};
+    all.forEach(r=>{ const k=r.category||r.type||'genel'; (byCat[k]=byCat[k]||[]).push(r.percentage); });
+    const ranking = Object.entries(byCat).map(([k,arr])=>({k,avg:Math.round(arr.reduce((s,v)=>s+v,0)/arr.length)})).sort((a,b)=>a.avg-b.avg);
+    const tips = [];
+    if (ranking.length){ const w = ranking[0]; tips.push(`Zayıf alan: ${w.k} • Bugün 10 soru çöz.`); }
+    const streak = calculateStreakDays?.() || 0;
+    if (streak<3) tips.push('Streak başlat: bugün en az 1 test çöz.'); else tips.push(`Streak ${streak} gün — devam!`);
+    const goals = JSON.parse(localStorage.getItem('bbGoals')||'null') || userData.goals;
+    tips.push(`Günlük hedef: ${goals.questionsPerDay} soru, ${goals.wordsPerDay} kelime, ${goals.readingsPerDay} okuma.`);
+    el.innerHTML = tips.map(t=>`<li>${t}</li>`).join('');
+    // weak tags quick buttons from lastQuizResult.tagsBreakdown lowest
+    try{
+      const last = JSON.parse(localStorage.getItem('lastQuizResult')||'null');
+      const tb = last && last.tagsBreakdown ? last.tagsBreakdown : null;
+      const quick = document.getElementById('bb-quick-tags'); if(quick){
+        if(tb){
+          const items = Object.entries(tb).sort((a,b)=>a[1].percentage-b[1].percentage).slice(0,3);
+          quick.innerHTML = items.map(([tag])=>`<button class="module-btn" onclick="bbQuickStart(['${tag}'])">#${tag}</button>`).join('');
+        } else {
+          quick.innerHTML = '';
+        }
+      }
+    } catch(e){}
 }
 
-function getScenarioOption(type, option) {
-  const options = {
-    'verkeer': {
-      'A': 'Direct aanhouden en boete uitschrijven',
-      'B': 'Rustig blijven en om verduidelijking vragen',
-      'C': 'Versterking oproepen en auto doorzoeken'
-    },
-    'huiszoeking': {
-      'A': 'Direct binnengaan en doorzoeken',
-      'B': 'Eerst de kinderen veiligstellen',
-      'C': 'Wachten op versterking en specialistische eenheid'
-    },
-    'massa': {
-      'A': 'Direct ingrijpen met geweld',
-      'B': 'Proberen te de-escaleren',
-      'C': 'Versterking oproepen en gebied afzetten'
-    },
-    'pursuit': {
-      'A': 'Doorgaan met achtervolging',
-      'B': 'Achtervolging stoppen vanwege veiligheidsrisico',
-      'C': 'Helikopter inzetten voor luchtsteun'
-    },
-    'recherche': {
-      'A': 'Direct sporen veiligstellen',
-      'B': 'Eerst slachtoffer helpen',
-      'C': 'Wachten op forensisch team'
-    },
-    'nood': {
-      'A': 'Direct naar binnen gaan',
-      'B': 'Eerst situatie inschatten',
-      'C': 'Versterking oproepen en gebied afzetten'
-    }
-  };
-  return options[type]?.[option] || 'Geen optie beschikbaar.';
+// Badges
+function renderBadges(){
+    const el = document.getElementById('bb-badges'); if(!el) return;
+    const badges = computeBadges();
+    localStorage.setItem('bbBadges', JSON.stringify(badges));
+    el.innerHTML = badges.map(b=>`<div title="${b.title}\n${b.desc}" style="padding:8px 12px; border:1px solid var(--glass-border); border-radius:999px; background:${b.earned?'#16a34a33':'rgba(26,26,46,0.6)'}; color:${b.earned?'#16a34a':'var(--text-secondary)'};">${b.icon} ${b.title}</div>`).join('');
 }
 
-function selectScenarioOption(scenarioType, option) {
-  console.log('Selected option:', option, 'for scenario:', scenarioType);
-  
-  // Store result
-  const scenarioResults = JSON.parse(localStorage.getItem('scenarioResults') || '{}');
-  if (!scenarioResults[scenarioType]) {
-    scenarioResults[scenarioType] = [];
-  }
-  scenarioResults[scenarioType].push({
-    option: option,
-    timestamp: new Date().toISOString(),
-    scenario: scenarioType
-  });
-  localStorage.setItem('scenarioResults', JSON.stringify(scenarioResults));
-  
-  // Show feedback
-  alert(`Je hebt optie ${option} gekozen. Goed gedaan!`);
-  
-  // Return to scenarios overview
-  backToScenarios();
+function computeBadges(){
+    const all = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+    ];
+    const perfect = all.some(r=>r.percentage===100);
+    const streak = calculateStreakDays?.() || 0;
+    const known = JSON.parse(localStorage.getItem('knownWords')||'[]');
+    const avg = all.length? Math.round(all.reduce((s,r)=>s+r.percentage,0)/all.length):0;
+    const badgeList = [
+        { key:'perfect', icon:'🎯', title:'Perfect', desc:'Bir testte %100', earned: perfect },
+        { key:'streak7', icon:'🔥', title:'7-Gün Serisi', desc:'7 gün üst üste çalışma', earned: streak>=7 },
+        { key:'words100', icon:'📚', title:'100 Kelime', desc:'100+ kelime işaretli', earned: known.length>=100 },
+        { key:'avg80', icon:'🚀', title:'Ustalık', desc:'Genel ortalama %80+', earned: avg>=80 }
+    ];
+    return badgeList;
 }
 
-function backToScenarios() {
-  window.location.href = 'scenarios.html';
-}
+// Premium
+function requirePremium(feature){ if(userData.premium) return true; showAchievementNotification('🔒 Premium özellik: '+feature); return false; }
 
-// Interview functions
-function startInterview(interviewType) {
-  console.log('Starting interview:', interviewType);
-  
-  // Store interview type for tracking
-  localStorage.setItem('currentInterview', interviewType);
-  
-  // Show interview interface
-  const mainContent = document.querySelector('main');
-  if (mainContent) {
-    mainContent.innerHTML = `
-      <section class="interview-interface">
-        <h3>Interview Training: ${getInterviewTitle(interviewType)}</h3>
-        <div class="interview-content">
-          <div class="interview-question">
-            <h4>Vraag:</h4>
-            <p>${getInterviewQuestion(interviewType)}</p>
-          </div>
-          <div class="interview-options">
-            <h4>Antwoord opties:</h4>
-            <div class="option-buttons">
-              <button class="interview-option" onclick="selectInterviewOption('${interviewType}', 'A')">
-                ${getInterviewOption(interviewType, 'A')}
-              </button>
-              <button class="interview-option" onclick="selectInterviewOption('${interviewType}', 'B')">
-                ${getInterviewOption(interviewType, 'B')}
-              </button>
-              <button class="interview-option" onclick="selectInterviewOption('${interviewType}', 'C')">
-                ${getInterviewOption(interviewType, 'C')}
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="interview-controls">
-          <button class="control-btn secondary" onclick="backToInterviews()">Terug naar Overzicht</button>
-        </div>
-      </section>
-    `;
-  }
-}
-
-function getInterviewTitle(type) {
-  const titles = {
-    'sollicitatie': 'Sollicitatiegesprek',
-    'nood': 'Noodsituatie Interview',
-    'onderzoek': 'Onderzoeksinterview',
-    'team': 'Team Interview',
-    'radio': 'Radio Communicatie',
-    'rolspel': 'Rolspel Training'
-  };
-  return titles[type] || 'Onbekende Interview Type';
-}
-
-function getInterviewQuestion(type) {
-  const questions = {
-    'sollicitatie': 'Waarom wil je bij de politie werken?',
-    'nood': 'Hoe zou je reageren op een agressieve verdachte?',
-    'onderzoek': 'Hoe ga je om met tegenstrijdige verklaringen?',
-    'team': 'Beschrijf een situatie waarin je in een team werkte.',
-    'radio': 'Hoe communiceer je effectief via de radio?',
-    'rolspel': 'Je bent in een stressvolle situatie. Hoe blijf je kalm?'
-  };
-  return questions[type] || 'Geen vraag beschikbaar.';
-}
-
-function getInterviewOption(type, option) {
-  const options = {
-    'sollicitatie': {
-      'A': 'Ik wil mensen helpen en de samenleving beschermen',
-      'B': 'Het lijkt me een interessante baan',
-      'C': 'Ik heb geen andere opties'
-    },
-    'nood': {
-      'A': 'Direct ingrijpen met geweld',
-      'B': 'Proberen te de-escaleren',
-      'C': 'Versterking oproepen'
-    },
-    'onderzoek': {
-      'A': 'Beide verklaringen gelijk behandelen',
-      'B': 'Meer bewijs verzamelen',
-      'C': 'De geloofwaardigste kiezen'
-    },
-    'team': {
-      'A': 'Ik werkte samen met collega\'s aan een project',
-      'B': 'Ik deed mijn eigen werk',
-      'C': 'Ik had geen team ervaring'
-    },
-    'radio': {
-      'A': 'Kort en bondig communiceren',
-      'B': 'Alle details doorgeven',
-      'C': 'Wachten tot ik rustig ben'
-    },
-    'rolspel': {
-      'A': 'Ik blijf kalm en denk na',
-      'B': 'Ik raak in paniek',
-      'C': 'Ik handel instinctief'
-    }
-  };
-  return options[type]?.[option] || 'Geen optie beschikbaar.';
-}
-
-function selectInterviewOption(interviewType, option) {
-  console.log('Selected option:', option, 'for interview:', interviewType);
-  
-  // Store result
-  const interviewResults = JSON.parse(localStorage.getItem('interviewResults') || '{}');
-  if (!interviewResults[interviewType]) {
-    interviewResults[interviewType] = [];
-  }
-  interviewResults[interviewType].push({
-    option: option,
-    timestamp: new Date().toISOString(),
-    interview: interviewType
-  });
-  localStorage.setItem('interviewResults', JSON.stringify(interviewResults));
-  
-  // Show feedback
-  alert(`Je hebt optie ${option} gekozen. Goed gedaan!`);
-  
-  // Return to interviews overview
-  backToInterviews();
-}
-
-function backToInterviews() {
-  window.location.href = 'gesprek.html';
-}
+// Theme toggle
+function applyTheme(mode){ document.documentElement.dataset.theme = mode; localStorage.setItem('bbTheme', mode); }
+function toggleTheme(){ const cur = localStorage.getItem('bbTheme')||'dark'; applyTheme(cur==='dark'?'light':'dark'); }
 
 // Sayfa yüklendikende
 document.addEventListener('DOMContentLoaded', function() {
@@ -731,6 +615,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Verileri yükle
     loadData();
     
+    // Re-render goals and mini bars on focus (data may change)
+    window.addEventListener('focus', ()=>{ renderGoals(); renderDashboardBars(); });
+
     // Event listenerlar
     document.getElementById('reload-btn')?.addEventListener('click', function(e) {
         e.preventDefault();
@@ -751,6 +638,27 @@ document.addEventListener('DOMContentLoaded', function() {
     if (location.pathname.endsWith('woorden.html')) {
         updateDailyWord();
     }
+    // Attach roles to main landmarks for accessibility
+    try { document.querySelectorAll('nav.top-nav').forEach(n=> n.setAttribute('role','navigation')); document.querySelector('main')?.setAttribute('role','main'); } catch {}
+    // Dropdown keyboard navigation
+    try {
+      document.querySelectorAll('.nav-dropdown .dropdown-btn').forEach(btn=>{
+        btn.setAttribute('aria-haspopup','true'); btn.setAttribute('aria-expanded','false');
+        const menu = btn.parentElement.querySelector('.dropdown-menu');
+        btn.addEventListener('keydown', (e)=>{
+          if(e.key==='Enter' || e.key===' '){ e.preventDefault(); const open = menu.style.display==='block'; menu.style.display = open? 'none':'block'; btn.setAttribute('aria-expanded', String(!open)); if(!open) menu.querySelector('a')?.focus(); }
+          if(e.key==='ArrowDown'){ e.preventDefault(); menu.querySelector('a')?.focus(); }
+        });
+        menu?.addEventListener('keydown',(e)=>{
+          const links=[...menu.querySelectorAll('a')]; const idx=links.indexOf(document.activeElement);
+          if(e.key==='ArrowDown'){ e.preventDefault(); (links[idx+1]||links[0])?.focus(); }
+          if(e.key==='ArrowUp'){ e.preventDefault(); (links[idx-1]||links[links.length-1])?.focus(); }
+          if(e.key==='Escape'){ e.preventDefault(); menu.style.display='none'; btn.setAttribute('aria-expanded','false'); btn.focus(); }
+        });
+      });
+    } catch {}
+    // Basic analytics
+    try { const evts = JSON.parse(localStorage.getItem('bbAnalytics')||'[]'); evts.unshift({ t:Date.now(), path:location.pathname }); localStorage.setItem('bbAnalytics', JSON.stringify(evts.slice(0,500))); } catch {}
 });
 
 // Quiz sayfası başlatma
@@ -986,354 +894,3 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeQuizPage();
     }
 });
-
-// Word management functions
-function markWordKnown() {
-  const currentWord = JSON.parse(localStorage.getItem('currentWord') || '{}');
-  if (currentWord.word) {
-    const knownWords = JSON.parse(localStorage.getItem('knownWords') || '[]');
-    if (!knownWords.includes(currentWord.word)) {
-      knownWords.push(currentWord.word);
-      localStorage.setItem('knownWords', JSON.stringify(knownWords));
-    }
-    
-    // Remove from study words if present
-    const studyWords = JSON.parse(localStorage.getItem('studyWords') || '[]');
-    const updatedStudyWords = studyWords.filter(w => w !== currentWord.word);
-    localStorage.setItem('studyWords', JSON.stringify(updatedStudyWords));
-    
-    // Update stats
-    updateWordStats();
-    
-    // Show next word
-    nextWord();
-  }
-}
-
-function studyWord() {
-  const currentWord = JSON.parse(localStorage.getItem('currentWord') || '{}');
-  if (currentWord.word) {
-    const studyWords = JSON.parse(localStorage.getItem('studyWords') || '[]');
-    if (!studyWords.includes(currentWord.word)) {
-      studyWords.push(currentWord.word);
-      localStorage.setItem('studyWords', JSON.stringify(studyWords));
-    }
-    
-    // Show next word
-    nextWord();
-  }
-}
-
-function nextWord() {
-  // Load next word from daily words
-  const dailyWords = JSON.parse(localStorage.getItem('dailyWords') || '[]');
-  const currentIndex = parseInt(localStorage.getItem('currentWordIndex') || '0');
-  
-  if (currentIndex < dailyWords.length - 1) {
-    const nextIndex = currentIndex + 1;
-    localStorage.setItem('currentWordIndex', nextIndex.toString());
-    
-    const nextWord = dailyWords[nextIndex];
-    localStorage.setItem('currentWord', JSON.stringify(nextWord));
-    
-    // Update display
-    showCurrentWord();
-  } else {
-    // All words completed
-    alert('Alle woorden van vandaag zijn voltooid!');
-    window.location.href = 'taal.html';
-  }
-}
-
-function showCurrentWord() {
-  const currentWord = JSON.parse(localStorage.getItem('currentWord') || '{}');
-  if (currentWord.word) {
-    const wordMain = document.querySelector('.word-main');
-    if (wordMain) {
-      wordMain.innerHTML = `
-        <div class="word-text">${currentWord.word}</div>
-        <div class="word-type">${currentWord.type || 'zelfstandig naamwoord'}</div>
-        <div class="word-meaning">${currentWord.betekenis || 'Betekenis niet beschikbaar'}</div>
-        <div class="word-example">${currentWord.voorbeeld || 'Voorbeeld niet beschikbaar'}</div>
-      `;
-    }
-  }
-}
-
-function updateWordStats() {
-  const knownWords = JSON.parse(localStorage.getItem('knownWords') || '[]');
-  const studyWords = JSON.parse(localStorage.getItem('studyWords') || '[]');
-  
-  // Update display if elements exist
-  const knownCount = document.querySelector('.known-count');
-  const studyCount = document.querySelector('.study-count');
-  
-  if (knownCount) knownCount.textContent = knownWords.length;
-  if (studyCount) studyCount.textContent = studyWords.length;
-}
-
-// Quiz functions
-function beoordeel(button, isCorrect) {
-  // Remove previous selections
-  document.querySelectorAll('#quiz-options button').forEach(btn => {
-    btn.classList.remove('selected', 'correct', 'incorrect');
-  });
-  
-  // Mark selected button
-  button.classList.add('selected');
-  
-  if (isCorrect) {
-    button.classList.add('correct');
-    // Add to score
-    const currentScore = parseInt(localStorage.getItem('currentQuizScore') || '0');
-    localStorage.setItem('currentQuizScore', (currentScore + 1).toString());
-  } else {
-    button.classList.add('incorrect');
-  }
-  
-  // Show next question after delay
-  setTimeout(() => {
-    nextQuizQuestion();
-  }, 1500);
-}
-
-function nextQuizQuestion() {
-  const currentQuestionIndex = parseInt(localStorage.getItem('currentQuestionIndex') || '0');
-  const totalQuestions = parseInt(localStorage.getItem('totalQuestions') || '0');
-  
-  if (currentQuestionIndex < totalQuestions - 1) {
-    localStorage.setItem('currentQuestionIndex', (currentQuestionIndex + 1).toString());
-    renderQuiz();
-  } else {
-    // Quiz completed
-    endQuiz();
-  }
-}
-
-function endQuiz() {
-  const score = parseInt(localStorage.getItem('currentQuizScore') || '0');
-  const total = parseInt(localStorage.getItem('totalQuestions') || '0');
-  const percentage = Math.round((score / total) * 100);
-  
-  // Save result
-  const quizResults = JSON.parse(localStorage.getItem('quizResults') || '[]');
-  quizResults.push({
-    score: score,
-    total: total,
-    percentage: percentage,
-    date: new Date().toISOString(),
-    category: localStorage.getItem('quizCategory') || 'general'
-  });
-  localStorage.setItem('quizResults', JSON.stringify(quizResults));
-  
-  // Show results
-  alert(`Quiz voltooid! Score: ${score}/${total} (${percentage}%)`);
-  
-  // Redirect to results page
-  window.location.href = 'resultaten.html';
-}
-
-// Calendar navigation functions
-function previousMonth() {
-  currentMonth--;
-  if (currentMonth < 0) {
-    currentMonth = 11;
-    currentYear--;
-  }
-  generateActivityCalendar();
-}
-
-function nextMonth() {
-  currentMonth++;
-  if (currentMonth > 11) {
-    currentMonth = 0;
-    currentYear++;
-  }
-  generateActivityCalendar();
-}
-
-// Stats tab functions
-function showStatsTab(period) {
-  // Remove active class from all tabs
-  document.querySelectorAll('.tab-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  
-  // Add active class to clicked tab
-  event.target.classList.add('active');
-  
-  // Update stats based on period
-  updateDetailedStats(period);
-}
-
-// ===== QUIZ FUNCTIONS =====
-
-// Quiz state
-let quizState = {
-  questions: [],
-  selectedQuestions: [],
-  currentIndex: 0,
-  score: 0,
-  answered: 0
-};
-
-// Load quiz data
-async function loadQuiz() {
-  try {
-    const response = await fetch('data/quiz.json');
-    if (!response.ok) throw new Error('Failed to load quiz data');
-    
-    const data = await response.json();
-    quizState.questions = data.questions || [];
-    
-    if (quizState.questions.length === 0) {
-      showError('Geen quiz vragen beschikbaar');
-      return;
-    }
-    
-    // Select 5 random questions
-    quizState.selectedQuestions = shuffleArray(quizState.questions).slice(0, 5);
-    quizState.currentIndex = 0;
-    quizState.score = 0;
-    quizState.answered = 0;
-    
-    renderQuestion();
-  } catch (error) {
-    console.error('Error loading quiz:', error);
-    showError('Fout bij het laden van de quiz: ' + error.message);
-  }
-}
-
-// Render current question
-function renderQuestion() {
-  const container = document.getElementById('quiz-container');
-  const question = quizState.selectedQuestions[quizState.currentIndex];
-  
-  if (!question) return;
-
-  container.innerHTML = `
-    <div class="question-container">
-      <div class="question-text">
-        <h3>Vraag ${quizState.currentIndex + 1} van ${quizState.selectedQuestions.length}</h3>
-        <p>${question.vraag}</p>
-      </div>
-      <div class="question-options">
-        ${question.opties.map((option, index) => `
-          <button class="option-btn" onclick="selectAnswer(this, ${index === question.antwoord})">
-            ${option}
-          </button>
-        `).join('')}
-      </div>
-    </div>
-  `;
-
-  // Hide end button initially
-  const endBtn = document.getElementById('end-quiz-btn');
-  if (endBtn) endBtn.style.display = 'none';
-}
-
-// Handle answer selection
-function selectAnswer(button, isCorrect) {
-  const allButtons = button.parentNode.querySelectorAll('.option-btn');
-  
-  // Disable all buttons
-  allButtons.forEach(btn => btn.disabled = true);
-  
-  // Mark correct/incorrect
-  if (isCorrect) {
-    button.classList.add('correct');
-    quizState.score++;
-  } else {
-    button.classList.add('incorrect');
-  }
-  
-  quizState.answered++;
-  
-  // Wait then move to next question or show end button
-  setTimeout(() => {
-    if (quizState.currentIndex === quizState.selectedQuestions.length - 1) {
-      // Last question - show end button
-      const endBtn = document.getElementById('end-quiz-btn');
-      if (endBtn) endBtn.style.display = 'inline-block';
-    } else {
-      // Move to next question
-      quizState.currentIndex++;
-      renderQuestion();
-    }
-  }, 1000);
-}
-
-// End quiz early
-function endQuizEarly() {
-  const percentage = quizState.answered > 0 ? Math.round((quizState.score / quizState.answered) * 100) : 0;
-  
-  const result = {
-    type: 'daily-quiz',
-    score: quizState.score,
-    total: quizState.answered,
-    percentage: percentage,
-    questions: quizState.selectedQuestions.slice(0, quizState.answered),
-    date: new Date().toISOString()
-  };
-  
-  // Save result
-  localStorage.setItem('lastQuizResult', JSON.stringify(result));
-  
-  // Redirect to results page
-  window.location.href = 'resultaten.html';
-}
-
-// Utility function to shuffle array
-function shuffleArray(array) {
-  const shuffled = [...array];
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled;
-}
-
-// Show error message
-function showError(message) {
-  const container = document.getElementById('quiz-container');
-  if (container) {
-    container.innerHTML = `
-      <div class="error-message">
-        <h3>❌ Fout</h3>
-        <p>${message}</p>
-        <button class="control-btn primary" onclick="loadQuiz()">Opnieuw proberen</button>
-      </div>
-    `;
-  }
-}
-
-// ===== AUTHENTICATION FUNCTIONS =====
-
-// Handle login for scenarios and other pages
-function handleLogin() {
-  const username = document.getElementById('bb-username').value.trim();
-  if (username) {
-    bbAuth.login(username);
-    alert('Ingelogd als: ' + username);
-  } else {
-    alert('Voer een gebruikersnaam in');
-  }
-}
-
-// ===== SCENARIO FUNCTIONS =====
-
-// Start a specific scenario
-function startScenario(scenarioType) {
-  alert('Scenario gestart: ' + scenarioType);
-  // Here comes the scenario logic
-  // TODO: Implement full scenario functionality
-}
-
-// ===== INTERVIEW FUNCTIONS =====
-
-// Start a specific interview training
-function startInterview(interviewType) {
-  alert('Interview training gestart: ' + interviewType);
-  // Here comes the interview logic
-  // TODO: Implement full interview functionality
-}

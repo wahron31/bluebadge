@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlueBadge – Politie Selectie Training</title>
+  <link rel="preload" as="style" href="style.css">
+  <link rel="preload" as="script" href="app.js">
   <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.webmanifest" />
 </head>
 <body>
   <header>
@@ -41,19 +44,10 @@
     <div class="hero-section">
       <h2 data-i18n="police_selection_training">POLITIE SELECTIE TRAINING</h2>
       <p data-i18n="prepare_exams">Bereid je voor op de examens en gesprekken • Elke seconde telt</p>
-      <div class="stats-bar">
-        <div class="stat-item">
-          <span class="stat-number" id="total-questions">156</span>
-          <span class="stat-label" data-i18n="questions_answered">Vragen Beantwoord</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" id="success-rate">78%</span>
-          <span class="stat-label" data-i18n="success_rate">Succespercentage</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" id="streak-days">7</span>
-          <span class="stat-label" data-i18n="days_streak">Dagen Achtereen</span>
-        </div>
+      <div class="kpi-chips" aria-label="Kernstatistieken">
+        <span class="chip" title="Vragen beantwoord"><span id="total-questions">156</span></span>
+        <span class="chip" title="Succespercentage"><span id="success-rate">78%</span></span>
+        <span class="chip" title="Dagen achtereen"><span id="streak-days">7</span></span>
       </div>
     </div>
   </header>
@@ -78,6 +72,56 @@
           <button class="challenge-btn" onclick="startDailyChallenge('situationeel')" data-i18n="start_test">Start Test</button>
         </div>
       </div>
+    </section>
+
+    <section class="goals-section" style="margin:24px 2rem;">
+      <h3 data-translate="daily_goals">🎯 Dagelijkse Doelen</h3>
+      <div class="overview-grid">
+        <div class="overview-card">
+          <div class="card-header">
+            <h4>Sorular</h4>
+            <span><span id="goal-q-today">0</span>/<span id="goal-q-target">50</span></span>
+          </div>
+          <div class="progress-bar large">
+            <div class="progress-fill" id="goal-q-bar" style="width:0%"></div>
+          </div>
+          <div style="margin-top:8px; display:flex; gap:6px;">
+            <input id="goal-q-input" type="number" min="10" max="500" value="50" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;" />
+            <button class="module-btn" id="goal-q-save">Opslaan</button>
+          </div>
+        </div>
+        <div class="overview-card">
+          <div class="card-header">
+            <h4>Woordenschat</h4>
+            <span><span id="goal-w-today">0</span>/<span id="goal-w-target">20</span></span>
+          </div>
+          <div class="progress-bar large">
+            <div class="progress-fill" id="goal-w-bar" style="width:0%"></div>
+          </div>
+          <div style="margin-top:8px; display:flex; gap:6px;">
+            <input id="goal-w-input" type="number" min="5" max="200" value="20" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;" />
+            <button class="module-btn" id="goal-w-save">Opslaan</button>
+          </div>
+        </div>
+        <div class="overview-card">
+          <div class="card-header">
+            <h4>Lezen</h4>
+            <span><span id="goal-r-today">0</span>/<span id="goal-r-target">1</span></span>
+          </div>
+          <div class="progress-bar large">
+            <div class="progress-fill" id="goal-r-bar" style="width:0%"></div>
+          </div>
+          <div style="margin-top:8px; display:flex; gap:6px;">
+            <input id="goal-r-input" type="number" min="1" max="20" value="1" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;" />
+            <button class="module-btn" id="goal-r-save">Opslaan</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mini-analytics" style="margin:24px 2rem;">
+      <h3 data-translate="last_7_days">📈 Laatste 7 Dagen</h3>
+      <div id="dash-bars" style="height:140px; display:flex; align-items:flex-end; gap:8px; background: rgba(26,26,46,0.6); border:1px solid var(--glass-border); border-radius:8px; padding:12px;"></div>
     </section>
 
     <section class="word-of-day">
@@ -154,6 +198,17 @@
       </div>
     </section>
 
+    <section class="smart-suggestions" style="margin:24px 2rem;">
+      <h3>🧭 Akıllı Öneriler</h3>
+      <ul id="bb-suggestions" style="margin-top:8px; line-height:1.6;"></ul>
+      <div id="bb-quick-tags" style="margin-top:8px; display:flex; gap:8px; flex-wrap:wrap;"></div>
+    </section>
+
+    <section class="badges" style="margin:24px 2rem;">
+      <h3>🏅 Rozetler</h3>
+      <div id="bb-badges" style="display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;"></div>
+    </section>
+
     <section class="recent-activity">
       <h3 data-i18n="recent_activity">📊 Recente Activiteit</h3>
       <div class="activity-list" id="activity-list">
@@ -170,5 +225,13 @@
   <script src="i18n.js"></script>
   <script src="auth.js"></script>
   <script src="app.js"></script>
+  <script src="layout.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+    // quick-start helper for tags
+    function bbQuickStart(tags){ try { localStorage.setItem('sim_prefill_tags', tags.join(',')); location.href='simulation.html'; } catch(e){} }
+  </script>
 </body>
 </html>

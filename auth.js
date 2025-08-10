@@ -12,11 +12,16 @@
   window.bbAuth = {
     current: getUser(),
     login(username){
-      if (!username) return false;
-      const user = { username, createdAt: new Date().toISOString() };
-      saveUser(user);
-      this.current = user;
-      return true;
+      try {
+        if (typeof username !== 'string') return false;
+        const value = username.trim();
+        const valid = /^[A-Za-z0-9_.-]{3,20}$/.test(value);
+        if (!valid) { alert('Gebruikersnaam ongeldig. 3-20 tekens, alleen letters/cijfers/._-'); return false; }
+        const user = { username: value, createdAt: new Date().toISOString() };
+        saveUser(user);
+        this.current = user;
+        return true;
+      } catch(e){ console.error('Login error', e); return false; }
     },
     logout(){
       localStorage.removeItem(KEY_USER);
@@ -37,13 +42,13 @@
   const origSetItem = localStorage.setItem.bind(localStorage);
 
   localStorage.getItem = function(k){
-    if (['cognitiveResults','languageResults','quizResults','activityHistory','learnedVocabulary','knownWords','studyWords'].includes(k)){
+    if (['cognitiveResults','languageResults','quizResults','activityHistory','learnedVocabulary','knownWords','studyWords','bbGoals','bbBadges'].includes(k)){
       return origGetItem(scopeKey(k));
     }
     return origGetItem(k);
   };
   localStorage.setItem = function(k, v){
-    if (['cognitiveResults','languageResults','quizResults','activityHistory','learnedVocabulary','knownWords','studyWords'].includes(k)){
+    if (['cognitiveResults','languageResults','quizResults','activityHistory','learnedVocabulary','knownWords','studyWords','bbGoals','bbBadges'].includes(k)){
       return origSetItem(scopeKey(k), v);
     }
     return origSetItem(k, v);

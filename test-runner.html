@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Test Runner</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main style="max-width:900px;margin:24px auto; padding:0 12px;">
+    <h3>Unit Tests</h3>
+    <pre id="out" style="background:#0f172a; color:#e2e8f0; padding:12px; border-radius:8px; min-height:200px;"></pre>
+  </main>
+  <script src="app.js"></script>
+  <script>
+    function assert(name, cond){ const o=document.getElementById('out'); o.textContent += `${cond?'✅':'❌'} ${name}\n`; if(!cond) throw new Error(name); }
+    try{
+      assert('sanitize escapes <', sanitizeText('<x>')==='&lt;x&gt;');
+      assert('csrf token stable', getCsrfToken()===getCsrfToken());
+      assert('feature flags default', typeof BB_CONFIG==='object');
+      document.getElementById('out').textContent += '\nKlaar.';
+    } catch(e){ document.getElementById('out').textContent += `\nFout: ${e.message}`; }
+  </script>
+</body>
+</html>

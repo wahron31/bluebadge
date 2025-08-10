@@ -4,7 +4,16 @@
 
   function t(key){
     const map = dict[current] || {};
-    return map[key] || map[key?.trim?.()] || key;
+    return map[key] || key;
+  }
+
+  async function loadDict(){
+    try {
+      const override = localStorage.getItem('i18n_override');
+      if (override) { dict = JSON.parse(override); }
+      else { dict = await fetchJSON('data/languages.json', { validate: d=> typeof d==='object' && d!==null }); }
+    } catch(e) { dict = {}; }
+    applyLang(current);
   }
 
   function applyLang(lang){
@@ -89,15 +98,33 @@
         option.classList.toggle('active', option.getAttribute('data-lang') === lang);
       });
     }
+=======
+    const l = dict[lang]||{};
+    document.querySelectorAll('[data-translate],[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-translate')||el.getAttribute('data-i18n');
+      if (l[key]) el.textContent = (typeof sanitizeText==='function'? sanitizeText(String(l[key])): String(l[key]));
+    });
+    document.documentElement.lang = lang;
+    const select = document.getElementById('language-select');
+    if (select) select.value = lang;
+>>>>>>> b5686b5c0142c64e6edc954502fd391e3b307dd6
   }
 
   async function init(){
+    await loadDict();
+    const select = document.getElementById('language-select');
+    if (select) {
+      select.addEventListener('change', () => {
+        current = select.value;
+        localStorage.setItem('selectedLanguage', current);
+        applyLang(current);
+      });
+    }
+    // sidebar select
     try {
-      const res = await fetch('data/languages.json');
-      dict = await res.json();
-    } catch(e) { dict = {}; }
-    renderSwitcher();
-    applyLang(current);
+      const sb = document.querySelector('.bb-lang-select');
+      if (sb){ sb.value = current; sb.addEventListener('change', ()=>{ current = sb.value; localStorage.setItem('selectedLanguage', current); applyLang(current); const top = document.getElementById('language-select'); if(top) top.value=current; }); }
+    } catch {}
   }
 
   window.i18n = { t, apply: applyLang, get lang(){ return current; }, get dict(){ return dict; } };

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Content Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="with-sidebar with-right">
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
+      <div class="nav-links">
+        <a href="index.html">Dashboard</a>
+      </div>
+    </nav>
+    <div class="hero-section"><h2>Contentbeheer</h2><p>CSV/JSON importeren • Bewerken • Downloaden • Toepassen</p></div>
+  </header>
+  <main style="max-width:1100px;margin:24px auto;">
+    <section class="test-interface" style="display:block;">
+      <div class="test-container">
+        <div class="overview-grid">
+          <div class="overview-card">
+            <h4>Lezen (JSON)</h4>
+            <p style="font-size:12px;opacity:0.8">Alanen: passage, vraag, opties[4], antwoord(int), uitleg</p>
+            <input type="file" accept="application/json" id="imp-lezen" />
+          </div>
+          <div class="overview-card">
+            <h4>Luisteren (JSON/CSV)</h4>
+            <p style="font-size:12px;opacity:0.8">Alanen: audioText, vraag, opties[4], antwoord(int), uitleg</p>
+            <input type="file" accept="application/json,text/csv" id="imp-luisteren" />
+          </div>
+          <div class="overview-card">
+            <h4>Woordenschat (JSON/CSV)</h4>
+            <p style="font-size:12px;opacity:0.8">Alanen: vraag, opties[4], antwoord(int), uitleg</p>
+            <input type="file" accept="application/json,text/csv" id="imp-woorden" />
+          </div>
+          <div class="overview-card">
+            <h4>Grammatica (JSON/CSV)</h4>
+            <p style="font-size:12px;opacity:0.8">Alanen: vraag, opties[4], antwoord(int), uitleg</p>
+            <input type="file" accept="application/json,text/csv" id="imp-grammatica" />
+          </div>
+          <div class="overview-card">
+            <h4>Quiz (JSON/CSV)</h4>
+            <p style="font-size:12px;opacity:0.8">Alanen: vraag, opt1..opt4, antwoord(int), categorie, tags(virgülle), uitleg</p>
+            <input type="file" accept="application/json,text/csv" id="imp-quiz" />
+          </div>
+          <div class="overview-card">
+            <h4>Cases (JSON/CSV)</h4>
+            <p style="font-size:12px;opacity:0.8">JSON: [{title, context, steps:[{vraag,opties[4],best(int),uitleg}]}] • CSV: title;context;vraag;opt1..opt4;best;uitleg</p>
+            <input type="file" accept="application/json,text/csv" id="imp-cases" />
+          </div>
+        </div>
+
+        <div style="margin-top:16px; display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="challenge-btn" id="clear-imports">Import leegmaken</button>
+          <button class="module-btn" id="validate-data">Valideren</button>
+          <button class="module-btn" id="apply-data">Opslaan (localStorage)</button>
+          <button class="module-btn" id="export-data">JSON Downloaden</button>
+          <button class="module-btn" id="export-bundle">Bundle Downloaden</button>
+          <input type="file" id="import-bundle" accept="application/json" style="display:none;" />
+          <button class="module-btn" id="import-bundle-btn">Bundle Importeren</button>
+          <span style="flex:1"></span>
+          <input id="filter-cat" placeholder="Categorie" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
+          <input id="filter-tag" placeholder="Tag" style="padding:6px 8px; border-radius:8px; border:1px solid #e5e7eb;" />
+          <button class="module-btn" id="apply-filter">Filteren</button>
+          <button class="module-btn" id="clear-filter">Wissen</button>
+          <button class="module-btn" id="delete-selected">Selectie Verwijderen</button>
+          <button class="module-btn" id="dedupe">Duplicaten Verwijderen</button>
+        </div>
+
+        <div style="margin-top:16px; padding:12px; border:1px solid var(--glass-border); border-radius:8px; background: rgba(26,26,46,0.6);">
+          <h4>Bulkinhoud genereren</h4>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+            <label>Woordenschat: <input id="gen-woorden" type="number" value="500" min="100" max="10000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
+            <label>Lezen: <input id="gen-lezen" type="number" value="100" min="20" max="1000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
+            <label>Grammatica: <input id="gen-gram" type="number" value="200" min="50" max="2000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
+            <label>Quiz: <input id="gen-quiz" type="number" value="300" min="50" max="5000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
+            <button class="challenge-btn" id="gen-run">Genereren en opslaan</button>
+          </div>
+          <p style="margin-top:6px; color:#94a3b8; font-size:12px;">Rastgele generatie is voor opleiding. Importeer CSV/JSON voor echte inhoud.</p>
+        </div>
+
+        <div style="margin-top:16px;">
+          <div id="preview-status" style="margin-bottom:8px; color:#e2e8f0;"></div>
+          <div style="overflow:auto; border:1px solid var(--glass-border); border-radius:8px;">
+            <table id="preview-table" style="width:100%; border-collapse:collapse; background:#0f172a; color:#e2e8f0;">
+              <thead id="preview-head"></thead>
+              <tbody id="preview-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="layout.js"></script>
+  <script>
+    let currentKey = null; // 'lezen'|'luisteren'|'woorden'|'grammatica'|'quiz'
+    let currentData = [];
+    let workingData = [];
+
+    function parseCSV(text){
+      const lines = text.split(/\r?\n/).filter(Boolean);
+      return lines.map(line => line.split(';'));
+    }
+    function mapFromCSV(rows, key){
+      // Expect: type-specific flat fields
+      return rows.map(r => {
+        if(key==='quiz'){
+          return { vraag: r[0], opties: [r[1],r[2],r[3],r[4]].filter(Boolean), antwoord: parseInt(r[5]||'0'), categorie: r[6]||'', tags: (r[7]||'').split(',').map(s=>s.trim()).filter(Boolean), uitleg: r[8]||'' };
+        }
+        if(key==='cases'){
+          return { title: r[0]||'', context: r[1]||'', vraag: r[2]||'', opties:[r[3],r[4],r[5],r[6]].filter(Boolean), best: parseInt(r[7]||'0'), uitleg: r[8]||'' };
+        }
+        if(key==='lezen'){
+          return { type:'lezen', passage: r[0]||'', vraag:r[1], opties:[r[2],r[3],r[4],r[5]].filter(Boolean), antwoord: parseInt(r[6]||'0'), uitleg:r[7]||'' };
+        }
+        if(key==='luisteren'){
+          return { type:'luisteren', audioText: r[0]||'', vraag:r[1], opties:[r[2],r[3],r[4],r[5]].filter(Boolean), antwoord: parseInt(r[6]||'0'), uitleg:r[7]||'' };
+        }
+        // woorden/grammatica
+        return { type:key, vraag:r[0], opties:[r[1],r[2],r[3],r[4]].filter(Boolean), antwoord: parseInt(r[5]||'0'), uitleg:r[6]||'' };
+      });
+    }
+
+    function setCurrent(key, data){ currentKey = key; currentData = Array.isArray(data)? data: []; workingData = [...currentData]; renderPreview(); }
+
+    function handle(file, key){
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          let data;
+          if (file.type === 'text/csv'){
+            const rows = parseCSV(reader.result);
+            data = mapFromCSV(rows, key);
+          } else {
+            data = JSON.parse(reader.result);
+          }
+          setCurrent(key, data);
+          document.getElementById('preview-status').textContent = `Geladen: ${key} • Records: ${Array.isArray(data)? data.length: 0}`;
+        } catch(e){ alert('Fout: '+e.message); }
+      };
+      reader.readAsText(file);
+    }
+
+    function renderPreview(){
+      const head = document.getElementById('preview-head');
+      const body = document.getElementById('preview-body');
+      head.innerHTML = ''; body.innerHTML = '';
+      if (!workingData || !workingData.length){ return; }
+      const columns = ['select', ...Array.from(new Set(workingData.flatMap(o=>Object.keys(o))))];
+      head.innerHTML = `<tr>${columns.map(c=>`<th style='text-align:left; padding:8px; border-bottom:1px solid #334;'>${c==='select'?'':c}</th>`).join('')}</tr>`;
+      workingData.forEach((row, ri)=>{
+        const tr = document.createElement('tr');
+        columns.forEach((col)=>{
+          const td = document.createElement('td');
+          td.style.padding = '6px 8px'; td.style.borderBottom = '1px solid #1f2937';
+          if (col==='select'){ td.innerHTML = `<input type='checkbox' data-row='${ri}' />`; tr.appendChild(td); return; }
+          let val = row[col];
+          if (Array.isArray(val)) val = val.join(' | ');
+          if (typeof val === 'object' && val!==null) val = JSON.stringify(val);
+          td.contentEditable = true; td.textContent = val===undefined?'':String(val);
+          td.onblur = ()=>{
+            let newVal = td.textContent.trim();
+            if (Array.isArray(row[col])) row[col] = newVal.split('|').map(s=>s.trim()).filter(Boolean);
+            else if (col==='antwoord') row[col] = parseInt(newVal||'0');
+            else if (col==='tags') row[col] = newVal.split(',').map(s=>s.trim()).filter(Boolean);
+            else if (col==='best') row[col] = parseInt(newVal||'0');
+            else row[col] = newVal;
+          };
+          tr.appendChild(td);
+        });
+        body.appendChild(tr);
+      });
+    }
+
+    function validateData(){
+      const errors = [];
+      if (!currentKey || !Array.isArray(workingData) || !workingData.length){ errors.push('Geen data'); }
+      const reqByKey = {
+        lezen:['vraag','opties','antwoord'],
+        luisteren:['vraag','opties','antwoord'],
+        woorden:['vraag','opties','antwoord'],
+        grammatica:['vraag','opties','antwoord'],
+        quiz:['vraag','opties','antwoord','categorie'],
+        cases:['title','vraag','opties','best']
+      };
+      const req = reqByKey[currentKey]||[];
+      workingData.forEach((r,i)=>{
+        req.forEach((k)=>{
+          if (r[k]===undefined || r[k]===null || (Array.isArray(r[k]) && r[k].length===0) || (typeof r[k]==='string' && r[k].trim()==='')){
+            errors.push(`#${i+1} ontbrekend veld: ${k}`);
+          }
+        });
+      });
+      document.getElementById('preview-status').textContent = errors.length? ('Fouten:\n'+errors.join('\n')): 'Data geldig';
+    }
+
+    function applyData(){
+      if (!currentKey) return alert('Voeg eerst gegevens toe');
+      if (currentKey==='quiz'){
+        localStorage.setItem('import_quiz', JSON.stringify(workingData));
+      } else if (currentKey==='cases'){
+        localStorage.setItem('import_cases', JSON.stringify(workingData));
+      } else {
+        localStorage.setItem('import_'+currentKey, JSON.stringify(workingData));
+      }
+      alert('Opgeslagen: '+currentKey);
+    }
+
+    function exportData(){
+      if (!currentKey) return alert('Geen data');
+      const blob = new Blob([JSON.stringify(workingData, null, 2)], {type:'application/json'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = currentKey+".json"; a.click();
+    }
+
+    document.getElementById('imp-lezen').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'lezen'); });
+    document.getElementById('imp-luisteren').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'luisteren'); });
+    document.getElementById('imp-woorden').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'woorden'); });
+    document.getElementById('imp-grammatica').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'grammatica'); });
+    document.getElementById('imp-quiz').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'quiz'); });
+    document.getElementById('imp-cases').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) handle(f,'cases'); });
+
+    document.getElementById('clear-imports').addEventListener('click', ()=>{
+      ['lezen','luisteren','woorden','grammatica'].forEach(k=> localStorage.removeItem('import_'+k));
+      localStorage.removeItem('import_quiz');
+      localStorage.removeItem('import_cases');
+      alert('Leeggemaakt'); document.getElementById('preview-status').textContent='';
+      document.getElementById('preview-head').innerHTML='';
+      document.getElementById('preview-body').innerHTML='';
+      currentKey=null; currentData=[]; workingData=[];
+    });
+    document.getElementById('validate-data').addEventListener('click', validateData);
+    document.getElementById('apply-data').addEventListener('click', applyData);
+    document.getElementById('export-data').addEventListener('click', exportData);
+
+    // Filters and bulk tools
+    function applyFilter(){
+      if (!currentData.length) return; const c = document.getElementById('filter-cat').value.trim().toLowerCase(); const t = document.getElementById('filter-tag').value.trim().toLowerCase();
+      workingData = currentData.filter(r=>{
+        const cat = (r.categorie||r.category||'').toLowerCase();
+        const tags = Array.isArray(r.tags)? r.tags.map(x=>String(x).toLowerCase()): [];
+        const okCat = c? cat.includes(c): true;
+        const okTag = t? tags.some(x=> x.includes(t)): true;
+        return okCat && okTag;
+      });
+      renderPreview();
+    }
+    function clearFilter(){ workingData = [...currentData]; document.getElementById('filter-cat').value=''; document.getElementById('filter-tag').value=''; renderPreview(); }
+    function deleteSelected(){
+      const checks = Array.from(document.querySelectorAll('#preview-body input[type="checkbox"]:checked'));
+      if (!checks.length) return; const idxs = checks.map(ch=> parseInt(ch.getAttribute('data-row'))).sort((a,b)=>b-a);
+      idxs.forEach(i=> workingData.splice(i,1));
+      // Also remove from currentData by matching by vraag+opties
+      currentData = currentData.filter((row)=> workingData.some(w=> (w.vraag||w.title) === (row.vraag||row.title)));
+      renderPreview();
+    }
+    function dedupe(){
+      const seen = new Set(); const out=[];
+      for(const r of workingData){ const key = (r.vraag||r.title||'')+'|'+(Array.isArray(r.opties)? r.opties.join('·'):JSON.stringify(r.opties||{})); if(!seen.has(key)){ seen.add(key); out.push(r); } }
+      workingData = out; currentData = out; renderPreview();
+    }
+    document.getElementById('apply-filter').addEventListener('click', applyFilter);
+    document.getElementById('clear-filter').addEventListener('click', clearFilter);
+    document.getElementById('delete-selected').addEventListener('click', deleteSelected);
+    document.getElementById('dedupe').addEventListener('click', dedupe);
+
+    // Bundle export/import
+    function exportBundle(){
+      const bundle = {
+        import_quiz: JSON.parse(localStorage.getItem('import_quiz')||'[]'),
+        import_lezen: JSON.parse(localStorage.getItem('import_lezen')||'[]'),
+        import_luisteren: JSON.parse(localStorage.getItem('import_luisteren')||'[]'),
+        import_woorden: JSON.parse(localStorage.getItem('import_woorden')||'[]'),
+        import_grammatica: JSON.parse(localStorage.getItem('import_grammatica')||'[]'),
+        import_cases: JSON.parse(localStorage.getItem('import_cases')||'[]'),
+      };
+      const blob = new Blob([JSON.stringify(bundle, null, 2)], {type:'application/json'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'bluebadge_bundle.json'; a.click();
+    }
+    function importBundle(file){
+      const reader = new FileReader();
+      reader.onload = ()=>{
+        try { const b = JSON.parse(reader.result); Object.keys(b||{}).forEach(k=>{ if(/^import_/.test(k)){ localStorage.setItem(k, JSON.stringify(b[k]||[])); } }); alert('Bundle geïmporteerd'); }
+        catch(e){ alert('Fout: '+e.message); }
+      };
+      reader.readAsText(file);
+    }
+    document.getElementById('export-bundle').addEventListener('click', exportBundle);
+    document.getElementById('import-bundle-btn').addEventListener('click', ()=> document.getElementById('import-bundle').click());
+    document.getElementById('import-bundle').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) importBundle(f); });
+
+    // Bulk generate
+    function randPick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+    function range(n){ return Array.from({length:n}, (_,i)=>i); }
+    function genWords(n){ const roots=['politie','verhoor','controle','dienst','rapport','patrouille','melding','verdachte','getuige','bewijs','wijk']; const defs=['tanım','kavram','bağlam','durum']; return range(n).map(i=>({ type:'woorden', vraag:`Kelime anlamı (${i+1})`, opties:['A','B','C','D'], antwoord:i%4, uitleg:`${randPick(roots)} ${randPick(defs)} voorbeeld` })); }
+    function genLezen(n){ return range(n).map(i=>({ type:'lezen', passage:`Korte tekst ${i+1}: ...`, vraag:`Tekst naar vraag (${i+1})?`, opties:['X','Y','Z','T'], antwoord:(i+1)%4, uitleg:'Tekst bevat hint' })); }
+    function genGram(n){ const rules=['dt','de-het','woordvolgorde','meervoud']; return range(n).map(i=>({ type:'grammatica', vraag:`Grammatica regel (${randPick(rules)}) ${i+1}`, opties:['Optie1','Optie2','Optie3','Optie4'], antwoord:i%4, uitleg:'Regel uitleg' })); }
+    function genQuiz(n){ const cats=['taal','cognitief','situatieel']; const tags=['verkeer','prosedure','communicatie','recht']; return range(n).map(i=>({ vraag:`Algemene vraag ${i+1}`, opties:['1','2','3','4'], antwoord:i%4, categorie: randPick(cats), tags:[randPick(tags)], uitleg:'Korte uitleg' })); }
+    document.getElementById('gen-run').addEventListener('click', ()=>{
+      const w = parseInt(document.getElementById('gen-woorden').value||'0');
+      const l = parseInt(document.getElementById('gen-lezen').value||'0');
+      const g = parseInt(document.getElementById('gen-gram').value||'0');
+      const q = parseInt(document.getElementById('gen-quiz').value||'0');
+      if(w>0) localStorage.setItem('import_woorden', JSON.stringify(genWords(w)));
+      if(l>0) localStorage.setItem('import_lezen', JSON.stringify(genLezen(l)));
+      if(g>0) localStorage.setItem('import_grammatica', JSON.stringify(genGram(g)));
+      if(q>0) localStorage.setItem('import_quiz', JSON.stringify(genQuiz(q)));
+      alert('Gegenereerd en opgeslagen');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Analitik</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="with-sidebar with-right">
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="dashboard">Dashboard</a>
+      </div>
+    </nav>
+    <div class="hero-section"><h2>Analitik</h2><p>Zayıf konular ve skor trendleri</p></div>
+  </header>
+  <main style="max-width:1000px;margin:24px auto;">
+    <section class="test-interface" style="display:block;">
+      <div class="test-container">
+        <div class="overview-grid">
+          <div class="overview-card"><h4>Genel Ortalama</h4><p id="an-avg">0%</p></div>
+          <div class="overview-card"><h4>Toplam Test</h4><p id="an-count">0</p></div>
+          <div class="overview-card"><h4>Streak</h4><p id="an-streak">0</p></div>
+        </div>
+        <h4 style="margin-top:16px;" data-translate="last_7_days_avg">Laatste 7 Dagen Gemiddelden</h4>
+        <div id="an-bars" style="height:200px; display:flex; align-items:flex-end; gap:8px; background: rgba(26,26,46,0.6); border:1px solid var(--glass-border); border-radius:8px; padding:12px;"></div>
+        <h4 style="margin-top:16px;" data-translate="weak_topics">Zwakke Onderwerpen</h4>
+        <ul id="an-weak"></ul>
+      </div>
+    </section>
+  </main>
+  <script src="layout.js"></script>
+  <script>
+    function getAll(){
+      return [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+      ];
+    }
+    function avg(){ const a=getAll(); if(!a.length) return 0; return Math.round(a.reduce((s,r)=>s+r.percentage,0)/a.length) }
+    function count(){ return getAll().length }
+    function streak(){
+      const dates = [...new Set(getAll().map(r=>r.date))].sort((a,b)=> new Date(b)-new Date(a));
+      if (!dates.length) return 0; let s=0; let d=new Date();
+      for(let i=0;i<dates.length;i++){
+        const expected = d.toISOString().split('T')[0];
+        if (i===0 && dates[0]!==expected){ const y=new Date(Date.now()-24*60*60*1000).toISOString().split('T')[0]; if (dates[0]!==y) break; d=new Date(Date.now()-24*60*60*1000); }
+        s++; d.setDate(d.getDate()-1);
+      } return s;
+    }
+    function last7(){ const a=getAll(); const res=[]; for(let i=6;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); const key=d.toISOString().split('T')[0]; const f=a.filter(r=>r.date===key); const v=f.length? Math.round(f.reduce((s,r)=>s+r.percentage,0)/f.length):0; res.push({date:key,val:v}); } return res; }
+    function weakTopics(){
+      const a=getAll(); const byCat={}; a.forEach(r=>{ const k=r.category||r.type||'genel'; (byCat[k]=byCat[k]||[]).push(r.percentage); });
+      const out = Object.entries(byCat).map(([k,arr])=>({k,avg: Math.round(arr.reduce((s,v)=>s+v,0)/arr.length)})).sort((x,y)=>x.avg-y.avg).slice(0,5);
+      return out;
+    }
+    function render(){
+      document.getElementById('an-avg').textContent = avg()+"%";
+      document.getElementById('an-count').textContent = count();
+      document.getElementById('an-streak').textContent = streak();
+      const bars = document.getElementById('an-bars'); bars.innerHTML=''; last7().forEach(d=>{ const b=document.createElement('div'); b.style.height=d.val+'%'; b.style.width='12%'; b.style.background = d.val>=80? '#16a34a': d.val>=60? '#f59e0b':'#dc2626'; b.title=d.date+': '+d.val+'%'; bars.appendChild(b); });
+      const weak = document.getElementById('an-weak'); weak.innerHTML = weakTopics().map(w=>`<li>${w.k}: ${w.avg}%</li>`).join('');
+    }
+    document.addEventListener('DOMContentLoaded', render);
+  </script>
+</body>
+</html>

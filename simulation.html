@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Examsimulatie</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="with-sidebar with-right">
+  <header>
+    <nav class="top-nav" role="navigation" aria-label="Hoofdnavigatie">
+      <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="dashboard">Dashboard</a>
+        <a href="quiz.html" data-i18n="daily_quiz">Dagelijkse Quiz</a>
+        <a href="cognitief.html" data-i18n="cognitive_skills">Cognitieve Vaardigheden</a>
+        <a href="taal.html" data-i18n="language_training">Taaltraining</a>
+        <a href="voortgang.html" data-i18n="progress">Voortgang</a>
+        <select id="language-select" aria-label="Language" style="margin-left: 8px;">
+          <option value="nl">NL</option>
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+          <option value="tr">TR</option>
+        </select>
+      </div>
+    </nav>
+    <div class="hero-section">
+      <h2>EXAM SIMULATION</h2>
+      <p data-i18n="prepare_exams">Bereid je voor op de examens en gesprekken • Elke seconde telt</p>
+    </div>
+  </header>
+
+  <main style="max-width:900px;margin:24px auto;">
+    <section class="test-interface" id="sim-interface" style="display:block;">
+      <h3 id="sim-title">Algemene toets – 30 vragen</h3>
+      <div class="test-container">
+        <div id="sim-config" style="margin-bottom:16px; padding:12px; border:1px solid var(--glass-border); border-radius:8px; background: rgba(26,26,46,0.6);">
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <div>
+              <label style="display:block; font-weight:600; margin-bottom:4px;">Kategoriler</label>
+              <div id="sim-categories" style="display:flex; gap:8px; flex-wrap:wrap;"></div>
+            </div>
+            <div>
+              <label for="sim-tags" style="display:block; font-weight:600; margin-bottom:4px;">Tags</label>
+              <input id="sim-tags" placeholder="bijv.: verkeer,procedure" style="width:220px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
+            </div>
+            <div>
+              <label for="sim-count" style="display:block; font-weight:600; margin-bottom:4px;">Vragen</label>
+              <input id="sim-count" type="number" min="5" max="100" value="30" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
+            </div>
+            <div>
+              <label for="sim-min" style="display:block; font-weight:600; margin-bottom:4px;">Tijd (min)</label>
+              <input id="sim-min" type="number" min="5" max="120" value="20" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
+            </div>
+            <div style="align-self:flex-end;">
+              <button class="control-btn primary" id="sim-start">Starten</button>
+            </div>
+          </div>
+        </div>
+        <div class="test-header">
+          <div class="test-info">
+            <span id="sim-counter">Vraag 1/30</span>
+            <span id="sim-timer">20:00</span>
+          </div>
+          <div class="test-progress">
+            <div class="progress-bar">
+              <div class="progress-fill" id="sim-progress-fill" style="width: 3.33%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="question-container">
+          <div class="question-text" id="sim-question">...</div>
+          <div class="question-options" id="sim-options"></div>
+        </div>
+        <div class="test-controls">
+          <button class="control-btn secondary" id="sim-prev" disabled>Vorige</button>
+          <button class="control-btn primary" id="sim-next">Volgende</button>
+          <button class="control-btn success" id="sim-end" style="display:none;">Einde</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BlueBadge | Classified Training System</p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="layout.js"></script>
+  <script>
+    let all = []; let qs = []; let idx = 0; let answers = []; let corrects = []; let wrongBook = [];
+    let timeLeft = 20*60; let timerId = null; let started = false;
+    async function load(){
+      try { bbLoading.show(); all = await fetchJSON('data/quiz_questions.json', { validate: d=> Array.isArray(d) }); } catch { all = []; }
+      try { const imp = JSON.parse(localStorage.getItem('import_quiz')||'[]'); if(Array.isArray(imp)&&imp.length){ all = imp; } } catch {}
+      renderCategoryFilters();
+      // prefill tags and auto start
+      const pre = (localStorage.getItem('sim_prefill_tags')||'').trim();
+      if (pre){
+        const input = document.getElementById('sim-tags'); if (input) input.value = pre;
+        setTimeout(()=>{ document.getElementById('sim-start')?.click(); localStorage.removeItem('sim_prefill_tags'); }, 0);
+      }
+      bbLoading.hide();
+    }
+    function shuffle(a){ const s=[...a]; for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]]} return s }
+    function startTimer(){
+      const el = document.getElementById('sim-timer');
+      timerId = setInterval(()=>{
+        timeLeft--; if(timeLeft<=0){ clearInterval(timerId); finish(); return; }
+        const m = Math.floor(timeLeft/60).toString().padStart(2,'0');
+        const s = (timeLeft%60).toString().padStart(2,'0');
+        el.textContent = `${m}:${s}`;
+      },1000);
+    }
+    function renderCategoryFilters(){
+      const cats = [...new Set((all||[]).map(q=>q.categorie||q.category).filter(Boolean))];
+      const ctn = document.getElementById('sim-categories');
+      ctn.innerHTML = '';
+      cats.forEach(c=>{
+        const id = 'cat-'+c;
+        const w = document.createElement('label'); w.style.display='inline-flex'; w.style.alignItems='center'; w.style.gap='6px';
+        w.innerHTML = `<input type="checkbox" id="${id}" value="${c}" checked /> <span>${c}</span>`;
+        ctn.appendChild(w);
+      });
+    }
+    function startExam(){
+      if (started) return; started = true;
+      const selected = Array.from(document.querySelectorAll('#sim-categories input[type="checkbox"]:checked')).map(i=>i.value);
+      const tagText = (document.getElementById('sim-tags').value||'').toLowerCase();
+      const wantedTags = tagText.split(',').map(s=>s.trim()).filter(Boolean);
+      const pool = all.filter(q=>{
+        const okCat = selected.length? selected.includes(q.categorie||q.category): true;
+        const qtags = Array.isArray(q.tags)? q.tags.map(x=>String(x).toLowerCase()): [];
+        const okTag = wantedTags.length? wantedTags.some(t=> qtags.some(x=> x.includes(t))): true;
+        return okCat && okTag;
+      });
+      const count = Math.max(5, Math.min(100, parseInt(document.getElementById('sim-count').value||'30')));
+      const minutes = Math.max(5, Math.min(120, parseInt(document.getElementById('sim-min').value||'20')));
+      timeLeft = minutes*60;
+      qs = shuffle(pool).slice(0, count);
+      corrects = qs.map(q=>q.antwoord);
+      answers = new Array(qs.length).fill(undefined);
+      idx = 0; document.getElementById('sim-config').style.display='none';
+      document.getElementById('sim-title').textContent = `Algemene toets – ${qs.length} vragen`;
+      render(); startTimer();
+    }
+    function render(){
+      const q = qs[idx]; const total = qs.length;
+      document.getElementById('sim-counter').textContent = `Vraag ${idx+1}/${total}`;
+      document.getElementById('sim-progress-fill').style.width = (((idx+1)/total)*100)+'%';
+      document.getElementById('sim-question').innerHTML = `<h4>${idx+1}</h4><p>${q.vraag}</p>`;
+      const opts = document.getElementById('sim-options'); opts.innerHTML = '';
+      q.opties.forEach((o,i)=>{
+        const b = document.createElement('button'); b.className = 'option-btn'; b.textContent = o;
+        b.onclick = ()=>{ answers[idx]=i; updateNav(); };
+        if(answers[idx]===i) b.classList.add('selected');
+        opts.appendChild(b);
+      });
+      updateNav();
+    }
+    function updateNav(){
+      document.getElementById('sim-prev').disabled = idx===0;
+      document.getElementById('sim-next').disabled = answers[idx]===undefined;
+      const onLast = idx === qs.length-1;
+      const showEnd = onLast && answers[idx]!==undefined;
+      document.getElementById('sim-end').style.display = showEnd? 'block':'none';
+    }
+    function next(){ if(idx < qs.length-1){ idx++; render(); } }
+    function prev(){ if(idx>0){ idx--; render(); } }
+    function finish(){
+      clearInterval(timerId);
+      let score=0; const total = qs.length; wrongBook = [];
+      const byCat = {};
+      qs.forEach((q,i)=>{
+        const cat = q.categorie || q.category || 'genel';
+        if(!byCat[cat]) byCat[cat] = {correct:0,total:0};
+        byCat[cat].total += 1;
+        if(answers[i]===corrects[i]){ score++; byCat[cat].correct += 1; }
+        else if(answers[i]!==undefined){ wrongBook.push({ vraag:q.vraag, opties:q.opties, correctIndex: corrects[i], userIndex: answers[i], categorie: cat, tags: Array.isArray(q.tags)? q.tags: [] }) }
+      });
+      // store results
+      const percentage = Math.round((score/total)*100);
+      const breakdown = Object.fromEntries(Object.entries(byCat).map(([k,v])=>[k,{...v, percentage: Math.round((v.correct/(v.total||1))*100)}]));
+      // tags breakdown
+      const byTag = {};
+      qs.forEach((q,i)=>{
+        const tags = Array.isArray(q.tags)? q.tags: [];
+        tags.forEach(t=>{
+          if(!byTag[t]) byTag[t] = {correct:0,total:0};
+          byTag[t].total += 1;
+          if(answers[i]===corrects[i]) byTag[t].correct += 1;
+        });
+      });
+      const tagsBreakdown = Object.fromEntries(Object.entries(byTag).map(([k,v])=>[k,{...v, percentage: Math.round((v.correct/(v.total||1))*100)}]));
+      const result = { date: new Date().toISOString().split('T')[0], time: new Date().toLocaleTimeString('nl-NL'), category: 'exam', score, total, percentage, type:'exam', breakdown };
+      let quizResults = JSON.parse(localStorage.getItem('quizResults')||'[]'); quizResults.unshift(result); quizResults = quizResults.slice(0,100); localStorage.setItem('quizResults', JSON.stringify(quizResults));
+      // save wrongs
+      const prevWrong = JSON.parse(localStorage.getItem('wrongBook')||'[]');
+      localStorage.setItem('wrongBook', JSON.stringify(prevWrong.concat(wrongBook).slice(-500)));
+      // go to results
+      localStorage.setItem('lastQuizResult', JSON.stringify({ type:'exam', score, total, percentage, breakdown, tagsBreakdown, questions: qs.map((q,i)=>({ vraag:q.vraag, opties:q.opties, userIndex: answers[i], correctIndex: corrects[i], categorie: q.categorie||q.category, tags: Array.isArray(q.tags)? q.tags: [] })) }));
+      location.href = 'resultaten.html';
+    }
+    document.addEventListener('DOMContentLoaded', ()=>{
+      load();
+      document.getElementById('sim-next').addEventListener('click', next);
+      document.getElementById('sim-prev').addEventListener('click', prev);
+      document.getElementById('sim-end').addEventListener('click', finish);
+      document.getElementById('sim-start').addEventListener('click', startExam);
+    });
+  </script>
+</body>
+</html>
