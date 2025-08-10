@@ -50,75 +50,55 @@
       <p>Oefen met realistische politie situaties en verbeter je besluitvorming</p>
     </section>
 
-    <section class="scenarios-overview">
-      <h3>Beschikbare Scenario's</h3>
-      <div class="scenarios-grid">
+    <section class="scenario-overview" id="scenario-overview-section">
+      <h3>🎯 Scenario Training Overzicht</h3>
+      <div class="scenario-grid">
         <div class="scenario-card">
-          <div class="scenario-icon">🚨</div>
+          <div class="scenario-icon">🚗</div>
           <h4>Verkeerscontrole</h4>
-          <p>Hoe ga je om met een verdachte bestuurder tijdens een routinecontrole?</p>
-          <div class="scenario-difficulty">
-            <span class="difficulty-badge beginner">Beginner</span>
-            <span class="scenario-time">15 min</span>
-          </div>
+          <p>Oefen verkeerscontroles en verdachte bestuurders</p>
           <button class="scenario-btn" onclick="startScenario('verkeer')">Start Scenario</button>
         </div>
-
+        
         <div class="scenario-card">
           <div class="scenario-icon">🏠</div>
           <h4>Huiszoeking</h4>
-          <p>Procedure en veiligheid bij het doorzoeken van een woning</p>
-          <div class="scenario-difficulty">
-            <span class="difficulty-badge intermediate">Gevorderd</span>
-            <span class="scenario-time">25 min</span>
-          </div>
+          <p>Leer veilige huiszoekingen uitvoeren</p>
           <button class="scenario-btn" onclick="startScenario('huiszoeking')">Start Scenario</button>
         </div>
-
+        
         <div class="scenario-card">
           <div class="scenario-icon">👥</div>
-          <h4>Massaopstootje</h4>
-          <p>De-escalatie en crowd control bij een onrustige menigte</p>
-          <div class="scenario-difficulty">
-            <span class="difficulty-badge advanced">Expert</span>
-            <span class="scenario-time">35 min</span>
-          </div>
+          <h4>Massasituatie</h4>
+          <p>Oefen omgaan met grote groepen mensen</p>
           <button class="scenario-btn" onclick="startScenario('massa')">Start Scenario</button>
         </div>
-
+        
         <div class="scenario-card">
-          <div class="scenario-icon">🚔</div>
-          <h4>Pursuit Situatie</h4>
-          <p>Veilige achtervolging en insluiting van een verdachte</p>
-          <div class="scenario-difficulty">
-            <span class="difficulty-badge advanced">Expert</span>
-            <span class="scenario-time">30 min</span>
-          </div>
+          <div class="scenario-icon">🏃</div>
+          <h4>Achtervolging</h4>
+          <p>Train achtervolgingen en arrestaties</p>
           <button class="scenario-btn" onclick="startScenario('pursuit')">Start Scenario</button>
         </div>
-
+        
         <div class="scenario-card">
           <div class="scenario-icon">🔍</div>
-          <h4>Recherchewerk</h4>
-          <p>Gebruik van bewijsmateriaal en getuigenverklaringen</p>
-          <div class="scenario-difficulty">
-            <span class="difficulty-badge intermediate">Gevorderd</span>
-            <span class="scenario-time">20 min</span>
-          </div>
+          <h4>Recherche</h4>
+          <p>Oefen recherchewerk en bewijsverzameling</p>
           <button class="scenario-btn" onclick="startScenario('recherche')">Start Scenario</button>
         </div>
-
+        
         <div class="scenario-card">
           <div class="scenario-icon">🚨</div>
           <h4>Noodoproep</h4>
           <p>Snelle reactie en coördinatie bij een noodsituatie</p>
-          <div class="scenario-difficulty">
-            <span class="difficulty-badge beginner">Beginner</span>
-            <span class="scenario-time">18 min</span>
-          </div>
           <button class="scenario-btn" onclick="startScenario('nood')">Start Scenario</button>
         </div>
       </div>
+    </section>
+
+    <section class="scenario-section" id="scenario-section" style="display: none;">
+      <!-- Scenario interface will be dynamically generated -->
     </section>
 
     <section class="scenario-stats">
