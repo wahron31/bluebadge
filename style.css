@@ -2123,3 +2123,17 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   .sidebar { display:block; }
   .top-nav { display:none; }
 }
+
+/* Right rail */
+.right-rail { position: fixed; right: 0; top: 0; bottom: 0; width: 300px; padding: 16px; display: none; overflow:auto; }
+.with-right .right-rail { display: none; }
+@media (min-width: 1280px){ .with-right .right-rail { display:block; } }
+
+/* Collapsed sidebar */
+.sidebar-collapsed .sidebar { width: 72px; }
+.sidebar-collapsed .with-sidebar main, .sidebar-collapsed .with-sidebar header .hero-section, .sidebar-collapsed .with-sidebar .hero-section { margin-left: 72px; }
+.sidebar-collapsed .sidebar .label { display:none; }
+
+/* Center feed width */
+.with-sidebar main { max-width: 860px; }
+@media (min-width: 1280px){ .with-right.with-sidebar main { margin-right: 300px; } }
