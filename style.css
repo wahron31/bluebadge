@@ -3672,3 +3672,109 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   box-shadow: var(--shadow-lg);
   filter: brightness(1.1);
 }
+
+/* Test Progress Bar Styles */
+.test-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(17, 24, 39, 0.4);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  position: relative;
+  margin: var(--spacing-md) 0;
+}
+
+.test-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: var(--radius-sm);
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.test-progress-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+.test-progress-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.test-progress-label {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.test-progress-percentage {
+  color: var(--accent-primary);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Test Question Navigation Styles */
+.test-question-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background: rgba(17, 24, 39, 0.3);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+}
+
+.test-question-nav button {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.test-question-nav button:hover:not(:disabled) {
+  border-color: var(--accent-primary);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.test-question-nav button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.test-question-nav button.prev::before {
+  content: '‹';
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.test-question-nav button.next::after {
+  content: '›';
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.test-question-nav .question-indicator {
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+}
