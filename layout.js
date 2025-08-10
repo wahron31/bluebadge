@@ -2,6 +2,7 @@
   if (window.__bbLayoutApplied) return; window.__bbLayoutApplied = true;
   const body = document.body; if (!body) return;
   body.classList.add('with-sidebar'); body.classList.add('with-right');
+  if (localStorage.getItem('bbSidebarCollapsed')===null) localStorage.setItem('bbSidebarCollapsed','1');
   if (localStorage.getItem('bbSidebarCollapsed')==='1') body.classList.add('sidebar-collapsed');
 
   const primaryLinks = [
@@ -33,6 +34,15 @@
       <div class="brand" style="display:flex;justify-content:space-between;align-items:center;">
         <h1 style="margin:0;"><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1>
         <button id="bb-toggle-sidebar" class="module-btn" title="Sidebar inklappen" style="padding:6px 8px;">⇔</button>
+      </div>
+      <div style="padding:6px 0;">
+        <select class="bb-lang-select" aria-label="Taal" style="width:100%; padding:6px 8px; border:1px solid var(--glass-border); background: rgba(26,26,46,.6); color:var(--text-secondary); border-radius:8px;">
+          <option value="nl">NL</option>
+          <option value="fr">FR</option>
+          <option value="en">EN</option>
+          <option value="de">DE</option>
+          <option value="tr">TR</option>
+        </select>
       </div>
       <nav id="bb-nav"></nav>
     `;

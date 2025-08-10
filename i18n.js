@@ -32,11 +32,16 @@
     const select = document.getElementById('language-select');
     if (select) {
       select.addEventListener('change', () => {
-        const lang = select.value;
-        localStorage.setItem('lang', lang);
-        applyLang(lang);
+        current = select.value;
+        localStorage.setItem('selectedLanguage', current);
+        applyLang(current);
       });
     }
+    // sidebar select
+    try {
+      const sb = document.querySelector('.bb-lang-select');
+      if (sb){ sb.value = current; sb.addEventListener('change', ()=>{ current = sb.value; localStorage.setItem('selectedLanguage', current); applyLang(current); const top = document.getElementById('language-select'); if(top) top.value=current; }); }
+    } catch {}
   }
 
   window.i18n = { t, apply: applyLang, get lang(){ return current; }, get dict(){ return dict; } };
