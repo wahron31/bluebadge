@@ -2536,3 +2536,29 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   margin-bottom: var(--spacing-lg);
   text-align: center;
 }
+
+/* Interview Stats Styles */
+.interview-stats {
+  margin-bottom: var(--spacing-xl);
+}
+
+.interview-stats h3 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+/* Recent Interviews Styles */
+.recent-interviews {
+  margin-bottom: var(--spacing-xl);
+}
+
+.recent-interviews h3 {
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
