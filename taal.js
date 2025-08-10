@@ -11,10 +11,10 @@ let languageWordsLearned = [];
 async function loadLanguageData() {
     try {
         const [lezen, luisteren, woorden, grammatica] = await Promise.all([
-            fetch('data/taal_lezen.json').then(res => res.json()).catch(() => []),
-            fetch('data/taal_luisteren.json').then(res => res.json()).catch(() => []),
-            fetch('data/taal_woorden.json').then(res => res.json()).catch(() => []),
-            fetch('data/taal_grammatica.json').then(res => res.json()).catch(() => [])
+            fetchJSON('data/taal_lezen.json', { validate: d=> Array.isArray(d) }).catch(() => []),
+            fetchJSON('data/taal_luisteren.json', { validate: d=> Array.isArray(d) }).catch(() => []),
+            fetchJSON('data/taal_woorden.json', { validate: d=> Array.isArray(d) }).catch(() => []),
+            fetchJSON('data/taal_grammatica.json', { validate: d=> Array.isArray(d) }).catch(() => [])
         ]);
         const samples = generateSampleLanguageData();
         const imported = {
@@ -438,11 +438,10 @@ let dailyWords = [];
 // Load daily words
 async function loadDailyWords() {
     try {
-        const response = await fetch('data/woorden.json');
-        const words = await response.json();
+        const words = await fetchJSON('data/woorden.json', { validate: d=> Array.isArray(d) });
         return words;
     } catch (error) {
-        console.error('Error loading words:', error);
+        console.error('Error loading daily words:', error);
         return [];
     }
 }

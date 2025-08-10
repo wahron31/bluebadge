@@ -7,16 +7,20 @@
     return map[key] || key;
   }
 
+  async function loadDict(){
+    try {
+      const override = localStorage.getItem('i18n_override');
+      if (override) { dict = JSON.parse(override); }
+      else { dict = await fetchJSON('data/languages.json', { validate: d=> typeof d==='object' && d!==null }); }
+    } catch(e) { dict = {}; }
+    applyLang(current);
+  }
+
   function applyLang(lang){
-    current = lang;
-    const map = dict[lang] || {};
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (map[key]) el.textContent = map[key];
-    });
-    document.querySelectorAll('[data-translate]').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      if (map[key]) el.textContent = map[key];
+    const l = dict[lang]||{};
+    document.querySelectorAll('[data-translate],[data-i18n]').forEach(el=>{
+      const key = el.getAttribute('data-translate')||el.getAttribute('data-i18n');
+      if (l[key]) el.textContent = (typeof sanitizeText==='function'? sanitizeText(String(l[key])): String(l[key]));
     });
     document.documentElement.lang = lang;
     const select = document.getElementById('language-select');
@@ -24,12 +28,7 @@
   }
 
   async function init(){
-    try {
-      const override = localStorage.getItem('i18n_override');
-      if (override) { dict = JSON.parse(override); }
-      else { const res = await fetch('data/languages.json'); dict = await res.json(); }
-    } catch(e) { dict = {}; }
-    applyLang(current);
+    await loadDict();
     const select = document.getElementById('language-select');
     if (select) {
       select.addEventListener('change', () => {

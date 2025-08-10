@@ -67,7 +67,7 @@
     let known = []; let study = [];
 
     async function loadWords(){
-      try { const r = await fetch('data/woorden.json'); deck = await r.json(); } catch { deck = []; }
+      try { bbLoading?.show(); deck = await fetchJSON('data/woorden.json', { validate: d=> Array.isArray(d) }); } catch { deck = []; } finally { bbLoading?.hide(); }
       if (!Array.isArray(deck)) deck = [];
       known = JSON.parse(localStorage.getItem('knownWords')||'[]');
       study = JSON.parse(localStorage.getItem('studyWords')||'[]');

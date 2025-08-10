@@ -72,7 +72,7 @@
     let data = []; let qs = []; let idx=0; let answers=[]; let score=0; let start=null; let currentText='';
 
     async function load(){
-      try { const r = await fetch('data/taal_luisteren.json'); data = await r.json(); } catch { data = []; }
+      try { bbLoading?.show(); data = await fetchJSON('data/taal_luisteren.json', { validate: d=> Array.isArray(d) }); } catch { data = []; } finally { bbLoading?.hide(); }
       qs = shuffle(data).slice(0,10);
       answers = new Array(qs.length).fill(undefined);
       idx=0; score=0; start=new Date(); render();
