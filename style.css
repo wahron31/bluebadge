@@ -2864,3 +2864,46 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   0% { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
+
+/* Test Footer Styles */
+.test-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--glass-border);
+}
+
+.finish-btn {
+  background: linear-gradient(135deg, var(--accent-success), var(--accent-primary));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  min-width: 150px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.finish-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
+
+.finish-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.finish-btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+  filter: none;
+}
