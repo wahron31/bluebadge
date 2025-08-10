@@ -3225,3 +3225,92 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
+/* Test Recommendations Styles */
+.test-recommendations {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.test-recommendations h3 {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.test-recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.test-recommendation-card {
+  background: rgba(17, 24, 39, 0.4);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  transition: var(--transition-normal);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.test-recommendation-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  transform: scaleX(0);
+  transition: var(--transition-normal);
+}
+
+.test-recommendation-card:hover::before {
+  transform: scaleX(1);
+}
+
+.test-recommendation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent-primary);
+}
+
+.test-recommendation-card h4 {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.test-recommendation-card p {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: var(--spacing-md);
+}
+
+.test-recommendation-card .recommendation-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--spacing-md);
+}
+
+.test-recommendation-card .recommendation-difficulty {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.test-recommendation-card .recommendation-time {
+  color: var(--accent-warning);
+  font-size: 14px;
+  font-weight: 600;
+}
