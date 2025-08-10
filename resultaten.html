@@ -50,6 +50,7 @@
           <div class="result-breakdown">
             <h4>Details</h4>
             <div id="res-details"></div>
+            <div id="res-breakdown" style="margin-top:12px;"></div>
           </div>
         </div>
         <div class="result-actions">
@@ -107,6 +108,15 @@
             </div>
           `;
         }).join('');
+      }
+
+      // Category breakdown
+      if (data.breakdown && typeof data.breakdown === 'object'){
+        const bd = data.breakdown;
+        const list = Object.entries(bd).map(([k,v])=>{
+          return `<li style='display:flex; justify-content:space-between; gap:8px;'><span>${k}</span><span>${v.correct}/${v.total} (${v.percentage}%)</span></li>`;
+        }).join('');
+        document.getElementById('res-breakdown').innerHTML = `<h4 style='margin-top:12px;'>Per Kategori</h4><ul style='margin:6px 0 0 0; padding-left:1rem;'>${list}</ul>`;
       }
 
       function optesList(opties, userIdx, correctIdx){

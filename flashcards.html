@@ -46,8 +46,10 @@
           <button class="word-btn know" id="fc-good">İyi</button>
           <button class="word-btn next" id="fc-easy">Kolay</button>
           <button class="word-btn next" id="fc-next">Sonraki</button>
+          <button class="word-btn" id="fc-mark-know">Biliyorum</button>
+          <button class="word-btn" id="fc-mark-study">Çalış</button>
         </div>
-        <p style="margin-top:8px;color:var(--text-secondary);"><span id="fc-progress">0/0</span></p>
+        <p style="margin-top:8px;color:var(--text-secondary);"><span id="fc-progress">0/0</span> • <span id="fc-counters">0 biliyorum • 0 çalış</span></p>
       </div>
     </section>
   </main>
@@ -62,13 +64,17 @@
     let queue = [];
     let idx = 0;
     let flipped = false;
+    let known = []; let study = [];
 
     async function loadWords(){
       try { const r = await fetch('data/woorden.json'); deck = await r.json(); } catch { deck = []; }
       if (!Array.isArray(deck)) deck = [];
+      known = JSON.parse(localStorage.getItem('knownWords')||'[]');
+      study = JSON.parse(localStorage.getItem('studyWords')||'[]');
       // kısa desteyi üret (karışık 30)
       queue = shuffle(deck).slice(0, 30).map((w,i)=>({ ...w, due: Date.now(), ef:2.3, interval:0, reps:0, id:i }));
       idx = 0; updateProgress(); show();
+      updateCounters();
     }
     function shuffle(a){ const s=[...a]; for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]]} return s }
     function show(){
@@ -100,6 +106,9 @@
     }
     function next(){ idx = (idx + 1) % queue.length; updateProgress(); show(); }
     function updateProgress(){ document.getElementById('fc-progress').textContent = (idx+1)+"/"+queue.length }
+    function updateCounters(){ document.getElementById('fc-counters').textContent = `${known.length} biliyorum • ${study.length} çalış`; }
+    function markKnow(){ const card = queue[idx]; if(!card) return; const key = card.woord||card.id; if(!known.includes(key)){ known.push(key); localStorage.setItem('knownWords', JSON.stringify(known)); updateCounters(); } }
+    function markStudy(){ const card = queue[idx]; if(!card) return; const key = card.woord||card.id; if(!study.includes(key)){ study.push(key); localStorage.setItem('studyWords', JSON.stringify(study)); updateCounters(); } }
 
     document.addEventListener('DOMContentLoaded', ()=>{
       loadWords();
@@ -108,6 +117,8 @@
       document.getElementById('fc-good').addEventListener('click', ()=>rate(4));
       document.getElementById('fc-easy').addEventListener('click', ()=>rate(5));
       document.getElementById('fc-next').addEventListener('click', next);
+      document.getElementById('fc-mark-know').addEventListener('click', markKnow);
+      document.getElementById('fc-mark-study').addEventListener('click', markStudy);
     });
   </script>
 </body>

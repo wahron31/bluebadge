@@ -35,6 +35,25 @@
     <section class="test-interface" id="sim-interface" style="display:block;">
       <h3 id="sim-title">Genel Sınav – 30 Soru</h3>
       <div class="test-container">
+        <div id="sim-config" style="margin-bottom:16px; padding:12px; border:1px solid var(--glass-border); border-radius:8px; background: rgba(26,26,46,0.6);">
+          <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+            <div>
+              <label style="display:block; font-weight:600; margin-bottom:4px;">Kategoriler</label>
+              <div id="sim-categories" style="display:flex; gap:8px; flex-wrap:wrap;"></div>
+            </div>
+            <div>
+              <label for="sim-count" style="display:block; font-weight:600; margin-bottom:4px;">Soru</label>
+              <input id="sim-count" type="number" min="5" max="100" value="30" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
+            </div>
+            <div>
+              <label for="sim-min" style="display:block; font-weight:600; margin-bottom:4px;">Süre (dk)</label>
+              <input id="sim-min" type="number" min="5" max="120" value="20" style="width:90px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
+            </div>
+            <div style="align-self:flex-end;">
+              <button class="control-btn primary" id="sim-start">Başlat</button>
+            </div>
+          </div>
+        </div>
         <div class="test-header">
           <div class="test-info">
             <span id="sim-counter">Soru 1/30</span>
@@ -66,13 +85,10 @@
   <script src="i18n.js"></script>
   <script>
     let all = []; let qs = []; let idx = 0; let answers = []; let corrects = []; let wrongBook = [];
-    let timeLeft = 20*60; let timerId = null;
+    let timeLeft = 20*60; let timerId = null; let started = false;
     async function load(){
       try { const r = await fetch('data/quiz_questions.json'); all = await r.json(); } catch { all = []; }
-      qs = shuffle(all).slice(0,30);
-      corrects = qs.map(q=>q.antwoord);
-      answers = new Array(qs.length).fill(undefined);
-      idx = 0; render(); startTimer();
+      renderCategoryFilters();
     }
     function shuffle(a){ const s=[...a]; for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]]} return s }
     function startTimer(){
@@ -83,6 +99,31 @@
         const s = (timeLeft%60).toString().padStart(2,'0');
         el.textContent = `${m}:${s}`;
       },1000);
+    }
+    function renderCategoryFilters(){
+      const cats = [...new Set((all||[]).map(q=>q.categorie||q.category).filter(Boolean))];
+      const ctn = document.getElementById('sim-categories');
+      ctn.innerHTML = '';
+      cats.forEach(c=>{
+        const id = 'cat-'+c;
+        const w = document.createElement('label'); w.style.display='inline-flex'; w.style.alignItems='center'; w.style.gap='6px';
+        w.innerHTML = `<input type="checkbox" id="${id}" value="${c}" checked /> <span>${c}</span>`;
+        ctn.appendChild(w);
+      });
+    }
+    function startExam(){
+      if (started) return; started = true;
+      const selected = Array.from(document.querySelectorAll('#sim-categories input[type="checkbox"]:checked')).map(i=>i.value);
+      const pool = all.filter(q=> selected.length? selected.includes(q.categorie||q.category): true);
+      const count = Math.max(5, Math.min(100, parseInt(document.getElementById('sim-count').value||'30')));
+      const minutes = Math.max(5, Math.min(120, parseInt(document.getElementById('sim-min').value||'20')));
+      timeLeft = minutes*60;
+      qs = shuffle(pool).slice(0, count);
+      corrects = qs.map(q=>q.antwoord);
+      answers = new Array(qs.length).fill(undefined);
+      idx = 0; document.getElementById('sim-config').style.display='none';
+      document.getElementById('sim-title').textContent = `Genel Sınav – ${qs.length} Soru`;
+      render(); startTimer();
     }
     function render(){
       const q = qs[idx]; const total = qs.length;
@@ -110,18 +151,24 @@
     function finish(){
       clearInterval(timerId);
       let score=0; const total = qs.length; wrongBook = [];
+      const byCat = {};
       qs.forEach((q,i)=>{
-        if(answers[i]===corrects[i]) score++; else if(answers[i]!==undefined){ wrongBook.push({ vraag:q.vraag, opties:q.opties, correctIndex: corrects[i], userIndex: answers[i] }) }
+        const cat = q.categorie || q.category || 'genel';
+        if(!byCat[cat]) byCat[cat] = {correct:0,total:0};
+        byCat[cat].total += 1;
+        if(answers[i]===corrects[i]){ score++; byCat[cat].correct += 1; }
+        else if(answers[i]!==undefined){ wrongBook.push({ vraag:q.vraag, opties:q.opties, correctIndex: corrects[i], userIndex: answers[i], categorie: cat }) }
       });
       // store results
       const percentage = Math.round((score/total)*100);
-      const result = { date: new Date().toISOString().split('T')[0], time: new Date().toLocaleTimeString('nl-NL'), category: 'exam', score, total, percentage, type:'exam' };
+      const breakdown = Object.fromEntries(Object.entries(byCat).map(([k,v])=>[k,{...v, percentage: Math.round((v.correct/(v.total||1))*100)}]));
+      const result = { date: new Date().toISOString().split('T')[0], time: new Date().toLocaleTimeString('nl-NL'), category: 'exam', score, total, percentage, type:'exam', breakdown };
       let quizResults = JSON.parse(localStorage.getItem('quizResults')||'[]'); quizResults.unshift(result); quizResults = quizResults.slice(0,100); localStorage.setItem('quizResults', JSON.stringify(quizResults));
       // save wrongs
       const prevWrong = JSON.parse(localStorage.getItem('wrongBook')||'[]');
       localStorage.setItem('wrongBook', JSON.stringify(prevWrong.concat(wrongBook).slice(-500)));
       // go to results
-      localStorage.setItem('lastQuizResult', JSON.stringify({ type:'exam', score, total, percentage, questions: qs.map((q,i)=>({ vraag:q.vraag, opties:q.opties, userIndex: answers[i], correctIndex: corrects[i] })) }));
+      localStorage.setItem('lastQuizResult', JSON.stringify({ type:'exam', score, total, percentage, breakdown, questions: qs.map((q,i)=>({ vraag:q.vraag, opties:q.opties, userIndex: answers[i], correctIndex: corrects[i], categorie: q.categorie||q.category })) }));
       location.href = 'resultaten.html';
     }
     document.addEventListener('DOMContentLoaded', ()=>{
@@ -129,6 +176,7 @@
       document.getElementById('sim-next').addEventListener('click', next);
       document.getElementById('sim-prev').addEventListener('click', prev);
       document.getElementById('sim-end').addEventListener('click', finish);
+      document.getElementById('sim-start').addEventListener('click', startExam);
     });
   </script>
 </body>
