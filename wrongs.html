@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BlueBadge – Yanlışlar Defteri</title>
+  <title>BlueBadge – Foutenboek</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -26,8 +26,8 @@
       </div>
     </nav>
     <div class="hero-section">
-      <h2>YANLIŞLAR DEFTERİ</h2>
-      <p>Hatalarını tekrar çözerek pekiştir</p>
+      <h2>FOUTENBOEK</h2>
+      <p>Oefen opnieuw met je fouten</p>
     </div>
   </header>
 
@@ -48,7 +48,7 @@
     function render(){
       const list = JSON.parse(localStorage.getItem('wrongBook')||'[]');
       const c = document.getElementById('wb-container');
-      if (!list.length){ c.innerHTML = '<p>Harika! Kayıtlı yanlış yok.</p>'; return; }
+      if (!list.length){ c.innerHTML = '<p>Geweldig! Geen fouten geregistreerd.</p>'; return; }
       c.innerHTML = list.slice(-100).reverse().map((it,idx)=>`
         <div class="question-container" style="background:#fff;color:#000;border:1px solid #e5e7eb;">
           <div class="question-text"><h4>#${list.length-idx}</h4><p>${it.vraag}</p></div>

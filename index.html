@@ -15,19 +15,40 @@
       </div>
       <div class="nav-links">
         <a href="index.html" data-i18n="dashboard">Dashboard</a>
-        <a href="quiz.html" data-i18n="daily_quiz">Dagelijkse Quiz</a>
-        <a href="cognitief.html" data-i18n="cognitive_skills">Cognitieve Vaardigheden</a>
-        <a href="taal.html" data-i18n="language_training">Taaltraining</a>
-        <a href="voortgang.html" data-i18n="progress">Voortgang</a>
-        <a href="flashcards.html">Flashcards</a>
-        <a href="listening.html">Listening</a>
-        <a href="simulation.html">Simülasyon</a>
-        <a href="cases.html">Mini-Case</a>
-        <a href="scenarios.html">Scenarios</a>
-        <a href="gesprek.html">Gesprek</a>
-        <a href="wrongs.html">Yanlışlar</a>
-        <a href="content-admin.html">İçerik</a>
-        <a href="analytics.html">Analitik</a>
+        <div class="nav-dropdown">
+          <button class="dropdown-btn">Training</button>
+          <div class="dropdown-menu">
+            <a href="quiz.html">Dagelijkse Quiz</a>
+            <a href="cognitief.html">Cognitief</a>
+            <a href="taal.html">Taal</a>
+            <a href="flashcards.html">Flashcards</a>
+            <a href="listening.html">Luisteren</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="dropdown-btn">Scenario</button>
+          <div class="dropdown-menu">
+            <a href="simulation.html">Simulatie</a>
+            <a href="cases.html">Mini-Case</a>
+            <a href="scenarios.html">Scenario's</a>
+            <a href="gesprek.html">Gesprek</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="dropdown-btn">Analyse</button>
+          <div class="dropdown-menu">
+            <a href="voortgang.html">Voortgang</a>
+            <a href="analytics.html">Analytisch</a>
+            <a href="wrongs.html">Foutenboek</a>
+          </div>
+        </div>
+        <div class="nav-dropdown">
+          <button class="dropdown-btn">Beheer</button>
+          <div class="dropdown-menu">
+            <a href="content-admin.html">Content</a>
+            <a href="i18n-editor.html">i18n</a>
+          </div>
+        </div>
         <select id="language-select" aria-label="Language" style="margin-left: 8px;">
           <option value="nl">NL</option>
           <option value="fr">FR</option>
@@ -36,8 +57,8 @@
           <option value="tr">TR</option>
         </select>
         <div id="language-switcher"></div>
-        <input id="bb-username" placeholder="Kullanıcı" style="margin-left:8px; padding:6px 8px; border-radius:6px; border:1px solid #334; background: rgba(26, 26, 46, 0.6); color: var(--text-secondary);" />
-        <button class="challenge-btn" style="padding:6px 10px;" onclick="(function(){ const u=document.getElementById('bb-username').value.trim(); if(u){ bbAuth.login(u); alert('Giriş yapıldı: '+u); } })()">Giriş</button>
+        <input id="bb-username" placeholder="Gebruiker" style="margin-left:8px; padding:6px 8px; border-radius:6px; border:1px solid #334; background: rgba(26, 26, 46, 0.6); color: var(--text-secondary);" />
+        <button class="challenge-btn" style="padding:6px 10px;" onclick="(function(){ const u=document.getElementById('bb-username').value.trim(); if(u){ if(bbAuth.login(u)) alert('Ingelogd: '+u); } })()">Login</button>
         <button class="module-btn" style="padding:6px 10px;" onclick="toggleTheme()">Tema</button>
       </div>
       
