@@ -8,6 +8,7 @@ let userData = {
     totalQuestions: 156,
     successRate: 78,
     streakDays: 7,
+    goals: { questionsPerDay: 50, wordsPerDay: 20, readingsPerDay: 1 },
     progress: {
         cognitief: 65,
         taal: 42,
@@ -178,6 +179,11 @@ function updateDashboard() {
     
     // İlerleme barlarını güncelle
     updateProgressBars();
+
+    // Goals section
+    renderGoals();
+    // Mini chart
+    renderDashboardBars();
 }
 
 // Günlük kelime güncelleme
@@ -529,6 +535,64 @@ function showAchievementNotification(message) {
     }, 3000);
 }
 
+// Goals
+function renderGoals(){
+    const saved = JSON.parse(localStorage.getItem('bbGoals')||'null');
+    if (saved){ userData.goals = { ...userData.goals, ...saved }; }
+    // set inputs and targets
+    document.getElementById('goal-q-input')?.setAttribute('value', userData.goals.questionsPerDay);
+    document.getElementById('goal-w-input')?.setAttribute('value', userData.goals.wordsPerDay);
+    document.getElementById('goal-r-input')?.setAttribute('value', userData.goals.readingsPerDay);
+    document.getElementById('goal-q-target')?.innerText = userData.goals.questionsPerDay;
+    document.getElementById('goal-w-target')?.innerText = userData.goals.wordsPerDay;
+    document.getElementById('goal-r-target')?.innerText = userData.goals.readingsPerDay;
+    // today counters
+    const today = new Date().toISOString().split('T')[0];
+    const all = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+    ].filter(r=>r.date===today);
+    const questionsToday = all.reduce((s,r)=> s + (r.total||0), 0);
+    // words known/study increments
+    const known = JSON.parse(localStorage.getItem('knownWords')||'[]');
+    const study = JSON.parse(localStorage.getItem('studyWords')||'[]');
+    const wordsToday = Math.min(known.length + Math.floor(study.length*0.5), userData.goals.wordsPerDay); // rough proxy
+    // readings from languageResults lezen today
+    const readingsToday = all.filter(r=> (r.category==='lezen' || r.type==='lezen')).length;
+    document.getElementById('goal-q-today')?.innerText = questionsToday;
+    document.getElementById('goal-w-today')?.innerText = wordsToday;
+    document.getElementById('goal-r-today')?.innerText = readingsToday;
+    // bars
+    const qPerc = Math.min(100, Math.round((questionsToday / Math.max(1,userData.goals.questionsPerDay))*100));
+    const wPerc = Math.min(100, Math.round((wordsToday / Math.max(1,userData.goals.wordsPerDay))*100));
+    const rPerc = Math.min(100, Math.round((readingsToday / Math.max(1,userData.goals.readingsPerDay))*100));
+    const qBar = document.getElementById('goal-q-bar'); if(qBar) qBar.style.width = qPerc+'%';
+    const wBar = document.getElementById('goal-w-bar'); if(wBar) wBar.style.width = wPerc+'%';
+    const rBar = document.getElementById('goal-r-bar'); if(rBar) rBar.style.width = rPerc+'%';
+    // save handlers
+    document.getElementById('goal-q-save')?.addEventListener('click', ()=>{ userData.goals.questionsPerDay = parseInt(document.getElementById('goal-q-input').value||'50'); localStorage.setItem('bbGoals', JSON.stringify(userData.goals)); renderGoals(); });
+    document.getElementById('goal-w-save')?.addEventListener('click', ()=>{ userData.goals.wordsPerDay = parseInt(document.getElementById('goal-w-input').value||'20'); localStorage.setItem('bbGoals', JSON.stringify(userData.goals)); renderGoals(); });
+    document.getElementById('goal-r-save')?.addEventListener('click', ()=>{ userData.goals.readingsPerDay = parseInt(document.getElementById('goal-r-input').value||'1'); localStorage.setItem('bbGoals', JSON.stringify(userData.goals)); renderGoals(); });
+}
+
+// Dashboard 7-day mini bars
+function renderDashboardBars(){
+    const el = document.getElementById('dash-bars'); if(!el) return;
+    const all = [
+        ...JSON.parse(localStorage.getItem('cognitiveResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('languageResults')||'[]'),
+        ...JSON.parse(localStorage.getItem('quizResults')||'[]')
+    ];
+    const days=[]; for(let i=6;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); days.push(d.toISOString().split('T')[0]); }
+    el.innerHTML='';
+    days.forEach(day=>{
+        const f = all.filter(r=>r.date===day); const v = f.length? Math.round(f.reduce((s,r)=>s+r.percentage,0)/f.length):0;
+        const b=document.createElement('div'); b.style.height=v+'%'; b.style.width='12%'; b.style.background=v>=80?'#16a34a':v>=60?'#f59e0b':'#dc2626'; b.title=`${day}: ${v}%`;
+        el.appendChild(b);
+    });
+}
+
 // Sayfa yüklendikende
 document.addEventListener('DOMContentLoaded', function() {
     // Kullanıcı verilerini yükle
@@ -540,6 +604,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Verileri yükle
     loadData();
     
+    // Re-render goals and mini bars on focus (data may change)
+    window.addEventListener('focus', ()=>{ renderGoals(); renderDashboardBars(); });
+
     // Event listenerlar
     document.getElementById('reload-btn')?.addEventListener('click', function(e) {
         e.preventDefault();
