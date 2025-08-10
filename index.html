@@ -12,22 +12,22 @@
       <div class="nav-brand">
         <h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1>
       </div>
+      
       <div class="nav-links">
         <a href="index.html" data-i18n="dashboard">Dashboard</a>
         <a href="quiz.html" data-i18n="daily_quiz">Dagelijkse Quiz</a>
         <a href="cognitief.html" data-i18n="cognitive_skills">Cognitieve Vaardigheden</a>
         <a href="taal.html" data-i18n="language_training">Taaltraining</a>
         <a href="voortgang.html" data-i18n="progress">Voortgang</a>
-        <select id="language-select" aria-label="Language" style="margin-left: 8px;">
-          <option value="nl">NL</option>
-          <option value="tr">TR</option>
-          <option value="en">EN</option>
-          <option value="fr">FR</option>
-          <option value="de">DE</option>
-        </select>
+      </div>
+      
+      <!-- Sağ taraf - Dil seçici ve Login -->
+      <div class="nav-right">
         <div id="language-switcher"></div>
-        <input id="bb-username" placeholder="Kullanıcı" style="margin-left:8px; padding:6px 8px; border-radius:6px; border:1px solid #334; background: rgba(26, 26, 46, 0.6); color: var(--text-secondary);" />
-        <button class="challenge-btn" style="padding:6px 10px;" onclick="(function(){ const u=document.getElementById('bb-username').value.trim(); if(u){ bbAuth.login(u); alert('Giriş yapıldı: '+u); } })()">Giriş</button>
+        <div class="login-section">
+          <input id="bb-username" placeholder="Gebruikersnaam" class="username-input" />
+          <button class="login-btn" onclick="handleLogin()">Inloggen</button>
+        </div>
       </div>
       
       <!-- Mobile Menu Button -->
@@ -184,5 +184,16 @@
   <script src="i18n.js"></script>
   <script src="auth.js"></script>
   <script src="app.js"></script>
+  <script>
+    function handleLogin() {
+      const username = document.getElementById('bb-username').value.trim();
+      if (username) {
+        bbAuth.login(username);
+        alert('Ingelogd als: ' + username);
+      } else {
+        alert('Voer een gebruikersnaam in');
+      }
+    }
+  </script>
 </body>
 </html>

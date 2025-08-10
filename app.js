@@ -22,13 +22,19 @@ function toggleLanguageMenu() {
     langMenu.classList.toggle('active');
 }
 
+// Mobile menu toggle function
 function toggleMobileMenu() {
-    const navLinks = document.querySelector('.nav-links');
-    const mobileBtn = document.querySelector('.mobile-menu-btn');
-    
+  const navLinks = document.querySelector('.nav-links');
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
+  
+  if (navLinks && mobileBtn) {
     navLinks.classList.toggle('active');
     mobileBtn.classList.toggle('active');
+  }
 }
+
+// Make it globally available
+window.toggleMobileMenu = toggleMobileMenu;
 
 function changeLanguage(langCode) {
     currentLanguage = langCode;

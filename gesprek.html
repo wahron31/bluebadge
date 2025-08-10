@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gesprekstraining - BlueBadge Training</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand">
+        <h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1>
+      </div>
+      
+      <div class="nav-links">
+        <a href="index.html" data-i18n="dashboard">Dashboard</a>
+        <a href="quiz.html" data-i18n="daily_quiz">Dagelijkse Quiz</a>
+        <a href="cognitief.html" data-i18n="cognitive_skills">Cognitieve Vaardigheden</a>
+        <a href="taal.html" data-i18n="language_training">Taaltraining</a>
+        <a href="voortgang.html" data-i18n="progress">Voortgang</a>
+      </div>
+      
+      <!-- Sağ taraf - Dil seçici ve Login -->
+      <div class="nav-right">
+        <div id="language-switcher"></div>
+        <div class="login-section">
+          <input id="bb-username" placeholder="Gebruikersnaam" class="username-input" />
+          <button class="login-btn" onclick="handleLogin()">Inloggen</button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero-section">
+      <h2>📋 Gesprekstraining</h2>
+      <p>Bereid je voor op politie interviews en verbeter je communicatievaardigheden</p>
+    </section>
+
+    <section class="interview-modules">
+      <h3>Interview Modules</h3>
+      <div class="interview-grid">
+        <div class="interview-card">
+          <div class="interview-icon">👔</div>
+          <h4>Sollicitatiegesprek</h4>
+          <p>Professionele presentatie en antwoorden op standaardvragen</p>
+          <div class="interview-difficulty">
+            <span class="difficulty-badge beginner">Beginner</span>
+            <span class="interview-time">20 min</span>
+          </div>
+          <button class="interview-btn" onclick="startInterview('sollicitatie')">Start Training</button>
+        </div>
+
+        <div class="interview-card">
+          <div class="interview-icon">🚨</div>
+          <h4>Noodsituatie Interview</h4>
+          <p>Hoe reageer je onder druk en stressvolle omstandigheden</p>
+          <div class="interview-difficulty">
+            <span class="difficulty-badge intermediate">Gevorderd</span>
+            <span class="interview-time">25 min</span>
+          </div>
+          <button class="interview-btn" onclick="startInterview('nood')">Start Training</button>
+        </div>
+
+        <div class="interview-card">
+          <div class="interview-icon">🔍</div>
+          <h4>Onderzoeksgesprek</h4>
+          <p>Technieken voor het afnemen van verhoren en getuigenverklaringen</p>
+          <div class="interview-difficulty">
+            <span class="difficulty-badge advanced">Expert</span>
+            <span class="interview-time">30 min</span>
+          </div>
+          <button class="interview-btn" onclick="startInterview('onderzoek')">Start Training</button>
+        </div>
+
+        <div class="interview-card">
+          <div class="interview-icon">👥</div>
+          <h4>Team Communicatie</h4>
+          <p>Effectieve communicatie binnen het politieteam</p>
+          <div class="interview-difficulty">
+            <span class="difficulty-badge intermediate">Gevorderd</span>
+            <span class="interview-time">22 min</span>
+          </div>
+          <button class="interview-btn" onclick="startInterview('team')">Start Training</button>
+        </div>
+
+        <div class="interview-card">
+          <div class="interview-icon">📱</div>
+          <h4>Radio Communicatie</h4>
+          <p>Correcte radio procedures en codes</p>
+          <div class="interview-difficulty">
+            <span class="difficulty-badge beginner">Beginner</span>
+            <span class="interview-time">18 min</span>
+          </div>
+          <button class="interview-btn" onclick="startInterview('radio')">Start Training</button>
+        </div>
+
+        <div class="interview-card">
+          <div class="interview-icon">🎭</div>
+          <h4>Rolspel Training</h4>
+          <p>Praktische oefeningen met acteurs</p>
+          <div class="interview-difficulty">
+            <span class="difficulty-badge advanced">Expert</span>
+            <span class="interview-time">35 min</span>
+          </div>
+          <button class="interview-btn" onclick="startInterview('rolspel')">Start Training</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="interview-tips">
+      <h3>Interview Tips & Tricks</h3>
+      <div class="tips-container">
+        <div class="tip-card">
+          <div class="tip-icon">💡</div>
+          <h4>Voorbereiding</h4>
+          <ul>
+            <li>Ken je CV uit je hoofd</li>
+            <li>Bereid vragen voor</li>
+            <li>Oefen je antwoorden</li>
+            <li>Dress to impress</li>
+          </ul>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">🎯</div>
+          <h4>Tijdens het Gesprek</h4>
+          <ul>
+            <li>Maak oogcontact</li>
+            <li>Luister actief</li>
+            <li>Wees eerlijk en authentiek</li>
+            <li>Toon enthousiasme</li>
+          </ul>
+        </div>
+
+        <div class="tip-card">
+          <div class="tip-icon">🚫</div>
+          <h4>Te Vermijden</h4>
+          <ul>
+            <li>Negatief over vorige werkgevers</li>
+            <li>Te veel praten</li>
+            <li>Onvoorbereid zijn</li>
+            <li>Laten zien dat je nerveus bent</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="interview-stats">
+      <h3>Jouw Interview Prestaties</h3>
+      <div class="stats-overview">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-content">
+            <span class="stat-number" id="completed-interviews">8</span>
+            <span class="stat-label">Voltooide Interviews</span>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">🎯</div>
+          <div class="stat-content">
+            <span class="stat-number" id="avg-interview-score">82%</span>
+            <span class="stat-label">Gemiddelde Score</span>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">⏱️</div>
+          <div class="stat-content">
+            <span class="stat-number" id="total-interview-time">3u 15m</span>
+            <span class="stat-label">Totale Tijd</span>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <div class="stat-icon">🏆</div>
+          <div class="stat-content">
+            <span class="stat-number" id="interview-rank">#5</span>
+            <span class="stat-label">Ranglijst Positie</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="recent-interviews">
+      <h3>Recente Interview Trainingen</h3>
+      <div class="recent-list">
+        <div class="recent-item">
+          <div class="recent-icon">👔</div>
+          <div class="recent-details">
+            <h4>Sollicitatiegesprek - Politie Antwerpen</h4>
+            <p>Score: 88% | Tijd: 18 min | Datum: Vandaag</p>
+          </div>
+          <div class="recent-score excellent">88%</div>
+        </div>
+        
+        <div class="recent-item">
+          <div class="recent-icon">🚨</div>
+          <div class="recent-details">
+            <h4>Noodsituatie Interview - Crisis Management</h4>
+            <p>Score: 75% | Tijd: 24 min | Datum: Gisteren</p>
+          </div>
+          <div class="recent-score good">75%</div>
+        </div>
+        
+        <div class="recent-item">
+          <div class="recent-icon">🔍</div>
+          <div class="recent-details">
+            <h4>Onderzoeksgesprek - Verhoor Technieken</h4>
+            <p>Score: 91% | Tijd: 28 min | Datum: 2 dagen geleden</p>
+          </div>
+          <div class="recent-score excellent">91%</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 BlueBadge | Classified Training System</p>
+    <p class="footer-note">Stay sharp. Stay ready. 🔍</p>
+  </footer>
+
+  <script src="i18n.js"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script>
+    function handleLogin() {
+      const username = document.getElementById('bb-username').value.trim();
+      if (username) {
+        bbAuth.login(username);
+        alert('Ingelogd als: ' + username);
+      } else {
+        alert('Voer een gebruikersnaam in');
+      }
+    }
+
+    function startInterview(interviewType) {
+      alert('Interview training gestart: ' + interviewType);
+      // Hier komt de interview logica
+    }
+
+    function toggleMobileMenu() {
+      // Mobile menu toggle logic
+    }
+  </script>
+</body>
+</html>

@@ -38,35 +38,43 @@
     const mount = document.getElementById('language-switcher');
     if (!mount) return;
     const langs = buildLanguages();
+    const active = langs.find(l=>l.code===current);
+    
     mount.innerHTML = `
-      <div class="lang-switcher">
-        <button class="lang-current" id="lang-btn">
-          <span class="flag">${langs.find(l=>l.code===current)?.flag || '🌐'}</span>
-          <span class="code">${current.toUpperCase()}</span>
-          <span class="arrow">▾</span>
+      <div class="language-selector">
+        <button class="lang-btn ${active ? 'active' : ''}" id="lang-btn">
+          <span class="lang-flag">${active?.flag || '🌐'}</span>
+          <span class="lang-code">${current.toUpperCase()}</span>
         </button>
         <div class="lang-menu" id="lang-menu">
           ${langs.map(l => `
-            <div class="lang-item" data-lang="${l.code}">
-              <span class="flag">${l.flag}</span>
-              <span class="name">${l.name}</span>
+            <div class="lang-option ${l.code === current ? 'active' : ''}" data-lang="${l.code}">
+              <span class="lang-flag">${l.flag}</span>
+              <span class="lang-name">${l.name}</span>
             </div>
           `).join('')}
         </div>
       </div>
     `;
+    
     const btn = document.getElementById('lang-btn');
     const menu = document.getElementById('lang-menu');
-    btn.onclick = (e)=>{ e.stopPropagation(); menu.classList.toggle('open'); };
-    menu.querySelectorAll('.lang-item').forEach(item => {
-      item.addEventListener('click', ()=>{
+    
+    btn.onclick = (e) => { 
+      e.stopPropagation(); 
+      menu.classList.toggle('active'); 
+    };
+    
+    menu.querySelectorAll('.lang-option').forEach(item => {
+      item.addEventListener('click', () => {
         const code = item.getAttribute('data-lang');
         localStorage.setItem('lang', code);
         applyLang(code);
-        menu.classList.remove('open');
+        menu.classList.remove('active');
       });
     });
-    document.addEventListener('click', ()=> menu.classList.remove('open'));
+    
+    document.addEventListener('click', () => menu.classList.remove('active'));
   }
 
   function updateSwitcher(lang){
@@ -74,9 +82,16 @@
     if (!btn) return;
     const langs = buildLanguages();
     const active = langs.find(l=>l.code===lang);
+    
     if (active){
-      btn.querySelector('.flag').textContent = active.flag;
-      btn.querySelector('.code').textContent = lang.toUpperCase();
+      btn.querySelector('.lang-flag').textContent = active.flag;
+      btn.querySelector('.lang-code').textContent = lang.toUpperCase();
+      
+      // Update active states
+      btn.classList.toggle('active', true);
+      document.querySelectorAll('.lang-option').forEach(option => {
+        option.classList.toggle('active', option.getAttribute('data-lang') === lang);
+      });
     }
   }
 
