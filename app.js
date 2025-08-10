@@ -9,6 +9,7 @@ let userData = {
     successRate: 78,
     streakDays: 7,
     goals: { questionsPerDay: 50, wordsPerDay: 20, readingsPerDay: 1 },
+    premium: false,
     progress: {
         cognitief: 65,
         taal: 42,
@@ -474,6 +475,9 @@ function updateDashboard() {
     // Smart suggestions and badges
     renderSmartSuggestions();
     renderBadges();
+
+    // Theme init
+    applyTheme(localStorage.getItem('bbTheme')||'dark');
 }
 
 // Update achievement indicators
@@ -648,13 +652,22 @@ function computeBadges(){
     const perfect = all.some(r=>r.percentage===100);
     const streak = calculateStreakDays?.() || 0;
     const known = JSON.parse(localStorage.getItem('knownWords')||'[]');
+    const avg = all.length? Math.round(all.reduce((s,r)=>s+r.percentage,0)/all.length):0;
     const badgeList = [
         { key:'perfect', icon:'🎯', title:'Perfect', desc:'Bir testte %100', earned: perfect },
         { key:'streak7', icon:'🔥', title:'7-Gün Serisi', desc:'7 gün üst üste çalışma', earned: streak>=7 },
-        { key:'words100', icon:'📚', title:'100 Kelime', desc:'100+ kelime işaretli', earned: known.length>=100 }
+        { key:'words100', icon:'📚', title:'100 Kelime', desc:'100+ kelime işaretli', earned: known.length>=100 },
+        { key:'avg80', icon:'🚀', title:'Ustalık', desc:'Genel ortalama %80+', earned: avg>=80 }
     ];
     return badgeList;
 }
+
+// Premium
+function requirePremium(feature){ if(userData.premium) return true; showAchievementNotification('🔒 Premium özellik: '+feature); return false; }
+
+// Theme toggle
+function applyTheme(mode){ document.documentElement.dataset.theme = mode; localStorage.setItem('bbTheme', mode); }
+function toggleTheme(){ const cur = localStorage.getItem('bbTheme')||'dark'; applyTheme(cur==='dark'?'light':'dark'); }
 
 // Sayfa yüklendikende
 document.addEventListener('DOMContentLoaded', function() {

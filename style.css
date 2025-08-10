@@ -23,6 +23,16 @@
   --shadow-blue: 0 0 20px rgba(74, 144, 226, 0.4);
 }
 
+[data-theme="light"] {
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --glass-bg: rgba(255,255,255,0.9);
+  --glass-border: rgba(99,102,241,0.2);
+  --shadow-dark: 0 8px 24px rgba(0,0,0,0.08);
+  --shadow-blue: 0 0 12px rgba(99,102,241,0.15);
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+}
+
 * {
   margin: 0;
   padding: 0;

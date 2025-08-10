@@ -69,6 +69,18 @@
           <button class="module-btn" id="dedupe">Duplikeleri Temizle</button>
         </div>
 
+        <div style="margin-top:16px; padding:12px; border:1px solid var(--glass-border); border-radius:8px; background: rgba(26,26,46,0.6);">
+          <h4>Toplu İçerik Üret</h4>
+          <div style="display:flex; gap:8px; flex-wrap:wrap; align-items:center;">
+            <label>Woordenschat: <input id="gen-woorden" type="number" value="500" min="100" max="10000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
+            <label>Lezen: <input id="gen-lezen" type="number" value="100" min="20" max="1000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
+            <label>Grammatica: <input id="gen-gram" type="number" value="200" min="50" max="2000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
+            <label>Quiz: <input id="gen-quiz" type="number" value="300" min="50" max="5000" style="width:100px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/></label>
+            <button class="challenge-btn" id="gen-run">Üret ve Kaydet</button>
+          </div>
+          <p style="margin-top:6px; color:#94a3b8; font-size:12px;">Rastgele üretim eğitim amaçlıdır. Gerçek içerik için CSV/JSON içe aktarın.</p>
+        </div>
+
         <div style="margin-top:16px;">
           <div id="preview-status" style="margin-bottom:8px; color:#e2e8f0;"></div>
           <div style="overflow:auto; border:1px solid var(--glass-border); border-radius:8px;">
@@ -276,6 +288,25 @@
     document.getElementById('export-bundle').addEventListener('click', exportBundle);
     document.getElementById('import-bundle-btn').addEventListener('click', ()=> document.getElementById('import-bundle').click());
     document.getElementById('import-bundle').addEventListener('change', (e)=>{ const f=e.target.files[0]; if(f) importBundle(f); });
+
+    // Bulk generate
+    function randPick(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+    function range(n){ return Array.from({length:n}, (_,i)=>i); }
+    function genWords(n){ const roots=['politie','verhoor','controle','dienst','rapport','patrouille','melding','verdachte','getuige','bewijs','wijk']; const defs=['tanım','kavram','bağlam','durum']; return range(n).map(i=>({ type:'woorden', vraag:`Kelime anlamı (${i+1})`, opties:['A','B','C','D'], antwoord:i%4, uitleg:`${randPick(roots)} ${randPick(defs)} örnek` })); }
+    function genLezen(n){ return range(n).map(i=>({ type:'lezen', passage:`Kısa metin ${i+1}: ...`, vraag:`Metne göre (${i+1})?`, opties:['X','Y','Z','T'], antwoord:(i+1)%4, uitleg:'Metin içinde ipucu' })); }
+    function genGram(n){ const rules=['dt','de-het','woordvolgorde','meervoud']; return range(n).map(i=>({ type:'grammatica', vraag:`Gramer kuralı (${randPick(rules)}) ${i+1}`, opties:['Seç1','Seç2','Seç3','Seç4'], antwoord:i%4, uitleg:'Kural açıklaması' })); }
+    function genQuiz(n){ const cats=['taal','cognitief','situationeel']; const tags=['trafik','prosedür','iletişim','hukuk']; return range(n).map(i=>({ vraag:`Genel soru ${i+1}`, opties:['1','2','3','4'], antwoord:i%4, categorie: randPick(cats), tags:[randPick(tags)], uitleg:'Kısa açıklama' })); }
+    document.getElementById('gen-run').addEventListener('click', ()=>{
+      const w = parseInt(document.getElementById('gen-woorden').value||'0');
+      const l = parseInt(document.getElementById('gen-lezen').value||'0');
+      const g = parseInt(document.getElementById('gen-gram').value||'0');
+      const q = parseInt(document.getElementById('gen-quiz').value||'0');
+      if(w>0) localStorage.setItem('import_woorden', JSON.stringify(genWords(w)));
+      if(l>0) localStorage.setItem('import_lezen', JSON.stringify(genLezen(l)));
+      if(g>0) localStorage.setItem('import_grammatica', JSON.stringify(genGram(g)));
+      if(q>0) localStorage.setItem('import_quiz', JSON.stringify(genQuiz(q)));
+      alert('Üretildi ve kaydedildi');
+    });
   </script>
 </body>
 </html>
