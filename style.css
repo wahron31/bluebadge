@@ -3555,3 +3555,120 @@ button:focus-visible, .module-btn:focus-visible, .challenge-btn:focus-visible, .
   width: 80px;
   text-align: center;
 }
+
+/* Test Feedback Styles */
+.test-feedback {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.test-feedback h3 {
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  text-align: center;
+}
+
+.test-feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.test-feedback-group {
+  background: rgba(17, 24, 39, 0.3);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  border: 1px solid var(--glass-border);
+}
+
+.test-feedback-group h4 {
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.test-feedback-group h4::before {
+  content: '💬';
+  font-size: 18px;
+  color: var(--accent-primary);
+}
+
+.test-feedback-row {
+  margin-bottom: var(--spacing-md);
+}
+
+.test-feedback-label {
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.test-feedback-textarea {
+  width: 100%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100px;
+  resize: vertical;
+  transition: var(--transition-normal);
+}
+
+.test-feedback-textarea:focus {
+  outline: none;
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.test-feedback-rating {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.test-feedback-star {
+  font-size: 24px;
+  color: rgba(148, 163, 184, 0.3);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.test-feedback-star:hover,
+.test-feedback-star.active {
+  color: var(--accent-warning);
+  transform: scale(1.1);
+}
+
+.test-feedback-submit {
+  background: linear-gradient(135deg, var(--accent-success), var(--accent-primary));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md) var(--spacing-xl);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  align-self: center;
+  min-width: 150px;
+}
+
+.test-feedback-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
