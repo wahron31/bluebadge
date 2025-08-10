@@ -70,6 +70,7 @@
   <script src="i18n.js"></script>
   <script src="auth.js"></script>
   <script>
+    function sanitizeText(input){ if(typeof input !== 'string') return ''; return input.replace(/[&<>"']/g, c=>({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;' }[c])); }
     (function(){
       const data = JSON.parse(localStorage.getItem('lastQuizResult') || 'null');
       if (!data) return;
@@ -96,8 +97,8 @@
 
       if (Array.isArray(data.questions)) {
         detailsEl.innerHTML = data.questions.map((q, i) => {
-          const vraag = q.vraag || q.question || '';
-          const opties = Array.isArray(q.opties) ? q.opties : [];
+          const vraag = sanitizeText(String(q.vraag || q.question || ''));
+          const opties = Array.isArray(q.opties) ? q.opties.map(o=> sanitizeText(String(o))) : [];
           const userIdx = typeof q.userIndex === 'number' ? q.userIndex : null;
           const correctIdx = typeof q.correctIndex === 'number' ? q.correctIndex : null;
           const correct = q.correct === true || (userIdx !== null && correctIdx !== null && userIdx === correctIdx);
@@ -106,7 +107,7 @@
               <div style="font-weight:700; color:${correct ? '#16a34a' : '#dc2626'}">${i+1}. ${vraag}</div>
               ${opties.length ? `<ul style='margin:0.5rem 0 0; padding-left:1.25rem;'>${optesList(opties, userIdx, correctIdx)}</ul>` : ''}
               ${Array.isArray(q.tags) && q.tags.length ? `<div style='margin-top:0.25rem; font-size:0.85rem; color:#6b7280;'>Etiketler: ${q.tags.join(', ')}</div>`: ''}
-              ${typeof q.uitleg === 'string' && q.uitleg ? `<div style='margin-top:0.5rem; font-size:0.9rem; color:#374151;'>${q.uitleg}</div>` : ''}
+              ${typeof q.uitleg === 'string' && q.uitleg ? `<div style='margin-top:0.5rem; font-size:0.9rem; color:#374151;'>${sanitizeText(q.uitleg)}</div>` : ''}
             </div>
           `;
         }).join('');

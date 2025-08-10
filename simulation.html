@@ -8,7 +8,7 @@
 </head>
 <body>
   <header>
-    <nav class="top-nav">
+    <nav class="top-nav" role="navigation" aria-label="Hoofdnavigatie">
       <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
       <div class="nav-links">
         <a href="index.html" data-i18n="dashboard">Dashboard</a>
@@ -43,7 +43,7 @@
             </div>
             <div>
               <label for="sim-tags" style="display:block; font-weight:600; margin-bottom:4px;">Tags</label>
-              <input id="sim-tags" placeholder="virgülle: trafik,prosedür" style="width:220px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
+              <input id="sim-tags" placeholder="bijv.: verkeer,procedure" style="width:220px; padding:6px; border-radius:8px; border:1px solid #e5e7eb;"/>
             </div>
             <div>
               <label for="sim-count" style="display:block; font-weight:600; margin-bottom:4px;">Vragen</label>
@@ -91,7 +91,7 @@
     let all = []; let qs = []; let idx = 0; let answers = []; let corrects = []; let wrongBook = [];
     let timeLeft = 20*60; let timerId = null; let started = false;
     async function load(){
-      try { const r = await fetch('data/quiz_questions.json'); all = await r.json(); } catch { all = []; }
+      try { bbLoading.show(); all = await fetchJSON('data/quiz_questions.json', { validate: d=> Array.isArray(d) }); } catch { all = []; }
       try { const imp = JSON.parse(localStorage.getItem('import_quiz')||'[]'); if(Array.isArray(imp)&&imp.length){ all = imp; } } catch {}
       renderCategoryFilters();
       // prefill tags and auto start
@@ -100,6 +100,7 @@
         const input = document.getElementById('sim-tags'); if (input) input.value = pre;
         setTimeout(()=>{ document.getElementById('sim-start')?.click(); localStorage.removeItem('sim_prefill_tags'); }, 0);
       }
+      bbLoading.hide();
     }
     function shuffle(a){ const s=[...a]; for(let i=s.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[s[i],s[j]]=[s[j],s[i]]} return s }
     function startTimer(){

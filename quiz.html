@@ -27,7 +27,7 @@
 </head>
 <body>
   <header>
-    <nav class="top-nav">
+    <nav class="top-nav" role="navigation" aria-label="Hoofdnavigatie">
       <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
       <div class="nav-links">
         <a href="index.html" data-i18n="dashboard">Dashboard</a>
@@ -83,8 +83,8 @@
 
     async function loadQuiz() {
       try {
-        const res = await fetch('data/quiz_questions.json');
-        vragen = await res.json();
+        bbLoading.show();
+        vragen = await fetchJSON('data/quiz_questions.json', { validate: d => Array.isArray(d) });
       } catch (e) {
         vragen = [];
       }
@@ -95,16 +95,19 @@
       currentIndex = 0;
       score = 0;
       render(currentIndex);
+      bbLoading.hide();
     }
 
     function render(index) {
       const q = gekozen[index];
       if (!q) return;
+      const vraag = sanitizeText(String(q.vraag||''));
+      const opts = Array.isArray(q.opties)? q.opties.map(o=> sanitizeText(String(o))): [];
       quizContainer.innerHTML = `
         <div class="question-box">
-          <div class="question">${index + 1}. ${q.vraag}</div>
-          <div class="options">
-            ${q.opties.map((opt, i) => `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`).join('')}
+          <div class="question">${index + 1}. ${vraag}</div>
+          <div class="options" role="group" aria-label="Antwoordopties">
+            ${opts.map((opt, i) => `<button aria-pressed="false" onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`).join('')}
           </div>
         </div>`;
       // Hide Einde by default; it will appear only after last question is answered
@@ -120,6 +123,7 @@
         if (isLast) {
           // Show Einde only after last question is answered
           document.getElementById('end-quiz-btn').style.display = 'inline-block';
+          document.getElementById('end-quiz-btn').focus();
         } else {
           currentIndex++;
           render(currentIndex);
@@ -130,7 +134,7 @@
     window.endQuizEarly = function() {
       const answered = Math.min(currentIndex + 1, gekozen.length);
       const percentage = answered > 0 ? Math.round((score / answered) * 100) : 0;
-      const payload = { type: 'daily-quiz', score, total: answered, percentage, questions: gekozen.slice(0, answered) };
+      const payload = { type: 'daily-quiz', score, total: answered, percentage, questions: gekozen.slice(0, answered).map(q=>({ vraag: String(q.vraag||''), opties: Array.isArray(q.opties)? q.opties.map(String): [], correctIndex: q.antwoord })) };
       localStorage.setItem('lastQuizResult', JSON.stringify(payload));
       location.href = 'resultaten.html';
     };

@@ -97,13 +97,14 @@ document.addEventListener('click', function(event) {
 // Load data files
 async function loadData() {
     try {
+        bbLoading.show();
         const [quiz, woorden, abstractRed, verbaalRed, numeriekRed, languages] = await Promise.all([
-            fetch('data/quiz_questions.json').then(res => res.json()).catch(() => []),
-            fetch('data/woorden.json').then(res => res.json()).catch(() => []),
-            fetch('data/abstract_redeneren.json').then(res => res.json()).catch(() => []),
-            fetch('data/verbaal_redeneren.json').then(res => res.json()).catch(() => []),
-            fetch('data/numeriek_redeneren.json').then(res => res.json()).catch(() => []),
-            fetch('data/languages.json').then(res => res.json()).catch(() => {})
+            fetchJSON('data/quiz_questions.json', { validate: d=> Array.isArray(d) }).catch(() => []),
+            fetchJSON('data/woorden.json', { validate: d=> Array.isArray(d) }).catch(() => []),
+            fetchJSON('data/abstract_redeneren.json', { validate: d=> Array.isArray(d) }).catch(() => []),
+            fetchJSON('data/verbaal_redeneren.json', { validate: d=> Array.isArray(d) }).catch(() => []),
+            fetchJSON('data/numeriek_redeneren.json', { validate: d=> Array.isArray(d) }).catch(() => []),
+            fetchJSON('data/languages.json', { validate: d=> typeof d==='object' && d!==null }).catch(() => ({}))
         ]);
         
         const importQuiz = JSON.parse(localStorage.getItem('import_quiz')||'[]');
@@ -121,10 +122,12 @@ async function loadData() {
         }
         
         updateDashboard();
+        bbLoading.hide();
     } catch (error) {
         console.log('Error loading data files:', error);
         // Continue with sample data
         loadSampleData();
+        bbLoading.hide();
     }
 }
 
@@ -703,6 +706,27 @@ document.addEventListener('DOMContentLoaded', function() {
     if (location.pathname.endsWith('woorden.html')) {
         updateDailyWord();
     }
+    // Attach roles to main landmarks for accessibility
+    try { document.querySelectorAll('nav.top-nav').forEach(n=> n.setAttribute('role','navigation')); document.querySelector('main')?.setAttribute('role','main'); } catch {}
+    // Dropdown keyboard navigation
+    try {
+      document.querySelectorAll('.nav-dropdown .dropdown-btn').forEach(btn=>{
+        btn.setAttribute('aria-haspopup','true'); btn.setAttribute('aria-expanded','false');
+        const menu = btn.parentElement.querySelector('.dropdown-menu');
+        btn.addEventListener('keydown', (e)=>{
+          if(e.key==='Enter' || e.key===' '){ e.preventDefault(); const open = menu.style.display==='block'; menu.style.display = open? 'none':'block'; btn.setAttribute('aria-expanded', String(!open)); if(!open) menu.querySelector('a')?.focus(); }
+          if(e.key==='ArrowDown'){ e.preventDefault(); menu.querySelector('a')?.focus(); }
+        });
+        menu?.addEventListener('keydown',(e)=>{
+          const links=[...menu.querySelectorAll('a')]; const idx=links.indexOf(document.activeElement);
+          if(e.key==='ArrowDown'){ e.preventDefault(); (links[idx+1]||links[0])?.focus(); }
+          if(e.key==='ArrowUp'){ e.preventDefault(); (links[idx-1]||links[links.length-1])?.focus(); }
+          if(e.key==='Escape'){ e.preventDefault(); menu.style.display='none'; btn.setAttribute('aria-expanded','false'); btn.focus(); }
+        });
+      });
+    } catch {}
+    // Basic analytics
+    try { const evts = JSON.parse(localStorage.getItem('bbAnalytics')||'[]'); evts.unshift({ t:Date.now(), path:location.pathname }); localStorage.setItem('bbAnalytics', JSON.stringify(evts.slice(0,500))); } catch {}
 });
 
 // Quiz sayfası başlatma
