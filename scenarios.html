@@ -194,25 +194,5 @@
   <script src="i18n.js"></script>
   <script src="auth.js"></script>
   <script src="app.js"></script>
-  <script>
-    function handleLogin() {
-      const username = document.getElementById('bb-username').value.trim();
-      if (username) {
-        bbAuth.login(username);
-        alert('Ingelogd als: ' + username);
-      } else {
-        alert('Voer een gebruikersnaam in');
-      }
-    }
-
-    function startScenario(scenarioType) {
-      alert('Scenario gestart: ' + scenarioType);
-      // Hier komt de scenario logica
-    }
-
-    function toggleMobileMenu() {
-      // Mobile menu toggle logic
-    }
-  </script>
 </body>
 </html>

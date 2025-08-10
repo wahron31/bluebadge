@@ -5,137 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BlueBadge - Quiz</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .quiz-header { background: var(--glass-bg); backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); padding: 2rem; text-align: center; margin-bottom: 2rem; }
-    .quiz-header h1 { color: var(--text-primary); margin-bottom: 0.5rem; font-size: 2rem; }
-    .quiz-header p { color: var(--text-secondary); font-size: 1.1rem; }
-    .quiz-container { max-width: 800px; margin: 0 auto; padding: 0 1rem; }
-    .question-box { background: #ffffff !important; color: #000000 !important; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-    .question { font-weight: 600; margin-bottom: 1.5rem; color: #000000 !important; font-size: 1.1rem; line-height: 1.6; }
-    .options { display: grid; gap: 1rem; }
-    .options button { display: block; padding: 1rem 1.25rem; width: 100%; border: 1px solid #d1d5db; background: #ffffff !important; color: #000000 !important; border-radius: 10px; cursor: pointer; transition: all 0.2s ease; font-size: 1rem; text-align: left; }
-    .options button:hover:not(:disabled) { background: #f8fafc; border-color: #3b82f6; color: #000000; transform: translateX(4px); }
-    .options button.correct { background: linear-gradient(135deg, var(--success), #22c55e); border-color: var(--success); color: #ffffff !important; }
-    .options button.wrong { background: linear-gradient(135deg, var(--danger), #ef4444); border-color: var(--danger); color: #ffffff !important; }
-    .options button:disabled { cursor: not-allowed; opacity: 0.8; }
-    .result-actions { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
-    .btn-primary, .btn-secondary { padding: 1rem 2rem; border: none; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; }
-    .btn-primary { background: var(--accent-blue); color: var(--text-primary); }
-    .btn-secondary { background: var(--accent-steel); color: var(--text-primary); }
-    .btn-primary:hover, .btn-secondary:hover { transform: translateY(-2px); box-shadow: var(--shadow-blue); }
-  </style>
 </head>
 <body>
   <header>
     <nav class="top-nav">
-      <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
+      <div class="nav-brand">
+        <h1><a href="index.html">🚔 BlueBadge</a></h1>
+      </div>
       <div class="nav-links">
         <a href="index.html" data-i18n="dashboard">Dashboard</a>
         <a href="quiz.html" data-i18n="daily_quiz">Dagelijkse Quiz</a>
         <a href="cognitief.html" data-i18n="cognitive_skills">Cognitieve Vaardigheden</a>
         <a href="taal.html" data-i18n="language_training">Taaltraining</a>
         <a href="voortgang.html" data-i18n="progress">Voortgang</a>
-        <select id="language-select" aria-label="Language" style="margin-left: 8px;">
-          <option value="nl">NL</option>
-          <option value="tr">TR</option>
-          <option value="en">EN</option>
-          <option value="fr">FR</option>
-          <option value="de">DE</option>
-        </select>
-        <div id="language-switcher"></div>
+        <a href="scenarios.html" data-i18n="police_scenarios">Politie Scenario's</a>
+        <a href="gesprek.html" data-i18n="interview_training">Gesprekstraining</a>
       </div>
-      <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><span></span><span></span><span></span></button>
+      <div class="nav-right">
+        <div id="language-switcher"></div>
+        <div class="login-section">
+          <input id="bb-username" placeholder="Gebruikersnaam" class="username-input" />
+          <button class="login-btn" onclick="handleLogin()">Inloggen</button>
+        </div>
+      </div>
+      <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   </header>
 
   <div class="quiz-header">
-    <h1 data-translate="daily_quiz">Dagelijkse Quiz</h1>
-    <p data-translate="answer_5_questions">Beantwoord de 5 vragen hieronder</p>
+    <h1 data-i18n="daily_quiz">Dagelijkse Quiz</h1>
+    <p data-i18n="answer_5_questions">Beantwoord de 5 vragen hieronder</p>
   </div>
 
   <main class="quiz-container" id="quiz-container"></main>
-  <div style="text-align:center; margin: 1rem 0;">
-    <button id="end-quiz-btn" class="btn-primary" style="display:none;" onclick="endQuizEarly()">Einde</button>
+  
+  <div class="quiz-controls">
+    <button id="end-quiz-btn" class="control-btn primary" style="display:none;" onclick="endQuizEarly()">
+      <span data-i18n="finish_quiz">Einde</span>
+    </button>
   </div>
 
   <footer>
-    <p data-translate="copyright">© 2025 BlueBadge | Classified Training System</p>
-    <p class="footer-note" data-translate="stay_sharp">Stay sharp. Stay ready. 🔍</p>
+    <p data-i18n="copyright">© 2025 BlueBadge | Classified Training System</p>
+    <p class="footer-note" data-i18n="stay_sharp">Stay sharp. Stay ready. 🔍</p>
   </footer>
 
   <script src="i18n.js"></script>
+  <script src="auth.js"></script>
   <script src="app.js"></script>
   <script>
-    const quizContainer = document.getElementById('quiz-container');
-    let vragen = [];
-    let gekozen = [];
-    let currentIndex = 0;
-    let score = 0;
-
-    function fisherYatesShuffle(arr) {
-      const a = [...arr];
-      for (let i = a.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [a[i], a[j]] = [a[j], a[i]];
-      }
-      return a;
-    }
-
-    async function loadQuiz() {
-      try {
-        const res = await fetch('data/quiz_questions.json');
-        vragen = await res.json();
-      } catch (e) {
-        vragen = [];
-      }
-      if (!Array.isArray(vragen) || vragen.length === 0) {
-        vragen = [];
-      }
-      gekozen = fisherYatesShuffle(vragen).slice(0, 5);
-      currentIndex = 0;
-      score = 0;
-      render(currentIndex);
-    }
-
-    function render(index) {
-      const q = gekozen[index];
-      if (!q) return;
-      quizContainer.innerHTML = `
-        <div class="question-box">
-          <div class="question">${index + 1}. ${q.vraag}</div>
-          <div class="options">
-            ${q.opties.map((opt, i) => `<button onclick="beoordeel(this, ${i === q.antwoord})">${opt}</button>`).join('')}
-          </div>
-        </div>`;
-      // Hide Einde by default; it will appear only after last question is answered
-      document.getElementById('end-quiz-btn').style.display = 'none';
-    }
-
-    window.beoordeel = function (btn, juist) {
-      const knoppen = btn.parentNode.querySelectorAll('button');
-      knoppen.forEach(b => b.disabled = true);
-      if (juist) { btn.classList.add('correct'); score++; } else { btn.classList.add('wrong'); }
-      setTimeout(() => {
-        const isLast = currentIndex === gekozen.length - 1;
-        if (isLast) {
-          // Show Einde only after last question is answered
-          document.getElementById('end-quiz-btn').style.display = 'inline-block';
-        } else {
-          currentIndex++;
-          render(currentIndex);
-        }
-      }, 400);
-    };
-
-    window.endQuizEarly = function() {
-      const answered = Math.min(currentIndex + 1, gekozen.length);
-      const percentage = answered > 0 ? Math.round((score / answered) * 100) : 0;
-      const payload = { type: 'daily-quiz', score, total: answered, percentage, questions: gekozen.slice(0, answered) };
-      localStorage.setItem('lastQuizResult', JSON.stringify(payload));
-      location.href = 'resultaten.html';
-    };
-
-    document.addEventListener('DOMContentLoaded', loadQuiz);
+    // Initialize quiz when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+      loadQuiz();
+      updatePageLanguage();
+    });
   </script>
 </body>
 </html>

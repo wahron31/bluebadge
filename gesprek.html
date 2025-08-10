@@ -232,25 +232,5 @@
   <script src="i18n.js"></script>
   <script src="auth.js"></script>
   <script src="app.js"></script>
-  <script>
-    function handleLogin() {
-      const username = document.getElementById('bb-username').value.trim();
-      if (username) {
-        bbAuth.login(username);
-        alert('Ingelogd als: ' + username);
-      } else {
-        alert('Voer een gebruikersnaam in');
-      }
-    }
-
-    function startInterview(interviewType) {
-      alert('Interview training gestart: ' + interviewType);
-      // Hier komt de interview logica
-    }
-
-    function toggleMobileMenu() {
-      // Mobile menu toggle logic
-    }
-  </script>
 </body>
 </html>

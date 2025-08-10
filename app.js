@@ -2,8 +2,6 @@
 let quizData = [];
 let woordenData = [];
 let cognitiefData = [];
-let languagesData = {};
-let currentLanguage = 'nl'; // Default language
 let userData = {
     totalQuestions: 156,
     successRate: 78,
@@ -15,12 +13,6 @@ let userData = {
         gesprek: 15
     }
 };
-
-// Language and mobile menu functions
-function toggleLanguageMenu() {
-    const langMenu = document.getElementById('lang-menu');
-    langMenu.classList.toggle('active');
-}
 
 // Mobile menu toggle function
 function toggleMobileMenu() {
@@ -36,59 +28,8 @@ function toggleMobileMenu() {
 // Make it globally available
 window.toggleMobileMenu = toggleMobileMenu;
 
-function changeLanguage(langCode) {
-    currentLanguage = langCode;
-    localStorage.setItem('selectedLanguage', langCode);
-    
-    // Update language button
-    const langFlags = {
-        'nl': '🇳🇱 VL',
-        'fr': '🇫🇷 FR', 
-        'de': '🇩🇪 DE',
-        'tr': '🇹🇷 TR'
-    };
-    
-    document.getElementById('current-lang').textContent = langFlags[langCode];
-    
-    // Close language menu
-    document.getElementById('lang-menu').classList.remove('active');
-    
-    // Update all translatable elements
-    updatePageLanguage();
-}
-
-function updatePageLanguage() {
-    if (!languagesData[currentLanguage]) return;
-    
-    const lang = languagesData[currentLanguage];
-    
-    // Update all elements with data-translate attribute
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (lang[key]) {
-            element.textContent = lang[key];
-        }
-    });
-    
-    // Update page title
-    document.title = `BlueBadge – ${lang.police_selection_training}`;
-    
-    // Update HTML lang attribute
-    document.documentElement.lang = currentLanguage;
-}
-
 // Close menus when clicking outside
 document.addEventListener('click', function(event) {
-    const langMenu = document.getElementById('lang-menu');
-    const langBtn = document.getElementById('lang-btn');
-    try {
-        if (langMenu && langBtn && !langBtn.contains(event.target) && !langMenu.contains(event.target)) {
-            langMenu.classList.remove('open');
-        }
-    } catch (e) {
-        // no-op
-    }
-    
     const navLinks = document.querySelector('.nav-links');
     const mobileBtn = document.querySelector('.mobile-menu-btn');
     
@@ -101,27 +42,18 @@ document.addEventListener('click', function(event) {
 // Load data files
 async function loadData() {
     try {
-        const [quiz, woorden, abstractRed, verbaalRed, numeriekRed, languages] = await Promise.all([
+        const [quiz, woorden, abstractRed, verbaalRed, numeriekRed] = await Promise.all([
             fetch('data/quiz_questions.json').then(res => res.json()).catch(() => []),
             fetch('data/woorden.json').then(res => res.json()).catch(() => []),
             fetch('data/abstract_redeneren.json').then(res => res.json()).catch(() => []),
             fetch('data/verbaal_redeneren.json').then(res => res.json()).catch(() => []),
-            fetch('data/numeriek_redeneren.json').then(res => res.json()).catch(() => []),
-            fetch('data/languages.json').then(res => res.json()).catch(() => {})
+            fetch('data/numeriek_redeneren.json').then(res => res.json()).catch(() => [])
         ]);
         
         quizData = quiz;
         woordenData = woorden;
-        // Cognitieve soruları birleştir
+        // Combine cognitive questions
         cognitiefData = [...abstractRed, ...verbaalRed, ...numeriekRed];
-        languagesData = languages;
-        
-        // Load saved language preference
-        const savedLanguage = localStorage.getItem('selectedLanguage');
-        if (savedLanguage && languagesData[savedLanguage]) {
-            currentLanguage = savedLanguage;
-            updatePageLanguage();
-        }
         
         updateDashboard();
     } catch (error) {
@@ -1232,4 +1164,176 @@ function showStatsTab(period) {
   
   // Update stats based on period
   updateDetailedStats(period);
+}
+
+// ===== QUIZ FUNCTIONS =====
+
+// Quiz state
+let quizState = {
+  questions: [],
+  selectedQuestions: [],
+  currentIndex: 0,
+  score: 0,
+  answered: 0
+};
+
+// Load quiz data
+async function loadQuiz() {
+  try {
+    const response = await fetch('data/quiz.json');
+    if (!response.ok) throw new Error('Failed to load quiz data');
+    
+    const data = await response.json();
+    quizState.questions = data.questions || [];
+    
+    if (quizState.questions.length === 0) {
+      showError('Geen quiz vragen beschikbaar');
+      return;
+    }
+    
+    // Select 5 random questions
+    quizState.selectedQuestions = shuffleArray(quizState.questions).slice(0, 5);
+    quizState.currentIndex = 0;
+    quizState.score = 0;
+    quizState.answered = 0;
+    
+    renderQuestion();
+  } catch (error) {
+    console.error('Error loading quiz:', error);
+    showError('Fout bij het laden van de quiz: ' + error.message);
+  }
+}
+
+// Render current question
+function renderQuestion() {
+  const container = document.getElementById('quiz-container');
+  const question = quizState.selectedQuestions[quizState.currentIndex];
+  
+  if (!question) return;
+
+  container.innerHTML = `
+    <div class="question-container">
+      <div class="question-text">
+        <h3>Vraag ${quizState.currentIndex + 1} van ${quizState.selectedQuestions.length}</h3>
+        <p>${question.vraag}</p>
+      </div>
+      <div class="question-options">
+        ${question.opties.map((option, index) => `
+          <button class="option-btn" onclick="selectAnswer(this, ${index === question.antwoord})">
+            ${option}
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  // Hide end button initially
+  const endBtn = document.getElementById('end-quiz-btn');
+  if (endBtn) endBtn.style.display = 'none';
+}
+
+// Handle answer selection
+function selectAnswer(button, isCorrect) {
+  const allButtons = button.parentNode.querySelectorAll('.option-btn');
+  
+  // Disable all buttons
+  allButtons.forEach(btn => btn.disabled = true);
+  
+  // Mark correct/incorrect
+  if (isCorrect) {
+    button.classList.add('correct');
+    quizState.score++;
+  } else {
+    button.classList.add('incorrect');
+  }
+  
+  quizState.answered++;
+  
+  // Wait then move to next question or show end button
+  setTimeout(() => {
+    if (quizState.currentIndex === quizState.selectedQuestions.length - 1) {
+      // Last question - show end button
+      const endBtn = document.getElementById('end-quiz-btn');
+      if (endBtn) endBtn.style.display = 'inline-block';
+    } else {
+      // Move to next question
+      quizState.currentIndex++;
+      renderQuestion();
+    }
+  }, 1000);
+}
+
+// End quiz early
+function endQuizEarly() {
+  const percentage = quizState.answered > 0 ? Math.round((quizState.score / quizState.answered) * 100) : 0;
+  
+  const result = {
+    type: 'daily-quiz',
+    score: quizState.score,
+    total: quizState.answered,
+    percentage: percentage,
+    questions: quizState.selectedQuestions.slice(0, quizState.answered),
+    date: new Date().toISOString()
+  };
+  
+  // Save result
+  localStorage.setItem('lastQuizResult', JSON.stringify(result));
+  
+  // Redirect to results page
+  window.location.href = 'resultaten.html';
+}
+
+// Utility function to shuffle array
+function shuffleArray(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+// Show error message
+function showError(message) {
+  const container = document.getElementById('quiz-container');
+  if (container) {
+    container.innerHTML = `
+      <div class="error-message">
+        <h3>❌ Fout</h3>
+        <p>${message}</p>
+        <button class="control-btn primary" onclick="loadQuiz()">Opnieuw proberen</button>
+      </div>
+    `;
+  }
+}
+
+// ===== AUTHENTICATION FUNCTIONS =====
+
+// Handle login for scenarios and other pages
+function handleLogin() {
+  const username = document.getElementById('bb-username').value.trim();
+  if (username) {
+    bbAuth.login(username);
+    alert('Ingelogd als: ' + username);
+  } else {
+    alert('Voer een gebruikersnaam in');
+  }
+}
+
+// ===== SCENARIO FUNCTIONS =====
+
+// Start a specific scenario
+function startScenario(scenarioType) {
+  alert('Scenario gestart: ' + scenarioType);
+  // Here comes the scenario logic
+  // TODO: Implement full scenario functionality
+}
+
+// ===== INTERVIEW FUNCTIONS =====
+
+// Start a specific interview training
+function startInterview(interviewType) {
+  alert('Interview training gestart: ' + interviewType);
+  // Here comes the interview logic
+  // TODO: Implement full interview functionality
 }

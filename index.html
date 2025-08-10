@@ -10,7 +10,7 @@
   <header>
     <nav class="top-nav">
       <div class="nav-brand">
-        <h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1>
+        <h1><a href="index.html">🚔 BlueBadge</a></h1>
       </div>
       
       <div class="nav-links">
@@ -19,9 +19,10 @@
         <a href="cognitief.html" data-i18n="cognitive_skills">Cognitieve Vaardigheden</a>
         <a href="taal.html" data-i18n="language_training">Taaltraining</a>
         <a href="voortgang.html" data-i18n="progress">Voortgang</a>
+        <a href="scenarios.html" data-i18n="police_scenarios">Politie Scenario's</a>
+        <a href="gesprek.html" data-i18n="interview_training">Gesprekstraining</a>
       </div>
       
-      <!-- Sağ taraf - Dil seçici ve Login -->
       <div class="nav-right">
         <div id="language-switcher"></div>
         <div class="login-section">
@@ -30,7 +31,6 @@
         </div>
       </div>
       
-      <!-- Mobile Menu Button -->
       <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
         <span></span>
         <span></span>
@@ -39,20 +39,20 @@
     </nav>
     
     <div class="hero-section">
-      <h2 data-translate="police_selection_training">POLITIE SELECTIE TRAINING</h2>
-      <p data-translate="prepare_exams">Bereid je voor op de examens en gesprekken • Elke seconde telt</p>
+      <h2 data-i18n="police_selection_training">POLITIE SELECTIE TRAINING</h2>
+      <p data-i18n="prepare_exams">Bereid je voor op de examens en gesprekken • Elke seconde telt</p>
       <div class="stats-bar">
         <div class="stat-item">
           <span class="stat-number" id="total-questions">156</span>
-          <span class="stat-label" data-translate="questions_answered">Vragen Beantwoord</span>
+          <span class="stat-label" data-i18n="questions_answered">Vragen Beantwoord</span>
         </div>
         <div class="stat-item">
           <span class="stat-number" id="success-rate">78%</span>
-          <span class="stat-label" data-translate="success_rate">Succespercentage</span>
+          <span class="stat-label" data-i18n="success_rate">Succespercentage</span>
         </div>
         <div class="stat-item">
           <span class="stat-number" id="streak-days">7</span>
-          <span class="stat-label" data-translate="days_streak">Dagen Achtereen</span>
+          <span class="stat-label" data-i18n="days_streak">Dagen Achtereen</span>
         </div>
       </div>
     </div>
@@ -60,140 +60,115 @@
 
   <main>
     <section class="daily-challenge">
-      <h3 data-translate="todays_challenge">🎯 Vandaag's Uitdaging</h3>
+      <h3 data-i18n="todays_challenge">🎯 Vandaag's Uitdaging</h3>
       <div class="challenge-grid">
         <div class="challenge-card">
-          <h4 data-translate="cognitive_test">Cognitieve Test</h4>
-          <p data-translate="logical_reasoning">Logisch redeneren en patroonherkenning</p>
-          <button class="challenge-btn" onclick="startDailyChallenge('cognitief')" data-translate="start_test">Start Test</button>
+          <h4 data-i18n="cognitive_test">Cognitieve Test</h4>
+          <p data-i18n="logical_reasoning">Logisch redeneren en patroonherkenning</p>
+          <button class="challenge-btn" onclick="startDailyChallenge('cognitief')" data-i18n="start_test">Start Test</button>
         </div>
         <div class="challenge-card">
-          <h4 data-translate="language_skills">Taalvaardigheid</h4>
-          <p data-translate="dutch_vocabulary">Nederlands woordenschat en grammatica</p>
-          <button class="challenge-btn" onclick="startDailyChallenge('taal')" data-translate="start_test">Start Test</button>
+          <h4 data-i18n="language_skills">Taalvaardigheid</h4>
+          <p data-i18n="dutch_vocabulary">Nederlands woordenschat en grammatica</p>
+          <button class="challenge-btn" onclick="startDailyChallenge('taal')" data-i18n="start_test">Start Test</button>
         </div>
         <div class="challenge-card">
-          <h4 data-translate="situational_judgment">Situationeel Oordeel</h4>
-          <p data-translate="police_scenarios">Politie scenario's en besluitvorming</p>
-          <button class="challenge-btn" onclick="startDailyChallenge('situationeel')" data-translate="start_test">Start Test</button>
+          <h4 data-i18n="situational_judgment">Situationeel Oordeel</h4>
+          <p data-i18n="police_scenarios">Politie scenario's en besluitvorming</p>
+          <button class="challenge-btn" onclick="startDailyChallenge('situationeel')" data-i18n="start_test">Start Test</button>
         </div>
       </div>
     </section>
 
     <section class="word-of-day">
-      <h3 data-translate="word_of_day">📖 Woord van de Dag</h3>
+      <h3 data-i18n="word_of_day">📖 Woord van de Dag</h3>
       <div class="word-card">
         <div class="word-main">
           <span class="word-text" id="daily-word">Omtrent</span>
           <span class="word-type">[voorzetsel]</span>
         </div>
         <div class="word-meaning" id="word-meaning">
-          <span data-translate="meaning">Betekenis</span>: over, met betrekking tot, aangaande
+          <span data-i18n="meaning">Betekenis</span>: over, met betrekking tot, aangaande
         </div>
         <div class="word-example" id="word-example">
           "Er zijn nog vragen omtrent de nieuwe procedure."
         </div>
-        <button class="word-practice-btn" data-translate="practice_word">Oefen met dit woord</button>
+        <button class="word-practice-btn" data-i18n="practice_word">Oefen met dit woord</button>
       </div>
     </section>
 
     <section class="training-modules">
-      <h3 data-translate="training_modules">🎓 Trainingsmodules</h3>
+      <h3 data-i18n="training_modules">🎓 Trainingsmodules</h3>
       <div class="modules-grid">
         <div class="module-card">
           <div class="module-icon">🧠</div>
-          <h4 data-translate="cognitive_skills_module">Cognitieve Vaardigheden</h4>
-          <p data-translate="logic_math_spatial">Logica, rekenen, ruimtelijk inzicht</p>
+          <h4 data-i18n="cognitive_skills_module">Cognitieve Vaardigheden</h4>
+          <p data-i18n="logic_math_spatial">Logica, rekenen, ruimtelijk inzicht</p>
           <div class="module-progress">
             <div class="progress-bar">
               <div class="progress-fill" style="width: 65%"></div>
             </div>
-            <span>65% <span data-translate="completed">voltooid</span></span>
+            <span>65% <span data-i18n="completed">voltooid</span></span>
           </div>
-          <a href="cognitief.html" class="module-btn" data-translate="continue">Verder gaan</a>
+          <a href="cognitief.html" class="module-btn" data-i18n="continue">Verder gaan</a>
         </div>
         
         <div class="module-card">
           <div class="module-icon">💬</div>
-          <h4 data-translate="language_skills_module">Taalvaardigheden</h4>
-          <p data-translate="dutch_french_vocabulary">Nederlands & Frans woordenschat</p>
+          <h4 data-i18n="language_skills_module">Taalvaardigheden</h4>
+          <p data-i18n="dutch_french_vocabulary">Nederlands & Frans woordenschat</p>
           <div class="module-progress">
             <div class="progress-bar">
               <div class="progress-fill" style="width: 42%"></div>
             </div>
-            <span>42% <span data-translate="completed">voltooid</span></span>
+            <span>42% <span data-i18n="completed">voltooid</span></span>
           </div>
-          <a href="taal.html" class="module-btn" data-translate="continue">Verder gaan</a>
+          <a href="taal.html" class="module-btn" data-i18n="continue">Verder gaan</a>
         </div>
         
         <div class="module-card">
           <div class="module-icon">👮</div>
-          <h4 data-translate="police_scenarios_module">Politie Scenario's</h4>
-          <p data-translate="practice_situations">Praktijkgerichte situaties</p>
+          <h4 data-i18n="police_scenarios_module">Politie Scenario's</h4>
+          <p data-i18n="practice_situations">Praktijkgerichte situaties</p>
           <div class="module-progress">
             <div class="progress-bar">
               <div class="progress-fill" style="width: 28%"></div>
             </div>
-            <span>28% <span data-translate="completed">voltooid</span></span>
+            <span>28% <span data-i18n="completed">voltooid</span></span>
           </div>
-          <a href="scenarios.html" class="module-btn" data-translate="continue">Verder gaan</a>
+          <a href="scenarios.html" class="module-btn" data-i18n="continue">Verder gaan</a>
         </div>
         
         <div class="module-card">
           <div class="module-icon">📋</div>
-          <h4 data-translate="interview_training">Gesprekstraining</h4>
-          <p data-translate="interview_preparation">Interview voorbereiding</p>
+          <h4 data-i18n="interview_training">Gesprekstraining</h4>
+          <p data-i18n="interview_preparation">Interview voorbereiding</p>
           <div class="module-progress">
             <div class="progress-bar">
               <div class="progress-fill" style="width: 15%"></div>
             </div>
-            <span>15% <span data-translate="completed">voltooid</span></span>
+            <span>15% <span data-i18n="completed">voltooid</span></span>
           </div>
-          <a href="gesprek.html" class="module-btn" data-translate="continue">Verder gaan</a>
+          <a href="gesprek.html" class="module-btn" data-i18n="continue">Verder gaan</a>
         </div>
       </div>
     </section>
 
     <section class="recent-activity">
-      <h3 data-translate="recent_activity">📊 Recente Activiteit</h3>
-      <div class="activity-list">
-        <div class="activity-item">
-          <span class="activity-date" data-translate="today">Vandaag</span>
-          <span class="activity-desc" data-translate="cognitive_test_completed">Cognitieve test voltooid - Score: 8/10</span>
-          <span class="activity-score good">80%</span>
-        </div>
-        <div class="activity-item">
-          <span class="activity-date" data-translate="yesterday">Gisteren</span>
-          <span class="activity-desc" data-translate="language_quiz_dutch">Taalquiz nederlands - Score: 7/10</span>
-          <span class="activity-score good">70%</span>
-        </div>
-        <div class="activity-item">
-          <span class="activity-date">2 <span data-translate="days_ago">dagen geleden</span></span>
-          <span class="activity-desc" data-translate="police_scenario_training">Politie scenario training</span>
-          <span class="activity-score excellent">90%</span>
-        </div>
+      <h3 data-i18n="recent_activity">📊 Recente Activiteit</h3>
+      <div class="activity-list" id="activity-list">
+        <!-- Activity items will be loaded dynamically -->
       </div>
     </section>
   </main>
 
   <footer>
-    <p data-translate="copyright">© 2025 BlueBadge | Classified Training System</p>
-    <p class="footer-note" data-translate="stay_sharp">Stay sharp. Stay ready. 🔍</p>
+    <p data-i18n="copyright">© 2025 BlueBadge | Classified Training System</p>
+    <p class="footer-note" data-i18n="stay_sharp">Stay sharp. Stay ready. 🔍</p>
   </footer>
 
   <script src="i18n.js"></script>
   <script src="auth.js"></script>
   <script src="app.js"></script>
-  <script>
-    function handleLogin() {
-      const username = document.getElementById('bb-username').value.trim();
-      if (username) {
-        bbAuth.login(username);
-        alert('Ingelogd als: ' + username);
-      } else {
-        alert('Voer een gebruikersnaam in');
-      }
-    }
-  </script>
 </body>
 </html>

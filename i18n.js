@@ -14,10 +14,6 @@
       const key = el.getAttribute('data-i18n');
       if (map[key]) el.textContent = map[key];
     });
-    document.querySelectorAll('[data-translate]').forEach(el => {
-      const key = el.getAttribute('data-translate');
-      if (map[key]) el.textContent = map[key];
-    });
     document.documentElement.lang = lang;
     const hiddenSelect = document.getElementById('language-select');
     if (hiddenSelect) hiddenSelect.value = lang;
