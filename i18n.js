@@ -2,6 +2,22 @@
   let dict = {};
   let current = localStorage.getItem('lang') || 'nl';
 
+  // Helper function for fetching JSON
+  async function fetchJSON(url, options = {}) {
+    try {
+      const response = await fetch(url);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      if (options.validate && !options.validate(data)) {
+        throw new Error('Validation failed');
+      }
+      return data;
+    } catch (error) {
+      console.error(`Error fetching ${url}:`, error);
+      return null;
+    }
+  }
+
   function t(key){
     const map = dict[current] || {};
     return map[key] || key;
@@ -98,20 +114,12 @@
         option.classList.toggle('active', option.getAttribute('data-lang') === lang);
       });
     }
-=======
-    const l = dict[lang]||{};
-    document.querySelectorAll('[data-translate],[data-i18n]').forEach(el=>{
-      const key = el.getAttribute('data-translate')||el.getAttribute('data-i18n');
-      if (l[key]) el.textContent = (typeof sanitizeText==='function'? sanitizeText(String(l[key])): String(l[key]));
-    });
-    document.documentElement.lang = lang;
-    const select = document.getElementById('language-select');
-    if (select) select.value = lang;
->>>>>>> b5686b5c0142c64e6edc954502fd391e3b307dd6
   }
 
   async function init(){
     await loadDict();
+    renderSwitcher();
+    
     const select = document.getElementById('language-select');
     if (select) {
       select.addEventListener('change', () => {
