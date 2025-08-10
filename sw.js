@@ -2,7 +2,7 @@ const CACHE = 'bb-cache-v1';
 const CORE = [
   '/', '/index.html', '/style.css', '/app.js', '/i18n.js',
   '/manifest.webmanifest', '/quiz.html', '/cognitief.html', '/taal.html', '/voortgang.html',
-  '/flashcards.html', '/simulation.html', '/wrongs.html', '/content-admin.html', '/analytics.html', '/cases.html'
+  '/flashcards.html', '/simulation.html', '/wrongs.html', '/content-admin.html', '/analytics.html', '/cases.html', '/scenarios.html', '/gesprek.html'
 ];
 const DATA = [
   '/data/languages.json', '/data/quiz_questions.json', '/data/woorden.json'

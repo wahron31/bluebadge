@@ -280,7 +280,7 @@
     function importBundle(file){
       const reader = new FileReader();
       reader.onload = ()=>{
-        try { const b = JSON.parse(reader.result); Object.keys(b||{}).forEach(k=>{ if(/^import_/.test(k)){ localStorage.setItem(k, JSON.stringify(b[k])); } }); alert('Bundle yüklendi'); }
+        try { const b = JSON.parse(reader.result); Object.keys(b||{}).forEach(k=>{ if(/^import_/.test(k)){ localStorage.setItem(k, JSON.stringify(b[k]||[])); } }); alert('Bundle yüklendi'); }
         catch(e){ alert('Hata: '+e.message); }
       };
       reader.readAsText(file);

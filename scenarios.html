@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueBadge – Scenario Training</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="nav-brand"><h1><a href="index.html" style="text-decoration:none; color:inherit;">🚔 BlueBadge</a></h1></div>
+      <div class="nav-links">
+        <a href="index.html" data-i18n="dashboard">Dashboard</a>
+        <a href="simulation.html">Simulatie</a>
+      </div>
+    </nav>
+    <div class="hero-section">
+      <h2 data-i18n="police_scenarios_module">Politie Scenario's</h2>
+      <p data-i18n="practice_situations">Praktijkgerichte situaties</p>
+    </div>
+  </header>
+  <main style="max-width:1000px;margin:24px auto; padding:0 12px;">
+    <section class="test-interface" style="display:block;">
+      <div class="test-container">
+        <div class="overview-grid">
+          <div class="overview-card" style="grid-column:1/-1;">
+            <h4>Scenario Lijst</h4>
+            <div id="sc-list" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:12px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 BlueBadge | Classified Training System</p>
+  </footer>
+  <script src="i18n.js"></script>
+  <script>
+    async function loadScenarios(){
+      try{
+        const raw = JSON.parse(localStorage.getItem('import_cases')||'[]');
+        return Array.isArray(raw)&&raw.length? raw : [];
+      }catch(e){ console.error('Scenarios load error', e); return []; }
+    }
+    function renderList(items){
+      const c = document.getElementById('sc-list');
+      if(!c) return; c.innerHTML = '';
+      if(!items.length){ c.innerHTML = '<p>Geen scenario beschikbaar. Voeg toe via Content Admin.</p>'; return; }
+      items.forEach((it,idx)=>{
+        const d = document.createElement('div'); d.className = 'overview-card';
+        d.innerHTML = `<h4>${it.title||'Scenario '+(idx+1)}</h4><p>${(it.context||'').slice(0,140)}...</p><button class="module-btn" data-idx="${idx}">Start</button>`;
+        d.querySelector('button').onclick = ()=>{ try{ localStorage.setItem('import_cases_active_idx', String(idx)); location.href='cases.html'; }catch(e){} };
+        c.appendChild(d);
+      });
+    }
+    document.addEventListener('DOMContentLoaded', async ()=>{
+      const items = await loadScenarios(); renderList(items);
+    });
+  </script>
+</body>
+</html>

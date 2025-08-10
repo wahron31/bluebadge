@@ -48,8 +48,7 @@
           { vraag:'Şikayetçi ile iletişim nasıl kurulmalı?', opties:['Emredici','Sakin ve açıklayıcı','Alaycı','Kaba'], best:1, uitleg:'Sakin ve açıklayıcı iletişim kurmak gerekir.', tags:['iletişim'] }
         ] } ];
       }
-      // pick first case
-      current = cases[0];
+      try{ const idx = parseInt(localStorage.getItem('import_cases_active_idx')||'0'); current = cases[Math.max(0, Math.min(cases.length-1, idx))] || cases[0]; } catch{ current = cases[0]; }
       steps = Array.isArray(current.steps) && current.steps.length ? current.steps : [{ vraag: current.vraag, opties: current.opties, best: current.best, uitleg: current.uitleg, tags: current.tags||[] }];
       step=0; answers=new Array(steps.length).fill(undefined); score=0; render();
     }

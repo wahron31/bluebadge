@@ -2027,3 +2027,21 @@ a:focus {
 #language-select { position: static; width: auto; height: auto; clip: auto; clip-path: none; white-space: normal; border:1px solid var(--glass-border); background: rgba(26,26,46,0.6); color: var(--text-secondary); border-radius: 8px; padding: 6px 10px; }
 /* remove custom switcher rules */
 .lang-switcher, .lang-current, .lang-menu, .lang-item { display:none !important; }
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .hero-section { margin: 1rem; padding: 2rem 1rem; }
+  .overview-grid { grid-template-columns: 1fr !important; }
+  .modules-grid { grid-template-columns: 1fr !important; }
+  .test-container { padding: 1rem; }
+  .nav-links { flex-wrap: wrap; }
+}
+
+/* Accessibility */
+button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}
+
+/* Utility */
+.hidden { display: none !important; }
