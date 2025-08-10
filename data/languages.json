@@ -60,7 +60,11 @@
     "reading_comprehension": "Begrijpend Lezen",
     "listening": "Luistervaardigheid",
     "vocabulary": "Woordenschat",
-    "grammar": "Grammatica"
+    "grammar": "Grammatica",
+    "daily_goals": "Dagelijkse Doelen",
+    "last_7_days": "Laatste 7 Dagen",
+    "last_7_days_avg": "Laatste 7 Dagen Gemiddelden",
+    "weak_topics": "Zwakke Onderwerpen"
   },
   "fr": {
     "language_name": "Français",
@@ -123,7 +127,11 @@
     "reading_comprehension": "Compréhension écrite",
     "listening": "Compréhension orale",
     "vocabulary": "Vocabulaire",
-    "grammar": "Grammaire"
+    "grammar": "Grammaire",
+    "daily_goals": "Objectifs Quotidiens",
+    "last_7_days": "7 Derniers Jours",
+    "last_7_days_avg": "Moyennes des 7 Derniers Jours",
+    "weak_topics": "Sujets Faibles"
   },
   "de": {
     "language_name": "Deutsch",
@@ -186,7 +194,11 @@
     "reading_comprehension": "Leseverständnis",
     "listening": "Hörverständnis",
     "vocabulary": "Wortschatz",
-    "grammar": "Grammatik"
+    "grammar": "Grammatik",
+    "daily_goals": "Tägliche Ziele",
+    "last_7_days": "Letzte 7 Tage",
+    "last_7_days_avg": "Durchschnitte der letzten 7 Tage",
+    "weak_topics": "Schwache Themen"
   },
   "tr": {
     "language_name": "Türkçe",
@@ -249,7 +261,11 @@
     "reading_comprehension": "Okuduğunu Anlama",
     "listening": "Dinlediğini Anlama",
     "vocabulary": "Kelime Hazinesi",
-    "grammar": "Gramer"
+    "grammar": "Gramer",
+    "daily_goals": "Günlük Hedefler",
+    "last_7_days": "Son 7 Gün",
+    "last_7_days_avg": "Son 7 Gün Ortalamaları",
+    "weak_topics": "Zayıf Konular"
   },
   "en": {
     "language_name": "English",
@@ -312,6 +328,10 @@
     "reading_comprehension": "Reading Comprehension",
     "listening": "Listening",
     "vocabulary": "Vocabulary",
-    "grammar": "Grammar"
+    "grammar": "Grammar",
+    "daily_goals": "Daily Goals",
+    "last_7_days": "Last 7 Days",
+    "last_7_days_avg": "Last 7 Days Averages",
+    "weak_topics": "Weak Topics"
   }
 }
