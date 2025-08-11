@@ -33,6 +33,8 @@ export default function AppLayout() {
             <NavLink to="/voortgang" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_progress', language)}</NavLink>
             <NavLink to="/profiel" className={({isActive}) => isActive ? 'active' : ''}>Profiel</NavLink>
             <NavLink to="/sessie" className={({isActive}) => isActive ? 'active' : ''}>Sessie</NavLink>
+            <NavLink to="/export" className={({isActive}) => isActive ? 'active' : ''}>Export</NavLink>
+            <NavLink to="/scenario-print" className={({isActive}) => isActive ? 'active' : ''}>Print Scenario's</NavLink>
           </nav>
           <div className="nav" aria-label="settings" style={{ alignItems: 'center' }}>
             <button className="button ghost" aria-label="Toggle theme" onClick={toggleTheme}>{theme === 'light' ? '🌙' : '☀️'}</button>

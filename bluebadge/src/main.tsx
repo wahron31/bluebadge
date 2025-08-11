@@ -13,6 +13,8 @@ import ListeningPage from './routes/ListeningPage'
 import LogicPage from './routes/LogicPage'
 import ProfilePage from './routes/ProfilePage'
 import SessionPage from './routes/SessionPage'
+import ExportPage from './routes/ExportPage'
+import ScenarioPrintPage from './routes/ScenarioPrintPage'
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,8 @@ const router = createBrowserRouter([
       { path: 'voortgang', element: <ProgressPage /> },
       { path: 'profiel', element: <ProfilePage /> },
       { path: 'sessie', element: <SessionPage /> },
+      { path: 'export', element: <ExportPage /> },
+      { path: 'scenario-print', element: <ScenarioPrintPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
