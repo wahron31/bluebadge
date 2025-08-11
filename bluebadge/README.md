@@ -14,12 +14,13 @@ Interactieve educatieve webapp voor cognitieve en taalvaardigheden (NL/TR) voor 
 - Quiz (taal, logica, algemeen, situatie)
 - Scenario-oefeningen (open antwoorden)
 - Voortgang (streak, statistieken, export/import/reset, dagdoel)
-- Luisteren (audio + vraag)
+- Luisteren (audio + vraag) — gebruikt `.wav` bestanden
 - Logica (reeksen/patronen)
 
 ## Bestanden en data
 
-- Audio: plaats bestanden in `public/audio/` en verwijs via `/audio/naam.mp3`
+- Audio: plaats `.wav` bestanden in `public/audio/` en verwijs via `/audio/naam.wav`
+- Dummy-audio genereren: `npm run gen:audio` (maakt 10 korte `.wav` tonen)
 - Data: `src/data/*`
 - Stores: `src/store/*`
 - Routes: `src/routes/*`
