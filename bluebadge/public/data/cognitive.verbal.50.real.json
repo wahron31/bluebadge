@@ -1,0 +1,552 @@
+[
+  {
+    "id": "v01",
+    "type": "verbal",
+    "prompt": "Synoniem voor “arresteren”",
+    "choices": [
+      "aanhouden",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v02",
+    "type": "verbal",
+    "prompt": "Synoniem voor “preventie”",
+    "choices": [
+      "voorkoming",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v03",
+    "type": "verbal",
+    "prompt": "Synoniem voor “conflict”",
+    "choices": [
+      "ruzie",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v04",
+    "type": "verbal",
+    "prompt": "Synoniem voor “melding”",
+    "choices": [
+      "rapportage",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v05",
+    "type": "verbal",
+    "prompt": "Synoniem voor “boete”",
+    "choices": [
+      "sanctie",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v06",
+    "type": "verbal",
+    "prompt": "Synoniem voor “arresteren”",
+    "choices": [
+      "aanhouden",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v07",
+    "type": "verbal",
+    "prompt": "Synoniem voor “preventie”",
+    "choices": [
+      "voorkoming",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v08",
+    "type": "verbal",
+    "prompt": "Synoniem voor “conflict”",
+    "choices": [
+      "ruzie",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v09",
+    "type": "verbal",
+    "prompt": "Synoniem voor “melding”",
+    "choices": [
+      "rapportage",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v10",
+    "type": "verbal",
+    "prompt": "Synoniem voor “boete”",
+    "choices": [
+      "sanctie",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v11",
+    "type": "verbal",
+    "prompt": "Synoniem voor “arresteren”",
+    "choices": [
+      "aanhouden",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v12",
+    "type": "verbal",
+    "prompt": "Synoniem voor “preventie”",
+    "choices": [
+      "voorkoming",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v13",
+    "type": "verbal",
+    "prompt": "Synoniem voor “conflict”",
+    "choices": [
+      "ruzie",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v14",
+    "type": "verbal",
+    "prompt": "Synoniem voor “melding”",
+    "choices": [
+      "rapportage",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v15",
+    "type": "verbal",
+    "prompt": "Synoniem voor “boete”",
+    "choices": [
+      "sanctie",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v16",
+    "type": "verbal",
+    "prompt": "Synoniem voor “arresteren”",
+    "choices": [
+      "aanhouden",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v17",
+    "type": "verbal",
+    "prompt": "Synoniem voor “preventie”",
+    "choices": [
+      "voorkoming",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v18",
+    "type": "verbal",
+    "prompt": "Synoniem voor “conflict”",
+    "choices": [
+      "ruzie",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v19",
+    "type": "verbal",
+    "prompt": "Synoniem voor “melding”",
+    "choices": [
+      "rapportage",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v20",
+    "type": "verbal",
+    "prompt": "Synoniem voor “boete”",
+    "choices": [
+      "sanctie",
+      "tegenstelling",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v21",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “gevaarlijk”",
+    "choices": [
+      "veilig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v22",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “schuldig”",
+    "choices": [
+      "onschuldig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v23",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “druk”",
+    "choices": [
+      "rustig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v24",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “illegaal”",
+    "choices": [
+      "legaal",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v25",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “open”",
+    "choices": [
+      "gesloten",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v26",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “gevaarlijk”",
+    "choices": [
+      "veilig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v27",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “schuldig”",
+    "choices": [
+      "onschuldig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v28",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “druk”",
+    "choices": [
+      "rustig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v29",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “illegaal”",
+    "choices": [
+      "legaal",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v30",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “open”",
+    "choices": [
+      "gesloten",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v31",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “gevaarlijk”",
+    "choices": [
+      "veilig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v32",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “schuldig”",
+    "choices": [
+      "onschuldig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v33",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “druk”",
+    "choices": [
+      "rustig",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v34",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “illegaal”",
+    "choices": [
+      "legaal",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v35",
+    "type": "verbal",
+    "prompt": "Tegenstelling van “open”",
+    "choices": [
+      "gesloten",
+      "synoniem",
+      "anders"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v36",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v37",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v38",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v39",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v40",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v41",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v42",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v43",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v44",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v45",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v46",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v47",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v48",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v49",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "v50",
+    "type": "verbal",
+    "prompt": "Vul aan: Politie : uniform = arts : …",
+    "choices": [
+      "stethoscoop",
+      "recept",
+      "brancard"
+    ],
+    "correctIndex": 0
+  }
+]

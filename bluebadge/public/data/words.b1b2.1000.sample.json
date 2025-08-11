@@ -1,0 +1,6002 @@
+[
+  {
+    "id": "wB1_001_01",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_01",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_01",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_01",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_01",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_01",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_01",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_01",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_01",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_01",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_01",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_01",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_01",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_01",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_01",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_01",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_01",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_01",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_01",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_01",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_01",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_01",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_01",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_01",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_01",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_01",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_01",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_01",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_01",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_01",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_01",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_01",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_01",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_01",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_01",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_01",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_01",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_01",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_01",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_01",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_02",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_02",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_02",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_02",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_02",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_02",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_02",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_02",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_02",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_02",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_02",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_02",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_02",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_02",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_02",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_02",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_02",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_02",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_02",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_02",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_02",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_02",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_02",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_02",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_02",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_02",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_02",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_02",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_02",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_02",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_02",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_02",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_02",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_02",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_02",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_02",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_02",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_02",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_02",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_02",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_03",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_03",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_03",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_03",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_03",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_03",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_03",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_03",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_03",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_03",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_03",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_03",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_03",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_03",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_03",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_03",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_03",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_03",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_03",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_03",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_03",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_03",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_03",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_03",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_03",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_03",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_03",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_03",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_03",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_03",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_03",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_03",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_03",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_03",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_03",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_03",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_03",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_03",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_03",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_03",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_04",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_04",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_04",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_04",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_04",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_04",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_04",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_04",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_04",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_04",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_04",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_04",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_04",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_04",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_04",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_04",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_04",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_04",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_04",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_04",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_04",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_04",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_04",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_04",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_04",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_04",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_04",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_04",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_04",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_04",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_04",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_04",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_04",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_04",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_04",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_04",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_04",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_04",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_04",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_04",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_05",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_05",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_05",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_05",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_05",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_05",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_05",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_05",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_05",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_05",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_05",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_05",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_05",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_05",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_05",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_05",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_05",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_05",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_05",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_05",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_05",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_05",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_05",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_05",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_05",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_05",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_05",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_05",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_05",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_05",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_05",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_05",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_05",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_05",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_05",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_05",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_05",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_05",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_05",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_05",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_06",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_06",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_06",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_06",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_06",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_06",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_06",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_06",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_06",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_06",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_06",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_06",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_06",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_06",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_06",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_06",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_06",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_06",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_06",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_06",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_06",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_06",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_06",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_06",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_06",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_06",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_06",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_06",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_06",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_06",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_06",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_06",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_06",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_06",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_06",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_06",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_06",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_06",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_06",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_06",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_07",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_07",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_07",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_07",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_07",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_07",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_07",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_07",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_07",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_07",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_07",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_07",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_07",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_07",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_07",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_07",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_07",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_07",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_07",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_07",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_07",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_07",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_07",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_07",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_07",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_07",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_07",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_07",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_07",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_07",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_07",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_07",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_07",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_07",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_07",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_07",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_07",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_07",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_07",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_07",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_08",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_08",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_08",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_08",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_08",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_08",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_08",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_08",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_08",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_08",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_08",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_08",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_08",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_08",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_08",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_08",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_08",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_08",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_08",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_08",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_08",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_08",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_08",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_08",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_08",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_08",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_08",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_08",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_08",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_08",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_08",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_08",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_08",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_08",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_08",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_08",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_08",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_08",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_08",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_08",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_09",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_09",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_09",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_09",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_09",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_09",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_09",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_09",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_09",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_09",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_09",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_09",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_09",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_09",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_09",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_09",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_09",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_09",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_09",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_09",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_09",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_09",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_09",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_09",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_09",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_09",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_09",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_09",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_09",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_09",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_09",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_09",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_09",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_09",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_09",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_09",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_09",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_09",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_09",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_09",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_10",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_10",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_10",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_10",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_10",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_10",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_10",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_10",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_10",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_10",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_10",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_10",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_10",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_10",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_10",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_10",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_10",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_10",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_10",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_10",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_10",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_10",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_10",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_10",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_10",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_10",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_10",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_10",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_10",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_10",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_10",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_10",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_10",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_10",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_10",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_10",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_10",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_10",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_10",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_10",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_11",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_11",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_11",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_11",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_11",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_11",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_11",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_11",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_11",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_11",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_11",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_11",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_11",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_11",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_11",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_11",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_11",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_11",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_11",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_11",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_11",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_11",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_11",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_11",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_11",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_11",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_11",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_11",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_11",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_11",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_11",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_11",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_11",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_11",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_11",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_11",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_11",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_11",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_11",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_11",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_12",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_12",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_12",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_12",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_12",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_12",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_12",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_12",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_12",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_12",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_12",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_12",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_12",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_12",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_12",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_12",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_12",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_12",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_12",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_12",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_12",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_12",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_12",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_12",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_12",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_12",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_12",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_12",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_12",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_12",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_12",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_12",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_12",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_12",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_12",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_12",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_12",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_12",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_12",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_12",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_13",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_13",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_13",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_13",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_13",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_13",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_13",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_13",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_13",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_13",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_13",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_13",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_13",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_13",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_13",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_13",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_13",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_13",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_13",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_13",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_13",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_13",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_13",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_13",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_13",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_13",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_13",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_13",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_13",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_13",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_13",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_13",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_13",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_13",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_13",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_13",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_13",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_13",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_13",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_13",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_14",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_14",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_14",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_14",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_14",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_14",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_14",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_14",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_14",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_14",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_14",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_14",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_14",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_14",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_14",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_14",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_14",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_14",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_14",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_14",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_14",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_14",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_14",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_14",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_14",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_14",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_14",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_14",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_14",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_14",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_14",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_14",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_14",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_14",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_14",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_14",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_14",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_14",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_14",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_14",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_15",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_15",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_15",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_15",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_15",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_15",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_15",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_15",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_15",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_15",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_15",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_15",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_15",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_15",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_15",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_15",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_15",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_15",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_15",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_15",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_15",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_15",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_15",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_15",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_15",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_15",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_15",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_15",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_15",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_15",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_15",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_15",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_15",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_15",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_15",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_15",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_15",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_15",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_15",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_15",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_16",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_16",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_16",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_16",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_16",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_16",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_16",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_16",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_16",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_16",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_16",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_16",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_16",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_16",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_16",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_16",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_16",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_16",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_16",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_16",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_16",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_16",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_16",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_16",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_16",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_16",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_16",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_16",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_16",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_16",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_16",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_16",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_16",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_16",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_16",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_16",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_16",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_16",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_16",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_16",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_17",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_17",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_17",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_17",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_17",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_17",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_17",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_17",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_17",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_17",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_17",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_17",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_17",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_17",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_17",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_17",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_17",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_17",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_17",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_17",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_17",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_17",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_17",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_17",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_17",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_17",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_17",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_17",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_17",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_17",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_17",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_17",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_17",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_17",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_17",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_17",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_17",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_17",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_17",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_17",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_18",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_18",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_18",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_18",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_18",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_18",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_18",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_18",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_18",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_18",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_18",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_18",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_18",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_18",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_18",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_18",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_18",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_18",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_18",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_18",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_18",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_18",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_18",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_18",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_18",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_18",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_18",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_18",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_18",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_18",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_18",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_18",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_18",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_18",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_18",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_18",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_18",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_18",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_18",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_18",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_19",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_19",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_19",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_19",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_19",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_19",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_19",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_19",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_19",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_19",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_19",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_19",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_19",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_19",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_19",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_19",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_19",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_19",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_19",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_19",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_19",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_19",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_19",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_19",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_19",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_19",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_19",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_19",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_19",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_19",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_19",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_19",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_19",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_19",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_19",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_19",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_19",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_19",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_19",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_19",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_20",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_20",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_20",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_20",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_20",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_20",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_20",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_20",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_20",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_20",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_20",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_20",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_20",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_20",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_20",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_20",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_20",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_20",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_20",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_20",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_20",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_20",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_20",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_20",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_20",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_20",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_20",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_20",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_20",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_20",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_20",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_20",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_20",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_20",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_20",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_20",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_20",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_20",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_20",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_20",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_21",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_21",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_21",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_21",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_21",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_21",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_21",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_21",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_21",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_21",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_21",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_21",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_21",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_21",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_21",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_21",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_21",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_21",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_21",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_21",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_21",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_21",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_21",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_21",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_21",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_21",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_21",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_21",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_21",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_21",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_21",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_21",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_21",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_21",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_21",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_21",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_21",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_21",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_21",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_21",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_22",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_22",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_22",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_22",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_22",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_22",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_22",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_22",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_22",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_22",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_22",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_22",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_22",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_22",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_22",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_22",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_22",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_22",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_22",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_22",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_22",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_22",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_22",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_22",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_22",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_22",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_22",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_22",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_22",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_22",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_22",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_22",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_22",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_22",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_22",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_22",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_22",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_22",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_22",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_22",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_23",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_23",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_23",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_23",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_23",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_23",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_23",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_23",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_23",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_23",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_23",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_23",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_23",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_23",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_23",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_23",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_23",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_23",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_23",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_23",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_23",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_23",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_23",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_23",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_23",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_23",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_23",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_23",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_23",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_23",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_23",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_23",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_23",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_23",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_23",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_23",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_23",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_23",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_23",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_23",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_24",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_24",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_24",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_24",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_24",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_24",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_24",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_24",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_24",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_24",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_24",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_24",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_24",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_24",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_24",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_24",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_24",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_24",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_24",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_24",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_24",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_24",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_24",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_24",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_24",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_24",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_24",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_24",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_24",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_24",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_24",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_24",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_24",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_24",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_24",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_24",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_24",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_24",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_24",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_24",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_001_25",
+    "nl": "verdachte",
+    "tr": "şüpheli",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_002_25",
+    "nl": "getuige",
+    "tr": "tanık",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_003_25",
+    "nl": "bewijs",
+    "tr": "delil",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_004_25",
+    "nl": "proces-verbaal",
+    "tr": "tutanak",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_005_25",
+    "nl": "verhoor",
+    "tr": "ifade",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_006_25",
+    "nl": "uniform",
+    "tr": "üniforma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_007_25",
+    "nl": "patrouille",
+    "tr": "devriye",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_008_25",
+    "nl": "melding",
+    "tr": "ihbar",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_009_25",
+    "nl": "aangifte",
+    "tr": "şikayet bildirimi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_010_25",
+    "nl": "identiteitskaart",
+    "tr": "kimlik kartı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_011_25",
+    "nl": "commissariaat",
+    "tr": "karakol",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_012_25",
+    "nl": "procedure",
+    "tr": "prosedür",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_013_25",
+    "nl": "de-escalatie",
+    "tr": "gerilimi düşürme",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_014_25",
+    "nl": "aanhouding",
+    "tr": "gözaltı",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_015_25",
+    "nl": "signaalement",
+    "tr": "eşkal",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_016_25",
+    "nl": "opsporing",
+    "tr": "arama/soruşturma",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_017_25",
+    "nl": "wijkagent",
+    "tr": "mahalle polisi",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_018_25",
+    "nl": "noodnummer",
+    "tr": "acil durum numarası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_019_25",
+    "nl": "zwaailicht",
+    "tr": "tepe lambası",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_020_25",
+    "nl": "sirene",
+    "tr": "siren",
+    "category": "politie"
+  },
+  {
+    "id": "wB1_021_25",
+    "nl": "rijbewijs",
+    "tr": "ehliyet",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_022_25",
+    "nl": "verzekering",
+    "tr": "sigorta",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_023_25",
+    "nl": "boete",
+    "tr": "ceza",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_024_25",
+    "nl": "overtreding",
+    "tr": "ihlâl",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_025_25",
+    "nl": "snelheidscontrole",
+    "tr": "hız kontrolü",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_026_25",
+    "nl": "zebrapad",
+    "tr": "yaya geçidi",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_027_25",
+    "nl": "rotonde",
+    "tr": "dönel kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_028_25",
+    "nl": "kruispunt",
+    "tr": "kavşak",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_029_25",
+    "nl": "voorrang",
+    "tr": "öncelik",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_030_25",
+    "nl": "richtingaanwijzer",
+    "tr": "sinyal (sinyal kolu)",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_031_25",
+    "nl": "aanrijding",
+    "tr": "çarpışma",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_032_25",
+    "nl": "schade",
+    "tr": "hasar",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_033_25",
+    "nl": "verkeersongeval",
+    "tr": "trafik kazası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_034_25",
+    "nl": "verkeersbord",
+    "tr": "trafik levhası",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_035_25",
+    "nl": "parkeerverbod",
+    "tr": "park yasağı",
+    "category": "verkeer"
+  },
+  {
+    "id": "wB1_036_25",
+    "nl": "afspraak",
+    "tr": "randevu",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_037_25",
+    "nl": "bewijsstuk",
+    "tr": "belge",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_038_25",
+    "nl": "melding maken",
+    "tr": "ihbarda bulunmak",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_039_25",
+    "nl": "begeleiding",
+    "tr": "refakat/rehberlik",
+    "category": "dagelijks"
+  },
+  {
+    "id": "wB1_040_25",
+    "nl": "voorstel",
+    "tr": "teklif",
+    "category": "dagelijks"
+  }
+]
