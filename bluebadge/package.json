@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "gen:audio": "node scripts/gen-audio.cjs",
     "test": "vitest run",
-    "test:ui": "vitest"
+    "test:ui": "vitest",
+    "gen:templates": "node scripts/gen-templates.cjs"
   },
   "dependencies": {
     "chart.js": "^4.5.0",
