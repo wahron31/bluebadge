@@ -11,7 +11,8 @@
     "gen:audio": "node scripts/gen-audio.cjs",
     "test": "vitest run",
     "test:ui": "vitest",
-    "gen:templates": "node scripts/gen-templates.cjs"
+    "gen:templates": "node scripts/gen-templates.cjs",
+    "gen:samples": "node scripts/gen-samples.cjs"
   },
   "dependencies": {
     "chart.js": "^4.5.0",

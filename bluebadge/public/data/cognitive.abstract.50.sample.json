@@ -1,0 +1,552 @@
+[
+  {
+    "id": "a01",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a02",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a03",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a04",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a05",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a06",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a07",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a08",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a09",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a10",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a11",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a12",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a13",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a14",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a15",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a16",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a17",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a18",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a19",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a20",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a21",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a22",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a23",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a24",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a25",
+    "type": "abstract",
+    "prompt": "AB, BC, CD, DE, … Volgende?",
+    "choices": [
+      "EF",
+      "FG",
+      "GH"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a26",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a27",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a28",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a29",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a30",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a31",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a32",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a33",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a34",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a35",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a36",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a37",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a38",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a39",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a40",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a41",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a42",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a43",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a44",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a45",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a46",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a47",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a48",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a49",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "a50",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  }
+]
