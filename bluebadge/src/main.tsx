@@ -20,6 +20,7 @@ const AdminImportPage = lazy(() => import('./routes/AdminImportPage'))
 const ReadingPage = lazy(() => import('./routes/ReadingPage'))
 const GrammarPage = lazy(() => import('./routes/GrammarPage'))
 const DashboardPage = lazy(() => import('./routes/DashboardPage'))
+const AchievementsPage = lazy(() => import('./routes/AchievementsPage'))
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,7 @@ const router = createBrowserRouter([
       { path: 'grammatica', element: <GrammarPage /> },
       { path: 'logica', element: <LogicPage /> },
       { path: 'dashboard', element: <DashboardPage /> },
+      { path: 'badges', element: <AchievementsPage /> },
       { path: 'voortgang', element: <ProgressPage /> },
       { path: 'profiel', element: <ProfilePage /> },
       { path: 'sessie', element: <SessionPage /> },
