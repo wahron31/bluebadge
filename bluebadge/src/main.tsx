@@ -1,24 +1,25 @@
-import { StrictMode } from 'react'
+import { StrictMode, lazy, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import AppLayout from './App'
-import HomePage from './routes/HomePage'
-import WordsPage from './routes/WordsPage'
-import QuizPage from './routes/QuizPage'
-import ScenariosPage from './routes/ScenariosPage'
-import ProgressPage from './routes/ProgressPage'
-import NotFoundPage from './routes/NotFoundPage'
-import ListeningPage from './routes/ListeningPage'
-import LogicPage from './routes/LogicPage'
-import ProfilePage from './routes/ProfilePage'
-import SessionPage from './routes/SessionPage'
-import ExportPage from './routes/ExportPage'
-import ScenarioPrintPage from './routes/ScenarioPrintPage'
-import AdminImportPage from './routes/AdminImportPage'
-import ReadingPage from './routes/ReadingPage'
-import GrammarPage from './routes/GrammarPage'
-import DashboardPage from './routes/DashboardPage'
+
+const HomePage = lazy(() => import('./routes/HomePage'))
+const WordsPage = lazy(() => import('./routes/WordsPage'))
+const QuizPage = lazy(() => import('./routes/QuizPage'))
+const ScenariosPage = lazy(() => import('./routes/ScenariosPage'))
+const ProgressPage = lazy(() => import('./routes/ProgressPage'))
+const NotFoundPage = lazy(() => import('./routes/NotFoundPage'))
+const ListeningPage = lazy(() => import('./routes/ListeningPage'))
+const LogicPage = lazy(() => import('./routes/LogicPage'))
+const ProfilePage = lazy(() => import('./routes/ProfilePage'))
+const SessionPage = lazy(() => import('./routes/SessionPage'))
+const ExportPage = lazy(() => import('./routes/ExportPage'))
+const ScenarioPrintPage = lazy(() => import('./routes/ScenarioPrintPage'))
+const AdminImportPage = lazy(() => import('./routes/AdminImportPage'))
+const ReadingPage = lazy(() => import('./routes/ReadingPage'))
+const GrammarPage = lazy(() => import('./routes/GrammarPage'))
+const DashboardPage = lazy(() => import('./routes/DashboardPage'))
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,8 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Suspense fallback={<div className="container" style={{ padding: 20 }}>Laden…</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
   </StrictMode>,
 )

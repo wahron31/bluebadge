@@ -24,4 +24,14 @@ export default defineConfig(() => ({
       },
     }),
   ],
+  build: {
+    chunkSizeWarningLimit: 1200,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          charts: ['chart.js', 'react-chartjs-2', 'chartjs-adapter-date-fns'],
+        },
+      },
+    },
+  },
 }))
