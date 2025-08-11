@@ -1,3 +1,20 @@
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: #fffceb;
+  color: #111827;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+}
+
 :root {
   --bb-blue-900: #0a3d91;
   --bb-blue-700: #1254c0;

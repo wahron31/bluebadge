@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { READING_ITEMS } from '../data/reading'
 import { useProgressStore } from '../store/progress'
 
@@ -13,12 +13,14 @@ export default function ReadingPage() {
   const hasNext = index < items.length - 1
   const [answer, setAnswer] = useState<number | null>(null)
   const [locked, setLocked] = useState(false)
+  const liveRef = useRef<HTMLDivElement>(null)
 
   const submit = () => {
     if (answer === null) return
     const correct = answer === current.questions[0].correctIndex
     recordAttempt('lezen', correct)
     setLocked(true)
+    if (liveRef.current) liveRef.current.textContent = correct ? 'Correct' : 'Niet correct'
   }
 
   const next = () => {
@@ -38,12 +40,16 @@ export default function ReadingPage() {
 
       <div className="card">
         <h3 style={{ marginTop: 0 }}>{current.questions[0].prompt}</h3>
-        <div className="grid">
+        <div role="radiogroup" aria-label="Keuzevragen" className="grid">
           {current.questions[0].choices.map((c, idx) => {
             const isCorrect = locked && idx === current.questions[0].correctIndex
             const isWrong = locked && answer === idx && !isCorrect
+            const checked = answer === idx
             return (
-              <button key={idx} className="button ghost" disabled={locked} onClick={() => setAnswer(idx)} style={{ borderColor: isCorrect ? 'green' : isWrong ? 'crimson' : undefined }}>{c}</button>
+              <div key={idx} role="radio" aria-checked={checked} tabIndex={locked ? -1 : checked ? 0 : -1} onKeyDown={(e) => {
+                if (locked) return
+                if (e.key === 'Enter' || e.key === ' ') { setAnswer(idx); e.preventDefault() }
+              }} onClick={() => !locked && setAnswer(idx)} className="button ghost" style={{ borderColor: isCorrect ? 'green' : isWrong ? 'crimson' : undefined }}>{c}</div>
             )
           })}
         </div>
@@ -51,6 +57,7 @@ export default function ReadingPage() {
           <button className="button" disabled={answer === null || locked} onClick={submit}>Bevestig</button>
           <button className="button secondary" disabled={!locked || !hasNext} onClick={next}>Volgende</button>
         </div>
+        <div ref={liveRef} aria-live="polite" style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(1px,1px,1px,1px)' }} />
       </div>
     </div>
   )

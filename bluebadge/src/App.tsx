@@ -17,6 +17,7 @@ export default function AppLayout() {
 
   return (
     <div className="app-shell">
+      <a href="#main" className="skip-link">Direct naar inhoud</a>
       <header className="header">
         <div className="header-inner container">
           <div className="brand">
@@ -46,7 +47,7 @@ export default function AppLayout() {
           </div>
         </div>
       </header>
-      <main className="main container">
+      <main id="main" tabIndex={-1} className="main container">
         <Outlet />
       </main>
       <footer className="footer">
