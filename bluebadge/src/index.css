@@ -1,0 +1,125 @@
+:root {
+  --bb-blue-900: #0a3d91;
+  --bb-blue-700: #1254c0;
+  --bb-blue-100: #e6efff;
+  --bb-gray-900: #101316;
+  --bb-gray-700: #2a2f36;
+  --bb-gray-300: #c9d1d9;
+  --bb-white: #ffffff;
+  --bb-accent: #ffc107;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--bb-gray-900);
+  background: var(--bb-blue-100);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.app-shell {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.header {
+  background: var(--bb-blue-900);
+  color: var(--bb-white);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.brand-badge {
+  inline-size: 28px;
+  block-size: 28px;
+  border-radius: 6px;
+  background: var(--bb-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bb-gray-900);
+  font-weight: 900;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.nav a {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--bb-white);
+  opacity: 0.95;
+}
+
+.nav a.active {
+  background: var(--bb-blue-700);
+}
+
+.main {
+  padding: 16px;
+}
+
+.card {
+  background: var(--bb-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  padding: 16px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid.cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid.cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+@media (max-width: 860px) {
+  .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; }
+}
+
+.button {
+  background: var(--bb-blue-900);
+  color: var(--bb-white);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.button.secondary { background: var(--bb-blue-700); }
+.button.ghost { background: transparent; color: var(--bb-blue-900); border: 1px solid var(--bb-blue-700); }
+
+.footer {
+  color: var(--bb-gray-700);
+  text-align: center;
+  padding: 20px 16px 32px;
+}
