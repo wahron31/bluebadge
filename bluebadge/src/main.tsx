@@ -17,6 +17,7 @@ import ExportPage from './routes/ExportPage'
 import ScenarioPrintPage from './routes/ScenarioPrintPage'
 import AdminImportPage from './routes/AdminImportPage'
 import ReadingPage from './routes/ReadingPage'
+import GrammarPage from './routes/GrammarPage'
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: 'scenarios', element: <ScenariosPage /> },
       { path: 'luisteren', element: <ListeningPage /> },
       { path: 'lezen', element: <ReadingPage /> },
+      { path: 'grammatica', element: <GrammarPage /> },
       { path: 'logica', element: <LogicPage /> },
       { path: 'voortgang', element: <ProgressPage /> },
       { path: 'profiel', element: <ProfilePage /> },

@@ -37,6 +37,7 @@ export default function ProgressPage() {
         <ProgressStats title="Scenario's" attempted={modules.scenarios.attempted} correct={modules.scenarios.correct} />
         <ProgressStats title="Luisteren" attempted={modules.luisteren.attempted} correct={modules.luisteren.correct} />
         <ProgressStats title="Lezen" attempted={modules.lezen.attempted} correct={modules.lezen.correct} />
+        <ProgressStats title="Grammatica" attempted={modules.grammatica.attempted} correct={modules.grammatica.correct} />
         <ProgressStats title="Logica" attempted={modules.logica.attempted} correct={modules.logica.correct} />
       </div>
 
