@@ -21,6 +21,9 @@ const ReadingPage = lazy(() => import('./routes/ReadingPage'))
 const GrammarPage = lazy(() => import('./routes/GrammarPage'))
 const DashboardPage = lazy(() => import('./routes/DashboardPage'))
 const AchievementsPage = lazy(() => import('./routes/AchievementsPage'))
+const NumericPage = lazy(() => import('./routes/NumericPage'))
+const VerbalPage = lazy(() => import('./routes/VerbalPage'))
+const AbstractPage = lazy(() => import('./routes/AbstractPage'))
 
 const router = createBrowserRouter([
   {
@@ -35,6 +38,9 @@ const router = createBrowserRouter([
       { path: 'lezen', element: <ReadingPage /> },
       { path: 'grammatica', element: <GrammarPage /> },
       { path: 'logica', element: <LogicPage /> },
+      { path: 'numeriek', element: <NumericPage /> },
+      { path: 'verbaal', element: <VerbalPage /> },
+      { path: 'abstract', element: <AbstractPage /> },
       { path: 'dashboard', element: <DashboardPage /> },
       { path: 'badges', element: <AchievementsPage /> },
       { path: 'voortgang', element: <ProgressPage /> },

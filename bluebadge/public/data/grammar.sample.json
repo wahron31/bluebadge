@@ -1,0 +1,10 @@
+[
+  {
+    "id": "g101",
+    "lang": "nl",
+    "prompt": "Kies de juiste vorm",
+    "sentence": "Zij ___ het rapport.",
+    "choices": ["schrijft", "schrijven", "schreef"],
+    "correctIndex": 0
+  }
+]
