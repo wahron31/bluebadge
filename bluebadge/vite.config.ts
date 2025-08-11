@@ -13,8 +13,8 @@ export default defineConfig(() => ({
         name: 'BlueBadge',
         short_name: 'BlueBadge',
         description: 'Oefenplatform voor cognitieve en taalvaardigheden (NL/TR) voor politie-kandidaten',
-        theme_color: '#0A3D91',
-        background_color: '#0A3D91',
+        theme_color: '#0B1630',
+        background_color: '#0B1630',
         display: 'standalone',
         start_url: '/',
         icons: [

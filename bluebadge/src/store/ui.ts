@@ -15,7 +15,7 @@ export const useUiStore = create<State>()(
   persist(
     (set, get) => ({
       language: 'nl',
-      theme: 'light',
+      theme: 'dark',
       setLanguage: (language) => set({ language }),
       toggleTheme: () => set({ theme: get().theme === 'light' ? 'dark' : 'light' }),
     }),

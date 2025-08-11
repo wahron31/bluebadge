@@ -29,25 +29,45 @@ export default function AppLayout() {
           </div>
           <nav className="nav" aria-label="primary">
             <NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''} {...pf('/')}>{t('nav_home', language)}</NavLink>
-            <NavLink to="/woorden" className={({isActive}) => isActive ? 'active' : ''} {...pf('/woorden')}>{t('nav_words', language)}</NavLink>
-            <NavLink to="/quiz" className={({isActive}) => isActive ? 'active' : ''} {...pf('/quiz')}>{t('nav_quiz', language)}</NavLink>
-            <NavLink to="/scenarios" className={({isActive}) => isActive ? 'active' : ''} {...pf('/scenarios')}>{t('nav_scenarios', language)}</NavLink>
-            <NavLink to="/luisteren" className={({isActive}) => isActive ? 'active' : ''} {...pf('/luisteren')}>{t('nav_listen', language)}</NavLink>
-            <NavLink to="/lezen" className={({isActive}) => isActive ? 'active' : ''} {...pf('/lezen')}>Lezen</NavLink>
-            <NavLink to="/grammatica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/grammatica')}>Grammatica</NavLink>
-            <NavLink to="/logica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/logica')}>{t('nav_logic', language)}</NavLink>
-            <NavLink to="/numeriek" className={({isActive}) => isActive ? 'active' : ''} {...pf('/numeriek')}>Numeriek</NavLink>
-            <NavLink to="/verbaal" className={({isActive}) => isActive ? 'active' : ''} {...pf('/verbaal')}>Verbaal</NavLink>
-            <NavLink to="/abstract" className={({isActive}) => isActive ? 'active' : ''} {...pf('/abstract')}>Abstract</NavLink>
-            <NavLink to="/selectieproef" className={({isActive}) => isActive ? 'active' : ''} {...pf('/selectieproef')}>Selectieproef</NavLink>
-            <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''} {...pf('/dashboard')}>Dashboard</NavLink>
-            <NavLink to="/badges" className={({isActive}) => isActive ? 'active' : ''} {...pf('/badges')}>Badges</NavLink>
-            <NavLink to="/voortgang" className={({isActive}) => isActive ? 'active' : ''} {...pf('/voortgang')}>{t('nav_progress', language)}</NavLink>
-            <NavLink to="/profiel" className={({isActive}) => isActive ? 'active' : ''} {...pf('/profiel')}>Profiel</NavLink>
-            <NavLink to="/sessie" className={({isActive}) => isActive ? 'active' : ''} {...pf('/sessie')}>Sessie</NavLink>
-            <NavLink to="/export" className={({isActive}) => isActive ? 'active' : ''} {...pf('/export')}>Export</NavLink>
-            <NavLink to="/scenario-print" className={({isActive}) => isActive ? 'active' : ''} {...pf('/scenario-print')}>Print Scenario's</NavLink>
-            <NavLink to="/admin-import" className={({isActive}) => isActive ? 'active' : ''} {...pf('/admin-import')}>Admin Import</NavLink>
+            <div className="nav-group">
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded="false">Taal</button>
+              <div className="nav-group-menu" role="menu">
+                <NavLink to="/woorden" className={({isActive}) => isActive ? 'active' : ''} {...pf('/woorden')}>{t('nav_words', language)}</NavLink>
+                <NavLink to="/luisteren" className={({isActive}) => isActive ? 'active' : ''} {...pf('/luisteren')}>{t('nav_listen', language)}</NavLink>
+                <NavLink to="/lezen" className={({isActive}) => isActive ? 'active' : ''} {...pf('/lezen')}>Lezen</NavLink>
+                <NavLink to="/grammatica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/grammatica')}>Grammatica</NavLink>
+              </div>
+            </div>
+            <div className="nav-group">
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded="false">Cognitief</button>
+              <div className="nav-group-menu" role="menu">
+                <NavLink to="/logica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/logica')}>{t('nav_logic', language)}</NavLink>
+                <NavLink to="/numeriek" className={({isActive}) => isActive ? 'active' : ''} {...pf('/numeriek')}>Numeriek</NavLink>
+                <NavLink to="/verbaal" className={({isActive}) => isActive ? 'active' : ''} {...pf('/verbaal')}>Verbaal</NavLink>
+                <NavLink to="/abstract" className={({isActive}) => isActive ? 'active' : ''} {...pf('/abstract')}>Abstract</NavLink>
+              </div>
+            </div>
+            <div className="nav-group">
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded="false">Oefenen</button>
+              <div className="nav-group-menu" role="menu">
+                <NavLink to="/quiz" className={({isActive}) => isActive ? 'active' : ''} {...pf('/quiz')}>{t('nav_quiz', language)}</NavLink>
+                <NavLink to="/scenarios" className={({isActive}) => isActive ? 'active' : ''} {...pf('/scenarios')}>{t('nav_scenarios', language)}</NavLink>
+                <NavLink to="/sessie" className={({isActive}) => isActive ? 'active' : ''} {...pf('/sessie')}>Sessie</NavLink>
+                <NavLink to="/selectieproef" className={({isActive}) => isActive ? 'active' : ''} {...pf('/selectieproef')}>Selectieproef</NavLink>
+              </div>
+            </div>
+            <div className="nav-group">
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded="false">Overzicht</button>
+              <div className="nav-group-menu" role="menu">
+                <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''} {...pf('/dashboard')}>Dashboard</NavLink>
+                <NavLink to="/badges" className={({isActive}) => isActive ? 'active' : ''} {...pf('/badges')}>Badges</NavLink>
+                <NavLink to="/voortgang" className={({isActive}) => isActive ? 'active' : ''} {...pf('/voortgang')}>{t('nav_progress', language)}</NavLink>
+                <NavLink to="/profiel" className={({isActive}) => isActive ? 'active' : ''} {...pf('/profiel')}>Profiel</NavLink>
+                <NavLink to="/export" className={({isActive}) => isActive ? 'active' : ''} {...pf('/export')}>Export</NavLink>
+                <NavLink to="/scenario-print" className={({isActive}) => isActive ? 'active' : ''} {...pf('/scenario-print')}>Print Scenario's</NavLink>
+                <NavLink to="/admin-import" className={({isActive}) => isActive ? 'active' : ''} {...pf('/admin-import')}>Admin Import</NavLink>
+              </div>
+            </div>
           </nav>
           <div className="nav" aria-label="settings" style={{ alignItems: 'center' }}>
             <button className="button ghost" aria-label="Toggle theme" onClick={toggleTheme}>{theme === 'light' ? '🌙' : '☀️'}</button>
