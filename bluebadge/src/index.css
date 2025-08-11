@@ -137,3 +137,21 @@ input, textarea { font: inherit; color: var(--bb-text); background: var(--bb-sur
 .nav-group-trigger .icon { margin-right: 6px; }
 .nav-group-menu { display: none; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 6px; }
 .nav-group:hover .nav-group-menu, .nav-group:focus-within .nav-group-menu { display: grid; }
+
+.hamburger-btn { display: none; background: transparent; border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 8px; margin-left: 8px; cursor: pointer; }
+.hamburger-lines { width: 18px; height: 2px; background: var(--bb-gray-300); display: block; position: relative; }
+.hamburger-lines::before, .hamburger-lines::after { content: ''; position: absolute; left: 0; right: 0; height: 2px; background: var(--bb-gray-300); }
+.hamburger-lines::before { top: -6px; }
+.hamburger-lines::after { top: 6px; }
+
+@media (max-width: 980px) {
+  .nav[aria-label="primary"] { display: none; }
+  .hamburger-btn { display: inline-block; }
+}
+
+.mobile-overlay { position: fixed; inset: 0; background: rgba(3,7,18,0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 40; overflow-y: auto; }
+.mobile-overlay-inner { padding: 20px; display: grid; gap: 16px; }
+.mobile-section { background: var(--bb-surface); border: 1px solid var(--bb-border); border-radius: 14px; padding: 12px; }
+.mobile-section-title { color: #e8f0ff; font-weight: 700; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+.mobile-section a { display: flex; align-items: center; gap: 8px; color: var(--bb-gray-300); padding: 8px; border-radius: 10px; }
+.mobile-section a:hover { background: rgba(255,255,255,0.06); }
