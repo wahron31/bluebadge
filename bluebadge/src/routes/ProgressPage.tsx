@@ -35,6 +35,8 @@ export default function ProgressPage() {
         <ProgressStats title="Woordenschat" attempted={modules.woorden.attempted} correct={modules.woorden.correct} />
         <ProgressStats title="Quiz" attempted={modules.quiz.attempted} correct={modules.quiz.correct} />
         <ProgressStats title="Scenario's" attempted={modules.scenarios.attempted} correct={modules.scenarios.correct} />
+        <ProgressStats title="Luisteren" attempted={modules.luisteren.attempted} correct={modules.luisteren.correct} />
+        <ProgressStats title="Logica" attempted={modules.logica.attempted} correct={modules.logica.correct} />
       </div>
 
       <div className="card">

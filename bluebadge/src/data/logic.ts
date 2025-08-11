@@ -24,4 +24,20 @@ export const LOGIC_ITEMS: LogicItem[] = [
     correctIndex: 1,
     explanation: 'x2 telkens: 24 x 2 = 48',
   },
+  {
+    id: 'lg3',
+    type: 'pattern',
+    prompt: 'AB, BC, CD, DE, … Volgende?',
+    choices: ['DF', 'EF', 'FG'],
+    correctIndex: 1,
+    explanation: 'Elke stap schuift 1 letter op: EF',
+  },
+  {
+    id: 'lg4',
+    type: 'number-sequence',
+    prompt: '2, 3, 5, 8, 12, … Volgende?',
+    choices: ['17', '18', '19'],
+    correctIndex: 0,
+    explanation: '+1, +2, +3, +4 → volgende +5: 12 + 5 = 17',
+  },
 ]

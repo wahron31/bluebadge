@@ -49,9 +49,15 @@ export default function HomePage() {
       </section>
 
       <section className="card">
-        <h2>Scenario's</h2>
-        <p>Beantwoord open vragen over politiegerelateerde situaties.</p>
-        <Link to="/scenarios" className="button">{t('start_scenarios', language)}</Link>
+        <h2>Luisteren</h2>
+        <p>Luister naar korte fragmenten en beantwoord vragen.</p>
+        <Link to="/luisteren" className="button">Start Luisteren</Link>
+      </section>
+
+      <section className="card">
+        <h2>Logica</h2>
+        <p>Oefen met reeksen en patronen.</p>
+        <Link to="/logica" className="button">Start Logica</Link>
       </section>
 
       <section className="card">

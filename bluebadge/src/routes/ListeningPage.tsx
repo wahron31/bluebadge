@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { LISTENING_ITEMS } from '../data/listening'
 import { useProgressStore } from '../store/progress'
+import { speak } from '../utils/tts'
 
 function shuffle<T>(arr: T[]): T[] { return [...arr].sort(() => Math.random() - 0.5) }
 
@@ -36,6 +37,9 @@ export default function ListeningPage() {
         <audio controls src={current.audioUrl} style={{ width: '100%' }}>
           Your browser does not support the audio element.
         </audio>
+        <div style={{ marginTop: 8, display: 'flex', gap: 8 }}>
+          <button className="button ghost" onClick={() => speak(current.transcript, 'nl-NL')}>Lees transcript (TTS)</button>
+        </div>
         <details style={{ marginTop: 8 }}>
           <summary>Transcript</summary>
           <p>{current.transcript}</p>
