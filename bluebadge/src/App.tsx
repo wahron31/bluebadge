@@ -39,6 +39,7 @@ export default function AppLayout() {
             <NavLink to="/numeriek" className={({isActive}) => isActive ? 'active' : ''} {...pf('/numeriek')}>Numeriek</NavLink>
             <NavLink to="/verbaal" className={({isActive}) => isActive ? 'active' : ''} {...pf('/verbaal')}>Verbaal</NavLink>
             <NavLink to="/abstract" className={({isActive}) => isActive ? 'active' : ''} {...pf('/abstract')}>Abstract</NavLink>
+            <NavLink to="/selectieproef" className={({isActive}) => isActive ? 'active' : ''} {...pf('/selectieproef')}>Selectieproef</NavLink>
             <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''} {...pf('/dashboard')}>Dashboard</NavLink>
             <NavLink to="/badges" className={({isActive}) => isActive ? 'active' : ''} {...pf('/badges')}>Badges</NavLink>
             <NavLink to="/voortgang" className={({isActive}) => isActive ? 'active' : ''} {...pf('/voortgang')}>{t('nav_progress', language)}</NavLink>

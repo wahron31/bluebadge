@@ -25,6 +25,7 @@ const AchievementsPage = lazy(() => import('./routes/AchievementsPage'))
 const NumericPage = lazy(() => import('./routes/NumericPage'))
 const VerbalPage = lazy(() => import('./routes/VerbalPage'))
 const AbstractPage = lazy(() => import('./routes/AbstractPage'))
+const SelectieproefPage = lazy(() => import('./routes/SelectieproefPage'))
 
 function AppRoot() {
   useEffect(() => { bootstrapSamples() }, [])
@@ -51,6 +52,7 @@ const router = createBrowserRouter([
       { path: 'numeriek', element: <NumericPage /> },
       { path: 'verbaal', element: <VerbalPage /> },
       { path: 'abstract', element: <AbstractPage /> },
+      { path: 'selectieproef', element: <SelectieproefPage /> },
       { path: 'dashboard', element: <DashboardPage /> },
       { path: 'badges', element: <AchievementsPage /> },
       { path: 'voortgang', element: <ProgressPage /> },
