@@ -33,8 +33,10 @@ export default function AppLayout() {
       <header className="header">
         <div className="header-inner container">
           <div className="brand">
-            <img src={logoUrl} alt="" className="brand-logo" aria-hidden />
-            <span>{t('brand', language)}</span>
+            <NavLink to="/" {...pf('/')} className="brand-link" aria-label="Home">
+              <img src={logoUrl} alt="" className="brand-logo" aria-hidden />
+              <span className="brand-text">{t('brand', language)}</span>
+            </NavLink>
           </div>
           <nav className="nav" aria-label="primary">
             <NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''} {...pf('/')}>{t('nav_home', language)}</NavLink>
