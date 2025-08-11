@@ -3,6 +3,7 @@ import './index.css'
 import { useUiStore } from './store/ui'
 import { useEffect } from 'react'
 import { t } from './i18n'
+import { prefetchRoute } from './prefetch'
 
 export default function AppLayout() {
   const language = useUiStore((s) => s.language)
@@ -15,6 +16,8 @@ export default function AppLayout() {
     document.documentElement.lang = language
   }, [theme, language])
 
+  const pf = (p: string) => ({ onMouseEnter: () => prefetchRoute(p), onFocus: () => prefetchRoute(p) })
+
   return (
     <div className="app-shell">
       <a href="#main" className="skip-link">Direct naar inhoud</a>
@@ -25,21 +28,21 @@ export default function AppLayout() {
             <span>{t('brand', language)}</span>
           </div>
           <nav className="nav" aria-label="primary">
-            <NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''}>{t('nav_home', language)}</NavLink>
-            <NavLink to="/woorden" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_words', language)}</NavLink>
-            <NavLink to="/quiz" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_quiz', language)}</NavLink>
-            <NavLink to="/scenarios" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_scenarios', language)}</NavLink>
-            <NavLink to="/luisteren" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_listen', language)}</NavLink>
-            <NavLink to="/lezen" className={({isActive}) => isActive ? 'active' : ''}>Lezen</NavLink>
-            <NavLink to="/grammatica" className={({isActive}) => isActive ? 'active' : ''}>Grammatica</NavLink>
-            <NavLink to="/logica" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_logic', language)}</NavLink>
-            <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''}>Dashboard</NavLink>
-            <NavLink to="/voortgang" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_progress', language)}</NavLink>
-            <NavLink to="/profiel" className={({isActive}) => isActive ? 'active' : ''}>Profiel</NavLink>
-            <NavLink to="/sessie" className={({isActive}) => isActive ? 'active' : ''}>Sessie</NavLink>
-            <NavLink to="/export" className={({isActive}) => isActive ? 'active' : ''}>Export</NavLink>
-            <NavLink to="/scenario-print" className={({isActive}) => isActive ? 'active' : ''}>Print Scenario's</NavLink>
-            <NavLink to="/admin-import" className={({isActive}) => isActive ? 'active' : ''}>Admin Import</NavLink>
+            <NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''} {...pf('/')}>{t('nav_home', language)}</NavLink>
+            <NavLink to="/woorden" className={({isActive}) => isActive ? 'active' : ''} {...pf('/woorden')}>{t('nav_words', language)}</NavLink>
+            <NavLink to="/quiz" className={({isActive}) => isActive ? 'active' : ''} {...pf('/quiz')}>{t('nav_quiz', language)}</NavLink>
+            <NavLink to="/scenarios" className={({isActive}) => isActive ? 'active' : ''} {...pf('/scenarios')}>{t('nav_scenarios', language)}</NavLink>
+            <NavLink to="/luisteren" className={({isActive}) => isActive ? 'active' : ''} {...pf('/luisteren')}>{t('nav_listen', language)}</NavLink>
+            <NavLink to="/lezen" className={({isActive}) => isActive ? 'active' : ''} {...pf('/lezen')}>Lezen</NavLink>
+            <NavLink to="/grammatica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/grammatica')}>Grammatica</NavLink>
+            <NavLink to="/logica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/logica')}>{t('nav_logic', language)}</NavLink>
+            <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''} {...pf('/dashboard')}>Dashboard</NavLink>
+            <NavLink to="/voortgang" className={({isActive}) => isActive ? 'active' : ''} {...pf('/voortgang')}>{t('nav_progress', language)}</NavLink>
+            <NavLink to="/profiel" className={({isActive}) => isActive ? 'active' : ''} {...pf('/profiel')}>Profiel</NavLink>
+            <NavLink to="/sessie" className={({isActive}) => isActive ? 'active' : ''} {...pf('/sessie')}>Sessie</NavLink>
+            <NavLink to="/export" className={({isActive}) => isActive ? 'active' : ''} {...pf('/export')}>Export</NavLink>
+            <NavLink to="/scenario-print" className={({isActive}) => isActive ? 'active' : ''} {...pf('/scenario-print')}>Print Scenario's</NavLink>
+            <NavLink to="/admin-import" className={({isActive}) => isActive ? 'active' : ''} {...pf('/admin-import')}>Admin Import</NavLink>
           </nav>
           <div className="nav" aria-label="settings" style={{ alignItems: 'center' }}>
             <button className="button ghost" aria-label="Toggle theme" onClick={toggleTheme}>{theme === 'light' ? '🌙' : '☀️'}</button>
