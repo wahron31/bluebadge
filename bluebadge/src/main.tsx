@@ -11,6 +11,8 @@ import ProgressPage from './routes/ProgressPage'
 import NotFoundPage from './routes/NotFoundPage'
 import ListeningPage from './routes/ListeningPage'
 import LogicPage from './routes/LogicPage'
+import ProfilePage from './routes/ProfilePage'
+import SessionPage from './routes/SessionPage'
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
       { path: 'luisteren', element: <ListeningPage /> },
       { path: 'logica', element: <LogicPage /> },
       { path: 'voortgang', element: <ProgressPage /> },
+      { path: 'profiel', element: <ProfilePage /> },
+      { path: 'sessie', element: <SessionPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
