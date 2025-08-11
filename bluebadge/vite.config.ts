@@ -24,4 +24,11 @@ export default defineConfig({
       },
     }),
   ],
+  test: {
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.ts'],
+    coverage: {
+      reporter: ['text', 'html'],
+    },
+  },
 })
