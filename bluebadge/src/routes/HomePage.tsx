@@ -4,6 +4,7 @@ import { WORDS } from '../data/words'
 import { useUiStore } from '../store/ui'
 import { t } from '../i18n'
 import { useProgressStore } from '../store/progress'
+import { useOnboardingStore } from '../store/onboarding'
 
 export default function HomePage() {
   const language = useUiStore((s) => s.language)
@@ -14,8 +15,22 @@ export default function HomePage() {
   const setDailyGoal = useProgressStore((s) => s.setDailyGoal)
   const progress = Math.min(100, Math.round((todayAttempts / dailyGoal) * 100))
 
+  const showHomeTips = useOnboardingStore((s) => s.showHomeTips)
+  const dismissHomeTips = useOnboardingStore((s) => s.dismissHomeTips)
+
   return (
     <div className="grid cols-2">
+      {showHomeTips && (
+        <section className="card" style={{ gridColumn: '1 / -1', background: '#fffceb' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 8 }}>
+            <div>
+              <strong>Tip:</strong> Stel je dagelijks doel in en probeer vandaag alle modules even aan te tikken.
+            </div>
+            <button className="button ghost" onClick={dismissHomeTips}>Begrepen</button>
+          </div>
+        </section>
+      )}
+
       <section className="card">
         <h2>{t('daily_word', language)}</h2>
         <p>
