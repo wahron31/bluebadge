@@ -16,6 +16,7 @@ import SessionPage from './routes/SessionPage'
 import ExportPage from './routes/ExportPage'
 import ScenarioPrintPage from './routes/ScenarioPrintPage'
 import AdminImportPage from './routes/AdminImportPage'
+import ReadingPage from './routes/ReadingPage'
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,7 @@ const router = createBrowserRouter([
       { path: 'quiz', element: <QuizPage /> },
       { path: 'scenarios', element: <ScenariosPage /> },
       { path: 'luisteren', element: <ListeningPage /> },
+      { path: 'lezen', element: <ReadingPage /> },
       { path: 'logica', element: <LogicPage /> },
       { path: 'voortgang', element: <ProgressPage /> },
       { path: 'profiel', element: <ProfilePage /> },
