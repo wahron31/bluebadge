@@ -6,12 +6,13 @@ import { useProgressStore } from '../store/progress'
 export default function ScenariosPage() {
   const [index, setIndex] = useState(0)
   const recordAttempt = useProgressStore((s) => s.recordAttempt)
+  const saveAnswer = useProgressStore((s) => s.saveScenarioAnswer)
 
   const current = SCENARIOS[index]
   const hasNext = index < SCENARIOS.length - 1
 
-  const handleSubmit = (_answer: string) => {
-    // Voor demo markeren we correct als ingevuld
+  const handleSubmit = (answer: string) => {
+    saveAnswer(current.id, answer)
     recordAttempt('scenarios', true)
     if (hasNext) setIndex((i) => i + 1)
   }

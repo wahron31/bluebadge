@@ -109,14 +109,23 @@ a { color: inherit; text-decoration: none; }
 .button {
   background: var(--bb-blue-900);
   color: var(--bb-white);
-  border: none;
+  border: 1px solid var(--bb-blue-900);
   border-radius: 10px;
   padding: 10px 14px;
   cursor: pointer;
 }
 
-.button.secondary { background: var(--bb-blue-700); }
+.button.secondary { background: var(--bb-blue-700); border-color: var(--bb-blue-700); }
 .button.ghost { background: transparent; color: var(--bb-blue-900); border: 1px solid var(--bb-blue-700); }
+
+input, textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #ffd24d;
+  outline-offset: 2px;
+}
 
 .footer {
   color: var(--bb-gray-700);

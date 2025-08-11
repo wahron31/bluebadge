@@ -3,6 +3,12 @@ import { persist } from 'zustand/middleware'
 
 export type ModuleKey = 'woorden' | 'quiz' | 'scenarios'
 
+export type ScenarioAnswer = {
+  scenarioId: string
+  text: string
+  timestamp: number
+}
+
 type ModuleProgress = {
   attempted: number
   correct: number
@@ -12,21 +18,31 @@ type State = {
   modules: Record<ModuleKey, ModuleProgress>
   lastPracticedISO?: string
   streakDays: number
+  scenarioAnswers: ScenarioAnswer[]
   recordAttempt: (module: ModuleKey, correct: boolean) => void
+  saveScenarioAnswer: (scenarioId: string, text: string) => void
+  exportData: () => string
+  importData: (json: string) => void
+  resetAll: () => void
 }
 
 const initialModule: ModuleProgress = { attempted: 0, correct: 0 }
 
+const initialState = {
+  modules: {
+    woorden: { ...initialModule },
+    quiz: { ...initialModule },
+    scenarios: { ...initialModule },
+  },
+  lastPracticedISO: undefined as string | undefined,
+  streakDays: 0,
+  scenarioAnswers: [] as ScenarioAnswer[],
+}
+
 export const useProgressStore = create<State>()(
   persist(
     (set, get) => ({
-      modules: {
-        woorden: { ...initialModule },
-        quiz: { ...initialModule },
-        scenarios: { ...initialModule },
-      },
-      lastPracticedISO: undefined,
-      streakDays: 0,
+      ...initialState,
       recordAttempt: (module, correct) => {
         const today = new Date()
         const todayISO = today.toISOString().slice(0, 10)
@@ -51,6 +67,29 @@ export const useProgressStore = create<State>()(
           }
         })
       },
+      saveScenarioAnswer: (scenarioId, text) => {
+        const answer = { scenarioId, text, timestamp: Date.now() }
+        set((state) => ({ scenarioAnswers: [answer, ...state.scenarioAnswers] }))
+      },
+      exportData: () => {
+        const { modules, lastPracticedISO, streakDays, scenarioAnswers } = get()
+        return JSON.stringify({ modules, lastPracticedISO, streakDays, scenarioAnswers }, null, 2)
+      },
+      importData: (json: string) => {
+        try {
+          const parsed = JSON.parse(json)
+          const { modules, lastPracticedISO, streakDays, scenarioAnswers } = parsed
+          set({
+            modules: modules ?? initialState.modules,
+            lastPracticedISO: lastPracticedISO ?? initialState.lastPracticedISO,
+            streakDays: typeof streakDays === 'number' ? streakDays : initialState.streakDays,
+            scenarioAnswers: Array.isArray(scenarioAnswers) ? scenarioAnswers : initialState.scenarioAnswers,
+          })
+        } catch (_e) {
+          // Ongeldige import negeren
+        }
+      },
+      resetAll: () => set({ ...initialState }),
     }),
     { name: 'bluebadge-progress' },
   ),
