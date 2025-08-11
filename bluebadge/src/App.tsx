@@ -32,6 +32,7 @@ export default function AppLayout() {
             <NavLink to="/lezen" className={({isActive}) => isActive ? 'active' : ''}>Lezen</NavLink>
             <NavLink to="/grammatica" className={({isActive}) => isActive ? 'active' : ''}>Grammatica</NavLink>
             <NavLink to="/logica" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_logic', language)}</NavLink>
+            <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''}>Dashboard</NavLink>
             <NavLink to="/voortgang" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_progress', language)}</NavLink>
             <NavLink to="/profiel" className={({isActive}) => isActive ? 'active' : ''}>Profiel</NavLink>
             <NavLink to="/sessie" className={({isActive}) => isActive ? 'active' : ''}>Sessie</NavLink>

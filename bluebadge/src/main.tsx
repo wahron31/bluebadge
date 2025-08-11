@@ -18,6 +18,7 @@ import ScenarioPrintPage from './routes/ScenarioPrintPage'
 import AdminImportPage from './routes/AdminImportPage'
 import ReadingPage from './routes/ReadingPage'
 import GrammarPage from './routes/GrammarPage'
+import DashboardPage from './routes/DashboardPage'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { path: 'lezen', element: <ReadingPage /> },
       { path: 'grammatica', element: <GrammarPage /> },
       { path: 'logica', element: <LogicPage /> },
+      { path: 'dashboard', element: <DashboardPage /> },
       { path: 'voortgang', element: <ProgressPage /> },
       { path: 'profiel', element: <ProfilePage /> },
       { path: 'sessie', element: <SessionPage /> },

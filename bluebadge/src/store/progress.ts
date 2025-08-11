@@ -9,6 +9,12 @@ export type ScenarioAnswer = {
   timestamp: number
 }
 
+export type AttemptLog = {
+  ts: number
+  module: ModuleKey
+  correct: boolean
+}
+
 type ModuleProgress = {
   attempted: number
   correct: number
@@ -19,6 +25,7 @@ type State = {
   lastPracticedISO?: string
   streakDays: number
   scenarioAnswers: ScenarioAnswer[]
+  attemptLog: AttemptLog[]
   todayISO?: string
   todayAttempts: number
   dailyGoal: number
@@ -45,6 +52,7 @@ const initialState = {
   lastPracticedISO: undefined as string | undefined,
   streakDays: 0,
   scenarioAnswers: [] as ScenarioAnswer[],
+  attemptLog: [] as AttemptLog[],
   todayISO: undefined as string | undefined,
   todayAttempts: 0,
   dailyGoal: 20,
@@ -73,12 +81,14 @@ export const useProgressStore = create<State>()(
           const prev = state.modules[module]
           const attempted = prev.attempted + 1
           const correctCount = prev.correct + (correct ? 1 : 0)
+          const newLogEntry = { ts: Date.now(), module, correct } as AttemptLog
           return {
             modules: { ...state.modules, [module]: { attempted, correct: correctCount } },
             lastPracticedISO: todayISO,
             streakDays: nextStreak,
             todayISO,
             todayAttempts: nextTodayAttempts,
+            attemptLog: [newLogEntry, ...state.attemptLog].slice(0, 5000),
           }
         })
       },
@@ -87,13 +97,13 @@ export const useProgressStore = create<State>()(
         set((state) => ({ scenarioAnswers: [answer, ...state.scenarioAnswers] }))
       },
       exportData: () => {
-        const { modules, lastPracticedISO, streakDays, scenarioAnswers, todayISO, todayAttempts, dailyGoal } = get()
-        return JSON.stringify({ modules, lastPracticedISO, streakDays, scenarioAnswers, todayISO, todayAttempts, dailyGoal }, null, 2)
+        const { modules, lastPracticedISO, streakDays, scenarioAnswers, todayISO, todayAttempts, dailyGoal, attemptLog } = get()
+        return JSON.stringify({ modules, lastPracticedISO, streakDays, scenarioAnswers, todayISO, todayAttempts, dailyGoal, attemptLog }, null, 2)
       },
       importData: (json: string) => {
         try {
           const parsed = JSON.parse(json)
-          const { modules, lastPracticedISO, streakDays, scenarioAnswers, todayISO, todayAttempts, dailyGoal } = parsed
+          const { modules, lastPracticedISO, streakDays, scenarioAnswers, todayISO, todayAttempts, dailyGoal, attemptLog } = parsed
           set({
             modules: modules ?? initialState.modules,
             lastPracticedISO: lastPracticedISO ?? initialState.lastPracticedISO,
@@ -102,6 +112,7 @@ export const useProgressStore = create<State>()(
             todayISO: todayISO ?? initialState.todayISO,
             todayAttempts: typeof todayAttempts === 'number' ? todayAttempts : initialState.todayAttempts,
             dailyGoal: typeof dailyGoal === 'number' ? dailyGoal : initialState.dailyGoal,
+            attemptLog: Array.isArray(attemptLog) ? attemptLog : initialState.attemptLog,
           })
         } catch (_e) {
           // Ongeldige import negeren
