@@ -1,5 +1,0 @@
-[
-  {"type":"grammatica","vraag":"Welke zin is correct?","opties":["Hij loop naar huis","Hij loopt naar huis","Hij loopte naar huis","Hij geloopt naar huis"],"antwoord":1,"uitleg":"Derde persoon enkelvoud: hij loopt."},
-  {"type":"grammatica","vraag":"Kies het juiste lidwoord: ... meisje","opties":["De","Het"],"antwoord":1,"uitleg":"'Meisje' is onzijdig: het meisje."},
-  {"type":"grammatica","vraag":"Vul de juiste vorm in: Hij ... (worden) morgen 18.","opties":["word","wordt","werd","geworden"],"antwoord":1,"uitleg":"Hij wordt (dt-regel)."}
-]
