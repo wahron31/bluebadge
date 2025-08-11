@@ -76,7 +76,7 @@ a { color: inherit; text-decoration: none; }
 
 .app-shell { min-height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
 
-.header { background: #0b1630; color: var(--bb-gray-300); border-bottom: 1px solid rgba(255,255,255,0.06); }
+.header { background: rgba(11,22,48,0.8); color: var(--bb-gray-300); border-bottom: 1px solid rgba(255,255,255,0.06); position: sticky; top: 0; backdrop-filter: saturate(140%) blur(8px); -webkit-backdrop-filter: saturate(140%) blur(8px); z-index: 30; }
 
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; }
 
@@ -98,6 +98,8 @@ a { color: inherit; text-decoration: none; }
 .nav-group:hover .nav-group-menu, .nav-group:focus-within .nav-group-menu { display: block; }
 .nav-group-menu a { display: block; padding: 8px 10px; border-radius: 8px; color: var(--bb-gray-300); }
 .nav-group-menu a:hover, .nav-group-menu a.active { background: rgba(255,255,255,0.06); color: #e8f0ff; }
+
+.nav-group.active-group > .nav-group-trigger { background: rgba(96, 165, 250, 0.18); color: #e8f0ff; border: 1px solid rgba(96,165,250,0.35); border-radius: 10px; }
 
 .main { padding: 20px; }
 

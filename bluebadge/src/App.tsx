@@ -4,12 +4,20 @@ import { useUiStore } from './store/ui'
 import { useEffect } from 'react'
 import { t } from './i18n'
 import { prefetchRoute } from './prefetch'
+import { useLocation } from 'react-router-dom'
 
 export default function AppLayout() {
   const language = useUiStore((s) => s.language)
   const theme = useUiStore((s) => s.theme)
   const setLanguage = useUiStore((s) => s.setLanguage)
   const toggleTheme = useUiStore((s) => s.toggleTheme)
+  const location = useLocation()
+
+  const path = location.pathname
+  const isLang = path.startsWith('/woorden') || path.startsWith('/luisteren') || path.startsWith('/lezen') || path.startsWith('/grammatica')
+  const isCog = path.startsWith('/logica') || path.startsWith('/numeriek') || path.startsWith('/verbaal') || path.startsWith('/abstract')
+  const isPractice = path.startsWith('/quiz') || path.startsWith('/scenarios') || path.startsWith('/sessie') || path.startsWith('/selectieproef')
+  const isOverview = path.startsWith('/dashboard') || path.startsWith('/badges') || path.startsWith('/voortgang') || path.startsWith('/profiel') || path.startsWith('/export') || path.startsWith('/scenario-print') || path.startsWith('/admin-import')
 
   useEffect(() => {
     document.body.classList.toggle('theme-dark', theme === 'dark')
@@ -29,8 +37,8 @@ export default function AppLayout() {
           </div>
           <nav className="nav" aria-label="primary">
             <NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''} {...pf('/')}>{t('nav_home', language)}</NavLink>
-            <div className="nav-group">
-              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded="false">Taal</button>
+            <div className={`nav-group ${isLang ? 'active-group' : ''}`}>
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isLang}>Taal</button>
               <div className="nav-group-menu" role="menu">
                 <NavLink to="/woorden" className={({isActive}) => isActive ? 'active' : ''} {...pf('/woorden')}>{t('nav_words', language)}</NavLink>
                 <NavLink to="/luisteren" className={({isActive}) => isActive ? 'active' : ''} {...pf('/luisteren')}>{t('nav_listen', language)}</NavLink>
@@ -38,8 +46,8 @@ export default function AppLayout() {
                 <NavLink to="/grammatica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/grammatica')}>Grammatica</NavLink>
               </div>
             </div>
-            <div className="nav-group">
-              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded="false">Cognitief</button>
+            <div className={`nav-group ${isCog ? 'active-group' : ''}`}>
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isCog}>Cognitief</button>
               <div className="nav-group-menu" role="menu">
                 <NavLink to="/logica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/logica')}>{t('nav_logic', language)}</NavLink>
                 <NavLink to="/numeriek" className={({isActive}) => isActive ? 'active' : ''} {...pf('/numeriek')}>Numeriek</NavLink>
@@ -47,8 +55,8 @@ export default function AppLayout() {
                 <NavLink to="/abstract" className={({isActive}) => isActive ? 'active' : ''} {...pf('/abstract')}>Abstract</NavLink>
               </div>
             </div>
-            <div className="nav-group">
-              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded="false">Oefenen</button>
+            <div className={`nav-group ${isPractice ? 'active-group' : ''}`}>
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isPractice}>Oefenen</button>
               <div className="nav-group-menu" role="menu">
                 <NavLink to="/quiz" className={({isActive}) => isActive ? 'active' : ''} {...pf('/quiz')}>{t('nav_quiz', language)}</NavLink>
                 <NavLink to="/scenarios" className={({isActive}) => isActive ? 'active' : ''} {...pf('/scenarios')}>{t('nav_scenarios', language)}</NavLink>
@@ -56,8 +64,8 @@ export default function AppLayout() {
                 <NavLink to="/selectieproef" className={({isActive}) => isActive ? 'active' : ''} {...pf('/selectieproef')}>Selectieproef</NavLink>
               </div>
             </div>
-            <div className="nav-group">
-              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded="false">Overzicht</button>
+            <div className={`nav-group ${isOverview ? 'active-group' : ''}`}>
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isOverview}>Overzicht</button>
               <div className="nav-group-menu" role="menu">
                 <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''} {...pf('/dashboard')}>Dashboard</NavLink>
                 <NavLink to="/badges" className={({isActive}) => isActive ? 'active' : ''} {...pf('/badges')}>Badges</NavLink>
