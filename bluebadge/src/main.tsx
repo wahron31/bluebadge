@@ -1,8 +1,9 @@
-import { StrictMode, lazy, Suspense } from 'react'
+import { StrictMode, lazy, Suspense, useEffect } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import AppLayout from './App'
+import { bootstrapSamples } from './bootstrap'
 
 const HomePage = lazy(() => import('./routes/HomePage'))
 const WordsPage = lazy(() => import('./routes/WordsPage'))
@@ -24,6 +25,15 @@ const AchievementsPage = lazy(() => import('./routes/AchievementsPage'))
 const NumericPage = lazy(() => import('./routes/NumericPage'))
 const VerbalPage = lazy(() => import('./routes/VerbalPage'))
 const AbstractPage = lazy(() => import('./routes/AbstractPage'))
+
+function AppRoot() {
+  useEffect(() => { bootstrapSamples() }, [])
+  return (
+    <Suspense fallback={<div className="container" style={{ padding: 20 }}>Laden…</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  )
+}
 
 const router = createBrowserRouter([
   {
@@ -56,8 +66,6 @@ const router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Suspense fallback={<div className="container" style={{ padding: 20 }}>Laden…</div>}>
-      <RouterProvider router={router} />
-    </Suspense>
+    <AppRoot />
   </StrictMode>,
 )
