@@ -12,7 +12,8 @@
     "test": "vitest run",
     "test:ui": "vitest",
     "gen:templates": "node scripts/gen-templates.cjs",
-    "gen:samples": "node scripts/gen-samples.cjs"
+    "gen:samples": "node scripts/gen-samples.cjs",
+    "gen:words200": "node scripts/make-words-200-from-sample.cjs"
   },
   "dependencies": {
     "chart.js": "^4.5.0",
