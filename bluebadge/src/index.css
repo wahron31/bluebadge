@@ -124,3 +124,8 @@ input, textarea { font: inherit; color: var(--bb-text); background: var(--bb-sur
 .progress-bar { height: 100%; border-radius: inherit; background: var(--bb-accent); transition: width 0.25s ease; }
 
 .footer { color: var(--bb-text-muted); text-align: center; padding: 20px 16px 32px; }
+
+.brand-logo { width: 28px; height: 28px; display: inline-block; border-radius: 6px; box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset; }
+.nav-group-trigger .icon { margin-right: 6px; }
+.nav-group-menu { display: none; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 6px; }
+.nav-group:hover .nav-group-menu, .nav-group:focus-within .nav-group-menu { display: grid; }

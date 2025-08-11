@@ -5,6 +5,7 @@ import { useEffect } from 'react'
 import { t } from './i18n'
 import { prefetchRoute } from './prefetch'
 import { useLocation } from 'react-router-dom'
+import logoUrl from './assets/logo.svg'
 
 export default function AppLayout() {
   const language = useUiStore((s) => s.language)
@@ -32,13 +33,13 @@ export default function AppLayout() {
       <header className="header">
         <div className="header-inner container">
           <div className="brand">
-            <span className="brand-badge">BB</span>
+            <img src={logoUrl} alt="" className="brand-logo" aria-hidden />
             <span>{t('brand', language)}</span>
           </div>
           <nav className="nav" aria-label="primary">
             <NavLink to="/" end className={({isActive}) => isActive ? 'active' : ''} {...pf('/')}>{t('nav_home', language)}</NavLink>
             <div className={`nav-group ${isLang ? 'active-group' : ''}`}>
-              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isLang}>Taal</button>
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isLang}><span className="icon" aria-hidden>🗣️</span>Taal</button>
               <div className="nav-group-menu" role="menu">
                 <NavLink to="/woorden" className={({isActive}) => isActive ? 'active' : ''} {...pf('/woorden')}>{t('nav_words', language)}</NavLink>
                 <NavLink to="/luisteren" className={({isActive}) => isActive ? 'active' : ''} {...pf('/luisteren')}>{t('nav_listen', language)}</NavLink>
@@ -47,7 +48,7 @@ export default function AppLayout() {
               </div>
             </div>
             <div className={`nav-group ${isCog ? 'active-group' : ''}`}>
-              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isCog}>Cognitief</button>
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isCog}><span className="icon" aria-hidden>🧠</span>Cognitief</button>
               <div className="nav-group-menu" role="menu">
                 <NavLink to="/logica" className={({isActive}) => isActive ? 'active' : ''} {...pf('/logica')}>{t('nav_logic', language)}</NavLink>
                 <NavLink to="/numeriek" className={({isActive}) => isActive ? 'active' : ''} {...pf('/numeriek')}>Numeriek</NavLink>
@@ -56,7 +57,7 @@ export default function AppLayout() {
               </div>
             </div>
             <div className={`nav-group ${isPractice ? 'active-group' : ''}`}>
-              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isPractice}>Oefenen</button>
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isPractice}><span className="icon" aria-hidden>🎯</span>Oefenen</button>
               <div className="nav-group-menu" role="menu">
                 <NavLink to="/quiz" className={({isActive}) => isActive ? 'active' : ''} {...pf('/quiz')}>{t('nav_quiz', language)}</NavLink>
                 <NavLink to="/scenarios" className={({isActive}) => isActive ? 'active' : ''} {...pf('/scenarios')}>{t('nav_scenarios', language)}</NavLink>
@@ -65,7 +66,7 @@ export default function AppLayout() {
               </div>
             </div>
             <div className={`nav-group ${isOverview ? 'active-group' : ''}`}>
-              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isOverview}>Overzicht</button>
+              <button type="button" className="nav-group-trigger" aria-haspopup="true" aria-expanded={isOverview}><span className="icon" aria-hidden>📊</span>Overzicht</button>
               <div className="nav-group-menu" role="menu">
                 <NavLink to="/dashboard" className={({isActive}) => isActive ? 'active' : ''} {...pf('/dashboard')}>Dashboard</NavLink>
                 <NavLink to="/badges" className={({isActive}) => isActive ? 'active' : ''} {...pf('/badges')}>Badges</NavLink>
