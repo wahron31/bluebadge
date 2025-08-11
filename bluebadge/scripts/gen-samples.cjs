@@ -95,27 +95,27 @@ function genAbstract50() {
   return items
 }
 
-function genReading40() {
+function genReading(count = 40) {
   const items = []
-  for (let i = 1; i <= 40; i++) {
+  for (let i = 1; i <= count; i++) {
     const body = `Melding ${i}: Er is geluidsoverlast gemeld in de wijk. De politie zal extra patrouilleren en bewoners vragen geluid te beperken na 22:00.`
     items.push({ id: `rS${pad(i)}`, title: `Tekst ${i}`, body, questions: [{ prompt: 'Wat is het doel?', choices: ['Boetes uitschrijven','Overlast verminderen','Verhuizingen organiseren'], correctIndex: 1 }] })
   }
   return items
 }
 
-function genListening40() {
+function genListening(count = 40) {
   const items = []
-  for (let i = 1; i <= 40; i++) {
+  for (let i = 1; i <= count; i++) {
     const transcript = `Goedemiddag, routinecontrole ${i}. Mag ik uw identiteitskaart, alstublieft?`
     items.push({ id: `lS${pad(i)}`, title: `Fragment ${i}`, audioUrl: '/audio/identiteitscontrole.wav', transcript, questions: [{ prompt: 'Wat wordt gevraagd?', choices: ['Rijbewijs','Identiteitskaart','Verzekering'], correctIndex: 1 }] })
   }
   return items
 }
 
-function genGrammar40() {
+function genGrammar(count = 40) {
   const items = []
-  for (let i = 1; i <= 40; i++) {
+  for (let i = 1; i <= count; i++) {
     const sentence = `De agent ___ het rapport (${i}).`
     items.push({ id: `gS${pad(i)}`, lang: 'nl', prompt: 'Kies de juiste vorm', sentence, choices: ['schrijft','schrijven','schreef'], correctIndex: 0 })
   }
@@ -128,9 +128,13 @@ function main() {
   writeJson(path.join(outDir, 'cognitive.numeric.50.sample.json'), genNumeric50())
   writeJson(path.join(outDir, 'cognitive.verbal.50.sample.json'), genVerbal50())
   writeJson(path.join(outDir, 'cognitive.abstract.50.sample.json'), genAbstract50())
-  writeJson(path.join(outDir, 'reading.40.sample.json'), genReading40())
-  writeJson(path.join(outDir, 'listening.40.sample.json'), genListening40())
-  writeJson(path.join(outDir, 'grammar.40.sample.json'), genGrammar40())
+  writeJson(path.join(outDir, 'reading.40.sample.json'), genReading(40))
+  writeJson(path.join(outDir, 'listening.40.sample.json'), genListening(40))
+  writeJson(path.join(outDir, 'grammar.40.sample.json'), genGrammar(40))
+  // new 50-count files as requested
+  writeJson(path.join(outDir, 'reading.50.sample.json'), genReading(50))
+  writeJson(path.join(outDir, 'listening.50.sample.json'), genListening(50))
+  writeJson(path.join(outDir, 'grammar.50.sample.json'), genGrammar(50))
 }
 
 if (require.main === module) main()
