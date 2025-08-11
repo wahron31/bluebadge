@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import Flashcard from '../components/Flashcard'
-import { WORDS } from '../data/words'
+import { getWords } from '../data/overrides'
 import type { WordItem } from '../data/words'
 import { useProgressStore } from '../store/progress'
 
@@ -16,8 +16,10 @@ export default function WordsPage() {
   const [query, setQuery] = useState('')
   const recordAttempt = useProgressStore((s) => s.recordAttempt)
 
+  const all = useMemo(() => getWords(), [])
+
   const filtered = useMemo<WordItem[]>(() => {
-    const byCat = category === 'alle' ? WORDS : WORDS.filter(w => w.category === category)
+    const byCat = category === 'alle' ? all : all.filter(w => w.category === category)
     const bySearch = query.trim()
       ? byCat.filter(w =>
           w.nl.toLowerCase().includes(query.toLowerCase()) ||
@@ -25,7 +27,7 @@ export default function WordsPage() {
         )
       : byCat
     return shuffle(bySearch)
-  }, [category, query])
+  }, [category, query, all])
 
   useEffect(() => { setIndex(0) }, [category, query])
 

@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import QuizQuestionView from '../components/QuizQuestion'
-import { QUIZ_QUESTIONS } from '../data/quizzes'
+import { getQuizzes } from '../data/overrides'
 import type { QuizCategory, QuizQuestion } from '../data/quizzes'
 import { useProgressStore } from '../store/progress'
 
@@ -14,10 +14,12 @@ export default function QuizPage() {
   const [category, setCategory] = useState<QuizCategory | 'alle'>('alle')
   const recordAttempt = useProgressStore((s) => s.recordAttempt)
 
+  const all = useMemo(() => getQuizzes(), [])
+
   const questions = useMemo<QuizQuestion[]>(() => {
-    const filtered = category === 'alle' ? QUIZ_QUESTIONS : QUIZ_QUESTIONS.filter(q => q.category === category)
+    const filtered = category === 'alle' ? all : all.filter(q => q.category === category)
     return shuffle(filtered).slice(0, 10)
-  }, [category])
+  }, [category, all])
 
   const [index, setIndex] = useState(0)
   const [score, setScore] = useState(0)

@@ -1,15 +1,16 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import ScenarioPrompt from '../components/ScenarioPrompt'
-import { SCENARIOS } from '../data/scenarios'
+import { getScenarios } from '../data/overrides'
 import { useProgressStore } from '../store/progress'
 
 export default function ScenariosPage() {
+  const all = useMemo(() => getScenarios(), [])
   const [index, setIndex] = useState(0)
   const recordAttempt = useProgressStore((s) => s.recordAttempt)
   const saveAnswer = useProgressStore((s) => s.saveScenarioAnswer)
 
-  const current = SCENARIOS[index]
-  const hasNext = index < SCENARIOS.length - 1
+  const current = all[index]
+  const hasNext = index < all.length - 1
 
   const handleSubmit = (answer: string) => {
     saveAnswer(current.id, answer)
@@ -21,7 +22,7 @@ export default function ScenariosPage() {
     <div className="grid">
       <ScenarioPrompt item={current} onSubmit={handleSubmit} />
       <div className="card">
-        <h3 style={{ marginTop: 0 }}>Scenario {index + 1} / {SCENARIOS.length}</h3>
+        <h3 style={{ marginTop: 0 }}>Scenario {index + 1} / {all.length}</h3>
         <div style={{ display: 'flex', gap: 8 }}>
           <button className="button ghost" disabled={index === 0} onClick={() => setIndex((i) => i - 1)}>Vorige</button>
           <button className="button ghost" disabled={!hasNext} onClick={() => setIndex((i) => i + 1)}>Volgende</button>

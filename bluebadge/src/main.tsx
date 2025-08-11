@@ -15,6 +15,7 @@ import ProfilePage from './routes/ProfilePage'
 import SessionPage from './routes/SessionPage'
 import ExportPage from './routes/ExportPage'
 import ScenarioPrintPage from './routes/ScenarioPrintPage'
+import AdminImportPage from './routes/AdminImportPage'
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,7 @@ const router = createBrowserRouter([
       { path: 'sessie', element: <SessionPage /> },
       { path: 'export', element: <ExportPage /> },
       { path: 'scenario-print', element: <ScenarioPrintPage /> },
+      { path: 'admin-import', element: <AdminImportPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
