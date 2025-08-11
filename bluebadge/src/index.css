@@ -9,6 +9,13 @@
   --bb-accent: #ffc107;
 }
 
+.theme-dark {
+  --bb-blue-100: #0f172a;
+  --bb-gray-900: #e5e7eb;
+  --bb-gray-700: #94a3b8;
+  --bb-white: #0b1020;
+}
+
 * { box-sizing: border-box; }
 
 html, body, #root { height: 100%; }
@@ -72,7 +79,7 @@ a { color: inherit; text-decoration: none; }
   gap: 10px;
 }
 
-.nav a {
+.nav a, .nav button {
   padding: 8px 12px;
   border-radius: 8px;
   color: var(--bb-white);
@@ -125,6 +132,19 @@ input, textarea {
 :focus-visible {
   outline: 3px solid #ffd24d;
   outline-offset: 2px;
+}
+
+.progress-track {
+  height: 12px;
+  border-radius: 999px;
+  background: #e5e7eb;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: inherit;
+  background: var(--bb-accent);
+  transition: width 0.25s ease;
 }
 
 .footer {

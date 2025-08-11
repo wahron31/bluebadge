@@ -45,4 +45,25 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
     correctIndex: 1,
     explanation: 'Volg de wettelijke procedure: ademtest is aangewezen als eerste stap.',
   },
+  {
+    id: 'q5',
+    category: 'taal',
+    prompt: 'Welke zin is grammaticaal correct?',
+    choices: ['Ik heb de man die je zoekt gezien.', 'Ik heb de man die je zoekt, gezien.', 'Ik heb de man welke je zoekt gezien.'],
+    correctIndex: 1,
+  },
+  {
+    id: 'q6',
+    category: 'logica',
+    prompt: 'Als het regent, is de straat nat. De straat is nat. Conclusie?',
+    choices: ['Het regent', 'Het kan regenen, maar hoeft niet', 'Het regent niet'],
+    correctIndex: 1,
+  },
+  {
+    id: 'q7',
+    category: 'algemeen',
+    prompt: 'Hoeveel provincies heeft Vlaanderen?',
+    choices: ['5', '9', '3'],
+    correctIndex: 0,
+  },
 ]

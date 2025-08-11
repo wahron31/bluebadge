@@ -30,4 +30,16 @@ export const SCENARIOS: ScenarioItem[] = [
       'Identificatie en vaststellingen',
     ],
   },
+  {
+    id: 's3',
+    title: 'Huiselijk conflict',
+    prompt:
+      'Buren melden geschreeuw in een appartement. Je staat voor de deur. Beschrijf je werkwijze en communicatie.',
+    guidelines: [
+      'Veiligheidspositie en partnerrol',
+      'Communicatie: kalmeren en scheiden van partijen',
+      'Screening op letsels en nood aan medische hulp',
+      'Registratie, PV en doorverwijzing',
+    ],
+  },
 ]
