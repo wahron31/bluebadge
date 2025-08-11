@@ -28,6 +28,8 @@ export default function AppLayout() {
             <NavLink to="/woorden" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_words', language)}</NavLink>
             <NavLink to="/quiz" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_quiz', language)}</NavLink>
             <NavLink to="/scenarios" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_scenarios', language)}</NavLink>
+            <NavLink to="/luisteren" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_listen', language)}</NavLink>
+            <NavLink to="/logica" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_logic', language)}</NavLink>
             <NavLink to="/voortgang" className={({isActive}) => isActive ? 'active' : ''}>{t('nav_progress', language)}</NavLink>
           </nav>
           <div className="nav" aria-label="settings" style={{ alignItems: 'center' }}>

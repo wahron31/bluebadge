@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
-export type ModuleKey = 'woorden' | 'quiz' | 'scenarios'
+export type ModuleKey = 'woorden' | 'quiz' | 'scenarios' | 'luisteren' | 'logica'
 
 export type ScenarioAnswer = {
   scenarioId: string
@@ -37,6 +37,8 @@ const initialState = {
     woorden: { ...initialModule },
     quiz: { ...initialModule },
     scenarios: { ...initialModule },
+    luisteren: { ...initialModule },
+    logica: { ...initialModule },
   },
   lastPracticedISO: undefined as string | undefined,
   streakDays: 0,

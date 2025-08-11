@@ -9,6 +9,8 @@ import QuizPage from './routes/QuizPage'
 import ScenariosPage from './routes/ScenariosPage'
 import ProgressPage from './routes/ProgressPage'
 import NotFoundPage from './routes/NotFoundPage'
+import ListeningPage from './routes/ListeningPage'
+import LogicPage from './routes/LogicPage'
 
 const router = createBrowserRouter([
   {
@@ -19,6 +21,8 @@ const router = createBrowserRouter([
       { path: 'woorden', element: <WordsPage /> },
       { path: 'quiz', element: <QuizPage /> },
       { path: 'scenarios', element: <ScenariosPage /> },
+      { path: 'luisteren', element: <ListeningPage /> },
+      { path: 'logica', element: <LogicPage /> },
       { path: 'voortgang', element: <ProgressPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],

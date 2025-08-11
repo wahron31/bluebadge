@@ -8,6 +8,8 @@ const dict: Dict = {
   nav_quiz: { nl: 'Quiz', tr: 'Quiz' },
   nav_scenarios: { nl: "Scenario's", tr: 'Senaryolar' },
   nav_progress: { nl: 'Voortgang', tr: 'İlerleme' },
+  nav_listen: { nl: 'Luisteren', tr: 'Dinleme' },
+  nav_logic: { nl: 'Logica', tr: 'Mantık' },
   brand: { nl: 'BlueBadge', tr: 'BlueBadge' },
   daily_word: { nl: 'Dagelijks woord', tr: 'Günün kelimesi' },
   daily_goal: { nl: 'Dagelijks doel', tr: 'Günlük hedef' },
