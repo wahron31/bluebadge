@@ -10,7 +10,11 @@ export default function HomePage() {
   const language = useUiStore((s) => s.language)
   const dailyWord = useMemo(() => {
     const all = getWords()
-    return all[Math.floor(Math.random() * all.length)]
+    const key = new Date().toISOString().slice(0, 10)
+    let hash = 0
+    for (let i = 0; i < key.length; i++) hash = (hash * 31 + key.charCodeAt(i)) >>> 0
+    const idx = all.length > 0 ? hash % all.length : 0
+    return all[Math.max(0, Math.min(idx, all.length - 1))]
   }, [])
 
   const todayAttempts = useProgressStore((s) => s.todayAttempts)

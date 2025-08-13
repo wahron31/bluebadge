@@ -1,0 +1,2202 @@
+[
+  {
+    "id": "aL001",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL002",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL003",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL004",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL005",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL006",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL007",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL008",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL009",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL010",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL011",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL012",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL013",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL014",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL015",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL016",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL017",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL018",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL019",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL020",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL021",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL022",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL023",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL024",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL025",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL026",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL027",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL028",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL029",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL030",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL031",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL032",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL033",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL034",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL035",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL036",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL037",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL038",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL039",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL040",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL041",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL042",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL043",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL044",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL045",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL046",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL047",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL048",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL049",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL050",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL051",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL052",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL053",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL054",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL055",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL056",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL057",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL058",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL059",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL060",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL061",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL062",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL063",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL064",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL065",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL066",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL067",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL068",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL069",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL070",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL071",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL072",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL073",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL074",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL075",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL076",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL077",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL078",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL079",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL080",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL081",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL082",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL083",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL084",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL085",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL086",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL087",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL088",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL089",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL090",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL091",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL092",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL093",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL094",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL095",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL096",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL097",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL098",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL099",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL100",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL101",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL102",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL103",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL104",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL105",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL106",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL107",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL108",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL109",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL110",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL111",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL112",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL113",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL114",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL115",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL116",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL117",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL118",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL119",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL120",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL121",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL122",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL123",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL124",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL125",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL126",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL127",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL128",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL129",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL130",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL131",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL132",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL133",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL134",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL135",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL136",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL137",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL138",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL139",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL140",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL141",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL142",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL143",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL144",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL145",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL146",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL147",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL148",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL149",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL150",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL151",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL152",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL153",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL154",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL155",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL156",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL157",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL158",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL159",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL160",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL161",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL162",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL163",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL164",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL165",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL166",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL167",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL168",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL169",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL170",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL171",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL172",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL173",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL174",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL175",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL176",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL177",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL178",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL179",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL180",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL181",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL182",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL183",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL184",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL185",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL186",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL187",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL188",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL189",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL190",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL191",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL192",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL193",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL194",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL195",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL196",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL197",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL198",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲, ▲▲▲, ▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲",
+      "▲▲▲",
+      "▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL199",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲, ▲▲▲▲, ▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲",
+      "▲▲▲▲",
+      "▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  },
+  {
+    "id": "aL200",
+    "type": "abstract",
+    "prompt": "Reeks: ▲▲▲▲, ▲▲▲▲▲, ▲▲▲▲▲▲, …",
+    "choices": [
+      "▲▲▲▲▲▲▲",
+      "▲▲▲▲▲",
+      "▲▲▲▲▲▲▲▲"
+    ],
+    "correctIndex": 0
+  }
+]

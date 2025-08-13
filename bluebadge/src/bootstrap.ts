@@ -16,26 +16,26 @@ export async function bootstrapSamples(): Promise<void> {
       const words = await fetchJson('/data/words.b1c2.5000.sample.json')
       setWords(words as any)
     }
-    // Cognitief: als leeg, laad alle drie
-    if (getCognitive().length < 50) {
-      const num = await fetchJson<CognitiveItem[]>('/data/cognitive.numeric.50.real.json')
-      const verb = await fetchJson<CognitiveItem[]>('/data/cognitive.verbal.50.real.json')
-      const abs = await fetchJson<CognitiveItem[]>('/data/cognitive.abstract.50.real.json')
+    // Cognitief: als leeg of klein, laad grote sets
+    if (getCognitive().length < 150) {
+      const num = await fetchJson<CognitiveItem[]>('/data/cognitive.numeric.200.large.json')
+      const verb = await fetchJson<CognitiveItem[]>('/data/cognitive.verbal.200.large.json')
+      const abs = await fetchJson<CognitiveItem[]>('/data/cognitive.abstract.200.large.json')
       setCognitive([...num, ...verb, ...abs])
     }
-    // Lezen 50 als minder dan 20
-    if (getReading().length < 20) {
-      const r = await fetchJson('/data/reading.50.sample.json')
+    // Lezen: laad 500 als minder dan 100
+    if (getReading().length < 100) {
+      const r = await fetchJson('/data/reading.500.large.json')
       setReading(r as any)
     }
-    // Luisteren 50 als minder dan 10
-    if (getListening().length < 10) {
-      const l = await fetchJson('/data/listening.50.sample.json')
+    // Luisteren: laad 500 als minder dan 100
+    if (getListening().length < 100) {
+      const l = await fetchJson('/data/listening.500.large.json')
       setListening(l as any)
     }
-    // Grammatica 50 als minder dan 10
-    if (getGrammar().length < 10) {
-      const g = await fetchJson('/data/grammar.50.sample.json')
+    // Grammatica: laad 500 als minder dan 100
+    if (getGrammar().length < 100) {
+      const g = await fetchJson('/data/grammar.500.large.json')
       setGrammar(g as any)
     }
     localStorage.setItem(FLAG, '1')

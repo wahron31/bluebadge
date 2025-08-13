@@ -20,8 +20,8 @@ export default function SelectieproefPage() {
   const recordAttempt = useProgressStore((s) => s.recordAttempt)
 
   const [selectedCats, setSelectedCats] = useState<Record<CategoryKey, boolean>>({ numeriek: true, verbaal: true, abstract: true, lezen: false, luisteren: false, grammatica: false })
-  const [count, setCount] = useState(30)
-  const [minutes, setMinutes] = useState(30)
+  const [count, setCount] = useState(50)
+  const [minutes, setMinutes] = useState(60)
   const [started, setStarted] = useState(false)
   const [finished, setFinished] = useState(false)
 
@@ -120,8 +120,8 @@ export default function SelectieproefPage() {
             ))}
           </div>
           <div style={{ display: 'flex', gap: 12, marginTop: 12, flexWrap: 'wrap' }}>
-            <label>Aantal vragen <input type="number" min={10} max={100} value={count} onChange={(e) => setCount(Math.max(10, Math.min(100, Number(e.target.value)||0)))} style={{ padding: '8px 10px', borderRadius: 8, border: '1px solid #ccc', width: 100 }} /></label>
-            <label>Tijd (min) <input type="number" min={10} max={180} value={minutes} onChange={(e) => setMinutes(Math.max(10, Math.min(180, Number(e.target.value)||0)))} style={{ padding: '8px 10px', borderRadius: 8, border: '1px solid #ccc', width: 100 }} /></label>
+            <label>Aantal vragen <input type="number" min={10} max={200} value={count} onChange={(e) => setCount(Math.max(10, Math.min(200, Number(e.target.value)||0)))} style={{ padding: '8px 10px', borderRadius: 8, border: '1px solid #ccc', width: 100 }} /></label>
+            <label>Tijd (min) <input type="number" min={10} max={240} value={minutes} onChange={(e) => setMinutes(Math.max(10, Math.min(240, Number(e.target.value)||0)))} style={{ padding: '8px 10px', borderRadius: 8, border: '1px solid #ccc', width: 100 }} /></label>
           </div>
           <p style={{ marginTop: 8 }}>Beschikbare vragen in selectie: {pool.length}</p>
           <button className="button" disabled={!canStart} onClick={start}>Start</button>

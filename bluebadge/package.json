@@ -13,6 +13,7 @@
     "test:ui": "vitest",
     "gen:templates": "node scripts/gen-templates.cjs",
     "gen:samples": "node scripts/gen-samples.cjs",
+    "gen:samples:large": "node scripts/gen-samples-large.cjs",
     "gen:words200": "node scripts/make-words-200-from-sample.cjs",
     "gen:words1000": "node scripts/make-words-1000-from-sample.cjs",
     "gen:cogsets": "node scripts/gen-cognitive-sets.cjs",
