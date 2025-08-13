@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useMemo } from 'react'
-import { WORDS } from '../data/words'
+import { getWords } from '../data/overrides'
 import { useUiStore } from '../store/ui'
 import { t } from '../i18n'
 import { useProgressStore } from '../store/progress'
@@ -8,7 +8,10 @@ import { useOnboardingStore } from '../store/onboarding'
 
 export default function HomePage() {
   const language = useUiStore((s) => s.language)
-  const dailyWord = useMemo(() => WORDS[Math.floor(Math.random() * WORDS.length)], [])
+  const dailyWord = useMemo(() => {
+    const all = getWords()
+    return all[Math.floor(Math.random() * all.length)]
+  }, [])
 
   const todayAttempts = useProgressStore((s) => s.todayAttempts)
   const dailyGoal = useProgressStore((s) => s.dailyGoal)

@@ -11,9 +11,9 @@ async function fetchJson<T>(url: string): Promise<T> {
 export async function bootstrapSamples(): Promise<void> {
   if (localStorage.getItem(FLAG)) return
   try {
-    // Woorden: als minder dan 200 items aanwezig
-    if (getWords().length < 200) {
-      const words = await fetchJson('/data/words.b1b2.1000.sample.json')
+    // Woorden: laad grote set indien minder dan 5000
+    if (getWords().length < 5000) {
+      const words = await fetchJson('/data/words.b1c2.5000.sample.json')
       setWords(words as any)
     }
     // Cognitief: als leeg, laad alle drie

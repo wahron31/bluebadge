@@ -15,7 +15,8 @@
     "gen:samples": "node scripts/gen-samples.cjs",
     "gen:words200": "node scripts/make-words-200-from-sample.cjs",
     "gen:words1000": "node scripts/make-words-1000-from-sample.cjs",
-    "gen:cogsets": "node scripts/gen-cognitive-sets.cjs"
+    "gen:cogsets": "node scripts/gen-cognitive-sets.cjs",
+    "gen:words5000": "node scripts/make-words-5000-from-sample.cjs"
   },
   "dependencies": {
     "chart.js": "^4.5.0",
