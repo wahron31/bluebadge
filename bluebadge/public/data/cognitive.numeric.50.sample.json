@@ -1,0 +1,552 @@
+[
+  {
+    "id": "n01",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "11+1",
+      "9+2",
+      "11+3"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n02",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "12+2",
+      "10+3",
+      "12+4"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n03",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "13+3",
+      "11+4",
+      "13+5"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n04",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "14+4",
+      "12+5",
+      "14+6"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n05",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "15+5",
+      "13+6",
+      "15+7"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n06",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "16+6",
+      "14+7",
+      "16+8"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n07",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "17+7",
+      "15+8",
+      "17+9"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n08",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "18+8",
+      "16+9",
+      "18+10"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n09",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "19+9",
+      "17+10",
+      "19+11"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n10",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "20+10",
+      "18+11",
+      "20+12"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n11",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "21+11",
+      "19+12",
+      "21+13"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n12",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "22+12",
+      "20+13",
+      "22+14"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n13",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "23+13",
+      "21+14",
+      "23+15"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n14",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "24+14",
+      "22+15",
+      "24+16"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n15",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "25+15",
+      "23+16",
+      "25+17"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n16",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "26+16",
+      "24+17",
+      "26+18"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n17",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "27+17",
+      "25+18",
+      "27+19"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n18",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "28+18",
+      "26+19",
+      "28+20"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n19",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "29+19",
+      "27+20",
+      "29+21"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n20",
+    "type": "numeric",
+    "prompt": "Welke uitkomst is het grootst?",
+    "choices": [
+      "30+20",
+      "28+21",
+      "30+22"
+    ],
+    "correctIndex": 2
+  },
+  {
+    "id": "n21",
+    "type": "numeric",
+    "prompt": "Reeks: 21, 23, 25, 27, … Wat is het volgende getal?",
+    "choices": [
+      "28",
+      "29",
+      "30"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n22",
+    "type": "numeric",
+    "prompt": "Reeks: 22, 25, 28, 31, … Wat is het volgende getal?",
+    "choices": [
+      "33",
+      "34",
+      "35"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n23",
+    "type": "numeric",
+    "prompt": "Reeks: 23, 27, 31, 35, … Wat is het volgende getal?",
+    "choices": [
+      "38",
+      "39",
+      "40"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n24",
+    "type": "numeric",
+    "prompt": "Reeks: 24, 26, 28, 30, … Wat is het volgende getal?",
+    "choices": [
+      "31",
+      "32",
+      "33"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n25",
+    "type": "numeric",
+    "prompt": "Reeks: 25, 28, 31, 34, … Wat is het volgende getal?",
+    "choices": [
+      "36",
+      "37",
+      "38"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n26",
+    "type": "numeric",
+    "prompt": "Reeks: 26, 30, 34, 38, … Wat is het volgende getal?",
+    "choices": [
+      "41",
+      "42",
+      "43"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n27",
+    "type": "numeric",
+    "prompt": "Reeks: 27, 29, 31, 33, … Wat is het volgende getal?",
+    "choices": [
+      "34",
+      "35",
+      "36"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n28",
+    "type": "numeric",
+    "prompt": "Reeks: 28, 31, 34, 37, … Wat is het volgende getal?",
+    "choices": [
+      "39",
+      "40",
+      "41"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n29",
+    "type": "numeric",
+    "prompt": "Reeks: 29, 33, 37, 41, … Wat is het volgende getal?",
+    "choices": [
+      "44",
+      "45",
+      "46"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n30",
+    "type": "numeric",
+    "prompt": "Reeks: 30, 32, 34, 36, … Wat is het volgende getal?",
+    "choices": [
+      "37",
+      "38",
+      "39"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n31",
+    "type": "numeric",
+    "prompt": "Reeks: 31, 34, 37, 40, … Wat is het volgende getal?",
+    "choices": [
+      "42",
+      "43",
+      "44"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n32",
+    "type": "numeric",
+    "prompt": "Reeks: 32, 36, 40, 44, … Wat is het volgende getal?",
+    "choices": [
+      "47",
+      "48",
+      "49"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n33",
+    "type": "numeric",
+    "prompt": "Reeks: 33, 35, 37, 39, … Wat is het volgende getal?",
+    "choices": [
+      "40",
+      "41",
+      "42"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n34",
+    "type": "numeric",
+    "prompt": "Reeks: 34, 37, 40, 43, … Wat is het volgende getal?",
+    "choices": [
+      "45",
+      "46",
+      "47"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n35",
+    "type": "numeric",
+    "prompt": "Reeks: 35, 39, 43, 47, … Wat is het volgende getal?",
+    "choices": [
+      "50",
+      "51",
+      "52"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n36",
+    "type": "numeric",
+    "prompt": "25% van 208 is …",
+    "choices": [
+      "42",
+      "52",
+      "62"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n37",
+    "type": "numeric",
+    "prompt": "25% van 211 is …",
+    "choices": [
+      "42",
+      "53",
+      "63"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n38",
+    "type": "numeric",
+    "prompt": "25% van 214 is …",
+    "choices": [
+      "43",
+      "54",
+      "64"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n39",
+    "type": "numeric",
+    "prompt": "25% van 217 is …",
+    "choices": [
+      "43",
+      "54",
+      "65"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n40",
+    "type": "numeric",
+    "prompt": "25% van 220 is …",
+    "choices": [
+      "44",
+      "55",
+      "66"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n41",
+    "type": "numeric",
+    "prompt": "25% van 223 is …",
+    "choices": [
+      "45",
+      "56",
+      "67"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n42",
+    "type": "numeric",
+    "prompt": "25% van 226 is …",
+    "choices": [
+      "45",
+      "57",
+      "68"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n43",
+    "type": "numeric",
+    "prompt": "25% van 229 is …",
+    "choices": [
+      "46",
+      "57",
+      "69"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n44",
+    "type": "numeric",
+    "prompt": "25% van 232 is …",
+    "choices": [
+      "46",
+      "58",
+      "70"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n45",
+    "type": "numeric",
+    "prompt": "25% van 235 is …",
+    "choices": [
+      "47",
+      "59",
+      "71"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n46",
+    "type": "numeric",
+    "prompt": "25% van 238 is …",
+    "choices": [
+      "48",
+      "60",
+      "71"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n47",
+    "type": "numeric",
+    "prompt": "25% van 241 is …",
+    "choices": [
+      "48",
+      "60",
+      "72"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n48",
+    "type": "numeric",
+    "prompt": "25% van 244 is …",
+    "choices": [
+      "49",
+      "61",
+      "73"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n49",
+    "type": "numeric",
+    "prompt": "25% van 247 is …",
+    "choices": [
+      "49",
+      "62",
+      "74"
+    ],
+    "correctIndex": 1
+  },
+  {
+    "id": "n50",
+    "type": "numeric",
+    "prompt": "25% van 250 is …",
+    "choices": [
+      "50",
+      "63",
+      "75"
+    ],
+    "correctIndex": 1
+  }
+]

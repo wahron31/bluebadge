@@ -1,0 +1,11 @@
+[
+  {
+    "id": "l101",
+    "title": "Identiteitscontrole",
+    "audioUrl": "/audio/identiteitscontrole.wav",
+    "transcript": "Mag ik uw identiteitskaart alstublieft?",
+    "questions": [
+      { "prompt": "Wat wordt gevraagd?", "choices": ["Rijbewijs", "Identiteitskaart", "Verzekering"], "correctIndex": 1 }
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "id": "r101",
+    "title": "Parkregels",
+    "body": "In het park is glas verboden. Honden aan de leiband.",
+    "questions": [
+      { "prompt": "Wat is verboden?", "choices": ["Glas", "Fietsen", "Wandelen"], "correctIndex": 0 }
+    ]
+  }
+]

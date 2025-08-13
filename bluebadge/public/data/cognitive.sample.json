@@ -1,0 +1,5 @@
+[
+  { "id": "n1", "type": "numeric", "prompt": "Welke som is het grootst?", "choices": ["12+7", "9+9", "8+10"], "correctIndex": 2 },
+  { "id": "v1", "type": "verbal", "prompt": "Synoniem voor 'aanhouden'", "choices": ["loslaten", "arresteren", "verlossen"], "correctIndex": 1 },
+  { "id": "a1", "type": "abstract", "prompt": "Reeks: 2, 4, 8, 16, ...", "choices": ["24", "30", "32"], "correctIndex": 2 }
+]
